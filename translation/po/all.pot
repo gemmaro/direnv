@@ -1,14 +1,553 @@
-# SOME DESCRIPTIVE TITLE.
+# SOME DESCRIPTIVE TITLE
 # Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"PO-Revision-Date: 2023-11-04 00:34+0900\n"
+"POT-Creation-Date: 2023-11-04 00:35+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: en\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#. type: Title =
+#: ../README.md:2
+#, markdown-text, no-wrap
+msgid "direnv -- unclutter your .profile"
+msgstr ""
+
+#. type: Plain text
+#: ../README.md:8
+#, markdown-text
+msgid ""
+"[![Built with "
+"Nix](https://builtwithnix.org/badge.svg)](https://builtwithnix.org)  "
+"[![Packaging "
+"status](https://repology.org/badge/tiny-repos/direnv.svg)](https://repology.org/project/direnv/versions)  "
+"[![latest packaged "
+"version(s)](https://repology.org/badge/latest-versions/direnv.svg)](https://repology.org/project/direnv/versions)  "
+"[![Support room on "
+"Matrix](https://img.shields.io/matrix/direnv:numtide.com.svg?label=%23direnv%3Anumtide.com&logo=matrix&server_fqdn=matrix.numtide.com)](https://matrix.to/#/#direnv:numtide.com)"
+msgstr ""
+
+#. type: Plain text
+#: ../README.md:12
+#, markdown-text
+msgid ""
+"`direnv` is an extension for your shell. It augments existing shells with a "
+"new feature that can load and unload environment variables depending on the "
+"current directory."
+msgstr ""
+
+#. type: Title ##
+#: ../README.md:13
+#, markdown-text, no-wrap
+msgid "Use cases"
+msgstr ""
+
+#. type: Bullet: '* '
+#: ../README.md:18
+#, markdown-text
+msgid "Load [12factor apps](https://12factor.net/) environment variables"
+msgstr ""
+
+#. type: Bullet: '* '
+#: ../README.md:18
+#, markdown-text
+msgid "Create per-project isolated development environments"
+msgstr ""
+
+#. type: Bullet: '* '
+#: ../README.md:18
+#, markdown-text
+msgid "Load secrets for deployment"
+msgstr ""
+
+#. type: Title ##
+#: ../README.md:19
+#, markdown-text, no-wrap
+msgid "How it works"
+msgstr ""
+
+#. type: Plain text
+#: ../README.md:26
+#, markdown-text
+msgid ""
+"Before each prompt, direnv checks for the existence of a `.envrc` file (and "
+"[optionally](man/direnv.toml.1.md#codeloaddotenvcode) a `.env` file) in the "
+"current and parent directories. If the file exists (and is authorized), it "
+"is loaded into a **bash** sub-shell and all exported variables are then "
+"captured by direnv and then made available to the current shell."
+msgstr ""
+
+#. type: Plain text
+#: ../README.md:30
+#, markdown-text
+msgid ""
+"It supports hooks for all the common shells like bash, zsh, tcsh and fish.  "
+"This allows project-specific environment variables without cluttering the "
+"`~/.profile` file."
+msgstr ""
+
+#. type: Plain text
+#: ../README.md:34
+#, markdown-text
+msgid ""
+"Because direnv is compiled into a single static executable, it is fast "
+"enough to be unnoticeable on each prompt. It is also language-agnostic and "
+"can be used to build solutions similar to rbenv, pyenv and phpenv."
+msgstr ""
+
+#. type: Title ##
+#: ../README.md:35
+#, markdown-text, no-wrap
+msgid "Getting Started"
+msgstr ""
+
+#. type: Title ###
+#: ../README.md:37
+#, markdown-text, no-wrap
+msgid "Prerequisites"
+msgstr ""
+
+#. type: Bullet: '* '
+#: ../README.md:41
+#, markdown-text
+msgid "Unix-like operating system (macOS, Linux, ...)"
+msgstr ""
+
+#. type: Bullet: '* '
+#: ../README.md:41
+#, markdown-text
+msgid "A supported shell (bash, zsh, tcsh, fish, elvish, powershell)"
+msgstr ""
+
+#. type: Title ###
+#: ../README.md:42
+#, markdown-text, no-wrap
+msgid "Basic Installation"
+msgstr ""
+
+#. type: Bullet: '1. '
+#: ../README.md:46
+#, markdown-text
+msgid ""
+"direnv is packaged in most distributions already. See [the installation "
+"documentation](docs/installation.md) for details."
+msgstr ""
+
+#. type: Bullet: '2. '
+#: ../README.md:46
+#, markdown-text
+msgid "[hook direnv into your shell](docs/hook.md)."
+msgstr ""
+
+#. type: Plain text
+#: ../README.md:48
+#, markdown-text
+msgid "Now restart your shell."
+msgstr ""
+
+#. type: Title ###
+#: ../README.md:49
+#, markdown-text, no-wrap
+msgid "Quick demo"
+msgstr ""
+
+#. type: Plain text
+#: ../README.md:52
+#, markdown-text
+msgid "To follow along in your shell once direnv is installed."
+msgstr ""
+
+#. type: Fenced code block (shell)
+#: ../README.md:53
+#, no-wrap
+msgid ""
+"# Create a new folder for demo purposes.\n"
+"$ mkdir ~/my-project\n"
+"$ cd ~/my-project\n"
+"\n"
+"# Show that the FOO environment variable is not loaded.\n"
+"$ echo ${FOO-nope}\n"
+"nope\n"
+"\n"
+"# Create a new .envrc. This file is bash code that is going to be loaded "
+"by\n"
+"# direnv.\n"
+"$ echo export FOO=foo > .envrc\n"
+".envrc is not allowed\n"
+"\n"
+"# The security mechanism didn't allow to load the .envrc. Since we trust "
+"it,\n"
+"# let's allow its execution.\n"
+"$ direnv allow .\n"
+"direnv: reloading\n"
+"direnv: loading .envrc\n"
+"direnv export: +FOO\n"
+"\n"
+"# Show that the FOO environment variable is loaded.\n"
+"$ echo ${FOO-nope}\n"
+"foo\n"
+"\n"
+"# Exit the project\n"
+"$ cd ..\n"
+"direnv: unloading\n"
+"\n"
+"# And now FOO is unset again\n"
+"$ echo ${FOO-nope}\n"
+"nope\n"
+msgstr ""
+
+#. type: Title ###
+#: ../README.md:87
+#, markdown-text, no-wrap
+msgid "The stdlib"
+msgstr ""
+
+#. type: Plain text
+#: ../README.md:91
+#, markdown-text
+msgid ""
+"Exporting variables by hand is a bit repetitive so direnv provides a set of "
+"utility functions that are made available in the context of the `.envrc` "
+"file."
+msgstr ""
+
+#. type: Plain text
+#: ../README.md:96
+#, markdown-text
+msgid ""
+"As an example, the `PATH_add` function is used to expand and prepend a path "
+"to the $PATH environment variable. Instead of `export PATH=$PWD/bin:$PATH` "
+"you can write `PATH_add bin`. It's shorter and avoids a common mistake where "
+"`$PATH=bin`."
+msgstr ""
+
+#. type: Plain text
+#: ../README.md:99
+#, markdown-text
+msgid ""
+"To find the documentation for all available functions check the "
+"[direnv-stdlib(1) man page](man/direnv-stdlib.1.md)."
+msgstr ""
+
+#. type: Plain text
+#: ../README.md:104
+#, markdown-text
+msgid ""
+"It's also possible to create your own extensions by creating a bash file at "
+"`~/.config/direnv/direnvrc` or `~/.config/direnv/lib/*.sh`. This file is "
+"loaded before your `.envrc` and thus allows you to make your own extensions "
+"to direnv."
+msgstr ""
+
+#. type: Plain text
+#: ../README.md:109
+#, markdown-text
+msgid ""
+"Note that this functionality is not supported in `.env` files. If the "
+"coexistence of both is needed, one can use `.envrc` for leveraging stdlib "
+"and append `dotenv` at the end of it to instruct direnv to also read the "
+"`.env` file next."
+msgstr ""
+
+#. type: Title ##
+#: ../README.md:110
+#, markdown-text, no-wrap
+msgid "Docs"
+msgstr ""
+
+#. type: Bullet: '* '
+#: ../README.md:117
+#, markdown-text
+msgid "[Install direnv](docs/installation.md)"
+msgstr ""
+
+#. type: Bullet: '* '
+#: ../README.md:117
+#, markdown-text
+msgid "[Hook into your shell](docs/hook.md)"
+msgstr ""
+
+#. type: Bullet: '* '
+#: ../README.md:117
+#, markdown-text
+msgid "[Develop for direnv](docs/development.md)"
+msgstr ""
+
+#. type: Bullet: '* '
+#: ../README.md:117
+#, markdown-text
+msgid "[Manage your rubies with direnv and ruby-install](docs/ruby.md)"
+msgstr ""
+
+#. type: Bullet: '* '
+#: ../README.md:117
+#, markdown-text
+msgid "[Community Wiki](https://github.com/direnv/direnv/wiki)"
+msgstr ""
+
+#. type: Plain text
+#: ../README.md:120
+#, markdown-text
+msgid ""
+"Make sure to take a look at the wiki! It contains all sorts of useful "
+"information such as common recipes, editor integration, tips-and-tricks."
+msgstr ""
+
+#. type: Title ###
+#: ../README.md:121
+#, markdown-text, no-wrap
+msgid "Man pages"
+msgstr ""
+
+#. type: Bullet: '* '
+#: ../README.md:126
+#, markdown-text
+msgid "[direnv(1) man page](man/direnv.1.md)"
+msgstr ""
+
+#. type: Bullet: '* '
+#: ../README.md:126
+#, markdown-text
+msgid "[direnv-stdlib(1) man page](man/direnv-stdlib.1.md)"
+msgstr ""
+
+#. type: Bullet: '* '
+#: ../README.md:126
+#, markdown-text
+msgid "[direnv.toml(1) man page](man/direnv.toml.1.md)"
+msgstr ""
+
+#. type: Title ###
+#: ../README.md:127
+#, markdown-text, no-wrap
+msgid "FAQ"
+msgstr ""
+
+#. type: Plain text
+#: ../README.md:131
+#, markdown-text
+msgid ""
+"Based on GitHub issues interactions, here are the top things that have been "
+"confusing for users:"
+msgstr ""
+
+#. type: Bullet: '1. '
+#: ../README.md:135
+#, markdown-text
+msgid ""
+"direnv has a standard library of functions, a collection of utilities that I "
+"found useful to have and accumulated over the years. You can find it here: "
+"https://github.com/direnv/direnv/blob/master/stdlib.sh"
+msgstr ""
+
+#. type: Bullet: '2. '
+#: ../README.md:139
+#, markdown-text
+msgid ""
+"It's possible to override the stdlib with your own set of function by adding "
+"a bash file to `~/.config/direnv/direnvrc`. This file is loaded and it's "
+"content made available to any `.envrc` file."
+msgstr ""
+
+#. type: Bullet: '3. '
+#: ../README.md:146
+#, markdown-text
+msgid ""
+"direnv is not loading the `.envrc` into the current shell. It's creating a "
+"new bash sub-process to load the stdlib, direnvrc and `.envrc`, and only "
+"exports the environment diff back to the original shell. This allows direnv "
+"to record the environment changes accurately and also work with all sorts of "
+"shells. It also means that aliases and functions are not exportable right "
+"now."
+msgstr ""
+
+#. type: Title ##
+#: ../README.md:147
+#, markdown-text, no-wrap
+msgid "Contributing"
+msgstr ""
+
+#. type: Plain text
+#: ../README.md:151
+#, markdown-text
+msgid ""
+"Bug reports, contributions and forks are welcome. All bugs or other forms of "
+"discussion happen on http://github.com/direnv/direnv/issues ."
+msgstr ""
+
+#. type: Plain text
+#: ../README.md:155
+#, markdown-text
+msgid ""
+"Or drop by on [Matrix](https://matrix.to/#/#direnv:numtide.com) to have a "
+"chat. If you ask a question make sure to stay around as not everyone is "
+"active all day."
+msgstr ""
+
+#. type: Title ###
+#: ../README.md:156
+#, markdown-text, no-wrap
+msgid "Testing"
+msgstr ""
+
+#. type: Plain text
+#: ../README.md:159
+#, markdown-text
+msgid ""
+"To run our tests, use these commands: (you may need to install "
+"[homebrew](https://brew.sh/))"
+msgstr ""
+
+#. type: Fenced code block
+#: ../README.md:160
+#, no-wrap
+msgid ""
+"brew bundle\n"
+"make test\n"
+msgstr ""
+
+#. type: Title ##
+#: ../README.md:165
+#, markdown-text, no-wrap
+msgid "Complementary projects"
+msgstr ""
+
+#. type: Plain text
+#: ../README.md:168
+#, markdown-text
+msgid ""
+"Here is a list of projects you might want to look into if you are using "
+"direnv."
+msgstr ""
+
+#. type: Bullet: '* '
+#: ../README.md:171
+#, markdown-text
+msgid "[starship](https://starship.rs/) - A cross-shell prompt."
+msgstr ""
+
+#. type: Bullet: '* '
+#: ../README.md:171
+#, markdown-text
+msgid ""
+"[Projects for Nix integration](https://github.com/direnv/direnv/wiki/Nix) - "
+"choose from one of a variety of projects offering improvements over Direnv's "
+"built-in `use_nix` implementation."
+msgstr ""
+
+#. type: Title ##
+#: ../README.md:172
+#, markdown-text, no-wrap
+msgid "Related projects"
+msgstr ""
+
+#. type: Plain text
+#: ../README.md:176
+#, markdown-text
+msgid ""
+"Here is a list of other projects found in the same design space. Feel free "
+"to submit new ones."
+msgstr ""
+
+#. type: Bullet: '* '
+#: ../README.md:184
+#, markdown-text
+msgid ""
+"[Environment Modules](http://modules.sourceforge.net/) - one of the oldest "
+"(in a good way) environment-loading systems"
+msgstr ""
+
+#. type: Bullet: '* '
+#: ../README.md:184
+#, markdown-text
+msgid ""
+"[autoenv](https://github.com/hyperupcall/autoenv) - older, popular, and "
+"lightweight."
+msgstr ""
+
+#. type: Bullet: '* '
+#: ../README.md:184
+#, markdown-text
+msgid ""
+"[zsh-autoenv](https://github.com/Tarrasch/zsh-autoenv) - a feature-rich "
+"mixture of autoenv and [smartcd](https://github.com/cxreg/smartcd): "
+"enter/leave events, nesting, stashing (Zsh-only)."
+msgstr ""
+
+#. type: Bullet: '* '
+#: ../README.md:184
+#, markdown-text
+msgid ""
+"[asdf](https://github.com/asdf-vm/asdf) - a pure bash solution that has a "
+"plugin system. The "
+"[asdf-direnv](https://github.com/asdf-community/asdf-direnv) plugin allows "
+"using asdf managed tools with direnv."
+msgstr ""
+
+#. type: Bullet: '* '
+#: ../README.md:184
+#, markdown-text
+msgid ""
+"[ondir](https://github.com/alecthomas/ondir) - OnDir is a small program to "
+"automate tasks specific to certain directories"
+msgstr ""
+
+#. type: Bullet: '* '
+#: ../README.md:184
+#, markdown-text
+msgid ""
+"[shadowenv](https://shopify.github.io/shadowenv/) - uses an s-expression "
+"format to define environment changes that should be executed"
+msgstr ""
+
+#. type: Bullet: '* '
+#: ../README.md:184
+#, markdown-text
+msgid ""
+"[quickenv](https://github.com/untitaker/quickenv) - an alternative loader "
+"for `.envrc` files that does not hook into your shell and favors speed over "
+"convenience."
+msgstr ""
+
+#. type: Title ##
+#: ../README.md:185
+#, markdown-text, no-wrap
+msgid "Commercial support"
+msgstr ""
+
+#. type: Plain text
+#: ../README.md:188
+#, markdown-text
+msgid "Looking for help or customization?"
+msgstr ""
+
+#. type: Plain text
+#: ../README.md:191
+#, markdown-text
+msgid ""
+"Get in touch with Numtide to get a quote. We make it easy for companies to "
+"work with Open Source projects: <https://numtide.com/contact>"
+msgstr ""
+
+#. type: Title ##
+#: ../README.md:192
+#, markdown-text, no-wrap
+msgid "COPYRIGHT"
+msgstr ""
+
+#. type: Plain text
+#: ../README.md:194
+#, markdown-text
+msgid ""
+"[MIT licence](LICENSE) - Copyright (C) 2019 @zimbatm and "
+"[contributors](https://github.com/direnv/direnv/graphs/contributors)"
+msgstr ""
