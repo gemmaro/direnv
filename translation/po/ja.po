@@ -1,18 +1,21 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Japanese translations for PACKAGE package
+# PACKAGE パッケージに対する英訳
+# Copyright (C) 2024 Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# Automatically generated, 2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Direnv\n"
-"POT-Creation-Date: 2023-11-04 00:35+0900\n"
-"PO-Revision-Date: 2023-11-04 00:35+0900\n"
-"Last-Translator: gemmaro <gemmaro.dev@gmail.com>\n"
+"POT-Creation-Date: 2024-11-24 08:58+0900\n"
+"PO-Revision-Date: 2024-11-24 09:48+0900\n"
+"Last-Translator: gemmaro\n"
 "Language-Team: none\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #. type: Title =
 #: ../README.md:2
@@ -189,9 +192,10 @@ msgstr ""
 
 #. type: Title ###
 #: ../README.md:87
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid "`direnv stdlib`"
 msgid "The stdlib"
-msgstr ""
+msgstr "`direnv stdlib`"
 
 #. type: Plain text
 #: ../README.md:91
@@ -258,8 +262,10 @@ msgstr ""
 
 #. type: Bullet: '* '
 #: ../README.md:117
+#, fuzzy
+#| msgid "Manage your rubies with direnv and ruby-install"
 msgid "[Manage your rubies with direnv and ruby-install](docs/ruby.md)"
-msgstr ""
+msgstr "direnvとruby-installでRubyを管理する"
 
 #. type: Bullet: '* '
 #: ../README.md:117
@@ -281,8 +287,10 @@ msgstr ""
 
 #. type: Bullet: '* '
 #: ../README.md:126
+#, fuzzy
+#| msgid "direnv(1), direnv.toml(1)"
 msgid "[direnv(1) man page](man/direnv.1.md)"
-msgstr ""
+msgstr "direnv(1), direnv.toml(1)"
 
 #. type: Bullet: '* '
 #: ../README.md:126
@@ -291,8 +299,10 @@ msgstr ""
 
 #. type: Bullet: '* '
 #: ../README.md:126
+#, fuzzy
+#| msgid "direnv(1), direnv.toml(1)"
 msgid "[direnv.toml(1) man page](man/direnv.toml.1.md)"
-msgstr ""
+msgstr "direnv(1), direnv.toml(1)"
 
 #. type: Title ###
 #: ../README.md:127
@@ -485,15 +495,1548 @@ msgid ""
 "work with Open Source projects: <https://numtide.com/contact>"
 msgstr ""
 
-#. type: Title ##
-#: ../README.md:192
+#. type: Title -
+#: ../README.md:192 ../man/direnv-stdlib.1.md:441
 #, no-wrap
 msgid "COPYRIGHT"
-msgstr ""
+msgstr "著作情報"
 
 #. type: Plain text
 #: ../README.md:194
+#, fuzzy
+#| msgid "MIT licence - Copyright (C) 2019 @zimbatm and contributors"
 msgid ""
 "[MIT licence](LICENSE) - Copyright (C) 2019 @zimbatm and [contributors]"
 "(https://github.com/direnv/direnv/graphs/contributors)"
+msgstr "MIT licence - Copyright (C) 2019 @zimbatm and contributors"
+
+#. type: Title =
+#: ../man/direnv-stdlib.1.md:2
+#, no-wrap
+msgid "DIRENV-STDLIB 1 \"2019\" direnv \"User Manuals\""
+msgstr "DIRENV-STDLIB 1 \"2019\" direnv 「利用者用マニュアル」"
+
+#. type: Title -
+#: ../man/direnv-stdlib.1.md:5
+#, no-wrap
+msgid "NAME"
+msgstr "名称"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:8
+msgid "direnv-stdlib - functions for the `.envrc`"
+msgstr "direnv-stdlib - `.envrc`用の関数"
+
+#. type: Title -
+#: ../man/direnv-stdlib.1.md:10
+#, no-wrap
+msgid "SYNOPSIS"
+msgstr "処方"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:13
+msgid "`direnv stdlib`"
+msgstr "`direnv stdlib`"
+
+#. type: Title -
+#: ../man/direnv-stdlib.1.md:15
+#, no-wrap
+msgid "DESCRIPTION"
+msgstr "解説"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:18
+msgid ""
+"Outputs a bash script called the *stdlib*. The following commands are "
+"included in that script and loaded in the context of an `.envrc`. In "
+"addition, it also loads the file in `~/.config/direnv/direnvrc` if it exists."
 msgstr ""
+"*標準ライブラリ*と呼ばれるbashスクリプトを出力します。\n"
+"以下のコマンドがスクリプトに含まれており、`.envrc`の文脈に読み込まれます。\n"
+"加えて、`~/.config/direnv/direnvrc`が存在するなら、このファイルも読み込みま"
+"す。"
+
+#. type: Title -
+#: ../man/direnv-stdlib.1.md:20
+#, no-wrap
+msgid "STDLIB"
+msgstr "標準ライブラリ"
+
+#. type: Title ###
+#: ../man/direnv-stdlib.1.md:22
+#, no-wrap
+msgid "`has <command>`"
+msgstr "`has <コマンド>`"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:25
+msgid ""
+"Returns 0 if the *command* is available. Returns 1 otherwise. It can be a "
+"binary in the PATH or a shell function."
+msgstr ""
+"*コマンド*が使えるときは0を返します。\n"
+"そうでなければ1を返します。\n"
+"コマンドとは、PATH中のバイナリまたはシェル関数です。"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:27 ../man/direnv-stdlib.1.md:37
+#: ../man/direnv-stdlib.1.md:55 ../man/direnv-stdlib.1.md:68
+#: ../man/direnv-stdlib.1.md:90 ../man/direnv-stdlib.1.md:99
+#: ../man/direnv-stdlib.1.md:148 ../man/direnv-stdlib.1.md:156
+#: ../man/direnv-stdlib.1.md:179 ../man/direnv-stdlib.1.md:201
+#: ../man/direnv-stdlib.1.md:285
+msgid "Example:"
+msgstr "例は次の通り。"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:31
+#, no-wrap
+msgid ""
+"    if has curl; then\n"
+"      echo \"Yes we do\"\n"
+"    fi\n"
+msgstr ""
+"    if has curl; then\n"
+"      echo \"Yes we do\"\n"
+"    fi\n"
+
+#. type: Title ###
+#: ../man/direnv-stdlib.1.md:32
+#, no-wrap
+msgid "`expand_path <rel_path> [<relative_to>]`"
+msgstr "`expand_path <相対パス> [<相対元>]`"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:35
+msgid ""
+"Outputs the absolute path of *rel_path* relative to *relative_to* or the "
+"current directory."
+msgstr ""
+"*相対パス*の、*相対元*または現在ディレクトリから見た、絶対パスを返します。"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:41
+#, no-wrap
+msgid ""
+"    cd /usr/local/games\n"
+"    expand_path ../foo\n"
+"    # output: /usr/local/foo\n"
+msgstr ""
+"    cd /usr/local/games\n"
+"    expand_path ../foo\n"
+"    # 出力：/usr/local/foo\n"
+
+#. type: Title ###
+#: ../man/direnv-stdlib.1.md:42
+#, no-wrap
+msgid "`dotenv [<dotenv_path>]`"
+msgstr "`dotenv [<.envのパス>]`"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:45
+msgid "Loads a \".env\" file into the current environment."
+msgstr "現環境に「.env」ファイルを読み込みます。"
+
+#. type: Title ###
+#: ../man/direnv-stdlib.1.md:46
+#, no-wrap
+msgid "`dotenv_if_exists [<dotenv_path>]`"
+msgstr "`dotenv_if_exists [<.envパス>]`"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:49
+msgid ""
+"Loads a \".env\" file into the current environment, but only if it exists."
+msgstr ""
+"現環境に「.env」ファイルを読み込みます。\n"
+"ただし、存在しているときに限ります。"
+
+#. type: Title ###
+#: ../man/direnv-stdlib.1.md:50
+#, no-wrap
+msgid "`user_rel_path <abs_path>`"
+msgstr "`user_rel_path <絶対パス>`"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:53
+msgid ""
+"Transforms an absolute path *abs_path* into a user-relative path if possible."
+msgstr "可能なとき、*絶対パス*を利用者にとっての相対パスへ変換します。"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:62
+#, no-wrap
+msgid ""
+"    echo $HOME\n"
+"    # output: /home/user\n"
+"    user_rel_path /home/user/my/project\n"
+"    # output: ~/my/project\n"
+"    user_rel_path /usr/local/lib\n"
+"    # output: /usr/local/lib\n"
+msgstr ""
+"    echo $HOME\n"
+"    # 出力：/home/user\n"
+"    user_rel_path /home/user/my/project\n"
+"    # 出力：~/my/project\n"
+"    user_rel_path /usr/local/lib\n"
+"    # 出力：/usr/local/lib\n"
+
+#. type: Title ###
+#: ../man/direnv-stdlib.1.md:63
+#, no-wrap
+msgid "`find_up <filename>`"
+msgstr "`find_up <ファイル名>`"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:66
+msgid ""
+"Outputs the path of *filename* when searched from the current directory up "
+"to /. Returns 1 if the file has not been found."
+msgstr ""
+"現ディレクトリから / に至るまで探索し、*ファイル名*のパスを出力します。\n"
+"ファイルが見つからなかったときは1を返します。"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:75
+#, no-wrap
+msgid ""
+"    cd /usr/local/my\n"
+"    mkdir -p project/foo\n"
+"    touch bar\n"
+"    cd project/foo\n"
+"    find_up bar\n"
+"    # output: /usr/local/my/bar\n"
+msgstr ""
+"    cd /usr/local/my\n"
+"    mkdir -p project/foo\n"
+"    touch bar\n"
+"    cd project/foo\n"
+"    find_up bar\n"
+"    # 出力：/usr/local/my/bar\n"
+
+#. type: Title ###
+#: ../man/direnv-stdlib.1.md:76
+#, no-wrap
+msgid "`source_env <file_or_dir_path>`"
+msgstr "`source_env <ファイルパスまたはディレクトリパス>`"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:79
+msgid "Loads another `.envrc` either by specifying its path or filename."
+msgstr "パスかファイル名を指定し、別の`.envrc`を呼び込みます。"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:81 ../man/direnv-stdlib.1.md:112
+#: ../man/direnv-stdlib.1.md:119
+msgid "NOTE: the other `.envrc` is not checked by the security framework."
+msgstr "補足：他の`.envrc`はセキュリティの枠組みで検査されません。"
+
+#. type: Title ###
+#: ../man/direnv-stdlib.1.md:82
+#, no-wrap
+msgid "`source_env_if_exists <filename>`"
+msgstr "`source_env_if_exists <ファイル名>`"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:85
+msgid "Loads another \".envrc\", but only if it exists."
+msgstr ""
+"別の「.envrc」を読み込みます。\n"
+"ただしファイルが存在するときだけです。"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:88
+#, no-wrap
+msgid ""
+"NOTE: contrary to `source_env`, this only works when passing a path to a file,\n"
+"      not a directory.\n"
+msgstr ""
+"補足：`source_env`とは対照的に、この機能はファイルへのパスを渡されたときのみ動作します。\n"
+"ディレクトリではありまません。\n"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:92
+#, no-wrap
+msgid "    source_env_if_exists .envrc.private\n"
+msgstr "    source_env_if_exists .envrc.private\n"
+
+#. type: Title ###
+#: ../man/direnv-stdlib.1.md:93
+#, no-wrap
+msgid "`env_vars_required <varname> [<varname> ...]`"
+msgstr "`env_vars_required <変数名> [<変数名> ...]`"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:95
+#, no-wrap
+msgid "Logs error for every variable not present in the environment or having an empty value.  \n"
+msgstr "環境に存在しない変数や空の値の変数に対して、エラーのログを出します。\n"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:97
+msgid ""
+"Typically this is used in combination with source_env and "
+"source_env_if_exists."
+msgstr "よく、source_envやsource_env_if_existsと組み合わせて使われます。"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:104
+#, no-wrap
+msgid ""
+"    # expect .envrc.private to provide tokens\n"
+"    source_env .envrc.private\n"
+"    # check presence of tokens\n"
+"    env_vars_required GITHUB_TOKEN OTHER_TOKEN\n"
+msgstr ""
+"    # .envrc.private によりトークンが提供されることを期待\n"
+"    source_env .envrc.private\n"
+"    # トークンが存在することを確認\n"
+"    env_vars_required GITHUB_TOKEN OTHER_TOKEN\n"
+
+#. type: Title ###
+#: ../man/direnv-stdlib.1.md:106
+#, no-wrap
+msgid "`source_up [<filename>]`"
+msgstr "`source_up [<ファイル名>]`"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:110
+msgid ""
+"Loads another `.envrc` if found with the find_up command. Returns 1 if no "
+"file is found."
+msgstr ""
+"find_up コマンドで別の「.envrc」が見付かったら、それを読み込みます。\n"
+"ファイルが見つからなかったときは1を返します。"
+
+#. type: Title ###
+#: ../man/direnv-stdlib.1.md:113
+#, no-wrap
+msgid "`source_up_if_exists [<filename>]`"
+msgstr "`source_up_if_exists [<ファイル名>]`"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:117
+msgid ""
+"Loads another `.envrc` if found with the find_up command. If one is not "
+"found, nothing happens."
+msgstr ""
+"find_up コマンドで別の`.envrc`が見つかったときは、それを読み込みます。\n"
+"何も見つからなければ、何も起きません。"
+
+#. type: Title ###
+#: ../man/direnv-stdlib.1.md:120
+#, no-wrap
+msgid "`source_url <url> <integrity-hash>`"
+msgstr "`source_url <URL> <正統性のためのハッシュ>`"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:124
+#, fuzzy
+#| msgid ""
+#| "Loads another script from the given `url`. Before loading it will check "
+#| "the integrity using the provided `integrity-hash`."
+msgid ""
+"Loads another script from the given `url`. Before loading it it will check "
+"the integrity using the provided `integrity-hash`."
+msgstr ""
+"与えられた`URL`から別のスクリプトを読み込みます。\n"
+"読み込む前に、与えられた`正統性のためのハッシュ`を使って、正統性を検査しま"
+"す。"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:127
+#, no-wrap
+msgid ""
+"To find the value of the `integrity-hash`, call `direnv fetchurl <url>` and\n"
+"extract the hash from the outputted message.\n"
+msgstr ""
+"`正統性のためのハッシュ`の値を調べるには、`direnv fetchurl <URL>`を呼びます。\n"
+"出力された伝文からハッシュを抽出してください。\n"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:129 ../man/direnv-stdlib.1.md:138
+msgid "See also `direnv-fetchurl(1)` for more details."
+msgstr "詳しくは`direnv-fetchurl(1)`もご参照ください。"
+
+#. type: Title ###
+#: ../man/direnv-stdlib.1.md:130
+#, no-wrap
+msgid "`fetchurl <url> [<integrity-hash>]`"
+msgstr "`fetchurl <URL> [<正統性のためのハッシュ>]`"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:133
+#, fuzzy
+#| msgid ""
+#| "Fetches the given `url` onto disk and outputs its path location on stdout."
+msgid ""
+"Fetches the given `url` onto disk and outputs it's path location on stdout."
+msgstr ""
+"与えられた`URL`から取得し、ディスクに保存します。\n"
+"また、標準入力にパスの場所を出力します。"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:136
+msgid ""
+"If the `integrity-hash` argument is provided, it will also check the "
+"integrity of the script."
+msgstr ""
+"`正統性のためのハッシュ`の引数が与えられたときは、スクリプトの正統性も検査し"
+"ます。"
+
+#. type: Title ###
+#: ../man/direnv-stdlib.1.md:139
+#, no-wrap
+msgid "`direnv_apply_dump <file>`"
+msgstr "`direnv_apply_dump <ファイル>`"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:142
+msgid "Loads the output of `direnv dump` that was stored in a file."
+msgstr "ファイルに保管された`direnv dump`の出力を読み込みます。"
+
+#. type: Title ###
+#: ../man/direnv-stdlib.1.md:143
+#, no-wrap
+msgid "`direnv_load [<command-generating-dump-output>]`"
+msgstr "`direnv_load [<コマンドにより生成されたダンプ出力>]`"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:146
+msgid ""
+"Applies the environment generated by running *argv* as a command. This is "
+"useful for adopting the environment of a child process - cause that process "
+"to run \"direnv dump\" and then wrap the results with direnv_load."
+msgstr ""
+"*引数のリスト*をコマンドとして走らせることで生成された環境を適用します。\n"
+"これは、子プロセスの環境を適用するのに便利です。\n"
+"プロセスで「direnv dump」を走らせ、その結果を direnv_load で包めばよいからで"
+"す。"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:150
+#, no-wrap
+msgid "    direnv_load opam exec direnv dump\n"
+msgstr "    direnv_load opam exec direnv dump\n"
+
+#. type: Title ###
+#: ../man/direnv-stdlib.1.md:151
+#, no-wrap
+msgid "`PATH_add <path>`"
+msgstr "`PATH_add <パス>`"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:154
+msgid ""
+"Prepends the expanded *path* to the PATH environment variable. It prevents a "
+"common mistake where PATH is replaced by only the new *path*."
+msgstr ""
+"展開した*パス*をPATH環境変数に前置します。\n"
+"PATHが新しい*パス*だけで置き換わるという、よくある誤りを防ぎます。"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:162
+#, no-wrap
+msgid ""
+"    pwd\n"
+"    # output: /home/user/my/project\n"
+"    PATH_add bin\n"
+"    echo $PATH\n"
+"    # output: /home/user/my/project/bin:/usr/bin:/bin\n"
+msgstr ""
+"    pwd\n"
+"    # 出力：/home/user/my/project\n"
+"    PATH_add bin\n"
+"    echo $PATH\n"
+"    # 出力：/home/user/my/project/bin:/usr/bin:/bin\n"
+
+#. type: Title ###
+#: ../man/direnv-stdlib.1.md:163
+#, no-wrap
+msgid "`MANPATH_add <path>`"
+msgstr "`MANPATH_add <パス>`"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:166
+msgid ""
+"Prepends the expanded *path* to the MANPATH environment variable. It takes "
+"care of man-specific heuritic."
+msgstr ""
+"展開された*パス*をMANPATH環境変数に前置します。\n"
+"man特有の発見的手法に対処されます。"
+
+#. type: Title ###
+#: ../man/direnv-stdlib.1.md:167
+#, no-wrap
+msgid "`path_add <varname> <path>`"
+msgstr "`path_add <変数名> <パス>`"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:170
+msgid "Works like `PATH_add` except that it's for an arbitrary *varname*."
+msgstr "`PATH_add`のような動作ですが、任意の*変数名*を対象とします。"
+
+#. type: Title ###
+#: ../man/direnv-stdlib.1.md:171
+#, no-wrap
+msgid "`PATH_rm <pattern> [<pattern> ...]`"
+msgstr "`PATH_rm <パターン> [<パターン> ...]`"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:174
+msgid ""
+"Removes directories that match any of the given shell patterns from the PATH "
+"environment variable. Order of the remaining directories is preserved in the "
+"resulting PATH."
+msgstr ""
+"与えられたシェルパターンに合致するディレクトリを、PATH環境変数から除きま"
+"す。\n"
+"残りのディレクトリの順序ば、結果のPATHで維持されます。"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:177
+#, no-wrap
+msgid ""
+"Bash pattern syntax:\n"
+"  https://www.gnu.org/software/bash/manual/html_node/Pattern-Matching.html\n"
+msgstr ""
+"Bashのパターン構文：\n"
+"  https://www.gnu.org/software/bash/manual/html_node/Pattern-Matching.html\n"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:185
+#, no-wrap
+msgid ""
+"    echo $PATH\n"
+"    # output: /dontremove/me:/remove/me:/usr/local/bin/:...\n"
+"    PATH_rm '/remove/*'\n"
+"    echo $PATH\n"
+"    # output: /dontremove/me:/usr/local/bin/:...\n"
+msgstr ""
+"    echo $PATH\n"
+"    # 出力：/dontremove/me:/remove/me:/usr/local/bin/:...\n"
+"    PATH_rm '/remove/*'\n"
+"    echo $PATH\n"
+"    # 出力：/dontremove/me:/usr/local/bin/:...\n"
+
+#. type: Title ###
+#: ../man/direnv-stdlib.1.md:187
+#, no-wrap
+msgid "`load_prefix <prefix_path>`"
+msgstr "`load_prefix <接頭辞パス>`"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:190
+msgid ""
+"Expands some common path variables for the given *prefix_path* prefix. This "
+"is useful if you installed something in the *prefix_path* using `./configure "
+"--prefix=$prefix_path && make install` and want to use it in the project."
+msgstr ""
+"与えられた*接頭辞パス*について、よくあるパス変数を展開します。\n"
+"`./configure --prefix=$prefix_path && make install`を使って*接頭辞パス*に何か"
+"をインストールしており、プロジェクトで使いたいときに便利です。"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:192
+msgid "Variables set:"
+msgstr "設定される変数は以下です。"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:199
+#, no-wrap
+msgid ""
+"    CPATH\n"
+"    LD_LIBRARY_PATH\n"
+"    LIBRARY_PATH\n"
+"    MANPATH\n"
+"    PATH\n"
+"    PKG_CONFIG_PATH\n"
+msgstr ""
+"    CPATH\n"
+"    LD_LIBRARY_PATH\n"
+"    LIBRARY_PATH\n"
+"    MANPATH\n"
+"    PATH\n"
+"    PKG_CONFIG_PATH\n"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:206
+#, no-wrap
+msgid ""
+"    ./configure --prefix=$HOME/rubies/ruby-1.9.3\n"
+"    make && make install\n"
+"    # Then in the .envrc\n"
+"    load_prefix ~/rubies/ruby-1.9.3\n"
+msgstr ""
+"    ./configure --prefix=$HOME/rubies/ruby-1.9.3\n"
+"    make && make install\n"
+"    # そして.envrcで次のようにします\n"
+"    load_prefix ~/rubies/ruby-1.9.3\n"
+
+#. type: Title ###
+#: ../man/direnv-stdlib.1.md:208
+#, no-wrap
+msgid "`semver_search <directory> <folder_prefix> <partial_version>`"
+msgstr "`semver_search <ディレクトリ> <フォルダ接頭辞> <部分バージョン>`"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:211
+msgid ""
+"Search a directory for the highest version number in SemVer format (X.Y.Z)."
+msgstr ""
+"セマンティックバージョニングによるバージョン番号 (X.Y.Z) のうち最大のものにつ"
+"いて、ディレクトリを検索します。"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:213
+msgid "Examples:"
+msgstr "例は次の通り。"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:226
+#, no-wrap
+msgid ""
+"    $ tree .\n"
+"    .\n"
+"    |-- dir\n"
+"        |-- program-1.4.0\n"
+"        |-- program-1.4.1\n"
+"        |-- program-1.5.0\n"
+"    $ semver_search \"dir\" \"program-\" \"1.4.0\"\n"
+"    1.4.0\n"
+"    $ semver_search \"dir\" \"program-\" \"1.4\"\n"
+"    1.4.1\n"
+"    $ semver_search \"dir\" \"program-\" \"1\"\n"
+"    1.5.0\n"
+msgstr ""
+"    $ tree .\n"
+"    .\n"
+"    |-- dir\n"
+"        |-- program-1.4.0\n"
+"        |-- program-1.4.1\n"
+"        |-- program-1.5.0\n"
+"    $ semver_search \"dir\" \"program-\" \"1.4.0\"\n"
+"    1.4.0\n"
+"    $ semver_search \"dir\" \"program-\" \"1.4\"\n"
+"    1.4.1\n"
+"    $ semver_search \"dir\" \"program-\" \"1\"\n"
+"    1.5.0\n"
+
+#. type: Title ###
+#: ../man/direnv-stdlib.1.md:227
+#, no-wrap
+msgid "`layout <type>`"
+msgstr "`layout <種類>`"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:230
+msgid "A semantic dispatch used to describe common project layouts."
+msgstr ""
+"よくあるプロジェクトの配置を記述するために使われる、意味論的な発出処理です。"
+
+#. type: Title ###
+#: ../man/direnv-stdlib.1.md:231
+#, no-wrap
+msgid "`layout go`"
+msgstr "`layout go`"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:235
+msgid ""
+"Adds \"$(direnv_layout_dir)/go\" to the GOPATH environment variable.  And "
+"also adds \"$PWD/bin\" to the PATH environment variable."
+msgstr ""
+"「$(direnv_layout_dir)/go」をGOPATH環境変数に加えます。\n"
+"また、「$PWD/bin」をPATH環境変数に加えます。"
+
+#. type: Title ###
+#: ../man/direnv-stdlib.1.md:236
+#, no-wrap
+msgid "`layout julia`"
+msgstr "`layout julia`"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:239
+msgid "Sets the `JULIA_PROJECT` environment variable to the current directory."
+msgstr "`JULIA_PROJECT`環境変数を現在ディレクトリに設定します。"
+
+#. type: Title ###
+#: ../man/direnv-stdlib.1.md:240
+#, no-wrap
+msgid "`layout node`"
+msgstr "`layout node`"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:243
+msgid "Adds \"$PWD/node_modules/.bin\" to the PATH environment variable."
+msgstr "「$PWD/node_modules/.bin」をPATH環境変数に加えます。"
+
+#. type: Title ###
+#: ../man/direnv-stdlib.1.md:244
+#, no-wrap
+msgid "`layout php`"
+msgstr "`layout php`"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:247
+msgid "Adds \"$PWD/vendor/bin\" to the PATH environment variable."
+msgstr "「$PWD/vendor/bin」をPATH環境変数に加えます。"
+
+#. type: Title ###
+#: ../man/direnv-stdlib.1.md:248
+#, no-wrap
+msgid "`layout perl`"
+msgstr "`layout perl`"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:251
+msgid ""
+"Setup environment variables required by perl's local::lib See http://search."
+"cpan.org/dist/local-lib/lib/local/lib.pm for more details."
+msgstr ""
+"perlのlocal::libで必要な環境変数を準備します。\n"
+"詳細は http://search.cpan.org/dist/local-lib/lib/local/lib.pm を参照。"
+
+#. type: Title ###
+#: ../man/direnv-stdlib.1.md:252
+#, no-wrap
+msgid "`layout pipenv`"
+msgstr "`layout pipenv`"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:255
+msgid ""
+"Similar to `layout python`, but uses Pipenv to build a virtualenv from the "
+"`Pipfile` located in the same directory. The path can be overridden by the "
+"`PIPENV_PIPFILE` environment variable."
+msgstr ""
+"`layout python`と似ていますが、Pipenvを使って、同ディレクトリにある`Pipfile`"
+"からvirtualenvを構築します。\n"
+"パスは`PIPENV_PIPFILE`環境変数で上塗りできます。"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:257
+msgid ""
+"Note that unlike invoking Pipenv manually, this does not load environment "
+"variables from a `.env` file automatically. You may want to add `dotenv ."
+"env` to copy that behavior."
+msgstr ""
+"なお、Pipenvを手動で呼び出すのとは異なり、自動で`.env`ファイルから環境変数を"
+"読み込みません。\n"
+"この挙動をそのまま実行するには、`dotenv .env`を加えると良いでしょう。"
+
+#. type: Title ###
+#: ../man/direnv-stdlib.1.md:258
+#, no-wrap
+msgid "`layout pyenv [<version> ...]`"
+msgstr "`layout pyenv [<バージョン> ...]`"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:261
+msgid ""
+"Similar to `layout python`, but uses pyenv to build a virtualenv with the "
+"specified Python interpreter version."
+msgstr ""
+"`layout python`と似ていますが、pyenvを使って指定されたPythonインタプリタの"
+"バージョンでvirtualenvを構築します。"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:263
+msgid ""
+"Multiple versions may be specified separated by spaces; please refer to the "
+"pyenv documentation for more information."
+msgstr ""
+"複数のバージョンを空白で区切って指定できます。\n"
+"詳細はpyenvの文書をご参照ください。"
+
+#. type: Title ###
+#: ../man/direnv-stdlib.1.md:264
+#, no-wrap
+msgid "`layout python [<python_exe>]`"
+msgstr "`layout python [<pythonの実行ファイル>]`"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:267
+msgid ""
+"Creates and loads a virtualenv environment under `$PWD/.direnv/python-"
+"$python_version`. This forces the installation of any egg into the project's "
+"sub-folder."
+msgstr ""
+"`$PWD/.direnv/python-$pythonのバージョン`配下にvirtualenvの環境を作り、読み込"
+"みます。\n"
+"これにより、eggのプロジェクトの副フォルダへのインストールが強制されます。"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:269
+msgid ""
+"It's possible to specify the python executable if you want to use different "
+"versions of python (eg: `layout python python3`)."
+msgstr ""
+"違うpythonのバージョンを使いたいときは、pythonの実行ファイルを指定できます"
+"（例：`layout python python3`）。"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:271
+msgid ""
+"Note that previously virtualenv was located under `$PWD/.direnv/virtualenv` "
+"and will be re-used by direnv if it exists."
+msgstr ""
+"なお、以前`$PWD/.direnv/virtualenv`配下にあったvirtualenvがあるときは、direnv"
+"により再利用されます。"
+
+#. type: Title ###
+#: ../man/direnv-stdlib.1.md:272
+#, no-wrap
+msgid "`layout python3`"
+msgstr "`layout python3`"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:275
+msgid "A shortcut for `layout python python3`"
+msgstr "`layout python python3`の早道です。"
+
+#. type: Title ###
+#: ../man/direnv-stdlib.1.md:276
+#, no-wrap
+msgid "`layout ruby`"
+msgstr "`layout ruby`"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:279
+msgid ""
+"Sets the GEM_HOME environment variable to `$PWD/.direnv/ruby/RUBY_VERSION`. "
+"This forces the installation of any gems into the project's sub-folder. If "
+"you're using bundler it will create wrapper programs that can be invoked "
+"directly instead of using the `bundle exec` prefix."
+msgstr ""
+"GEM_HOME環境変数を`$PWD/.direnv/ruby/RUBY_VERSION`に設定します。\n"
+"これにより、全てのgemがプロジェクトの副フォルダへ強制的にインストールされま"
+"す。\n"
+"bundlerを使っている場合、`bundle exec`の接頭辞を使う代わりに、そのまま呼び出"
+"せるようにラッパープログラムが作られます。"
+
+#. type: Title ###
+#: ../man/direnv-stdlib.1.md:280
+#, no-wrap
+msgid "`use <program_name> [<version>]`"
+msgstr "`use <プログラム名> [<バージョン>]`"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:283
+msgid ""
+"A semantic command dispatch intended for loading external dependencies into "
+"the environment."
+msgstr ""
+"外部の依存関係を環境に読み込むことを目的とした、意味論的なコマンドの発出機能"
+"です。"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:291
+#, no-wrap
+msgid ""
+"    use_ruby() {\n"
+"      echo \"Ruby $1\"\n"
+"    }\n"
+"    use ruby 1.9.3\n"
+"    # output: Ruby 1.9.3\n"
+msgstr ""
+"    use_ruby() {\n"
+"      echo \"Ruby $1\"\n"
+"    }\n"
+"    use ruby 1.9.3\n"
+"    # 出力：Ruby 1.9.3\n"
+
+#. type: Title ###
+#: ../man/direnv-stdlib.1.md:292
+#, no-wrap
+msgid "`use julia <version>`"
+msgstr "`use julia <バージョン>`"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:299
+#, no-wrap
+msgid ""
+"Loads the specified Julia version. You must specify a path to the directory with\n"
+"installed Julia versions using $JULIA_VERSIONS. You can optionally override the\n"
+"prefix for folders inside $JULIA_VERSIONS (default `julia-`) using $JULIA_VERSION_PREFIX.\n"
+"If no exact match for `<version>` is found a search will be performed and the latest\n"
+"version will be loaded.\n"
+msgstr ""
+"指定されたJuliaのバージョンを読み込みます。\n"
+"$JULIA_VERSIONSを使って、インストールされたJuliaのバージョンのあるディレクトリへのパスを指定しなければなりません。\n"
+"$JULIA_VERSION_PREFIX（既定は`julia-`）を使い、$JULIA_VERSIONS内のフォルダの接頭辞を上塗りできますが、省けます。\n"
+"`<バージョン>`にちょうと合致するものが見つからなければ、検索が実行され、最新版が読み込まれます。\n"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:301
+msgid "Examples (.envrc):"
+msgstr "例 (.envrc) は次の通りです。"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:305
+#, no-wrap
+msgid ""
+"    use julia 1.5.1   # loads $JULIA_VERSIONS/julia-1.5.1\n"
+"    use julia 1.5     # loads $JULIA_VERSIONS/julia-1.5.1\n"
+"    use julia master  # loads $JULIA_VERSIONS/julia-master\n"
+msgstr ""
+"    use julia 1.5.1   # $JULIA_VERSIONS/julia-1.5.1 を読み込みます\n"
+"    use julia 1.5     # $JULIA_VERSIONS/julia-1.5.1 を読み込みます\n"
+"    use julia master  # $JULIA_VERSIONS/julia-master を読み込みます\n"
+
+#. type: Title ###
+#: ../man/direnv-stdlib.1.md:306
+#, no-wrap
+msgid "`use rbenv`"
+msgstr "`use rbenv`"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:309
+msgid "Loads rbenv which add the ruby wrappers available on the PATH."
+msgstr "rbenvを読み込み、使えるrubyのラッパーをPATHへ加えます。"
+
+#. type: Title ###
+#: ../man/direnv-stdlib.1.md:310
+#, no-wrap
+msgid "`use nix [...]`"
+msgstr "`use nix [...]`"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:313
+msgid "Load environment variables from `nix-shell`."
+msgstr "`nix-shell`による環境変数を読み込みます。"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:315
+msgid ""
+"If you have a `default.nix` or `shell.nix` these will be used by default, "
+"but you can also specify packages directly (e.g `use nix -p ocaml`)."
+msgstr ""
+"`default.nix`や`shell.nix`があるとき、これらが既定で使われます。\n"
+"しかし、パッケージを直接指定することもできます（例：`use nix -p ocaml`）。"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:317
+msgid "See http://nixos.org/nix/manual/#sec-nix-shell"
+msgstr "http://nixos.org/nix/manual/#sec-nix-shell を参照"
+
+#. type: Title ###
+#: ../man/direnv-stdlib.1.md:318
+#, no-wrap
+msgid "`use flake [<installable>]`"
+msgstr "`use flake [<インストール可能な対象>]`"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:321
+msgid "Load the build environment of a derivation similar to `nix develop`."
+msgstr ""
+"派生物の構築環境を読み込みます。\n"
+"`nix develop`と似ています。"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:325
+msgid ""
+"By default it will load the current folder flake.nix devShell attribute. Or "
+"pass an \"installable\" like \"nixpkgs#hello\" to load all the build "
+"dependencies of the hello package from the latest nixpkgs."
+msgstr ""
+"既定で現在のフォルダにflake.nixのdevShell属性を読み込みます。\n"
+"あるいは、「nixpkgs#hello」のように「インストール可能な対象」を渡して、最新の"
+"nixpkgsからhelloパッケージの構築の依存関係を全て読み込みます。"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:328
+msgid ""
+"Note that the flakes feature is hidden behind an experimental flag, which "
+"you will have to enable on your own. Flakes is not considered stable yet."
+msgstr ""
+"なおflakesの機能は実験的フラグで隠されています。\n"
+"こちらは自分で有効にしなければなりません。\n"
+"Flakesはまだ安定とされていません。"
+
+#. type: Title ###
+#: ../man/direnv-stdlib.1.md:329
+#, no-wrap
+msgid "`use guix [...]`"
+msgstr "`use guix [...]`"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:332
+msgid "Load environment variables from `guix shell`."
+msgstr "`guix shell`から環境変数を読み込みます。"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:334
+msgid ""
+"Any arguments given will be passed to guix shell. For example, `use guix "
+"hello` would setup an environment including the hello package. To create an "
+"environment with the hello dependencies, the `--development` flag is used "
+"`use guix --development hello`. Other options include `--file` which allows "
+"loading an environment from a file."
+msgstr ""
+"与えられた全ての引数がguix shellに渡されます。\n"
+"例えば`use guix hello`とすると、helloパッケージを含む環境を準備します。\n"
+"helloの依存関係のある環境を作るには、`--development`フラグを使います。\n"
+"すなわち`use guix --development hello`です。\n"
+"他のオプションには`--file`があり、ファイルから環境を読み込めます。"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:336
+msgid "See https://guix.gnu.org/en/manual/en/guix.html#Invoking-guix-shell"
+msgstr "https://guix.gnu.org/en/manual/en/guix.html#Invoking-guix-shell を参照"
+
+#. type: Title ###
+#: ../man/direnv-stdlib.1.md:337
+#, no-wrap
+msgid "`rvm [...]`"
+msgstr "`rvm [...]`"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:340
+msgid "Should work just like in the shell if you have rvm installed."
+msgstr ""
+"rvmをインストールしているときは、そのシェルとちょうど同じはたらきになるでしょ"
+"う。"
+
+#. type: Title ###
+#: ../man/direnv-stdlib.1.md:341
+#, no-wrap
+msgid "`use node [<version>]`:"
+msgstr "`use node [<バージョン>]`:"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:344
+msgid "Loads the specified NodeJS version into the environment."
+msgstr "指定されたNodeJSのバージョンを環境へ読み込みます。"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:347
+msgid ""
+"If a partial NodeJS version is passed (i.e. `4.2`), a fuzzy match is "
+"performed and the highest matching version installed is selected."
+msgstr ""
+"部分的なNodeJSのバージョン（つまり`4.2`など）が渡されたとき、曖昧合致が実行さ"
+"れ、最も大きい、インストールされている、合致したバージョンが選択されます。"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:350
+msgid ""
+"If no version is passed, it will look at the '.nvmrc' or '.node-version' "
+"files in the current directory if they exist."
+msgstr ""
+"バージョンが渡されないとき、現在のディレクトリに`.nvmrc`ファイルや`.node-"
+"version`ファイルがあれば、それを参照します。"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:352
+msgid "Environment Variables:"
+msgstr "環境変数は次の通りです。"
+
+#. type: Bullet: '- '
+#: ../man/direnv-stdlib.1.md:356
+msgid ""
+"$NODE_VERSIONS (required)  Points to a folder that contains all the "
+"installed Node versions. That folder must exist."
+msgstr ""
+"$NODE_VERSIONS（必須）\n"
+"全てのインストールされたNodeのバージョンを含むフォルダを指します。\n"
+"フォルダは存在しなければなりません。"
+
+#. type: Bullet: '- '
+#: ../man/direnv-stdlib.1.md:359
+msgid ""
+"$NODE_VERSION_PREFIX (optional) [default=\"node-v\"] Overrides the default "
+"version prefix."
+msgstr ""
+"$NODE_VERSION_PREFIX（省略可能）［既定では「node-v」］\n"
+"既定のバージョンの接頭辞を上塗りします。"
+
+#. type: Title ###
+#: ../man/direnv-stdlib.1.md:360
+#, no-wrap
+msgid "`use vim [<vimrc_file>]`"
+msgstr "`use vim [<vimrcファイル>]`"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:364
+msgid ""
+"Prepends the specified vim script (or .vimrc.local by default) to the "
+"`DIRENV_EXTRA_VIMRC` environment variable."
+msgstr ""
+"指定されたvimスクリプト（または既定では.vimrc.local）を`DIRENV_EXTRA_VIMRC`環"
+"境変数へ前置します。"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:367
+msgid ""
+"This variable is understood by the direnv/direnv.vim extension. When found, "
+"it will source it after opening files in the directory."
+msgstr ""
+"この変数はdirenv/direnv.vim拡張で認識されます。\n"
+"この拡張が見つかったとき、ファイルをディレクトリで開いた後に読み込みます。"
+
+#. type: Title ###
+#: ../man/direnv-stdlib.1.md:368
+#, no-wrap
+msgid "`watch_file <path> [<path> ...]`"
+msgstr "`watch_file <パス> [<パス> ...]`"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:371
+msgid ""
+"Adds each file to direnv's watch-list. If the file changes direnv will "
+"reload the environment on the next prompt."
+msgstr ""
+"各ファイルをdirenvの監視リストに加えます。\n"
+"ファイルが変わったら、direnvは次のプロンプトで環境を再読込みします。"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:373 ../man/direnv-stdlib.1.md:430
+msgid "Example (.envrc):"
+msgstr "例 (.envrc) は次の通り。"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:375
+#, no-wrap
+msgid "    watch_file Gemfile\n"
+msgstr "    watch_file Gemfile\n"
+
+#. type: Title ###
+#: ../man/direnv-stdlib.1.md:376
+#, no-wrap
+msgid "`direnv_version <version_at_least>`"
+msgstr "`direnv_version <最低バージョン>`"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:381
+msgid ""
+"Checks that the direnv version is at least old as `version_at_least`. This "
+"can be useful when sharing an `.envrc` and to make sure that the users are "
+"up to date."
+msgstr ""
+"direnvのバージョンが少なくとも`最低バージョン`と同じくらい古いことを確認しま"
+"す。\n"
+"`.envrc`を共有しており、利用者の環境が最新であることを確認するときに便利なこ"
+"とがあります。"
+
+#. type: Title ###
+#: ../man/direnv-stdlib.1.md:382
+#, no-wrap
+msgid "`strict_env [<command> ...]`"
+msgstr "`strict_env [<コマンド> ...]`"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:386
+msgid ""
+"Turns on shell execution strictness. This will force the .envrc evaluation "
+"context to exit immediately if:"
+msgstr ""
+"シェル拡張の厳密性を有効にします。\n"
+"こうすると .envrc の評価の文脈が、次のときに直ちに終了するようにします。"
+
+#. type: Bullet: '- '
+#: ../man/direnv-stdlib.1.md:393
+msgid ""
+"any command in a pipeline returns a non-zero exit status that is not "
+"otherwise handled as part of `if`, `while`, or `until` tests, return value "
+"negation (`!`), or part of a boolean (`&&` or `||`)  chain."
+msgstr ""
+"パイプライン中のコマンドのどれかがゼロでない終了状態を返し、`if`、`while`、"
+"`until`の条件で扱われなければ、値の否定 (`!`) ないし真偽値（`&&`または`||`）"
+"の連鎖の一部を返します。"
+
+#. type: Bullet: '- '
+#: ../man/direnv-stdlib.1.md:393
+msgid ""
+"any variable that has not explicitly been set or declared (with either "
+"`declare` or `local`) is referenced."
+msgstr ""
+"明示的に設定されなかったり（`declare`や`local`で）宣言されなかったりした変数"
+"が参照されたとき、"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:396
+msgid ""
+"If followed by a command-line, the strictness applies for the duration of "
+"the command."
+msgstr "コマンドラインが後続するとき、厳密性はそのコマンドの間、適用されます。"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:398 ../man/direnv-stdlib.1.md:412
+msgid "Example (Whole Script):"
+msgstr "例（スクリプト全体）は次の通りです。"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:401
+#, no-wrap
+msgid ""
+"    strict_env\n"
+"    has curl\n"
+msgstr ""
+"    strict_env\n"
+"    has curl\n"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:403 ../man/direnv-stdlib.1.md:417
+msgid "Example (Command):"
+msgstr "（コマンドの）例は次の通りです。"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:405
+#, no-wrap
+msgid "    strict_env has curl\n"
+msgstr "    strict_env has curl\n"
+
+#. type: Title ####
+#: ../man/direnv-stdlib.1.md:406
+#, no-wrap
+msgid "`unstrict_env [<command> ...]`"
+msgstr "`unstrict_env [<コマンド> ...]`"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:410
+msgid ""
+"Turns off shell execution strictness. If followed by a command-line, the "
+"strictness applies for the duration of the command."
+msgstr ""
+"シェル拡張の厳密性を無効にします。\n"
+"コマンドラインが後続するとき、厳密性はコマンドの間、適用されます。"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:415
+#, no-wrap
+msgid ""
+"    unstrict_env\n"
+"    has curl\n"
+msgstr ""
+"    unstrict_env\n"
+"    has curl\n"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:419
+#, no-wrap
+msgid "    unstrict_env has curl\n"
+msgstr "    unstrict_env has curl\n"
+
+#. type: Title ###
+#: ../man/direnv-stdlib.1.md:420
+#, no-wrap
+msgid "`on_git_branch [<branch_name>]`"
+msgstr "`on_git_branch [<ブランチ名>]`"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:425
+msgid ""
+"Returns 0 if within a git repository with given `branch_name`. If no branch "
+"name is provided, then returns 0 when within _any_ branch. Requires the git "
+"command to be installed. Returns 1 otherwise."
+msgstr ""
+"gitリポジトリにあり、与えられた`ブランチ名`のときは0を返します。\n"
+"ブランチ名がなければ、 _どの_ ブランチにいても0を返します。\n"
+"gitコマンドがインストールされていることが必須です。\n"
+"そうでなければ1を返します。"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:428
+msgid ""
+"When a branch is specified, then `.git/HEAD` is watched so that entering/"
+"exiting a branch triggers a reload."
+msgstr ""
+"ブランチが指定されているとき、`.git/HEAD`が監視されます。\n"
+"そのため、ブランチに入ったり出たりすると再読込が引き起こされます。"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:434
+#, no-wrap
+msgid ""
+"    if on_git_branch child_changes; then\n"
+"      export MERGE_BASE_BRANCH=parent_changes\n"
+"    fi\n"
+msgstr ""
+"    if on_git_branch child_changes; then\n"
+"      export MERGE_BASE_BRANCH=parent_changes\n"
+"    fi\n"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:438
+#, no-wrap
+msgid ""
+"    if on_git_branch; then\n"
+"      echo \"Thanks for contributing to a GitHub project!\"\n"
+"    fi\n"
+msgstr ""
+"    if on_git_branch; then\n"
+"      echo \"Thanks for contributing to a GitHub project!\"\n"
+"    fi\n"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:444
+msgid "MIT licence - Copyright (C) 2019 @zimbatm and contributors"
+msgstr "MIT licence - Copyright (C) 2019 @zimbatm and contributors"
+
+#. type: Title -
+#: ../man/direnv-stdlib.1.md:446
+#, no-wrap
+msgid "SEE ALSO"
+msgstr "こちらも参照"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:448
+msgid "direnv(1), direnv.toml(1)"
+msgstr "direnv(1), direnv.toml(1)"
+
+#. type: Title #
+#: ../docs/ruby.md:1
+#, no-wrap
+msgid "Manage your rubies with direnv and ruby-install"
+msgstr "direnvとruby-installでRubyを管理する"
+
+#. type: Plain text
+#: ../docs/ruby.md:8
+msgid ""
+"direnv is just a shell extension that manages your environment variables "
+"depending on the folder you live in. In this article we will explore how it "
+"can be used in combination with [ruby-install](https://github.com/postmodern/"
+"ruby-install) to manage and select the version of ruby that you want to use "
+"in a project."
+msgstr ""
+"direnvは単なるシェルの拡張であり、今いるフォルダによって環境変数を管理しま"
+"す。\n"
+"この記事では、[ruby-install](https://github.com/postmodern/ruby-install)と組"
+"み合わせて使うことで、プロジェクトで使いたいrubyのバージョンを管理したり選択"
+"したりする方法を見ていきます。"
+
+#. type: Title ##
+#: ../docs/ruby.md:9
+#, no-wrap
+msgid "The setup"
+msgstr "準備"
+
+#. type: Plain text
+#: ../docs/ruby.md:12
+msgid "First install direnv. This is the quick version on OSX + Bash:"
+msgstr ""
+"まずdirenvをインストールしてください。\n"
+"以下はOSXとBashを使っている場合の簡単な手順です。"
+
+#. type: Fenced code block (bash)
+#: ../docs/ruby.md:13
+#, no-wrap
+msgid ""
+"brew install direnv\n"
+"echo 'eval $(direnv hook bash)' >> .bashrc\n"
+"exec $0\n"
+msgstr ""
+"brew install direnv\n"
+"echo 'eval $(direnv hook bash)' >> .bashrc\n"
+"exec $0\n"
+
+#. type: Plain text
+#: ../docs/ruby.md:22
+msgid ""
+"Then use [ruby-install](https://github.com/postmodern/ruby-install) to "
+"install a couple of ruby versions. We're also creating a couple of aliases "
+"for convenience."
+msgstr ""
+"それから[ruby-install](https://github.com/postmodern/ruby-install)を使って、"
+"いくつかrubyのバージョンをインストールしてください。\n"
+"また、便宜上エイリアスを作ります。"
+
+#. type: Fenced code block
+#: ../docs/ruby.md:23
+#, no-wrap
+msgid ""
+"brew install ruby-install\n"
+"ruby-install ruby 1.9\n"
+"ruby-install ruby 2.0\n"
+"cd ~/.rubies\n"
+"ln -s 1.9.3-p448 1.9.3\n"
+"ln -s 1.9.3-p448 1.9\n"
+"ln -s 2.0.0-p247 2.0.0\n"
+"ln -s 2.0.0-p247 2.0\n"
+msgstr ""
+"brew install ruby-install\n"
+"ruby-install ruby 1.9\n"
+"ruby-install ruby 2.0\n"
+"cd ~/.rubies\n"
+"ln -s 1.9.3-p448 1.9.3\n"
+"ln -s 1.9.3-p448 1.9\n"
+"ln -s 2.0.0-p247 2.0.0\n"
+"ln -s 2.0.0-p247 2.0\n"
+
+#. type: Plain text
+#: ../docs/ruby.md:37
+msgid ""
+"The end goal is that each project will have an `.envrc` file that contains a "
+"descriptive syntax like `use ruby 1.9.3` to selects the right ruby version "
+"for the project."
+msgstr ""
+"最終目標は、各プロジェクトに、`use ruby 1.9.3`のような分かりやすい構文を含む"
+"`.envrc`ファイルがあり、プロジェクトの正しいrubyのバージョンを選択できるよう"
+"にすることです。"
+
+#. type: Plain text
+#: ../docs/ruby.md:41
+msgid ""
+"For that regard we are going to use a couple of commands available in the "
+"[direnv stdlib](/man/direnv-stdlib.1.md) and expand it a bit in the `~/."
+"config/direnv/direnvrc` file."
+msgstr ""
+"このため、[direnvの標準ライブラリ](/man/direnv-stdlib.1.md)で使えるコマンドを"
+"使います。\n"
+"また、`~/.config/direnv/direnvrc`ファイルで少し拡張します。"
+
+#. type: Plain text
+#: ../docs/ruby.md:43
+msgid ""
+"Add this to the `~/.config/direnv/direnvrc` file (you have to create it if "
+"it doesn't exist):"
+msgstr ""
+"以下を`~/.config/direnv/direnvrc`ファイルに追加してください（ファイルが存在し"
+"ないときは作らなければなりません）。"
+
+#. type: Fenced code block (bash)
+#: ../docs/ruby.md:44
+#, no-wrap
+msgid ""
+"# Usage: use ruby <version>\n"
+"#\n"
+"# Loads the specified ruby version into the environment\n"
+"#\n"
+"use_ruby() {\n"
+"  local ruby_dir=$HOME/.rubies/$1\n"
+"  load_prefix $ruby_dir\n"
+"  layout ruby\n"
+"}\n"
+msgstr ""
+"# 使い方：use ruby <バージョン>\n"
+"#\n"
+"# 指定されたrubyのバージョンを環境に読み込みます\n"
+"#\n"
+"use_ruby() {\n"
+"  local ruby_dir=$HOME/.rubies/$1\n"
+"  load_prefix $ruby_dir\n"
+"  layout ruby\n"
+"}\n"
+
+#. type: Plain text
+#: ../docs/ruby.md:59
+msgid ""
+"That's it. Now in any project you can run `direnv edit .` and add `use ruby "
+"1.9.3` or `use ruby 2.0` in the file like you want and direnv will select "
+"the right ruby version when you enter the project's folder."
+msgstr ""
+"以上です。\n"
+"これで、プロジェクトで`direnv edit .`を走らせたり、ファイルに`use ruby 1.9.3`"
+"や`use ruby 2.0`を追加したりして、direnvにより、プロジェクトのフォルダに入っ"
+"たときに正しいrubyのバージョンが選択されるようにできます。"
+
+#. type: Title ##
+#: ../docs/ruby.md:60
+#, no-wrap
+msgid "A bit of explanation"
+msgstr "少し説明"
+
+#. type: Plain text
+#: ../docs/ruby.md:65
+msgid ""
+"The last part probably needs a bit more explanation. We make use of a couple "
+"of commands that are part of the [stdlib](/man/direnv-stdlib.1.md) which is "
+"available in the execution context of an envrc."
+msgstr ""
+"最後の部分は多分もう少し説明が必要です。\n"
+"[標準ライブラリ](/man/direnv-stdlib.1.md)の一部のコマンドを活用しており、これ"
+"らはenvrcの実行の文脈で使えます。"
+
+#. type: Plain text
+#: ../docs/ruby.md:69
+#, no-wrap
+msgid ""
+"`use` is a command dispatch that's just there to build the\n"
+"`use something something` dsl so that `use ruby <version>` will translate into\n"
+"`use_ruby <version>`.\n"
+msgstr ""
+"`use`はコマンドの発出器で、`use ナントカ カントカ`の領域特化言語を構築するためだけにあります。\n"
+"これにより、`use ruby <バージョン>`は`use_ruby <バージョン>`に読み替えます。\n"
+
+#. type: Plain text
+#: ../docs/ruby.md:72
+#, no-wrap
+msgid ""
+"`load_prefix` will add a couple of things into the environment, notably add\n"
+"`<prefix>/bin` into the PATH. This is what makes the specified ruby available.\n"
+msgstr ""
+"`load_prefix`により、環境にいくつかのものが追加されます。\n"
+"特に、`<prefix>/bin`がPATHに追加されます。\n"
+"こうすることで、特定のrubyが使えるようになります。\n"
+
+#. type: Plain text
+#: ../docs/ruby.md:82
+msgid ""
+"And finally `layout ruby` who like `use` translates into the `layout_ruby` "
+"function call. It's used to describe common project layouts. In the stdlib, "
+"the ruby layout will configure rubygems (with the `GEM_HOME` environment "
+"variable)  to install all the gems into the .direnv/ruby/RUBY_VERSION folder "
+"under the project root. This is a bit similar to rvm's gemsets except that "
+"they live inside your project's folder. It also configures bundler to "
+"install wrapper shims into the .direnv/bin folder which allows you to invoke "
+"the commands directly instead of prefixing your ruby programs with `bundle "
+"exec` all the time."
+msgstr ""
+"また最後に、`layout ruby`は`use`に似ており、`layout_ruby`関数呼び出しに読み替"
+"えます。\n"
+"これは、一般的なプロジェクトの配置を記述するために使います。\n"
+"標準ライブラリでは、rubyの配置で（`GEM_HOME`環境変数により）rubygemsを構成"
+"し、プロジェクトルート配下の .direnv/ruby/RUBY_VERSION フォルダに全てのgemが"
+"インストールされます。\n"
+"rvmのgemsetと少し似ていますが、そちらはプロジェクトのフォルダ内にある点が異な"
+"ります。\n"
+"また、bundlerを構成して、.direnv/bin フォルダにラッパーのシンボリックリンクを"
+"インストールします。\n"
+"これにより、毎回`bundle exec`でrubyプログラムを前置する代わりに、直接コマンド"
+"を呼び出せます。"
+
+#. type: Title ##
+#: ../docs/ruby.md:83
+#, no-wrap
+msgid "Conclusion"
+msgstr "結論"
+
+#. type: Plain text
+#: ../docs/ruby.md:89
+msgid ""
+"As you see this approach is not restricted to ruby. You could have various "
+"versions of python installed under ~/.pythons and a `use_python` defined in "
+"your ~/.direnvrc. Or perl, php, ...  This is the good thing about direnv, "
+"it's not restricted to a single language."
+msgstr ""
+"ここまで見てきたように、この手法はrubyに限定されません。\n"
+"~/.pythons 配下に様々なバージョンのpythonをインストールし、~/.direnvrc で"
+"`use_python`を定義することができるでしょう。\n"
+"perl、php、などなども同様です。\n"
+"これはdirenvの良い点であり、単一の言語に制限されないのです。"
+
+#. type: Plain text
+#: ../docs/ruby.md:96
+msgid ""
+"Actually, wouldn't it be great to have all your project's dependencies "
+"available when you enter the project folder ? Not only your ruby version but "
+"also the exact redis or mysql or ... version that you want to use, without "
+"having to start a VM. I think that's definitely possible using something "
+"like the [Nix package manager](http://nixos.org/nix/), something that still "
+"needs to be explored in a future post."
+msgstr ""
+"実際のところ、プロジェクトフォルダに入ったとき、全てのプロジェクトの依存関係"
+"があると素晴らしくないですか？\n"
+"rubyのバージョンだけでなく、使いたいredisやmysqlやその他諸々の厳密なバージョ"
+"ンを、VMを開始させることなく使えるといいですよね。\n"
+"筆者はこれが確実に可能であると考えており、それには[Nixパッケージ管理](http://"
+"nixos.org/nix/)のようなものを使います。\n"
+"そちらについては将来別の記事で見ていく必要があると考えています。"
+
+#, no-wrap
+#~ msgid "`layout opam`"
+#~ msgstr "`layout opam`"
+
+#~ msgid "Sets environment variables from `opam env`."
+#~ msgstr "`opam env`により環境変数を設定します。"
