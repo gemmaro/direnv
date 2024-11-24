@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Direnv\n"
-"POT-Creation-Date: 2024-11-24 08:58+0900\n"
+"POT-Creation-Date: 2024-11-24 09:01+0900\n"
 "PO-Revision-Date: 2024-11-24 09:48+0900\n"
 "Last-Translator: gemmaro\n"
 "Language-Team: none\n"
@@ -116,7 +116,8 @@ msgstr ""
 
 #. type: Bullet: '* '
 #: ../README.md:41
-msgid "A supported shell (bash, zsh, tcsh, fish, elvish, powershell)"
+msgid ""
+"A supported shell (bash, zsh, tcsh, fish, elvish, powershell, murex, nushell)"
 msgstr ""
 
 #. type: Title ###
@@ -286,39 +287,46 @@ msgid "Man pages"
 msgstr ""
 
 #. type: Bullet: '* '
-#: ../README.md:126
+#: ../README.md:127
 #, fuzzy
 #| msgid "direnv(1), direnv.toml(1)"
 msgid "[direnv(1) man page](man/direnv.1.md)"
 msgstr "direnv(1), direnv.toml(1)"
 
 #. type: Bullet: '* '
-#: ../README.md:126
+#: ../README.md:127
+#, fuzzy
+#| msgid "direnv(1), direnv.toml(1)"
+msgid "[direnv-fetchurl(1) man page](man/direnv-fetchurl.1.md)"
+msgstr "direnv(1), direnv.toml(1)"
+
+#. type: Bullet: '* '
+#: ../README.md:127
 msgid "[direnv-stdlib(1) man page](man/direnv-stdlib.1.md)"
 msgstr ""
 
 #. type: Bullet: '* '
-#: ../README.md:126
+#: ../README.md:127
 #, fuzzy
 #| msgid "direnv(1), direnv.toml(1)"
 msgid "[direnv.toml(1) man page](man/direnv.toml.1.md)"
 msgstr "direnv(1), direnv.toml(1)"
 
 #. type: Title ###
-#: ../README.md:127
+#: ../README.md:128
 #, no-wrap
 msgid "FAQ"
 msgstr ""
 
 #. type: Plain text
-#: ../README.md:131
+#: ../README.md:132
 msgid ""
 "Based on GitHub issues interactions, here are the top things that have been "
 "confusing for users:"
 msgstr ""
 
 #. type: Bullet: '1. '
-#: ../README.md:135
+#: ../README.md:136
 msgid ""
 "direnv has a standard library of functions, a collection of utilities that I "
 "found useful to have and accumulated over the years. You can find it here: "
@@ -326,15 +334,15 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '2. '
-#: ../README.md:139
+#: ../README.md:140
 msgid ""
 "It's possible to override the stdlib with your own set of function by adding "
-"a bash file to `~/.config/direnv/direnvrc`. This file is loaded and it's "
+"a bash file to `~/.config/direnv/direnvrc`. This file is loaded and its "
 "content made available to any `.envrc` file."
 msgstr ""
 
 #. type: Bullet: '3. '
-#: ../README.md:146
+#: ../README.md:147
 msgid ""
 "direnv is not loading the `.envrc` into the current shell. It's creating a "
 "new bash sub-process to load the stdlib, direnvrc and `.envrc`, and only "
@@ -345,20 +353,20 @@ msgid ""
 msgstr ""
 
 #. type: Title ##
-#: ../README.md:147
+#: ../README.md:148
 #, no-wrap
 msgid "Contributing"
 msgstr ""
 
 #. type: Plain text
-#: ../README.md:151
+#: ../README.md:152
 msgid ""
 "Bug reports, contributions and forks are welcome. All bugs or other forms of "
 "discussion happen on http://github.com/direnv/direnv/issues ."
 msgstr ""
 
 #. type: Plain text
-#: ../README.md:155
+#: ../README.md:156
 msgid ""
 "Or drop by on [Matrix](https://matrix.to/#/#direnv:numtide.com) to have a "
 "chat. If you ask a question make sure to stay around as not everyone is "
@@ -366,20 +374,20 @@ msgid ""
 msgstr ""
 
 #. type: Title ###
-#: ../README.md:156
+#: ../README.md:157
 #, no-wrap
 msgid "Testing"
 msgstr ""
 
 #. type: Plain text
-#: ../README.md:159
+#: ../README.md:160
 msgid ""
 "To run our tests, use these commands: (you may need to install [homebrew]"
 "(https://brew.sh/))"
 msgstr ""
 
 #. type: Fenced code block
-#: ../README.md:160
+#: ../README.md:161
 #, no-wrap
 msgid ""
 "brew bundle\n"
@@ -387,25 +395,25 @@ msgid ""
 msgstr ""
 
 #. type: Title ##
-#: ../README.md:165
+#: ../README.md:166
 #, no-wrap
 msgid "Complementary projects"
 msgstr ""
 
 #. type: Plain text
-#: ../README.md:168
+#: ../README.md:169
 msgid ""
 "Here is a list of projects you might want to look into if you are using "
 "direnv."
 msgstr ""
 
 #. type: Bullet: '* '
-#: ../README.md:171
+#: ../README.md:172
 msgid "[starship](https://starship.rs/) - A cross-shell prompt."
 msgstr ""
 
 #. type: Bullet: '* '
-#: ../README.md:171
+#: ../README.md:172
 msgid ""
 "[Projects for Nix integration](https://github.com/direnv/direnv/wiki/Nix) - "
 "choose from one of a variety of projects offering improvements over Direnv's "
@@ -413,34 +421,34 @@ msgid ""
 msgstr ""
 
 #. type: Title ##
-#: ../README.md:172
+#: ../README.md:173
 #, no-wrap
 msgid "Related projects"
 msgstr ""
 
 #. type: Plain text
-#: ../README.md:176
+#: ../README.md:177
 msgid ""
 "Here is a list of other projects found in the same design space. Feel free "
 "to submit new ones."
 msgstr ""
 
 #. type: Bullet: '* '
-#: ../README.md:184
+#: ../README.md:185
 msgid ""
 "[Environment Modules](http://modules.sourceforge.net/) - one of the oldest "
 "(in a good way) environment-loading systems"
 msgstr ""
 
 #. type: Bullet: '* '
-#: ../README.md:184
+#: ../README.md:185
 msgid ""
 "[autoenv](https://github.com/hyperupcall/autoenv) - older, popular, and "
 "lightweight."
 msgstr ""
 
 #. type: Bullet: '* '
-#: ../README.md:184
+#: ../README.md:185
 msgid ""
 "[zsh-autoenv](https://github.com/Tarrasch/zsh-autoenv) - a feature-rich "
 "mixture of autoenv and [smartcd](https://github.com/cxreg/smartcd): enter/"
@@ -448,7 +456,7 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '* '
-#: ../README.md:184
+#: ../README.md:185
 msgid ""
 "[asdf](https://github.com/asdf-vm/asdf) - a pure bash solution that has a "
 "plugin system. The [asdf-direnv](https://github.com/asdf-community/asdf-"
@@ -456,21 +464,21 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '* '
-#: ../README.md:184
+#: ../README.md:185
 msgid ""
 "[ondir](https://github.com/alecthomas/ondir) - OnDir is a small program to "
 "automate tasks specific to certain directories"
 msgstr ""
 
 #. type: Bullet: '* '
-#: ../README.md:184
+#: ../README.md:185
 msgid ""
 "[shadowenv](https://shopify.github.io/shadowenv/) - uses an s-expression "
 "format to define environment changes that should be executed"
 msgstr ""
 
 #. type: Bullet: '* '
-#: ../README.md:184
+#: ../README.md:185
 msgid ""
 "[quickenv](https://github.com/untitaker/quickenv) - an alternative loader "
 "for `.envrc` files that does not hook into your shell and favors speed over "
@@ -478,31 +486,31 @@ msgid ""
 msgstr ""
 
 #. type: Title ##
-#: ../README.md:185
+#: ../README.md:186
 #, no-wrap
 msgid "Commercial support"
 msgstr ""
 
 #. type: Plain text
-#: ../README.md:188
+#: ../README.md:189
 msgid "Looking for help or customization?"
 msgstr ""
 
 #. type: Plain text
-#: ../README.md:191
+#: ../README.md:192
 msgid ""
 "Get in touch with Numtide to get a quote. We make it easy for companies to "
 "work with Open Source projects: <https://numtide.com/contact>"
 msgstr ""
 
 #. type: Title -
-#: ../README.md:192 ../man/direnv-stdlib.1.md:441
+#: ../README.md:193 ../man/direnv-stdlib.1.md:445
 #, no-wrap
 msgid "COPYRIGHT"
 msgstr "著作情報"
 
 #. type: Plain text
-#: ../README.md:194
+#: ../README.md:195
 #, fuzzy
 #| msgid "MIT licence - Copyright (C) 2019 @zimbatm and contributors"
 msgid ""
@@ -584,7 +592,7 @@ msgstr ""
 #: ../man/direnv-stdlib.1.md:90 ../man/direnv-stdlib.1.md:99
 #: ../man/direnv-stdlib.1.md:148 ../man/direnv-stdlib.1.md:156
 #: ../man/direnv-stdlib.1.md:179 ../man/direnv-stdlib.1.md:201
-#: ../man/direnv-stdlib.1.md:285
+#: ../man/direnv-stdlib.1.md:289
 msgid "Example:"
 msgstr "例は次の通り。"
 
@@ -836,8 +844,8 @@ msgstr "`source_url <URL> <正統性のためのハッシュ>`"
 #| "Loads another script from the given `url`. Before loading it will check "
 #| "the integrity using the provided `integrity-hash`."
 msgid ""
-"Loads another script from the given `url`. Before loading it it will check "
-"the integrity using the provided `integrity-hash`."
+"Loads another script from the given `url`. Before loading it will check the "
+"integrity using the provided `integrity-hash`."
 msgstr ""
 "与えられた`URL`から別のスクリプトを読み込みます。\n"
 "読み込む前に、与えられた`正統性のためのハッシュ`を使って、正統性を検査しま"
@@ -870,7 +878,7 @@ msgstr "`fetchurl <URL> [<正統性のためのハッシュ>]`"
 #| msgid ""
 #| "Fetches the given `url` onto disk and outputs its path location on stdout."
 msgid ""
-"Fetches the given `url` onto disk and outputs it's path location on stdout."
+"Fetches the given `url` onto disk and outputs its path location on stdout."
 msgstr ""
 "与えられた`URL`から取得し、ディスクに保存します。\n"
 "また、標準入力にパスの場所を出力します。"
@@ -1174,22 +1182,33 @@ msgstr "「$PWD/node_modules/.bin」をPATH環境変数に加えます。"
 #. type: Title ###
 #: ../man/direnv-stdlib.1.md:244
 #, no-wrap
+msgid "`layout opam`"
+msgstr "`layout opam`"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:247
+msgid "Sets environment variables from `opam env`."
+msgstr "`opam env`により環境変数を設定します。"
+
+#. type: Title ###
+#: ../man/direnv-stdlib.1.md:248
+#, no-wrap
 msgid "`layout php`"
 msgstr "`layout php`"
 
 #. type: Plain text
-#: ../man/direnv-stdlib.1.md:247
+#: ../man/direnv-stdlib.1.md:251
 msgid "Adds \"$PWD/vendor/bin\" to the PATH environment variable."
 msgstr "「$PWD/vendor/bin」をPATH環境変数に加えます。"
 
 #. type: Title ###
-#: ../man/direnv-stdlib.1.md:248
+#: ../man/direnv-stdlib.1.md:252
 #, no-wrap
 msgid "`layout perl`"
 msgstr "`layout perl`"
 
 #. type: Plain text
-#: ../man/direnv-stdlib.1.md:251
+#: ../man/direnv-stdlib.1.md:255
 msgid ""
 "Setup environment variables required by perl's local::lib See http://search."
 "cpan.org/dist/local-lib/lib/local/lib.pm for more details."
@@ -1198,13 +1217,13 @@ msgstr ""
 "詳細は http://search.cpan.org/dist/local-lib/lib/local/lib.pm を参照。"
 
 #. type: Title ###
-#: ../man/direnv-stdlib.1.md:252
+#: ../man/direnv-stdlib.1.md:256
 #, no-wrap
 msgid "`layout pipenv`"
 msgstr "`layout pipenv`"
 
 #. type: Plain text
-#: ../man/direnv-stdlib.1.md:255
+#: ../man/direnv-stdlib.1.md:259
 msgid ""
 "Similar to `layout python`, but uses Pipenv to build a virtualenv from the "
 "`Pipfile` located in the same directory. The path can be overridden by the "
@@ -1215,7 +1234,7 @@ msgstr ""
 "パスは`PIPENV_PIPFILE`環境変数で上塗りできます。"
 
 #. type: Plain text
-#: ../man/direnv-stdlib.1.md:257
+#: ../man/direnv-stdlib.1.md:261
 msgid ""
 "Note that unlike invoking Pipenv manually, this does not load environment "
 "variables from a `.env` file automatically. You may want to add `dotenv ."
@@ -1226,13 +1245,13 @@ msgstr ""
 "この挙動をそのまま実行するには、`dotenv .env`を加えると良いでしょう。"
 
 #. type: Title ###
-#: ../man/direnv-stdlib.1.md:258
+#: ../man/direnv-stdlib.1.md:262
 #, no-wrap
 msgid "`layout pyenv [<version> ...]`"
 msgstr "`layout pyenv [<バージョン> ...]`"
 
 #. type: Plain text
-#: ../man/direnv-stdlib.1.md:261
+#: ../man/direnv-stdlib.1.md:265
 msgid ""
 "Similar to `layout python`, but uses pyenv to build a virtualenv with the "
 "specified Python interpreter version."
@@ -1241,7 +1260,7 @@ msgstr ""
 "バージョンでvirtualenvを構築します。"
 
 #. type: Plain text
-#: ../man/direnv-stdlib.1.md:263
+#: ../man/direnv-stdlib.1.md:267
 msgid ""
 "Multiple versions may be specified separated by spaces; please refer to the "
 "pyenv documentation for more information."
@@ -1250,13 +1269,13 @@ msgstr ""
 "詳細はpyenvの文書をご参照ください。"
 
 #. type: Title ###
-#: ../man/direnv-stdlib.1.md:264
+#: ../man/direnv-stdlib.1.md:268
 #, no-wrap
 msgid "`layout python [<python_exe>]`"
 msgstr "`layout python [<pythonの実行ファイル>]`"
 
 #. type: Plain text
-#: ../man/direnv-stdlib.1.md:267
+#: ../man/direnv-stdlib.1.md:271
 msgid ""
 "Creates and loads a virtualenv environment under `$PWD/.direnv/python-"
 "$python_version`. This forces the installation of any egg into the project's "
@@ -1267,7 +1286,7 @@ msgstr ""
 "これにより、eggのプロジェクトの副フォルダへのインストールが強制されます。"
 
 #. type: Plain text
-#: ../man/direnv-stdlib.1.md:269
+#: ../man/direnv-stdlib.1.md:273
 msgid ""
 "It's possible to specify the python executable if you want to use different "
 "versions of python (eg: `layout python python3`)."
@@ -1276,7 +1295,7 @@ msgstr ""
 "（例：`layout python python3`）。"
 
 #. type: Plain text
-#: ../man/direnv-stdlib.1.md:271
+#: ../man/direnv-stdlib.1.md:275
 msgid ""
 "Note that previously virtualenv was located under `$PWD/.direnv/virtualenv` "
 "and will be re-used by direnv if it exists."
@@ -1285,24 +1304,24 @@ msgstr ""
 "により再利用されます。"
 
 #. type: Title ###
-#: ../man/direnv-stdlib.1.md:272
+#: ../man/direnv-stdlib.1.md:276
 #, no-wrap
 msgid "`layout python3`"
 msgstr "`layout python3`"
 
 #. type: Plain text
-#: ../man/direnv-stdlib.1.md:275
+#: ../man/direnv-stdlib.1.md:279
 msgid "A shortcut for `layout python python3`"
 msgstr "`layout python python3`の早道です。"
 
 #. type: Title ###
-#: ../man/direnv-stdlib.1.md:276
+#: ../man/direnv-stdlib.1.md:280
 #, no-wrap
 msgid "`layout ruby`"
 msgstr "`layout ruby`"
 
 #. type: Plain text
-#: ../man/direnv-stdlib.1.md:279
+#: ../man/direnv-stdlib.1.md:283
 msgid ""
 "Sets the GEM_HOME environment variable to `$PWD/.direnv/ruby/RUBY_VERSION`. "
 "This forces the installation of any gems into the project's sub-folder. If "
@@ -1316,13 +1335,13 @@ msgstr ""
 "せるようにラッパープログラムが作られます。"
 
 #. type: Title ###
-#: ../man/direnv-stdlib.1.md:280
+#: ../man/direnv-stdlib.1.md:284
 #, no-wrap
 msgid "`use <program_name> [<version>]`"
 msgstr "`use <プログラム名> [<バージョン>]`"
 
 #. type: Plain text
-#: ../man/direnv-stdlib.1.md:283
+#: ../man/direnv-stdlib.1.md:287
 msgid ""
 "A semantic command dispatch intended for loading external dependencies into "
 "the environment."
@@ -1331,7 +1350,7 @@ msgstr ""
 "です。"
 
 #. type: Plain text
-#: ../man/direnv-stdlib.1.md:291
+#: ../man/direnv-stdlib.1.md:295
 #, no-wrap
 msgid ""
 "    use_ruby() {\n"
@@ -1347,13 +1366,13 @@ msgstr ""
 "    # 出力：Ruby 1.9.3\n"
 
 #. type: Title ###
-#: ../man/direnv-stdlib.1.md:292
+#: ../man/direnv-stdlib.1.md:296
 #, no-wrap
 msgid "`use julia <version>`"
 msgstr "`use julia <バージョン>`"
 
 #. type: Plain text
-#: ../man/direnv-stdlib.1.md:299
+#: ../man/direnv-stdlib.1.md:303
 #, no-wrap
 msgid ""
 "Loads the specified Julia version. You must specify a path to the directory with\n"
@@ -1368,12 +1387,12 @@ msgstr ""
 "`<バージョン>`にちょうと合致するものが見つからなければ、検索が実行され、最新版が読み込まれます。\n"
 
 #. type: Plain text
-#: ../man/direnv-stdlib.1.md:301
+#: ../man/direnv-stdlib.1.md:305
 msgid "Examples (.envrc):"
 msgstr "例 (.envrc) は次の通りです。"
 
 #. type: Plain text
-#: ../man/direnv-stdlib.1.md:305
+#: ../man/direnv-stdlib.1.md:309
 #, no-wrap
 msgid ""
 "    use julia 1.5.1   # loads $JULIA_VERSIONS/julia-1.5.1\n"
@@ -1385,29 +1404,29 @@ msgstr ""
 "    use julia master  # $JULIA_VERSIONS/julia-master を読み込みます\n"
 
 #. type: Title ###
-#: ../man/direnv-stdlib.1.md:306
+#: ../man/direnv-stdlib.1.md:310
 #, no-wrap
 msgid "`use rbenv`"
 msgstr "`use rbenv`"
 
 #. type: Plain text
-#: ../man/direnv-stdlib.1.md:309
+#: ../man/direnv-stdlib.1.md:313
 msgid "Loads rbenv which add the ruby wrappers available on the PATH."
 msgstr "rbenvを読み込み、使えるrubyのラッパーをPATHへ加えます。"
 
 #. type: Title ###
-#: ../man/direnv-stdlib.1.md:310
+#: ../man/direnv-stdlib.1.md:314
 #, no-wrap
 msgid "`use nix [...]`"
 msgstr "`use nix [...]`"
 
 #. type: Plain text
-#: ../man/direnv-stdlib.1.md:313
+#: ../man/direnv-stdlib.1.md:317
 msgid "Load environment variables from `nix-shell`."
 msgstr "`nix-shell`による環境変数を読み込みます。"
 
 #. type: Plain text
-#: ../man/direnv-stdlib.1.md:315
+#: ../man/direnv-stdlib.1.md:319
 msgid ""
 "If you have a `default.nix` or `shell.nix` these will be used by default, "
 "but you can also specify packages directly (e.g `use nix -p ocaml`)."
@@ -1416,25 +1435,25 @@ msgstr ""
 "しかし、パッケージを直接指定することもできます（例：`use nix -p ocaml`）。"
 
 #. type: Plain text
-#: ../man/direnv-stdlib.1.md:317
+#: ../man/direnv-stdlib.1.md:321
 msgid "See http://nixos.org/nix/manual/#sec-nix-shell"
 msgstr "http://nixos.org/nix/manual/#sec-nix-shell を参照"
 
 #. type: Title ###
-#: ../man/direnv-stdlib.1.md:318
+#: ../man/direnv-stdlib.1.md:322
 #, no-wrap
 msgid "`use flake [<installable>]`"
 msgstr "`use flake [<インストール可能な対象>]`"
 
 #. type: Plain text
-#: ../man/direnv-stdlib.1.md:321
+#: ../man/direnv-stdlib.1.md:325
 msgid "Load the build environment of a derivation similar to `nix develop`."
 msgstr ""
 "派生物の構築環境を読み込みます。\n"
 "`nix develop`と似ています。"
 
 #. type: Plain text
-#: ../man/direnv-stdlib.1.md:325
+#: ../man/direnv-stdlib.1.md:329
 msgid ""
 "By default it will load the current folder flake.nix devShell attribute. Or "
 "pass an \"installable\" like \"nixpkgs#hello\" to load all the build "
@@ -1445,7 +1464,7 @@ msgstr ""
 "nixpkgsからhelloパッケージの構築の依存関係を全て読み込みます。"
 
 #. type: Plain text
-#: ../man/direnv-stdlib.1.md:328
+#: ../man/direnv-stdlib.1.md:332
 msgid ""
 "Note that the flakes feature is hidden behind an experimental flag, which "
 "you will have to enable on your own. Flakes is not considered stable yet."
@@ -1455,18 +1474,18 @@ msgstr ""
 "Flakesはまだ安定とされていません。"
 
 #. type: Title ###
-#: ../man/direnv-stdlib.1.md:329
+#: ../man/direnv-stdlib.1.md:333
 #, no-wrap
 msgid "`use guix [...]`"
 msgstr "`use guix [...]`"
 
 #. type: Plain text
-#: ../man/direnv-stdlib.1.md:332
+#: ../man/direnv-stdlib.1.md:336
 msgid "Load environment variables from `guix shell`."
 msgstr "`guix shell`から環境変数を読み込みます。"
 
 #. type: Plain text
-#: ../man/direnv-stdlib.1.md:334
+#: ../man/direnv-stdlib.1.md:338
 msgid ""
 "Any arguments given will be passed to guix shell. For example, `use guix "
 "hello` would setup an environment including the hello package. To create an "
@@ -1481,36 +1500,36 @@ msgstr ""
 "他のオプションには`--file`があり、ファイルから環境を読み込めます。"
 
 #. type: Plain text
-#: ../man/direnv-stdlib.1.md:336
+#: ../man/direnv-stdlib.1.md:340
 msgid "See https://guix.gnu.org/en/manual/en/guix.html#Invoking-guix-shell"
 msgstr "https://guix.gnu.org/en/manual/en/guix.html#Invoking-guix-shell を参照"
 
 #. type: Title ###
-#: ../man/direnv-stdlib.1.md:337
+#: ../man/direnv-stdlib.1.md:341
 #, no-wrap
 msgid "`rvm [...]`"
 msgstr "`rvm [...]`"
 
 #. type: Plain text
-#: ../man/direnv-stdlib.1.md:340
+#: ../man/direnv-stdlib.1.md:344
 msgid "Should work just like in the shell if you have rvm installed."
 msgstr ""
 "rvmをインストールしているときは、そのシェルとちょうど同じはたらきになるでしょ"
 "う。"
 
 #. type: Title ###
-#: ../man/direnv-stdlib.1.md:341
+#: ../man/direnv-stdlib.1.md:345
 #, no-wrap
 msgid "`use node [<version>]`:"
 msgstr "`use node [<バージョン>]`:"
 
 #. type: Plain text
-#: ../man/direnv-stdlib.1.md:344
+#: ../man/direnv-stdlib.1.md:348
 msgid "Loads the specified NodeJS version into the environment."
 msgstr "指定されたNodeJSのバージョンを環境へ読み込みます。"
 
 #. type: Plain text
-#: ../man/direnv-stdlib.1.md:347
+#: ../man/direnv-stdlib.1.md:351
 msgid ""
 "If a partial NodeJS version is passed (i.e. `4.2`), a fuzzy match is "
 "performed and the highest matching version installed is selected."
@@ -1519,7 +1538,7 @@ msgstr ""
 "れ、最も大きい、インストールされている、合致したバージョンが選択されます。"
 
 #. type: Plain text
-#: ../man/direnv-stdlib.1.md:350
+#: ../man/direnv-stdlib.1.md:354
 msgid ""
 "If no version is passed, it will look at the '.nvmrc' or '.node-version' "
 "files in the current directory if they exist."
@@ -1528,12 +1547,12 @@ msgstr ""
 "version`ファイルがあれば、それを参照します。"
 
 #. type: Plain text
-#: ../man/direnv-stdlib.1.md:352
+#: ../man/direnv-stdlib.1.md:356
 msgid "Environment Variables:"
 msgstr "環境変数は次の通りです。"
 
 #. type: Bullet: '- '
-#: ../man/direnv-stdlib.1.md:356
+#: ../man/direnv-stdlib.1.md:360
 msgid ""
 "$NODE_VERSIONS (required)  Points to a folder that contains all the "
 "installed Node versions. That folder must exist."
@@ -1543,7 +1562,7 @@ msgstr ""
 "フォルダは存在しなければなりません。"
 
 #. type: Bullet: '- '
-#: ../man/direnv-stdlib.1.md:359
+#: ../man/direnv-stdlib.1.md:363
 msgid ""
 "$NODE_VERSION_PREFIX (optional) [default=\"node-v\"] Overrides the default "
 "version prefix."
@@ -1552,13 +1571,13 @@ msgstr ""
 "既定のバージョンの接頭辞を上塗りします。"
 
 #. type: Title ###
-#: ../man/direnv-stdlib.1.md:360
+#: ../man/direnv-stdlib.1.md:364
 #, no-wrap
 msgid "`use vim [<vimrc_file>]`"
 msgstr "`use vim [<vimrcファイル>]`"
 
 #. type: Plain text
-#: ../man/direnv-stdlib.1.md:364
+#: ../man/direnv-stdlib.1.md:368
 msgid ""
 "Prepends the specified vim script (or .vimrc.local by default) to the "
 "`DIRENV_EXTRA_VIMRC` environment variable."
@@ -1567,7 +1586,7 @@ msgstr ""
 "境変数へ前置します。"
 
 #. type: Plain text
-#: ../man/direnv-stdlib.1.md:367
+#: ../man/direnv-stdlib.1.md:371
 msgid ""
 "This variable is understood by the direnv/direnv.vim extension. When found, "
 "it will source it after opening files in the directory."
@@ -1576,13 +1595,13 @@ msgstr ""
 "この拡張が見つかったとき、ファイルをディレクトリで開いた後に読み込みます。"
 
 #. type: Title ###
-#: ../man/direnv-stdlib.1.md:368
+#: ../man/direnv-stdlib.1.md:372
 #, no-wrap
 msgid "`watch_file <path> [<path> ...]`"
 msgstr "`watch_file <パス> [<パス> ...]`"
 
 #. type: Plain text
-#: ../man/direnv-stdlib.1.md:371
+#: ../man/direnv-stdlib.1.md:375
 msgid ""
 "Adds each file to direnv's watch-list. If the file changes direnv will "
 "reload the environment on the next prompt."
@@ -1591,24 +1610,24 @@ msgstr ""
 "ファイルが変わったら、direnvは次のプロンプトで環境を再読込みします。"
 
 #. type: Plain text
-#: ../man/direnv-stdlib.1.md:373 ../man/direnv-stdlib.1.md:430
+#: ../man/direnv-stdlib.1.md:377 ../man/direnv-stdlib.1.md:434
 msgid "Example (.envrc):"
 msgstr "例 (.envrc) は次の通り。"
 
 #. type: Plain text
-#: ../man/direnv-stdlib.1.md:375
+#: ../man/direnv-stdlib.1.md:379
 #, no-wrap
 msgid "    watch_file Gemfile\n"
 msgstr "    watch_file Gemfile\n"
 
 #. type: Title ###
-#: ../man/direnv-stdlib.1.md:376
+#: ../man/direnv-stdlib.1.md:380
 #, no-wrap
 msgid "`direnv_version <version_at_least>`"
 msgstr "`direnv_version <最低バージョン>`"
 
 #. type: Plain text
-#: ../man/direnv-stdlib.1.md:381
+#: ../man/direnv-stdlib.1.md:385
 msgid ""
 "Checks that the direnv version is at least old as `version_at_least`. This "
 "can be useful when sharing an `.envrc` and to make sure that the users are "
@@ -1620,13 +1639,13 @@ msgstr ""
 "とがあります。"
 
 #. type: Title ###
-#: ../man/direnv-stdlib.1.md:382
+#: ../man/direnv-stdlib.1.md:386
 #, no-wrap
 msgid "`strict_env [<command> ...]`"
 msgstr "`strict_env [<コマンド> ...]`"
 
 #. type: Plain text
-#: ../man/direnv-stdlib.1.md:386
+#: ../man/direnv-stdlib.1.md:390
 msgid ""
 "Turns on shell execution strictness. This will force the .envrc evaluation "
 "context to exit immediately if:"
@@ -1635,7 +1654,7 @@ msgstr ""
 "こうすると .envrc の評価の文脈が、次のときに直ちに終了するようにします。"
 
 #. type: Bullet: '- '
-#: ../man/direnv-stdlib.1.md:393
+#: ../man/direnv-stdlib.1.md:397
 msgid ""
 "any command in a pipeline returns a non-zero exit status that is not "
 "otherwise handled as part of `if`, `while`, or `until` tests, return value "
@@ -1646,7 +1665,7 @@ msgstr ""
 "の連鎖の一部を返します。"
 
 #. type: Bullet: '- '
-#: ../man/direnv-stdlib.1.md:393
+#: ../man/direnv-stdlib.1.md:397
 msgid ""
 "any variable that has not explicitly been set or declared (with either "
 "`declare` or `local`) is referenced."
@@ -1655,19 +1674,19 @@ msgstr ""
 "が参照されたとき、"
 
 #. type: Plain text
-#: ../man/direnv-stdlib.1.md:396
+#: ../man/direnv-stdlib.1.md:400
 msgid ""
 "If followed by a command-line, the strictness applies for the duration of "
 "the command."
 msgstr "コマンドラインが後続するとき、厳密性はそのコマンドの間、適用されます。"
 
 #. type: Plain text
-#: ../man/direnv-stdlib.1.md:398 ../man/direnv-stdlib.1.md:412
+#: ../man/direnv-stdlib.1.md:402 ../man/direnv-stdlib.1.md:416
 msgid "Example (Whole Script):"
 msgstr "例（スクリプト全体）は次の通りです。"
 
 #. type: Plain text
-#: ../man/direnv-stdlib.1.md:401
+#: ../man/direnv-stdlib.1.md:405
 #, no-wrap
 msgid ""
 "    strict_env\n"
@@ -1677,24 +1696,24 @@ msgstr ""
 "    has curl\n"
 
 #. type: Plain text
-#: ../man/direnv-stdlib.1.md:403 ../man/direnv-stdlib.1.md:417
+#: ../man/direnv-stdlib.1.md:407 ../man/direnv-stdlib.1.md:421
 msgid "Example (Command):"
 msgstr "（コマンドの）例は次の通りです。"
 
 #. type: Plain text
-#: ../man/direnv-stdlib.1.md:405
+#: ../man/direnv-stdlib.1.md:409
 #, no-wrap
 msgid "    strict_env has curl\n"
 msgstr "    strict_env has curl\n"
 
 #. type: Title ####
-#: ../man/direnv-stdlib.1.md:406
+#: ../man/direnv-stdlib.1.md:410
 #, no-wrap
 msgid "`unstrict_env [<command> ...]`"
 msgstr "`unstrict_env [<コマンド> ...]`"
 
 #. type: Plain text
-#: ../man/direnv-stdlib.1.md:410
+#: ../man/direnv-stdlib.1.md:414
 msgid ""
 "Turns off shell execution strictness. If followed by a command-line, the "
 "strictness applies for the duration of the command."
@@ -1703,7 +1722,7 @@ msgstr ""
 "コマンドラインが後続するとき、厳密性はコマンドの間、適用されます。"
 
 #. type: Plain text
-#: ../man/direnv-stdlib.1.md:415
+#: ../man/direnv-stdlib.1.md:419
 #, no-wrap
 msgid ""
 "    unstrict_env\n"
@@ -1713,19 +1732,19 @@ msgstr ""
 "    has curl\n"
 
 #. type: Plain text
-#: ../man/direnv-stdlib.1.md:419
+#: ../man/direnv-stdlib.1.md:423
 #, no-wrap
 msgid "    unstrict_env has curl\n"
 msgstr "    unstrict_env has curl\n"
 
 #. type: Title ###
-#: ../man/direnv-stdlib.1.md:420
+#: ../man/direnv-stdlib.1.md:424
 #, no-wrap
 msgid "`on_git_branch [<branch_name>]`"
 msgstr "`on_git_branch [<ブランチ名>]`"
 
 #. type: Plain text
-#: ../man/direnv-stdlib.1.md:425
+#: ../man/direnv-stdlib.1.md:429
 msgid ""
 "Returns 0 if within a git repository with given `branch_name`. If no branch "
 "name is provided, then returns 0 when within _any_ branch. Requires the git "
@@ -1737,7 +1756,7 @@ msgstr ""
 "そうでなければ1を返します。"
 
 #. type: Plain text
-#: ../man/direnv-stdlib.1.md:428
+#: ../man/direnv-stdlib.1.md:432
 msgid ""
 "When a branch is specified, then `.git/HEAD` is watched so that entering/"
 "exiting a branch triggers a reload."
@@ -1746,21 +1765,21 @@ msgstr ""
 "そのため、ブランチに入ったり出たりすると再読込が引き起こされます。"
 
 #. type: Plain text
-#: ../man/direnv-stdlib.1.md:434
-#, no-wrap
-msgid ""
-"    if on_git_branch child_changes; then\n"
-"      export MERGE_BASE_BRANCH=parent_changes\n"
-"    fi\n"
-msgstr ""
-"    if on_git_branch child_changes; then\n"
-"      export MERGE_BASE_BRANCH=parent_changes\n"
-"    fi\n"
-
-#. type: Plain text
 #: ../man/direnv-stdlib.1.md:438
 #, no-wrap
 msgid ""
+"    if on_git_branch child_changes; then\n"
+"      export MERGE_BASE_BRANCH=parent_changes\n"
+"    fi\n"
+msgstr ""
+"    if on_git_branch child_changes; then\n"
+"      export MERGE_BASE_BRANCH=parent_changes\n"
+"    fi\n"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:442
+#, no-wrap
+msgid ""
 "    if on_git_branch; then\n"
 "      echo \"Thanks for contributing to a GitHub project!\"\n"
 "    fi\n"
@@ -1770,18 +1789,18 @@ msgstr ""
 "    fi\n"
 
 #. type: Plain text
-#: ../man/direnv-stdlib.1.md:444
+#: ../man/direnv-stdlib.1.md:448
 msgid "MIT licence - Copyright (C) 2019 @zimbatm and contributors"
 msgstr "MIT licence - Copyright (C) 2019 @zimbatm and contributors"
 
 #. type: Title -
-#: ../man/direnv-stdlib.1.md:446
+#: ../man/direnv-stdlib.1.md:450
 #, no-wrap
 msgid "SEE ALSO"
 msgstr "こちらも参照"
 
 #. type: Plain text
-#: ../man/direnv-stdlib.1.md:448
+#: ../man/direnv-stdlib.1.md:452
 msgid "direnv(1), direnv.toml(1)"
 msgstr "direnv(1), direnv.toml(1)"
 
@@ -2033,10 +2052,3 @@ msgstr ""
 "筆者はこれが確実に可能であると考えており、それには[Nixパッケージ管理](http://"
 "nixos.org/nix/)のようなものを使います。\n"
 "そちらについては将来別の記事で見ていく必要があると考えています。"
-
-#, no-wrap
-#~ msgid "`layout opam`"
-#~ msgstr "`layout opam`"
-
-#~ msgid "Sets environment variables from `opam env`."
-#~ msgstr "`opam env`により環境変数を設定します。"
