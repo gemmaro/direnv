@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Direnv\n"
 "POT-Creation-Date: 2024-11-24 09:01+0900\n"
-"PO-Revision-Date: 2024-11-24 09:48+0900\n"
+"PO-Revision-Date: 2024-11-24 09:22+0900\n"
 "Last-Translator: gemmaro\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -21,7 +21,7 @@ msgstr ""
 #: ../README.md:2
 #, no-wrap
 msgid "direnv -- unclutter your .profile"
-msgstr ""
+msgstr "direnv -- .profileを整頓"
 
 #. type: Plain text
 #: ../README.md:8
@@ -35,6 +35,10 @@ msgid ""
 "com&logo=matrix&server_fqdn=matrix.numtide.com)](https://matrix.to/#/#direnv:"
 "numtide.com)"
 msgstr ""
+"[![Nixでビルド](https://builtwithnix.org/badge.svg)](https://builtwithnix.org)\n"
+"[![パッケージ化の状態](https://repology.org/badge/tiny-repos/direnv.svg)](https://repology.org/project/direnv/versions)\n"
+"[![最新のパッケージバージョン](https://repology.org/badge/latest-versions/direnv.svg)](https://repology.org/project/direnv/versions)\n"
+"[![Matrixのサポート場所](https://img.shields.io/matrix/direnv:numtide.com.svg?label=%23direnv%3Anumtide.com&logo=matrix&server_fqdn=matrix.numtide.com)](https://matrix.to/#/#direnv:numtide.com)"
 
 #. type: Plain text
 #: ../README.md:12
@@ -43,33 +47,35 @@ msgid ""
 "new feature that can load and unload environment variables depending on the "
 "current directory."
 msgstr ""
+"`direnv`はシェルの拡張です。\n"
+"現在のディレクトリによって、環境変数の読み込みないし読み戻しをする新しい機能で、既存のシェルを拡張します。"
 
 #. type: Title ##
 #: ../README.md:13
 #, no-wrap
 msgid "Use cases"
-msgstr ""
+msgstr "用途"
 
 #. type: Bullet: '* '
 #: ../README.md:18
 msgid "Load [12factor apps](https://12factor.net/) environment variables"
-msgstr ""
+msgstr "[12factorアプリ](https://12factor.net/)の環境変数を読み込む"
 
 #. type: Bullet: '* '
 #: ../README.md:18
 msgid "Create per-project isolated development environments"
-msgstr ""
+msgstr "プロジェクト毎の独立した開発環境を作成"
 
 #. type: Bullet: '* '
 #: ../README.md:18
 msgid "Load secrets for deployment"
-msgstr ""
+msgstr "デプロイのための機密情報を読み込む"
 
 #. type: Title ##
 #: ../README.md:19
 #, no-wrap
 msgid "How it works"
-msgstr ""
+msgstr "仕組み"
 
 #. type: Plain text
 #: ../README.md:26
@@ -80,6 +86,8 @@ msgid ""
 "is loaded into a **bash** sub-shell and all exported variables are then "
 "captured by direnv and then made available to the current shell."
 msgstr ""
+"各プロンプトの前に、現在のディレクトリとその上位のディレクトリの`.envrc`ファイル（と[任意で](man/direnv.toml.1.md#codeloaddotenvcode)`.env`ファイル）の存在がdirenvにより確認されます。\n"
+"ファイルが存在するとき（かつ権限があるとき）、**bash**の副シェルに読み込まれ、全てのエクスポートされた変数がdirenvに捕捉されて、現在のシェルで使えるようになります。"
 
 #. type: Plain text
 #: ../README.md:30
@@ -88,6 +96,8 @@ msgid ""
 "This allows project-specific environment variables without cluttering the "
 "`~/.profile` file."
 msgstr ""
+"bash、zsh、tcsh、fishといった全ての一般的なシェルのフックに対応しています。\n"
+"これにより、`~/.profile`ファイルを散らかすことなく、プロジェクト固有の環境変数が使えます。"
 
 #. type: Plain text
 #: ../README.md:34
@@ -96,35 +106,37 @@ msgid ""
 "enough to be unnoticeable on each prompt. It is also language-agnostic and "
 "can be used to build solutions similar to rbenv, pyenv and phpenv."
 msgstr ""
+"direnvは単一の静的実行ファイルにコンパイルされるため、プロンプトが表示されるとき、存在を感じさせない程度には高速です。\n"
+"また言語に依らないため、rbenv、pyenv、phpenvに似たソリューションの構築に使えます。"
 
 #. type: Title ##
 #: ../README.md:35
 #, no-wrap
 msgid "Getting Started"
-msgstr ""
+msgstr "始め方"
 
 #. type: Title ###
 #: ../README.md:37
 #, no-wrap
 msgid "Prerequisites"
-msgstr ""
+msgstr "事前要件"
 
 #. type: Bullet: '* '
 #: ../README.md:41
 msgid "Unix-like operating system (macOS, Linux, ...)"
-msgstr ""
+msgstr "Unixライクなオペレーティングシステム (macOS, Linux, ...)"
 
 #. type: Bullet: '* '
 #: ../README.md:41
 msgid ""
 "A supported shell (bash, zsh, tcsh, fish, elvish, powershell, murex, nushell)"
-msgstr ""
+msgstr "対応しているシェル (bash, zsh, tcsh, fish, elvish, powershell, murex, nushell)"
 
 #. type: Title ###
 #: ../README.md:42
 #, no-wrap
 msgid "Basic Installation"
-msgstr ""
+msgstr "基本的なインストール方法"
 
 #. type: Bullet: '1. '
 #: ../README.md:46
@@ -132,22 +144,24 @@ msgid ""
 "direnv is packaged in most distributions already. See [the installation "
 "documentation](docs/installation.md) for details."
 msgstr ""
+"direnvは既にほとんどのディストリビューションでパッケージ化されています。\n"
+"詳細は[インストール方法の文書](docs/installation.md)をご参照ください。"
 
 #. type: Bullet: '2. '
 #: ../README.md:46
 msgid "[hook direnv into your shell](docs/hook.md)."
-msgstr ""
+msgstr "[シェルにdirenvをフックする](docs/hook.md)。"
 
 #. type: Plain text
 #: ../README.md:48
 msgid "Now restart your shell."
-msgstr ""
+msgstr "それからシェルを再起動させてください。"
 
 #. type: Title ###
 #: ../README.md:49
 #, no-wrap
 msgid "Quick demo"
-msgstr ""
+msgstr "簡単なデモ"
 
 #. type: Plain text
 #: ../README.md:52
@@ -193,10 +207,9 @@ msgstr ""
 
 #. type: Title ###
 #: ../README.md:87
-#, fuzzy, no-wrap
-#| msgid "`direnv stdlib`"
+#, no-wrap
 msgid "The stdlib"
-msgstr "`direnv stdlib`"
+msgstr "標準ライブラリ"
 
 #. type: Plain text
 #: ../README.md:91
@@ -263,10 +276,8 @@ msgstr ""
 
 #. type: Bullet: '* '
 #: ../README.md:117
-#, fuzzy
-#| msgid "Manage your rubies with direnv and ruby-install"
 msgid "[Manage your rubies with direnv and ruby-install](docs/ruby.md)"
-msgstr "direnvとruby-installでRubyを管理する"
+msgstr "[direnvとruby-installでRubyを管理する](docs/ruby.md)"
 
 #. type: Bullet: '* '
 #: ../README.md:117
@@ -288,17 +299,13 @@ msgstr ""
 
 #. type: Bullet: '* '
 #: ../README.md:127
-#, fuzzy
-#| msgid "direnv(1), direnv.toml(1)"
 msgid "[direnv(1) man page](man/direnv.1.md)"
-msgstr "direnv(1), direnv.toml(1)"
+msgstr "[direnv(1) のmanページ](man/direnv.1.md)"
 
 #. type: Bullet: '* '
 #: ../README.md:127
-#, fuzzy
-#| msgid "direnv(1), direnv.toml(1)"
 msgid "[direnv-fetchurl(1) man page](man/direnv-fetchurl.1.md)"
-msgstr "direnv(1), direnv.toml(1)"
+msgstr "[direnv-fetchurl(1) のmanページ](man/direnv-fetchurl.1.md)"
 
 #. type: Bullet: '* '
 #: ../README.md:127
@@ -307,10 +314,8 @@ msgstr ""
 
 #. type: Bullet: '* '
 #: ../README.md:127
-#, fuzzy
-#| msgid "direnv(1), direnv.toml(1)"
 msgid "[direnv.toml(1) man page](man/direnv.toml.1.md)"
-msgstr "direnv(1), direnv.toml(1)"
+msgstr "[direnv.toml(1) のmanページ](man/direnv.toml.1.md)"
 
 #. type: Title ###
 #: ../README.md:128
@@ -511,12 +516,10 @@ msgstr "著作情報"
 
 #. type: Plain text
 #: ../README.md:195
-#, fuzzy
-#| msgid "MIT licence - Copyright (C) 2019 @zimbatm and contributors"
 msgid ""
 "[MIT licence](LICENSE) - Copyright (C) 2019 @zimbatm and [contributors]"
 "(https://github.com/direnv/direnv/graphs/contributors)"
-msgstr "MIT licence - Copyright (C) 2019 @zimbatm and contributors"
+msgstr "[MIT licence](LICENSE) - Copyright (C) 2019 @zimbatm と[貢献者の方々](https://github.com/direnv/direnv/graphs/contributors)"
 
 #. type: Title =
 #: ../man/direnv-stdlib.1.md:2
@@ -839,17 +842,12 @@ msgstr "`source_url <URL> <正統性のためのハッシュ>`"
 
 #. type: Plain text
 #: ../man/direnv-stdlib.1.md:124
-#, fuzzy
-#| msgid ""
-#| "Loads another script from the given `url`. Before loading it will check "
-#| "the integrity using the provided `integrity-hash`."
 msgid ""
 "Loads another script from the given `url`. Before loading it will check the "
 "integrity using the provided `integrity-hash`."
 msgstr ""
 "与えられた`URL`から別のスクリプトを読み込みます。\n"
-"読み込む前に、与えられた`正統性のためのハッシュ`を使って、正統性を検査しま"
-"す。"
+"読み込む前に、与えられた`正統性のためのハッシュ`を使って、正統性を検査します。"
 
 #. type: Plain text
 #: ../man/direnv-stdlib.1.md:127
@@ -874,9 +872,6 @@ msgstr "`fetchurl <URL> [<正統性のためのハッシュ>]`"
 
 #. type: Plain text
 #: ../man/direnv-stdlib.1.md:133
-#, fuzzy
-#| msgid ""
-#| "Fetches the given `url` onto disk and outputs its path location on stdout."
 msgid ""
 "Fetches the given `url` onto disk and outputs its path location on stdout."
 msgstr ""
