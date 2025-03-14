@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Direnv\n"
 "POT-Creation-Date: 2025-03-14 22:30+0900\n"
-"PO-Revision-Date: 2025-03-14 22:26+0900\n"
+"PO-Revision-Date: 2025-03-14 22:46+0900\n"
 "Last-Translator: gemmaro\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -1936,20 +1936,18 @@ msgid ""
 "DIRENV 1 \"2019\" direnv \"User Manuals\"\n"
 "===========================================\n"
 msgstr ""
+"DIRENV 1 \"2019\" direnv \"取扱説明書\"\n"
+"===========================================\n"
 
 #. type: Plain text
 #: ../man/direnv.1.md:8
-#, fuzzy
-#| msgid "direnv -- unclutter your .profile"
 msgid "direnv - unclutter your .profile"
-msgstr "direnv -- .profileを整頓"
+msgstr "direnv - .profileを整頓"
 
 #. type: Plain text
 #: ../man/direnv.1.md:13
-#, fuzzy
-#| msgid "`strict_env [<command> ...]`"
 msgid "`direnv` *command* ..."
-msgstr "`strict_env [<コマンド> ...]`"
+msgstr "`direnv` *コマンド* ..."
 
 #. type: Plain text
 #: ../man/direnv.1.md:21
@@ -1962,49 +1960,31 @@ msgstr ""
 
 #. type: Plain text
 #: ../man/direnv.1.md:26
-#, fuzzy
-#| msgid ""
-#| "Before each prompt, direnv checks for the existence of a `.envrc` file "
-#| "(and [optionally](man/direnv.toml.1.md#codeloaddotenvcode) a `.env` file) "
-#| "in the current and parent directories. If the file exists (and is "
-#| "authorized), it is loaded into a **bash** sub-shell and all exported "
-#| "variables are then captured by direnv and then made available to the "
-#| "current shell."
 msgid ""
 "Before each prompt it checks for the existence of an `.envrc` file in the "
 "current and parent directories. If the file exists, it is loaded into a bash "
 "sub-shell and all exported variables are then captured by direnv and then "
 "made available to your current shell, while unset variables are removed."
 msgstr ""
-"各プロンプトの前に、現在のディレクトリとその上位のディレクトリの`.envrc`ファ"
-"イル（と[任意で](man/direnv.toml.1.md#codeloaddotenvcode)`.env`ファイル）の存"
-"在がdirenvにより確認されます。\n"
-"ファイルが存在するとき（かつ権限があるとき）、**bash**の副シェルに読み込ま"
-"れ、全てのエクスポートされた変数がdirenvに捕捉されて、現在のシェルで使えるよ"
-"うになります。"
+"各プロンプトの前に、現在のディレクトリとその上位のディレクトリの`.envrc`ファイルの存在がdirenvにより確認されます。\n"
+"ファイルが存在するとき、bashの副シェルに読み込まれ、全てのエクスポートされた変数がdirenvに捕捉されて、現在のシェルで使えるようになります。\n"
+"また、設定が外れた変数は削除されます。"
 
 #. type: Plain text
 #: ../man/direnv.1.md:30
-#, fuzzy
-#| msgid ""
-#| "Because direnv is compiled into a single static executable, it is fast "
-#| "enough to be unnoticeable on each prompt. It is also language-agnostic "
-#| "and can be used to build solutions similar to rbenv, pyenv and phpenv."
 msgid ""
 "Because direnv is compiled into a single static executable it is fast enough "
 "to be unnoticeable on each prompt. It is also language agnostic and can be "
 "used to build solutions similar to rbenv, pyenv, phpenv, ..."
 msgstr ""
-"direnvは単一の静的実行ファイルにコンパイルされるため、プロンプトが表示される"
-"とき、存在を感じさせない程度には高速です。\n"
-"また言語に依らないため、rbenv、pyenv、phpenvに似たソリューションの構築に使え"
-"ます。"
+"direnvは単一の静的実行ファイルにコンパイルされるため、プロンプトが表示されるとき、存在を感じさせない程度には高速です。\n"
+"また言語に依らないため、rbenv、pyenv、phpenv等に似たソリューションの構築に使えます。"
 
 #. type: Title -
 #: ../man/direnv.1.md:32
 #, no-wrap
 msgid "EXAMPLE"
-msgstr ""
+msgstr "例"
 
 #. type: Fenced code block
 #: ../man/direnv.1.md:34
@@ -2027,12 +2007,28 @@ msgid ""
 "$ echo ${FOO-nope}\n"
 "nope\n"
 msgstr ""
+"$ cd ~/my_project\n"
+"$ echo ${FOO-nope}\n"
+"nope\n"
+"$ echo export FOO=foo > .envrc\n"
+"\\.envrc is not allowed\n"
+"$ direnv allow .\n"
+"direnv: reloading\n"
+"direnv: loading .envrc\n"
+"direnv export: +FOO\n"
+"$ echo ${FOO-nope}\n"
+"foo\n"
+"$ cd ..\n"
+"direnv: unloading\n"
+"direnv export: ~PATH\n"
+"$ echo ${FOO-nope}\n"
+"nope\n"
 
 #. type: Title -
 #: ../man/direnv.1.md:54
 #, no-wrap
 msgid "SETUP"
-msgstr ""
+msgstr "準備"
 
 #. type: Plain text
 #: ../man/direnv.1.md:58
@@ -2040,73 +2036,75 @@ msgid ""
 "For direnv to work properly it needs to be hooked into the shell. Each shell "
 "has its own extension mechanism:"
 msgstr ""
+"direnvが適切に機能するためには、シェルにフックする必要があります。\n"
+"それぞれのシェルには、独自の拡張の仕組みがあります。"
 
 #. type: Title ###
 #: ../man/direnv.1.md:59
 #, no-wrap
 msgid "BASH"
-msgstr ""
+msgstr "BASH"
 
 #. type: Plain text
 #: ../man/direnv.1.md:62
 msgid "Add the following line at the end of the `~/.bashrc` file:"
-msgstr ""
+msgstr "以下の行を`~/.bashrc`ファイルの末尾に加えてください。"
 
 #. type: Fenced code block (sh)
 #: ../man/direnv.1.md:63
 #, no-wrap
 msgid "eval \"$(direnv hook bash)\"\n"
-msgstr ""
+msgstr "eval \"$(direnv hook bash)\"\n"
 
 #. type: Plain text
 #: ../man/direnv.1.md:69
 msgid ""
 "Make sure it appears even after rvm, git-prompt and other shell extensions "
 "that manipulate the prompt."
-msgstr ""
+msgstr "必ず、rvm、git-promptやその他のプロンプトを操作するシェルの拡張より後にくるようにしてください。"
 
 #. type: Title ###
 #: ../man/direnv.1.md:70
 #, no-wrap
 msgid "ZSH"
-msgstr ""
+msgstr "ZSH"
 
 #. type: Plain text
 #: ../man/direnv.1.md:73
 msgid "Add the following line at the end of the `~/.zshrc` file:"
-msgstr ""
+msgstr "以下の行を`~/.zshrc`ファイルの末尾に加えてください。"
 
 #. type: Fenced code block (sh)
 #: ../man/direnv.1.md:74
 #, no-wrap
 msgid "eval \"$(direnv hook zsh)\"\n"
-msgstr ""
+msgstr "eval \"$(direnv hook zsh)\"\n"
 
 #. type: Title ###
 #: ../man/direnv.1.md:78
 #, no-wrap
 msgid "FISH"
-msgstr ""
+msgstr "FISH"
 
 #. type: Plain text
 #: ../man/direnv.1.md:81
 msgid ""
 "Add the following line at the end of the `$XDG_CONFIG_HOME/fish/config.fish` "
 "file:"
-msgstr ""
+msgstr "以下の行を`$XDG_CONFIG_HOME/fish/config.fish`ファイルの末尾に加えてください。"
 
 #. type: Fenced code block (fish)
 #: ../man/direnv.1.md:82
 #, no-wrap
 msgid "direnv hook fish | source\n"
-msgstr ""
+msgstr "direnv hook fish | source\n"
 
 #. type: Plain text
 #: ../man/direnv.1.md:87
 msgid ""
 "Fish supports 3 modes you can set with with the global environment variable "
 "`direnv_fish_mode`:"
-msgstr ""
+msgstr "Fishは3つのモードに対応しており、大域環境変数`direnv_fish_mode`で設定できます。"
 
 #. type: Fenced code block (fish)
 #: ../man/direnv.1.md:88
@@ -2121,29 +2119,29 @@ msgstr ""
 #: ../man/direnv.1.md:95
 #, no-wrap
 msgid "TCSH"
-msgstr ""
+msgstr "TCSH"
 
 #. type: Plain text
 #: ../man/direnv.1.md:98
 msgid "Add the following line at the end of the `~/.cshrc` file:"
-msgstr ""
+msgstr "以下の行を`~/.cshrc`ファイルの末尾に加えてください。"
 
 #. type: Fenced code block (sh)
 #: ../man/direnv.1.md:99
 #, no-wrap
 msgid "eval `direnv hook tcsh`\n"
-msgstr ""
+msgstr "eval `direnv hook tcsh`\n"
 
 #. type: Title ###
 #: ../man/direnv.1.md:103
 #, no-wrap
 msgid "Elvish"
-msgstr ""
+msgstr "Elvish"
 
 #. type: Plain text
 #: ../man/direnv.1.md:106
 msgid "Run:"
-msgstr ""
+msgstr "以下を実行してください。"
 
 #. type: Fenced code block
 #: ../man/direnv.1.md:107
@@ -2152,58 +2150,59 @@ msgid ""
 "~> mkdir -p ~/.config/elvish/lib\n"
 "~> direnv hook elvish > ~/.config/elvish/lib/direnv.elv\n"
 msgstr ""
+"~> mkdir -p ~/.config/elvish/lib\n"
+"~> direnv hook elvish > ~/.config/elvish/lib/direnv.elv\n"
 
 #. type: Plain text
 #: ../man/direnv.1.md:113
 msgid "and add the following line to your `~/.config/elvish/rc.elv` file:"
-msgstr ""
+msgstr "そして、以下の行を`~/.config/elvish/rc.elv`ファイルに加えてください。"
 
 #. type: Fenced code block
 #: ../man/direnv.1.md:114
-#, fuzzy, no-wrap
-#| msgid "`use rbenv`"
+#, no-wrap
 msgid "use direnv\n"
-msgstr "`use rbenv`"
+msgstr "use direnv\n"
 
 #. type: Title ###
 #: ../man/direnv.1.md:118
 #, no-wrap
 msgid "PowerShell"
-msgstr ""
+msgstr "PowerShell"
 
 #. type: Plain text
 #: ../man/direnv.1.md:121
 msgid "Add the following line to your `$PROFILE`:"
-msgstr ""
+msgstr "以下の行を`$PROFILE`に加えてください。"
 
 #. type: Fenced code block (powershell)
 #: ../man/direnv.1.md:122
 #, no-wrap
 msgid "Invoke-Expression \"$(direnv hook pwsh)\"\n"
-msgstr ""
+msgstr "Invoke-Expression \"$(direnv hook pwsh)\"\n"
 
 #. type: Title ###
 #: ../man/direnv.1.md:126
 #, no-wrap
 msgid "Murex"
-msgstr ""
+msgstr "Murex"
 
 #. type: Plain text
 #: ../man/direnv.1.md:129
 msgid "Add the following line to your `~/.murex_profile`:"
-msgstr ""
+msgstr "以下の行を`~/.murex_profile`に加えてください。"
 
 #. type: Fenced code block
 #: ../man/direnv.1.md:130
 #, no-wrap
 msgid "direnv hook murex -> source\n"
-msgstr ""
+msgstr "direnv hook murex -> source\n"
 
 #. type: Title -
 #: ../man/direnv.1.md:135
 #, no-wrap
 msgid "USAGE"
-msgstr ""
+msgstr "使い方"
 
 #. type: Plain text
 #: ../man/direnv.1.md:139
@@ -2241,11 +2240,6 @@ msgstr ""
 
 #. type: Plain text
 #: ../man/direnv.1.md:160
-#, fuzzy
-#| msgid ""
-#| "Exporting variables by hand is a bit repetitive so direnv provides a set "
-#| "of utility functions that are made available in the context of the `."
-#| "envrc` file."
 msgid ""
 "Exporting variables by hand is a bit repetitive so direnv provides a set of "
 "utility functions that are made available in the context of the `.envrc` "
@@ -2253,10 +2247,10 @@ msgid ""
 "define your own extensions inside `$XDG_CONFIG_HOME/direnv/direnvrc` or "
 "`$XDG_CONFIG_HOME/direnv/lib/*.sh` files."
 msgstr ""
-"手作業で変数をエクスポートするのは、ちょっとした作業の繰り返しになってしまい"
-"ます。\n"
-"そこでdirenvでは、いろいろな補助関数が提供されており、`.envrc`ファイルの文脈"
-"で使えるようになっています。"
+"手作業で変数をエクスポートするのは、ちょっとした作業の繰り返しになってしまいます。\n"
+"そこでdirenvでは、いろいろな補助関数が提供されており、`.envrc`ファイルの文脈で使えるようになっています。\n"
+"詳しくはdirenv-stdlib(1)のmanページをご確認ください。\n"
+"また、`$XDG_CONFIG_HOME/direnv/direnvrc`ないし`$XDG_CONFIG_HOME/direnv/lib/*.sh`ファイルの中に、独自の拡張を定義することもできます。"
 
 #. type: Plain text
 #: ../man/direnv.1.md:162
@@ -2267,97 +2261,88 @@ msgstr ""
 #: ../man/direnv.1.md:164
 #, no-wrap
 msgid "ENVIRONMENT"
-msgstr ""
+msgstr "環境"
 
 #. type: Plain text
 #: ../man/direnv.1.md:168
 msgid "`XDG_CONFIG_HOME` : Defaults to `$HOME/.config`."
-msgstr ""
+msgstr "`XDG_CONFIG_HOME`：既定で`$HOME/.config`です。"
 
 #. type: Plain text
 #: ../man/direnv.1.md:171
 msgid "`XDG_DATA_HOME` : Defaults to `$HOME/.local/share`."
-msgstr ""
+msgstr "`XDG_DATA_HOME`：既定で`$HOME/.local/share`です。"
 
 #. type: Title -
 #: ../man/direnv.1.md:173
 #, no-wrap
 msgid "FILES"
-msgstr ""
+msgstr "ファイル"
 
 #. type: Plain text
 #: ../man/direnv.1.md:177
 msgid ""
 "`$XDG_CONFIG_HOME/direnv/direnv.toml` : Direnv configuration. See direnv."
 "toml(1)."
-msgstr ""
+msgstr "`$XDG_CONFIG_HOME/direnv/direnv.toml`：Direnvの構成です。direnv.toml(1)を参照。"
 
 #. type: Plain text
 #: ../man/direnv.1.md:180
 msgid ""
 "`$XDG_CONFIG_HOME/direnv/direnvrc` : Bash code loaded before every `.envrc`. "
 "Good for personal extensions."
-msgstr ""
+msgstr "`$XDG_CONFIG_HOME/direnv/direnvrc`：`.envrc`の前に、毎回読み込まれるBashコードです。個人用の拡張に好適です。"
 
 #. type: Plain text
 #: ../man/direnv.1.md:183
 msgid ""
 "`$XDG_CONFIG_HOME/direnv/lib/*.sh` : Bash code loaded before every `.envrc`. "
 "Good for third-party extensions."
-msgstr ""
+msgstr "`$XDG_CONFIG_HOME/direnv/lib/*.sh`：`.envrc`の前に毎回読み込まれるBashのコードです。サードパーティの拡張に好適です。"
 
 #. type: Plain text
 #: ../man/direnv.1.md:186
 msgid ""
 "`$XDG_DATA_HOME/direnv/allow` : Records which `.envrc` files have been "
 "`direnv allow`ed."
-msgstr ""
+msgstr "`$XDG_DATA_HOME/direnv/allow`：どの`.envrc`ファイルが`direnv allow`されたかを記録しているところです。"
 
 #. type: Title -
 #: ../man/direnv.1.md:188
 #, no-wrap
 msgid "CONTRIBUTE"
-msgstr ""
+msgstr "貢献"
 
 #. type: Plain text
 #: ../man/direnv.1.md:191
 msgid "Bug reports, contributions and forks are welcome."
-msgstr ""
+msgstr "不具合の報告、貢献、フォークを歓迎します。"
 
 #. type: Plain text
 #: ../man/direnv.1.md:194
-#, fuzzy
-#| msgid ""
-#| "Bug reports, contributions and forks are welcome. All bugs or other forms "
-#| "of discussion happen on http://github.com/direnv/direnv/issues ."
 msgid ""
 "All bugs or other forms of discussion happen on <http://github.com/direnv/"
 "direnv/issues>"
-msgstr ""
-"不具合の報告、貢献やフォークは歓迎します。\n"
-"不具合やその他の議論は全て、 http://github.com/direnv/direnv/issues でされて"
-"います。"
+msgstr "不具合やその他の議論は全て、 http://github.com/direnv/direnv/issues でされています"
 
 #. type: Plain text
 #: ../man/direnv.1.md:197
 msgid ""
 "There is also a wiki available where you can share your usage patterns or "
 "other tips and tricks <https://github.com/direnv/direnv/wiki>"
-msgstr ""
+msgstr "ウィキもあり、使用しているパターン、その他のコツやトリックを共有したりすることができます：<https://github.com/direnv/direnv/wiki>"
 
 #. type: Plain text
 #: ../man/direnv.1.md:200
 msgid ""
 "Or drop by on the [#direnv channel on FreeNode](irc://#direnv@FreeNode) to "
 "have a chat."
-msgstr ""
+msgstr "もしくは、チャットをされる方は[FreeNodeの#direnvチャンネル](irc://#direnv@FreeNode)にお立ち寄りください。"
 
 #. type: Plain text
 #: ../man/direnv.1.md:209
-#, fuzzy
-#| msgid "direnv(1), direnv.toml(1)"
 msgid "direnv-stdlib(1), direnv.toml(1), direnv-fetchurl(1)"
-msgstr "direnv(1), direnv.toml(1)"
+msgstr "direnv-stdlib(1), direnv.toml(1), direnv-fetchurl(1)"
 
 #. type: Title #
 #: ../docs/ruby.md:1
