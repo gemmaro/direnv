@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Direnv\n"
 "POT-Creation-Date: 2025-03-14 21:07+0900\n"
-"PO-Revision-Date: 2024-11-24 09:22+0900\n"
+"PO-Revision-Date: 2025-03-14 21:44+0900\n"
 "Last-Translator: gemmaro\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -181,7 +181,7 @@ msgstr "簡単なデモ"
 #. type: Plain text
 #: ../README.md:52
 msgid "To follow along in your shell once direnv is installed."
-msgstr ""
+msgstr "direnvがインストールされたら、シェルで以下をやってみましょう。"
 
 #. type: Fenced code block (shell)
 #: ../README.md:53
@@ -219,6 +219,36 @@ msgid ""
 "$ echo ${FOO-nope}\n"
 "nope\n"
 msgstr ""
+"# デモ用に新しいフォルダを作ります。\n"
+"$ mkdir ~/my-project\n"
+"$ cd ~/my-project\n"
+"\n"
+"# FOO環境変数が読み込まれていないことを確かめます。\n"
+"$ echo ${FOO-nope}\n"
+"nope\n"
+"\n"
+"# 新しく.envrcを作ります。このファイルはbashのコードで、direnvにより読み込まれます。\n"
+"$ echo export FOO=foo > .envrc\n"
+".envrc is not allowed\n"
+"\n"
+"# 安全上の仕組みにより、.envrcの読み込みが許可されませんでした。\n"
+"# ここでは信頼できるため、実行を許可しましょう。\n"
+"$ direnv allow .\n"
+"direnv: reloading\n"
+"direnv: loading .envrc\n"
+"direnv export: +FOO\n"
+"\n"
+"# FOO環境変数が読み込まれたことを確かめます。\n"
+"$ echo ${FOO-nope}\n"
+"foo\n"
+"\n"
+"# プロジェクトを出ます\n"
+"$ cd ..\n"
+"direnv: unloading\n"
+"\n"
+"# するとFOOは再び未設定になりました\n"
+"$ echo ${FOO-nope}\n"
+"nope\n"
 
 #. type: Title ###
 #: ../README.md:87
@@ -233,6 +263,8 @@ msgid ""
 "utility functions that are made available in the context of the `.envrc` "
 "file."
 msgstr ""
+"手作業で変数をエクスポートするのは、ちょっとした作業の繰り返しになってしまいます。\n"
+"そこでdirenvでは、いろいろな補助関数が提供されており、`.envrc`ファイルの文脈で使えるようになっています。"
 
 #. type: Plain text
 #: ../README.md:96
@@ -242,13 +274,16 @@ msgid ""
 "you can write `PATH_add bin`. It's shorter and avoids a common mistake where "
 "`$PATH=bin`."
 msgstr ""
+"例えば、`PATH_add`関数は$PATH環境変数にパスを拡張したり、前置したりするのに使います。\n"
+"`export PATH=$PWD/bin:$PATH`とする代わりに、`PATH_add bin`と書けます。\n"
+"こちらの方が短く、`$PATH=bin`のようなよくある誤りを避けられます。"
 
 #. type: Plain text
 #: ../README.md:99
 msgid ""
 "To find the documentation for all available functions check the [direnv-"
 "stdlib(1) man page](man/direnv-stdlib.1.md)."
-msgstr ""
+msgstr "使える全ての関数の文書については、[direnv-stdlib(1)のmanページ](man/direnv-stdlib.1.md)をご確認ください。"
 
 #. type: Plain text
 #: ../README.md:104
@@ -258,6 +293,8 @@ msgid ""
 "loaded before your `.envrc` and thus allows you to make your own extensions "
 "to direnv."
 msgstr ""
+"`~/.config/direnv/direnvrc`や`~/.config/direnv/lib/*.sh`にbashファイルを作ると、自分だけの拡張を作ることもできます。\n"
+"このファイルは`.envrc`より前に読み込まれるため、direnvに独自の拡張を作ることができるようになっているのです。"
 
 #. type: Plain text
 #: ../README.md:109
@@ -266,28 +303,28 @@ msgid ""
 "coexistence of both is needed, one can use `.envrc` for leveraging stdlib "
 "and append `dotenv` at the end of it to instruct direnv to also read the `."
 "env` file next."
-msgstr ""
+msgstr "なお、この機能は`.env`ファイルでは対応していません。両方を共存させる必要があるときは、`.envrc`の標準ライブラリを活用し、末尾に`dotenv`を付けることで、次にdirenvに`.env`も読むよう伝えられます。"
 
 #. type: Title ##
 #: ../README.md:110
 #, no-wrap
 msgid "Docs"
-msgstr ""
+msgstr "文書"
 
 #. type: Bullet: '* '
 #: ../README.md:117
 msgid "[Install direnv](docs/installation.md)"
-msgstr ""
+msgstr "[direnvのインストール](docs/installation.md)"
 
 #. type: Bullet: '* '
 #: ../README.md:117
 msgid "[Hook into your shell](docs/hook.md)"
-msgstr ""
+msgstr "[シェルにフックする](docs/hook.md)"
 
 #. type: Bullet: '* '
 #: ../README.md:117
 msgid "[Develop for direnv](docs/development.md)"
-msgstr ""
+msgstr "[direnvの開発](docs/development.md)"
 
 #. type: Bullet: '* '
 #: ../README.md:117
@@ -297,7 +334,7 @@ msgstr "[direnvとruby-installでRubyを管理する](docs/ruby.md)"
 #. type: Bullet: '* '
 #: ../README.md:117
 msgid "[Community Wiki](https://github.com/direnv/direnv/wiki)"
-msgstr ""
+msgstr "[コミュニティのウィキ](https://github.com/direnv/direnv/wiki)"
 
 #. type: Plain text
 #: ../README.md:120
@@ -305,12 +342,14 @@ msgid ""
 "Make sure to take a look at the wiki! It contains all sorts of useful "
 "information such as common recipes, editor integration, tips-and-tricks."
 msgstr ""
+"ぜひウィキをご覧ください！\n"
+"よくあるレシピ、エディタとの統合、コツやトリックといった、多岐にわたる有用な情報が含まれています。"
 
 #. type: Title ###
 #: ../README.md:121
 #, no-wrap
 msgid "Man pages"
-msgstr ""
+msgstr "manページ"
 
 #. type: Bullet: '* '
 #: ../README.md:127
@@ -325,7 +364,7 @@ msgstr "[direnv-fetchurl(1) のmanページ](man/direnv-fetchurl.1.md)"
 #. type: Bullet: '* '
 #: ../README.md:127
 msgid "[direnv-stdlib(1) man page](man/direnv-stdlib.1.md)"
-msgstr ""
+msgstr "[direnv-stdlib(1)のmanページ](man/direnv-stdlib.1.md)"
 
 #. type: Bullet: '* '
 #: ../README.md:127
@@ -336,14 +375,14 @@ msgstr "[direnv.toml(1) のmanページ](man/direnv.toml.1.md)"
 #: ../README.md:128
 #, no-wrap
 msgid "FAQ"
-msgstr ""
+msgstr "よくある質問"
 
 #. type: Plain text
 #: ../README.md:132
 msgid ""
 "Based on GitHub issues interactions, here are the top things that have been "
 "confusing for users:"
-msgstr ""
+msgstr "GitHubの質問のやり取りに基づいたところ、利用者が混乱しがちなことの上位にくるものとして以下があります。"
 
 #. type: Bullet: '1. '
 #: ../README.md:136
@@ -352,6 +391,9 @@ msgid ""
 "found useful to have and accumulated over the years. You can find it here: "
 "https://github.com/direnv/direnv/blob/master/stdlib.sh"
 msgstr ""
+"direnvには関数の標準ライブラリがあります。\n"
+"これは補助機能の集まりであり、あって便利だと気付いて長年にわたって蓄積してきたものです。\n"
+"https://github.com/direnv/direnv/blob/master/stdlib.sh にあります。"
 
 #. type: Bullet: '2. '
 #: ../README.md:140
@@ -360,6 +402,8 @@ msgid ""
 "a bash file to `~/.config/direnv/direnvrc`. This file is loaded and its "
 "content made available to any `.envrc` file."
 msgstr ""
+"`~/.config/direnv/direnvrc`にbashファイルを追加して、自分だけの関数の集まりで標準ライブラリを上塗りすることができます。\n"
+"このファイルが読み込まれると、その内容は任意の`.envrc`ファイルで使えるようになります。"
 
 #. type: Bullet: '3. '
 #: ../README.md:147
@@ -371,12 +415,16 @@ msgid ""
 "shells. It also means that aliases and functions are not exportable right "
 "now."
 msgstr ""
+"direnvは、現在のシェルに`.envrc`を読み込みません。\n"
+"新しいbashの副プロセスを作り、標準ライブラリ、direnvrc、`.envrc`を読み込んで、環境の差分を元のシェルに送り返すだけです。\n"
+"これにより、direnvは環境の変更を正確に記録することができ、また全ての種類のシェルで動作します。\n"
+"また、エイリアスと関数は現時点でエクスポートできないということでもあります。"
 
 #. type: Title ##
 #: ../README.md:148
 #, no-wrap
 msgid "Contributing"
-msgstr ""
+msgstr "貢献"
 
 #. type: Plain text
 #: ../README.md:152
@@ -384,6 +432,8 @@ msgid ""
 "Bug reports, contributions and forks are welcome. All bugs or other forms of "
 "discussion happen on http://github.com/direnv/direnv/issues ."
 msgstr ""
+"不具合の報告、貢献やフォークは歓迎します。\n"
+"不具合やその他の議論は全て、 http://github.com/direnv/direnv/issues でされています。"
 
 #. type: Plain text
 #: ../README.md:156
@@ -392,19 +442,21 @@ msgid ""
 "chat. If you ask a question make sure to stay around as not everyone is "
 "active all day."
 msgstr ""
+"もしくは、チャットをする際は[Matrix](https://matrix.to/#/#direnv:numtide.com)にお立ち寄りください。\n"
+"質問するときは、全員が一日中アクティブではないため、回答が返ってくるまでしばらく待ってみてください。"
 
 #. type: Title ###
 #: ../README.md:157
 #, no-wrap
 msgid "Testing"
-msgstr ""
+msgstr "テスト"
 
 #. type: Plain text
 #: ../README.md:160
 msgid ""
 "To run our tests, use these commands: (you may need to install [homebrew]"
 "(https://brew.sh/))"
-msgstr ""
+msgstr "テストを実行するには、次のコマンドを使ってください（[homebrew](https://brew.sh/)をインストールする必要があるかもしれません）。"
 
 #. type: Fenced code block
 #: ../README.md:161
@@ -413,24 +465,26 @@ msgid ""
 "brew bundle\n"
 "make test\n"
 msgstr ""
+"brew bundle\n"
+"make test\n"
 
 #. type: Title ##
 #: ../README.md:166
 #, no-wrap
 msgid "Complementary projects"
-msgstr ""
+msgstr "相補的なプロジェクト"
 
 #. type: Plain text
 #: ../README.md:169
 msgid ""
 "Here is a list of projects you might want to look into if you are using "
 "direnv."
-msgstr ""
+msgstr "以下は、direnvを使う場合に見てみると良さそうなプロジェクトの一覧です。"
 
 #. type: Bullet: '* '
 #: ../README.md:172
 msgid "[starship](https://starship.rs/) - A cross-shell prompt."
-msgstr ""
+msgstr "[starship](https://starship.rs/) - 様々なシェルで使えるプロンプトです。"
 
 #. type: Bullet: '* '
 #: ../README.md:172
@@ -438,13 +492,13 @@ msgid ""
 "[Projects for Nix integration](https://github.com/direnv/direnv/wiki/Nix) - "
 "choose from one of a variety of projects offering improvements over Direnv's "
 "built-in `use_nix` implementation."
-msgstr ""
+msgstr "[Nixとの統合用のプロジェクト](https://github.com/direnv/direnv/wiki/Nix) - Direnvの組込の`use_nix`の実装をさらに向上させる、様々なプロジェクトがあります。ご自由にお選びください。"
 
 #. type: Title ##
 #: ../README.md:173
 #, no-wrap
 msgid "Related projects"
-msgstr ""
+msgstr "関連するプロジェクト"
 
 #. type: Plain text
 #: ../README.md:177
@@ -452,20 +506,22 @@ msgid ""
 "Here is a list of other projects found in the same design space. Feel free "
 "to submit new ones."
 msgstr ""
+"以下は、同じ設計の領域にある他のプロジェクトの一覧です。\n"
+"新しいものがあったら遠慮なくご提案ください。"
 
 #. type: Bullet: '* '
 #: ../README.md:186
 msgid ""
 "[Environment Modules](http://modules.sourceforge.net/) - one of the oldest "
 "(in a good way) environment-loading systems"
-msgstr ""
+msgstr "[Environment Modules](http://modules.sourceforge.net/) - （いい意味で）最古の環境読込みシステム"
 
 #. type: Bullet: '* '
 #: ../README.md:186
 msgid ""
 "[autoenv](https://github.com/hyperupcall/autoenv) - older, popular, and "
 "lightweight."
-msgstr ""
+msgstr "[autoenv](https://github.com/hyperupcall/autoenv) - 比較的古く、人気があり、軽量です。"
 
 #. type: Bullet: '* '
 #: ../README.md:186
@@ -473,7 +529,7 @@ msgid ""
 "[zsh-autoenv](https://github.com/Tarrasch/zsh-autoenv) - a feature-rich "
 "mixture of autoenv and [smartcd](https://github.com/cxreg/smartcd): enter/"
 "leave events, nesting, stashing (Zsh-only)."
-msgstr ""
+msgstr "[zsh-autoenv](https://github.com/Tarrasch/zsh-autoenv) - 機能が豊富な、autoenvと[smartcd](https://github.com/cxreg/smartcd)の取り合わせです。入退出のイベント、入れ子、スタッシュがあります（Zshのみ）。"
 
 #. type: Bullet: '* '
 #: ../README.md:186
@@ -481,14 +537,14 @@ msgid ""
 "[asdf](https://github.com/asdf-vm/asdf) - a pure bash solution that has a "
 "plugin system. The [asdf-direnv](https://github.com/asdf-community/asdf-"
 "direnv) plugin allows using asdf managed tools with direnv."
-msgstr ""
+msgstr "[asdf](https://github.com/asdf-vm/asdf) - プラグインシステムを備えている純粋なbashのソリューション。[asdf-direnv](https://github.com/asdf-community/asdf-direnv)プラグインでは、asdfで管理されたツールとdirenvを一緒に使うことができます。"
 
 #. type: Bullet: '* '
 #: ../README.md:186
 msgid ""
 "[ondir](https://github.com/alecthomas/ondir) - OnDir is a small program to "
 "automate tasks specific to certain directories"
-msgstr ""
+msgstr "[ondir](https://github.com/alecthomas/ondir) - OnDirは特定のディレクトリに特有のタスクを自動化する、小さなプログラムです"
 
 #. type: Bullet: '* '
 #: ../README.md:186
