@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Direnv\n"
 "POT-Creation-Date: 2025-03-14 21:07+0900\n"
-"PO-Revision-Date: 2025-03-14 21:44+0900\n"
+"PO-Revision-Date: 2025-03-14 22:26+0900\n"
 "Last-Translator: gemmaro\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -551,7 +551,7 @@ msgstr "[ondir](https://github.com/alecthomas/ondir) - OnDirは特定のディ�
 msgid ""
 "[shadowenv](https://shopify.github.io/shadowenv/) - uses an s-expression "
 "format to define environment changes that should be executed"
-msgstr ""
+msgstr "[shadowenv](https://shopify.github.io/shadowenv/) - S式の形式を使って環境の変更を定義し、それが実行されます"
 
 #. type: Bullet: '* '
 #: ../README.md:186
@@ -559,24 +559,24 @@ msgid ""
 "[quickenv](https://github.com/untitaker/quickenv) - an alternative loader "
 "for `.envrc` files that does not hook into your shell and favors speed over "
 "convenience."
-msgstr ""
+msgstr "[quickenv](https://github.com/untitaker/quickenv) - 代替となる`.envrc`ファイルの読込器で、シェルにフックを掛けません。利便性と引き換えに速度に長けています。"
 
 #. type: Bullet: '* '
 #: ../README.md:186
 msgid ""
 "[mise](https://github.com/jdx/mise) - direnv, make and asdf all in one tool."
-msgstr ""
+msgstr "[mise](https://github.com/jdx/mise) - direnv、make、asdfを1つのツールにまとめたものです。"
 
 #. type: Title ##
 #: ../README.md:187
 #, no-wrap
 msgid "Commercial support"
-msgstr ""
+msgstr "商業支援"
 
 #. type: Plain text
 #: ../README.md:190
 msgid "Looking for help or customization?"
-msgstr ""
+msgstr "ヘルプやカスタマイズをお求めですか？"
 
 #. type: Plain text
 #: ../README.md:193
@@ -584,6 +584,8 @@ msgid ""
 "Get in touch with Numtide to get a quote. We make it easy for companies to "
 "work with Open Source projects: <https://numtide.com/contact>"
 msgstr ""
+"お見積もりはNumtideまでご連絡ください。\n"
+"我々は企業がオープンソースプロジェクトと協働しやすくなるようにしています：<https://numtide.com/contact>"
 
 #. type: Title -
 #: ../README.md:194 ../man/direnv-stdlib.1.md:445
