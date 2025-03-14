@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Direnv\n"
-"POT-Creation-Date: 2024-11-24 09:01+0900\n"
+"POT-Creation-Date: 2025-03-14 21:07+0900\n"
 "PO-Revision-Date: 2024-11-24 09:22+0900\n"
 "Last-Translator: gemmaro\n"
 "Language-Team: none\n"
@@ -35,10 +35,15 @@ msgid ""
 "com&logo=matrix&server_fqdn=matrix.numtide.com)](https://matrix.to/#/#direnv:"
 "numtide.com)"
 msgstr ""
-"[![Nixでビルド](https://builtwithnix.org/badge.svg)](https://builtwithnix.org)\n"
-"[![パッケージ化の状態](https://repology.org/badge/tiny-repos/direnv.svg)](https://repology.org/project/direnv/versions)\n"
-"[![最新のパッケージバージョン](https://repology.org/badge/latest-versions/direnv.svg)](https://repology.org/project/direnv/versions)\n"
-"[![Matrixのサポート場所](https://img.shields.io/matrix/direnv:numtide.com.svg?label=%23direnv%3Anumtide.com&logo=matrix&server_fqdn=matrix.numtide.com)](https://matrix.to/#/#direnv:numtide.com)"
+"[![Nixでビルド](https://builtwithnix.org/badge.svg)](https://builtwithnix."
+"org)\n"
+"[![パッケージ化の状態](https://repology.org/badge/tiny-repos/direnv.svg)]"
+"(https://repology.org/project/direnv/versions)\n"
+"[![最新のパッケージバージョン](https://repology.org/badge/latest-versions/"
+"direnv.svg)](https://repology.org/project/direnv/versions)\n"
+"[![Matrixのサポート場所](https://img.shields.io/matrix/direnv:numtide.com."
+"svg?label=%23direnv%3Anumtide.com&logo=matrix&server_fqdn=matrix.numtide."
+"com)](https://matrix.to/#/#direnv:numtide.com)"
 
 #. type: Plain text
 #: ../README.md:12
@@ -48,7 +53,8 @@ msgid ""
 "current directory."
 msgstr ""
 "`direnv`はシェルの拡張です。\n"
-"現在のディレクトリによって、環境変数の読み込みないし読み戻しをする新しい機能で、既存のシェルを拡張します。"
+"現在のディレクトリによって、環境変数の読み込みないし読み戻しをする新しい機能"
+"で、既存のシェルを拡張します。"
 
 #. type: Title ##
 #: ../README.md:13
@@ -86,8 +92,12 @@ msgid ""
 "is loaded into a **bash** sub-shell and all exported variables are then "
 "captured by direnv and then made available to the current shell."
 msgstr ""
-"各プロンプトの前に、現在のディレクトリとその上位のディレクトリの`.envrc`ファイル（と[任意で](man/direnv.toml.1.md#codeloaddotenvcode)`.env`ファイル）の存在がdirenvにより確認されます。\n"
-"ファイルが存在するとき（かつ権限があるとき）、**bash**の副シェルに読み込まれ、全てのエクスポートされた変数がdirenvに捕捉されて、現在のシェルで使えるようになります。"
+"各プロンプトの前に、現在のディレクトリとその上位のディレクトリの`.envrc`ファ"
+"イル（と[任意で](man/direnv.toml.1.md#codeloaddotenvcode)`.env`ファイル）の存"
+"在がdirenvにより確認されます。\n"
+"ファイルが存在するとき（かつ権限があるとき）、**bash**の副シェルに読み込ま"
+"れ、全てのエクスポートされた変数がdirenvに捕捉されて、現在のシェルで使えるよ"
+"うになります。"
 
 #. type: Plain text
 #: ../README.md:30
@@ -97,7 +107,8 @@ msgid ""
 "`~/.profile` file."
 msgstr ""
 "bash、zsh、tcsh、fishといった全ての一般的なシェルのフックに対応しています。\n"
-"これにより、`~/.profile`ファイルを散らかすことなく、プロジェクト固有の環境変数が使えます。"
+"これにより、`~/.profile`ファイルを散らかすことなく、プロジェクト固有の環境変"
+"数が使えます。"
 
 #. type: Plain text
 #: ../README.md:34
@@ -106,8 +117,10 @@ msgid ""
 "enough to be unnoticeable on each prompt. It is also language-agnostic and "
 "can be used to build solutions similar to rbenv, pyenv and phpenv."
 msgstr ""
-"direnvは単一の静的実行ファイルにコンパイルされるため、プロンプトが表示されるとき、存在を感じさせない程度には高速です。\n"
-"また言語に依らないため、rbenv、pyenv、phpenvに似たソリューションの構築に使えます。"
+"direnvは単一の静的実行ファイルにコンパイルされるため、プロンプトが表示される"
+"とき、存在を感じさせない程度には高速です。\n"
+"また言語に依らないため、rbenv、pyenv、phpenvに似たソリューションの構築に使え"
+"ます。"
 
 #. type: Title ##
 #: ../README.md:35
@@ -130,7 +143,9 @@ msgstr "Unixライクなオペレーティングシステム (macOS, Linux, ...)
 #: ../README.md:41
 msgid ""
 "A supported shell (bash, zsh, tcsh, fish, elvish, powershell, murex, nushell)"
-msgstr "対応しているシェル (bash, zsh, tcsh, fish, elvish, powershell, murex, nushell)"
+msgstr ""
+"対応しているシェル (bash, zsh, tcsh, fish, elvish, powershell, murex, "
+"nushell)"
 
 #. type: Title ###
 #: ../README.md:42
@@ -439,21 +454,21 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '* '
-#: ../README.md:185
+#: ../README.md:186
 msgid ""
 "[Environment Modules](http://modules.sourceforge.net/) - one of the oldest "
 "(in a good way) environment-loading systems"
 msgstr ""
 
 #. type: Bullet: '* '
-#: ../README.md:185
+#: ../README.md:186
 msgid ""
 "[autoenv](https://github.com/hyperupcall/autoenv) - older, popular, and "
 "lightweight."
 msgstr ""
 
 #. type: Bullet: '* '
-#: ../README.md:185
+#: ../README.md:186
 msgid ""
 "[zsh-autoenv](https://github.com/Tarrasch/zsh-autoenv) - a feature-rich "
 "mixture of autoenv and [smartcd](https://github.com/cxreg/smartcd): enter/"
@@ -461,7 +476,7 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '* '
-#: ../README.md:185
+#: ../README.md:186
 msgid ""
 "[asdf](https://github.com/asdf-vm/asdf) - a pure bash solution that has a "
 "plugin system. The [asdf-direnv](https://github.com/asdf-community/asdf-"
@@ -469,57 +484,65 @@ msgid ""
 msgstr ""
 
 #. type: Bullet: '* '
-#: ../README.md:185
+#: ../README.md:186
 msgid ""
 "[ondir](https://github.com/alecthomas/ondir) - OnDir is a small program to "
 "automate tasks specific to certain directories"
 msgstr ""
 
 #. type: Bullet: '* '
-#: ../README.md:185
+#: ../README.md:186
 msgid ""
 "[shadowenv](https://shopify.github.io/shadowenv/) - uses an s-expression "
 "format to define environment changes that should be executed"
 msgstr ""
 
 #. type: Bullet: '* '
-#: ../README.md:185
+#: ../README.md:186
 msgid ""
 "[quickenv](https://github.com/untitaker/quickenv) - an alternative loader "
 "for `.envrc` files that does not hook into your shell and favors speed over "
 "convenience."
 msgstr ""
 
-#. type: Title ##
+#. type: Bullet: '* '
 #: ../README.md:186
+msgid ""
+"[mise](https://github.com/jdx/mise) - direnv, make and asdf all in one tool."
+msgstr ""
+
+#. type: Title ##
+#: ../README.md:187
 #, no-wrap
 msgid "Commercial support"
 msgstr ""
 
 #. type: Plain text
-#: ../README.md:189
+#: ../README.md:190
 msgid "Looking for help or customization?"
 msgstr ""
 
 #. type: Plain text
-#: ../README.md:192
+#: ../README.md:193
 msgid ""
 "Get in touch with Numtide to get a quote. We make it easy for companies to "
 "work with Open Source projects: <https://numtide.com/contact>"
 msgstr ""
 
 #. type: Title -
-#: ../README.md:193 ../man/direnv-stdlib.1.md:445
+#: ../README.md:194 ../man/direnv-stdlib.1.md:445
 #, no-wrap
 msgid "COPYRIGHT"
 msgstr "著作情報"
 
 #. type: Plain text
-#: ../README.md:195
+#: ../README.md:196
 msgid ""
 "[MIT licence](LICENSE) - Copyright (C) 2019 @zimbatm and [contributors]"
 "(https://github.com/direnv/direnv/graphs/contributors)"
-msgstr "[MIT licence](LICENSE) - Copyright (C) 2019 @zimbatm と[貢献者の方々](https://github.com/direnv/direnv/graphs/contributors)"
+msgstr ""
+"[MIT licence](LICENSE) - Copyright (C) 2019 @zimbatm と[貢献者の方々]"
+"(https://github.com/direnv/direnv/graphs/contributors)"
 
 #. type: Title =
 #: ../man/direnv-stdlib.1.md:2
@@ -847,7 +870,8 @@ msgid ""
 "integrity using the provided `integrity-hash`."
 msgstr ""
 "与えられた`URL`から別のスクリプトを読み込みます。\n"
-"読み込む前に、与えられた`正統性のためのハッシュ`を使って、正統性を検査します。"
+"読み込む前に、与えられた`正統性のためのハッシュ`を使って、正統性を検査しま"
+"す。"
 
 #. type: Plain text
 #: ../man/direnv-stdlib.1.md:127
