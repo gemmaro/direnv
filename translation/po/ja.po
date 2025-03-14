@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Direnv\n"
 "POT-Creation-Date: 2025-03-14 22:30+0900\n"
-"PO-Revision-Date: 2025-03-14 22:46+0900\n"
+"PO-Revision-Date: 2025-03-14 22:55+0900\n"
 "Last-Translator: gemmaro\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -2114,6 +2114,9 @@ msgid ""
 "set -g direnv_fish_mode eval_after_arrow # trigger direnv at prompt, and only after arrow-based directory changes before executing command\n"
 "set -g direnv_fish_mode disable_arrow    # trigger direnv at prompt only, this is similar functionality to the original behavior\n"
 msgstr ""
+"set -g direnv_fish_mode eval_on_arrow    # プロンプト、及び矢印ベースのディレクトリの変更でdirenvを開始（既定）\n"
+"set -g direnv_fish_mode eval_after_arrow # プロンプト、及び実行コマンド前の矢印ベースのディレクトリの変更でのみdirenvを開始\n"
+"set -g direnv_fish_mode disable_arrow    # プロンプトでのみdirenvを開始。元々の動作と似た機能性です\n"
 
 #. type: Title ###
 #: ../man/direnv.1.md:95
@@ -2209,7 +2212,7 @@ msgstr "使い方"
 msgid ""
 "In some target folder, create an `.envrc` file and add some export(1)  and "
 "unset(1) directives in it."
-msgstr ""
+msgstr "対象のフォルダにより、`.envrc`ファイルを作ってexport(1)やunset(1)ディレクティブを加えてください。"
 
 #. type: Plain text
 #: ../man/direnv.1.md:144
@@ -2255,7 +2258,7 @@ msgstr ""
 #. type: Plain text
 #: ../man/direnv.1.md:162
 msgid "Hopefully this is enough to get you started."
-msgstr ""
+msgstr "きっとここまでで始めてみる分には充分でしょう。"
 
 #. type: Title -
 #: ../man/direnv.1.md:164
