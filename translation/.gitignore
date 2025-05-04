@@ -1,1 +1,6 @@
-/ja/
+/ja/.bundle/
+/ja/Gemfile.lock
+/ja/_includes/head-custom.html
+/ja/README.md
+/ja/docs/
+/ja/man/
