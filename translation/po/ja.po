@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Direnv\n"
 "POT-Creation-Date: 2025-05-04 13:40+0900\n"
-"PO-Revision-Date: 2025-03-14 22:55+0900\n"
+"PO-Revision-Date: 2025-05-04 13:52+0900\n"
 "Last-Translator: gemmaro\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -1626,10 +1626,8 @@ msgstr ""
 
 #. type: Plain text
 #: ../man/direnv-stdlib.1.md:340
-#, fuzzy
-#| msgid "See https://guix.gnu.org/en/manual/en/guix.html#Invoking-guix-shell"
 msgid "See https://guix.gnu.org/manual/en/guix.html#Invoking-guix-shell"
-msgstr "https://guix.gnu.org/en/manual/en/guix.html#Invoking-guix-shell を参照"
+msgstr "https://guix.gnu.org/manual/en/guix.html#Invoking-guix-shell を参照"
 
 #. type: Title ###
 #: ../man/direnv-stdlib.1.md:341
@@ -1959,6 +1957,9 @@ msgid ""
 "depending on your current directory. This allows you to have project-"
 "specific environment variables and not clutter the \"~/.profile\" file."
 msgstr ""
+"`direnv`はシェルの環境変数の管理器です。\n"
+"現在のディレクトリによって、環境変数を読み込んだり読み戻したりするために、bashやzshやfishといったシェルにフックを掛けられます。\n"
+"これにより、プロジェクト固有の環境変数を持たせることができ、「~/.profile」ファイルが散らかりません。"
 
 #. type: Plain text
 #: ../man/direnv.1.md:26
@@ -2110,16 +2111,10 @@ msgstr "direnv hook fish | source\n"
 
 #. type: Plain text
 #: ../man/direnv.1.md:87
-#, fuzzy
-#| msgid ""
-#| "Fish supports 3 modes you can set with with the global environment "
-#| "variable `direnv_fish_mode`:"
 msgid ""
 "Fish supports 3 modes you can set with the global environment variable "
 "`direnv_fish_mode`:"
-msgstr ""
-"Fishは3つのモードに対応しており、大域環境変数`direnv_fish_mode`で設定できま"
-"す。"
+msgstr "Fishは3つのモードに対応しており、大域環境変数`direnv_fish_mode`で設定できます。"
 
 #. type: Fenced code block (fish)
 #: ../man/direnv.1.md:88
@@ -2239,6 +2234,9 @@ msgid ""
 "automatically. Otherwise any git repo that you pull, or tar archive that you "
 "unpack, would be able to wipe your hard drive once you `cd` into it."
 msgstr ""
+"次のプロンプトを見ると、`.envrc`が阻まれたことでdirenvが文句を言っていることに気付きます。\n"
+"これは安全のための仕組みであり、自動で新しいファイルを読み込むのを避けています。\n"
+"さもなくば、プルした全てのgitリポジトリや、開封したtarアーカイブにより、その中に`cd`したが最後、ハードドライブを消し去ってしまうことができるでしょうから。"
 
 #. type: Plain text
 #: ../man/direnv.1.md:149
@@ -2248,6 +2246,9 @@ msgid ""
 "edit .` is a handy shortcut that opens the file in your $EDITOR and "
 "automatically reloads it if the file's modification time has changed."
 msgstr ""
+"ここでは何も悪いことは起きようがないことは確実です。\n"
+"`direnv allow .`と入力し、direnvが新しい環境を読み込む様子を見てください。\n"
+"なお、`.direnv edit .`は手軽なショートカットであり、$EDITORでファイルを開いてファイルの変更時間が変化したときに自動で再読込されます。"
 
 #. type: Plain text
 #: ../man/direnv.1.md:154
@@ -2257,6 +2258,10 @@ msgid ""
 "loaded again. That's the base of the mechanism that allows you to build cool "
 "things."
 msgstr ""
+"これで環境が読み込まれました。\n"
+"ディレクトリの外に`cd`すると、自動で読み戻されることに気付かれるでしょう。\n"
+"`cd`で中に戻ると、再び読み込まれます。\n"
+"以上が基本的な仕組みであり、これを使うと色々と工夫できるでしょう。"
 
 #. type: Plain text
 #: ../man/direnv.1.md:160
