@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Direnv\n"
-"POT-Creation-Date: 2025-05-04 13:40+0900\n"
+"POT-Creation-Date: 2025-05-05 18:26+0900\n"
 "PO-Revision-Date: 2025-05-05 18:13+0900\n"
 "Last-Translator: gemmaro\n"
 "Language-Team: none\n"
@@ -16,6 +16,403 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+#. type: Title =
+#: ../man/direnv.toml.1.md:2
+#, fuzzy, no-wrap
+#| msgid "DIRENV-STDLIB 1 \"2019\" direnv \"User Manuals\""
+msgid "DIRENV.TOML 1 \"2019\" direnv \"User Manuals\""
+msgstr "DIRENV-STDLIB 1 \"2019\" direnv 「利用者用マニュアル」"
+
+#. type: Title -
+#: ../man/direnv.toml.1.md:5 ../man/direnv-stdlib.1.md:5 ../man/direnv.1.md:5
+#, no-wrap
+msgid "NAME"
+msgstr "名称"
+
+#. type: Plain text
+#: ../man/direnv.toml.1.md:8
+msgid "direnv.toml - the direnv configuration file"
+msgstr ""
+
+#. type: Title -
+#: ../man/direnv.toml.1.md:10 ../man/direnv-stdlib.1.md:15
+#: ../man/direnv.1.md:15
+#, no-wrap
+msgid "DESCRIPTION"
+msgstr "解説"
+
+#. type: Plain text
+#: ../man/direnv.toml.1.md:13
+msgid ""
+"A configuration file in [TOML](https://github.com/toml-lang/toml) format to "
+"specify a variety of configuration options for direnv. The file is read from "
+"`$XDG_CONFIG_HOME/direnv/direnv.toml` (typically ~/.config/direnv/direnv."
+"toml)."
+msgstr ""
+
+#. type: Plain text
+#: ../man/direnv.toml.1.md:15
+#, no-wrap
+msgid "> For versions v2.21.0 and below use config.toml instead of direnv.toml\n"
+msgstr ""
+
+#. type: Title -
+#: ../man/direnv.toml.1.md:17
+#, no-wrap
+msgid "FORMAT"
+msgstr ""
+
+#. type: Plain text
+#: ../man/direnv.toml.1.md:20
+msgid ""
+"See the [TOML GitHub Repository](https://github.com/toml-lang/toml) for "
+"details about the syntax of the configuration file."
+msgstr ""
+
+#. type: Title -
+#: ../man/direnv.toml.1.md:22
+#, no-wrap
+msgid "CONFIG"
+msgstr ""
+
+#. type: Plain text
+#: ../man/direnv.toml.1.md:25
+msgid ""
+"The configuration is specified in sections which each have their own top-"
+"level [tables](https://github.com/toml-lang/toml#table), with key/value "
+"pairs specified in each section."
+msgstr ""
+
+#. type: Plain text
+#: ../man/direnv.toml.1.md:27 ../man/direnv.toml.1.md:96
+#: ../man/direnv.toml.1.md:120 ../man/direnv-stdlib.1.md:27
+#: ../man/direnv-stdlib.1.md:37 ../man/direnv-stdlib.1.md:55
+#: ../man/direnv-stdlib.1.md:68 ../man/direnv-stdlib.1.md:90
+#: ../man/direnv-stdlib.1.md:99 ../man/direnv-stdlib.1.md:148
+#: ../man/direnv-stdlib.1.md:156 ../man/direnv-stdlib.1.md:179
+#: ../man/direnv-stdlib.1.md:201 ../man/direnv-stdlib.1.md:289
+msgid "Example:"
+msgstr "例は次の通り。"
+
+#. type: Fenced code block (toml)
+#: ../man/direnv.toml.1.md:28
+#, no-wrap
+msgid ""
+"[section]\n"
+"key = \"value\"\n"
+msgstr ""
+
+#. type: Plain text
+#: ../man/direnv.toml.1.md:34
+msgid "The following sections are supported:"
+msgstr ""
+
+#. type: Title ##
+#: ../man/direnv.toml.1.md:35
+#, no-wrap
+msgid "[global]"
+msgstr ""
+
+#. type: Title ###
+#: ../man/direnv.toml.1.md:37
+#, no-wrap
+msgid "`bash_path`"
+msgstr ""
+
+#. type: Plain text
+#: ../man/direnv.toml.1.md:40
+msgid ""
+"This allows one to hard-code the position of bash. It maybe be useful to set "
+"this to avoid having direnv to fail when PATH is being mutated."
+msgstr ""
+
+#. type: Title ###
+#: ../man/direnv.toml.1.md:41
+#, no-wrap
+msgid "`disable_stdin`"
+msgstr ""
+
+#. type: Plain text
+#: ../man/direnv.toml.1.md:44
+msgid ""
+"If set to `true`, stdin is disabled (redirected to /dev/null) during the `."
+"envrc` evaluation."
+msgstr ""
+
+#. type: Title ###
+#: ../man/direnv.toml.1.md:45
+#, fuzzy, no-wrap
+#| msgid "`layout pipenv`"
+msgid "`load_dotenv`"
+msgstr "`layout pipenv`"
+
+#. type: Plain text
+#: ../man/direnv.toml.1.md:48
+#, no-wrap
+msgid "> direnv >= 2.31.0 is required\n"
+msgstr ""
+
+#. type: Plain text
+#: ../man/direnv.toml.1.md:50
+msgid ""
+"If set to `true`, also look for and load `.env` files on top of the `.envrc` "
+"files. If both `.envrc` and `.env` files exist, the `.envrc` will always be "
+"chosen first."
+msgstr ""
+
+#. type: Title ###
+#: ../man/direnv.toml.1.md:51
+#, fuzzy, no-wrap
+#| msgid "`use rbenv`"
+msgid "`strict_env`"
+msgstr "`use rbenv`"
+
+#. type: Plain text
+#: ../man/direnv.toml.1.md:55
+msgid ""
+"If set to `true`, the `.envrc` will be loaded with `set -euo pipefail`. This "
+"option will be the default in the future."
+msgstr ""
+
+#. type: Title ###
+#: ../man/direnv.toml.1.md:56
+#, no-wrap
+msgid "`warn_timeout`"
+msgstr ""
+
+#. type: Plain text
+#: ../man/direnv.toml.1.md:60
+msgid ""
+"Specify how long to wait before warning the user that the command is taking "
+"too long to execute. Defaults to \"5s\"."
+msgstr ""
+
+#. type: Plain text
+#: ../man/direnv.toml.1.md:64
+msgid ""
+"A duration string is a possibly signed sequence of decimal numbers, each "
+"with optional fraction and a unit suffix, such as \"300ms\", \"-1.5h\" or "
+"\"2h45m\".  Valid time units are \"ns\", \"us\" (or \"µs\"), \"ms\", \"s\", "
+"\"m\", \"h\"."
+msgstr ""
+
+#. type: Plain text
+#: ../man/direnv.toml.1.md:67
+msgid ""
+"This feature is disabled if the duration is lower or equal to zero.  Will be "
+"overwritten if the environment variable `DIRENV_WARN_TIMEOUT` is set to any "
+"of the above values."
+msgstr ""
+
+#. type: Title ###
+#: ../man/direnv.toml.1.md:68
+#, no-wrap
+msgid "`hide_env_diff`"
+msgstr ""
+
+#. type: Plain text
+#: ../man/direnv.toml.1.md:72
+msgid ""
+"Set to `true` to hide the diff of the environment variables when loading the "
+"`.envrc`. Defaults to `false`."
+msgstr ""
+
+#. type: Title ###
+#: ../man/direnv.toml.1.md:73
+#, no-wrap
+msgid "`log_format`"
+msgstr ""
+
+#. type: Plain text
+#: ../man/direnv.toml.1.md:76
+msgid ""
+"Sets the log format for direnv outputs. Set to \"-\" to disable normal "
+"logging."
+msgstr ""
+
+#. type: Plain text
+#: ../man/direnv.toml.1.md:78 ../man/direnv.toml.1.md:84
+#, no-wrap
+msgid "> direnv >= 2.36.0 is required\n"
+msgstr ""
+
+#. type: Title ###
+#: ../man/direnv.toml.1.md:79
+#, no-wrap
+msgid "`log_filter`"
+msgstr ""
+
+#. type: Plain text
+#: ../man/direnv.toml.1.md:82
+msgid "A Regexp that can be used to filter out some of the logs."
+msgstr ""
+
+#. type: Title ##
+#: ../man/direnv.toml.1.md:85
+#, no-wrap
+msgid "[whitelist]"
+msgstr ""
+
+#. type: Plain text
+#: ../man/direnv.toml.1.md:88
+msgid ""
+"Specifying whitelist directives marks specific directory hierarchies or "
+"specific directories as \"trusted\" -- direnv will evaluate any matching ."
+"envrc files regardless of whether they have been specifically allowed. "
+"**This feature should be used with great care**, as anyone with the ability "
+"to write files to that directory (including collaborators on VCS "
+"repositories) will be able to execute arbitrary code on your computer."
+msgstr ""
+
+#. type: Plain text
+#: ../man/direnv.toml.1.md:90
+msgid "There are two types of whitelist directives supported:"
+msgstr ""
+
+#. type: Title ###
+#: ../man/direnv.toml.1.md:91
+#, no-wrap
+msgid "`prefix`"
+msgstr ""
+
+#. type: Plain text
+#: ../man/direnv.toml.1.md:94
+msgid ""
+"Accepts an array of strings. If any of the strings in this list are a prefix "
+"of an .envrc file's absolute path, that file will be implicitly allowed, "
+"regardless of contents or past usage of `direnv allow` or `direnv deny`."
+msgstr ""
+
+#. type: Fenced code block (toml)
+#: ../man/direnv.toml.1.md:97
+#, no-wrap
+msgid ""
+"[whitelist]\n"
+"prefix = [ \"/home/user/code/project-a\", \"~/code/project-b\" ]\n"
+msgstr ""
+
+#. type: Plain text
+#: ../man/direnv.toml.1.md:103
+msgid "In this example, the following .envrc files will be implicitly allowed:"
+msgstr ""
+
+#. type: Bullet: '* '
+#: ../man/direnv.toml.1.md:109 ../man/direnv.toml.1.md:130
+msgid "`/home/user/code/project-a/.envrc`"
+msgstr ""
+
+#. type: Bullet: '* '
+#: ../man/direnv.toml.1.md:109
+msgid "`/home/user/code/project-a/subdir/.envrc`"
+msgstr ""
+
+#. type: Bullet: '* '
+#: ../man/direnv.toml.1.md:109
+msgid "`~/code/project-b/.envrc`"
+msgstr ""
+
+#. type: Bullet: '* '
+#: ../man/direnv.toml.1.md:109
+msgid "`~/code/project-b/subdir/.envrc`"
+msgstr ""
+
+#. type: Bullet: '* '
+#: ../man/direnv.toml.1.md:109
+msgid "and so on"
+msgstr ""
+
+#. type: Plain text
+#: ../man/direnv.toml.1.md:111 ../man/direnv.toml.1.md:132
+msgid ""
+"In this example, the following .envrc files will not be implicitly allowed "
+"(although they can be explicitly allowed by running `direnv allow`):"
+msgstr ""
+
+#. type: Bullet: '* '
+#: ../man/direnv.toml.1.md:114
+msgid "`/home/user/project-c/.envrc`"
+msgstr ""
+
+#. type: Bullet: '* '
+#: ../man/direnv.toml.1.md:114
+msgid "`/opt/random/.envrc`"
+msgstr ""
+
+#. type: Title ###
+#: ../man/direnv.toml.1.md:115
+#, no-wrap
+msgid "`exact`"
+msgstr ""
+
+#. type: Plain text
+#: ../man/direnv.toml.1.md:118
+msgid ""
+"Accepts an array of strings. Each string can be a directory name or the full "
+"path to an .envrc file. If a directory name is passed, it will be treated as "
+"if it had been passed as itself with `/.envrc` appended. After resolving the "
+"filename, each string will be checked for being an exact match with an ."
+"envrc file's absolute path. If they match exactly, that .envrc file will be "
+"implicitly allowed, regardless of contents or past usage of `direnv allow` "
+"or `direnv deny`."
+msgstr ""
+
+#. type: Fenced code block (toml)
+#: ../man/direnv.toml.1.md:121
+#, no-wrap
+msgid ""
+"[whitelist]\n"
+"exact = [ \"/home/user/project-a/.envrc\", \"~/project-b/subdir-a\" ]\n"
+msgstr ""
+
+#. type: Plain text
+#: ../man/direnv.toml.1.md:127
+msgid ""
+"In this example, the following .envrc files will be implicitly allowed, and "
+"no others:"
+msgstr ""
+
+#. type: Bullet: '* '
+#: ../man/direnv.toml.1.md:130
+msgid "`~/project-b/subdir-a`"
+msgstr ""
+
+#. type: Bullet: '* '
+#: ../man/direnv.toml.1.md:135
+msgid "`/home/user/code/project-b/subproject-c/.envrc`"
+msgstr ""
+
+#. type: Bullet: '* '
+#: ../man/direnv.toml.1.md:135
+msgid "`~/code/.envrc`"
+msgstr ""
+
+#. type: Title -
+#: ../man/direnv.toml.1.md:137 ../README.md:194 ../man/direnv-stdlib.1.md:445
+#: ../man/direnv.1.md:202
+#, no-wrap
+msgid "COPYRIGHT"
+msgstr "著作情報"
+
+#. type: Plain text
+#: ../man/direnv.toml.1.md:140 ../man/direnv-stdlib.1.md:448
+#: ../man/direnv.1.md:205
+msgid "MIT licence - Copyright (C) 2019 @zimbatm and contributors"
+msgstr "MIT licence - Copyright (C) 2019 @zimbatm and contributors"
+
+#. type: Title -
+#: ../man/direnv.toml.1.md:142 ../man/direnv-stdlib.1.md:450
+#: ../man/direnv.1.md:207
+#, no-wrap
+msgid "SEE ALSO"
+msgstr "こちらも参照"
+
+#. type: Plain text
+#: ../man/direnv.toml.1.md:144
+#, fuzzy
+#| msgid "direnv(1), direnv.toml(1)"
+msgid "direnv(1), direnv-stdlib(1)"
+msgstr "direnv(1), direnv.toml(1)"
 
 #. type: Title =
 #: ../README.md:2
@@ -635,12 +1032,6 @@ msgstr ""
 "我々は企業がオープンソースプロジェクトと協働しやすくなるようにしています："
 "<https://numtide.com/contact>"
 
-#. type: Title -
-#: ../README.md:194 ../man/direnv-stdlib.1.md:445 ../man/direnv.1.md:202
-#, no-wrap
-msgid "COPYRIGHT"
-msgstr "著作情報"
-
 #. type: Plain text
 #: ../README.md:196
 msgid ""
@@ -655,12 +1046,6 @@ msgstr ""
 #, no-wrap
 msgid "DIRENV-STDLIB 1 \"2019\" direnv \"User Manuals\""
 msgstr "DIRENV-STDLIB 1 \"2019\" direnv 「利用者用マニュアル」"
-
-#. type: Title -
-#: ../man/direnv-stdlib.1.md:5 ../man/direnv.1.md:5
-#, no-wrap
-msgid "NAME"
-msgstr "名称"
 
 #. type: Plain text
 #: ../man/direnv-stdlib.1.md:8
@@ -677,12 +1062,6 @@ msgstr "処方"
 #: ../man/direnv-stdlib.1.md:13
 msgid "`direnv stdlib`"
 msgstr "`direnv stdlib`"
-
-#. type: Title -
-#: ../man/direnv-stdlib.1.md:15 ../man/direnv.1.md:15
-#, no-wrap
-msgid "DESCRIPTION"
-msgstr "解説"
 
 #. type: Plain text
 #: ../man/direnv-stdlib.1.md:18
@@ -717,16 +1096,6 @@ msgstr ""
 "*コマンド*が使えるときは0を返します。\n"
 "そうでなければ1を返します。\n"
 "コマンドとは、PATH中のバイナリまたはシェル関数です。"
-
-#. type: Plain text
-#: ../man/direnv-stdlib.1.md:27 ../man/direnv-stdlib.1.md:37
-#: ../man/direnv-stdlib.1.md:55 ../man/direnv-stdlib.1.md:68
-#: ../man/direnv-stdlib.1.md:90 ../man/direnv-stdlib.1.md:99
-#: ../man/direnv-stdlib.1.md:148 ../man/direnv-stdlib.1.md:156
-#: ../man/direnv-stdlib.1.md:179 ../man/direnv-stdlib.1.md:201
-#: ../man/direnv-stdlib.1.md:289
-msgid "Example:"
-msgstr "例は次の通り。"
 
 #. type: Plain text
 #: ../man/direnv-stdlib.1.md:31
@@ -1914,17 +2283,6 @@ msgstr ""
 "    fi\n"
 
 #. type: Plain text
-#: ../man/direnv-stdlib.1.md:448 ../man/direnv.1.md:205
-msgid "MIT licence - Copyright (C) 2019 @zimbatm and contributors"
-msgstr "MIT licence - Copyright (C) 2019 @zimbatm and contributors"
-
-#. type: Title -
-#: ../man/direnv-stdlib.1.md:450 ../man/direnv.1.md:207
-#, no-wrap
-msgid "SEE ALSO"
-msgstr "こちらも参照"
-
-#. type: Plain text
 #: ../man/direnv-stdlib.1.md:452
 msgid "direnv(1), direnv.toml(1)"
 msgstr "direnv(1), direnv.toml(1)"
@@ -1958,8 +2316,10 @@ msgid ""
 "specific environment variables and not clutter the \"~/.profile\" file."
 msgstr ""
 "`direnv`はシェルの環境変数の管理器です。\n"
-"現在のディレクトリによって、環境変数を読み込んだり読み戻したりするために、bashやzshやfishといったシェルにフックを掛けられます。\n"
-"これにより、プロジェクト固有の環境変数を持たせることができ、「~/.profile」ファイルが散らかりません。"
+"現在のディレクトリによって、環境変数を読み込んだり読み戻したりするために、"
+"bashやzshやfishといったシェルにフックを掛けられます。\n"
+"これにより、プロジェクト固有の環境変数を持たせることができ、「~/.profile」"
+"ファイルが散らかりません。"
 
 #. type: Plain text
 #: ../man/direnv.1.md:26
@@ -2114,7 +2474,9 @@ msgstr "direnv hook fish | source\n"
 msgid ""
 "Fish supports 3 modes you can set with the global environment variable "
 "`direnv_fish_mode`:"
-msgstr "Fishは3つのモードに対応しており、大域環境変数`direnv_fish_mode`で設定できます。"
+msgstr ""
+"Fishは3つのモードに対応しており、大域環境変数`direnv_fish_mode`で設定できま"
+"す。"
 
 #. type: Fenced code block (fish)
 #: ../man/direnv.1.md:88
@@ -2234,9 +2596,13 @@ msgid ""
 "automatically. Otherwise any git repo that you pull, or tar archive that you "
 "unpack, would be able to wipe your hard drive once you `cd` into it."
 msgstr ""
-"次のプロンプトを見ると、`.envrc`が阻まれたことでdirenvが文句を言っていることに気付きます。\n"
-"これは安全のための仕組みであり、自動で新しいファイルを読み込むのを避けています。\n"
-"さもなくば、プルした全てのgitリポジトリや、開封したtarアーカイブにより、その中に`cd`したが最後、ハードドライブを消し去ってしまうことができるでしょうから。"
+"次のプロンプトを見ると、`.envrc`が阻まれたことでdirenvが文句を言っていること"
+"に気付きます。\n"
+"これは安全のための仕組みであり、自動で新しいファイルを読み込むのを避けていま"
+"す。\n"
+"さもなくば、プルした全てのgitリポジトリや、開封したtarアーカイブにより、その"
+"中に`cd`したが最後、ハードドライブを消し去ってしまうことができるでしょうか"
+"ら。"
 
 #. type: Plain text
 #: ../man/direnv.1.md:149
@@ -2248,7 +2614,8 @@ msgid ""
 msgstr ""
 "ここでは何も悪いことは起きようがないことは確実です。\n"
 "`direnv allow .`と入力し、direnvが新しい環境を読み込む様子を見てください。\n"
-"なお、`.direnv edit .`は手軽なショートカットであり、$EDITORでファイルを開いてファイルの変更時間が変化したときに自動で再読込されます。"
+"なお、`.direnv edit .`は手軽なショートカットであり、$EDITORでファイルを開いて"
+"ファイルの変更時間が変化したときに自動で再読込されます。"
 
 #. type: Plain text
 #: ../man/direnv.1.md:154
@@ -2613,7 +2980,8 @@ msgid ""
 "it's not restricted to a single language."
 msgstr ""
 "ここまで見てきたように、この手法はrubyに限定されません。\n"
-"`~/.pythons`配下に様々なバージョンのpythonをインストールし、`~/.direnvrc`で`use_python`を定義することができるでしょう。\n"
+"`~/.pythons`配下に様々なバージョンのpythonをインストールし、`~/.direnvrc`で"
+"`use_python`を定義することができるでしょう。\n"
 "perl、phpなども同様です。\n"
 "これはdirenvの良い点であり、単一の言語に制限されないのです。"
 

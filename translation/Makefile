@@ -1,7 +1,7 @@
 all: ja/README.md
 .PHONY: all
 
-ja/README.md: po/en.pot po/ja.po
+ja/README.md: po/en.pot po/ja.po po4a.cfg
 	LANG=C po4a po4a.cfg
 
 po/en.pot:
