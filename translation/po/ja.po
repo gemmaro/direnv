@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Direnv\n"
 "POT-Creation-Date: 2025-05-04 13:40+0900\n"
-"PO-Revision-Date: 2025-05-04 13:52+0900\n"
+"PO-Revision-Date: 2025-05-05 18:13+0900\n"
 "Last-Translator: gemmaro\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -2603,6 +2603,7 @@ msgstr ""
 msgid "Conclusion"
 msgstr "結論"
 
+# 「~」を含むパスは行内コードにしないと、打ち消し線に誤解されることがあります。
 #. type: Plain text
 #: ../docs/ruby.md:89
 msgid ""
@@ -2612,9 +2613,8 @@ msgid ""
 "it's not restricted to a single language."
 msgstr ""
 "ここまで見てきたように、この手法はrubyに限定されません。\n"
-"~/.pythons 配下に様々なバージョンのpythonをインストールし、~/.direnvrc で"
-"`use_python`を定義することができるでしょう。\n"
-"perl、php、などなども同様です。\n"
+"`~/.pythons`配下に様々なバージョンのpythonをインストールし、`~/.direnvrc`で`use_python`を定義することができるでしょう。\n"
+"perl、phpなども同様です。\n"
 "これはdirenvの良い点であり、単一の言語に制限されないのです。"
 
 #. type: Plain text
