@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Direnv\n"
 "POT-Creation-Date: 2025-05-05 18:26+0900\n"
-"PO-Revision-Date: 2025-05-05 18:13+0900\n"
+"PO-Revision-Date: 2025-05-05 21:47+0900\n"
 "Last-Translator: gemmaro\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -19,10 +19,9 @@ msgstr ""
 
 #. type: Title =
 #: ../man/direnv.toml.1.md:2
-#, fuzzy, no-wrap
-#| msgid "DIRENV-STDLIB 1 \"2019\" direnv \"User Manuals\""
+#, no-wrap
 msgid "DIRENV.TOML 1 \"2019\" direnv \"User Manuals\""
-msgstr "DIRENV-STDLIB 1 \"2019\" direnv 「利用者用マニュアル」"
+msgstr "DIRENV.TOML 1 \"2019\" direnv 「利用者便覧」"
 
 #. type: Title -
 #: ../man/direnv.toml.1.md:5 ../man/direnv-stdlib.1.md:5 ../man/direnv.1.md:5
@@ -33,7 +32,7 @@ msgstr "名称"
 #. type: Plain text
 #: ../man/direnv.toml.1.md:8
 msgid "direnv.toml - the direnv configuration file"
-msgstr ""
+msgstr "direnv.toml - direnvの構成ファイル"
 
 #. type: Title -
 #: ../man/direnv.toml.1.md:10 ../man/direnv-stdlib.1.md:15
@@ -55,26 +54,26 @@ msgstr ""
 #: ../man/direnv.toml.1.md:15
 #, no-wrap
 msgid "> For versions v2.21.0 and below use config.toml instead of direnv.toml\n"
-msgstr ""
+msgstr "> バージョンv2.21.0以前については、direnv.tomlではなくconfig.tomlを使ってください。\n"
 
 #. type: Title -
 #: ../man/direnv.toml.1.md:17
 #, no-wrap
 msgid "FORMAT"
-msgstr ""
+msgstr "形式"
 
 #. type: Plain text
 #: ../man/direnv.toml.1.md:20
 msgid ""
 "See the [TOML GitHub Repository](https://github.com/toml-lang/toml) for "
 "details about the syntax of the configuration file."
-msgstr ""
+msgstr "構成ファイルの構文について、詳しくは[TOMLのGitHubリポジトリ](https://github.com/toml-lang/toml)をご参照ください。"
 
 #. type: Title -
 #: ../man/direnv.toml.1.md:22
 #, no-wrap
 msgid "CONFIG"
-msgstr ""
+msgstr "構成"
 
 #. type: Plain text
 #: ../man/direnv.toml.1.md:25
@@ -102,23 +101,25 @@ msgid ""
 "[section]\n"
 "key = \"value\"\n"
 msgstr ""
+"[節]\n"
+"キー = \"バリュー\"\n"
 
 #. type: Plain text
 #: ../man/direnv.toml.1.md:34
 msgid "The following sections are supported:"
-msgstr ""
+msgstr "以下の節に対応しています。"
 
 #. type: Title ##
 #: ../man/direnv.toml.1.md:35
 #, no-wrap
 msgid "[global]"
-msgstr ""
+msgstr "[global]"
 
 #. type: Title ###
 #: ../man/direnv.toml.1.md:37
 #, no-wrap
 msgid "`bash_path`"
-msgstr ""
+msgstr "`bash_path`"
 
 #. type: Plain text
 #: ../man/direnv.toml.1.md:40
@@ -126,32 +127,33 @@ msgid ""
 "This allows one to hard-code the position of bash. It maybe be useful to set "
 "this to avoid having direnv to fail when PATH is being mutated."
 msgstr ""
+"これにより、bashの場所をハードコードできます。\n"
+"PATHが改変されたときにdirenvの実行が失敗することを避ける上で、これを設定すると便利かもしれません。"
 
 #. type: Title ###
 #: ../man/direnv.toml.1.md:41
 #, no-wrap
 msgid "`disable_stdin`"
-msgstr ""
+msgstr "`disable_stdin`"
 
 #. type: Plain text
 #: ../man/direnv.toml.1.md:44
 msgid ""
 "If set to `true`, stdin is disabled (redirected to /dev/null) during the `."
 "envrc` evaluation."
-msgstr ""
+msgstr "`true`に設定したとき、`.envrc`の評価時に標準入力が無効になります（/dev/nullにリダイレクトされます）。"
 
 #. type: Title ###
 #: ../man/direnv.toml.1.md:45
-#, fuzzy, no-wrap
-#| msgid "`layout pipenv`"
+#, no-wrap
 msgid "`load_dotenv`"
-msgstr "`layout pipenv`"
+msgstr "`load_dotenv`"
 
 #. type: Plain text
 #: ../man/direnv.toml.1.md:48
 #, no-wrap
 msgid "> direnv >= 2.31.0 is required\n"
-msgstr ""
+msgstr "> direnv >= 2.31.0が必要です。\n"
 
 #. type: Plain text
 #: ../man/direnv.toml.1.md:50
@@ -163,10 +165,9 @@ msgstr ""
 
 #. type: Title ###
 #: ../man/direnv.toml.1.md:51
-#, fuzzy, no-wrap
-#| msgid "`use rbenv`"
+#, no-wrap
 msgid "`strict_env`"
-msgstr "`use rbenv`"
+msgstr "`strict_env`"
 
 #. type: Plain text
 #: ../man/direnv.toml.1.md:55
@@ -174,12 +175,14 @@ msgid ""
 "If set to `true`, the `.envrc` will be loaded with `set -euo pipefail`. This "
 "option will be the default in the future."
 msgstr ""
+"`true`に設定しているとき、`.envrc`は`set -euo pipefail`で読み込まれます。\n"
+"このオプションは将来の既定となります。"
 
 #. type: Title ###
 #: ../man/direnv.toml.1.md:56
 #, no-wrap
 msgid "`warn_timeout`"
-msgstr ""
+msgstr "`warn_timeout`"
 
 #. type: Plain text
 #: ../man/direnv.toml.1.md:60
@@ -187,6 +190,8 @@ msgid ""
 "Specify how long to wait before warning the user that the command is taking "
 "too long to execute. Defaults to \"5s\"."
 msgstr ""
+"コマンドの実行が長く掛かり過ぎていることを利用者に警告するまでどれだけ待つか指定します。\n"
+"既定は「5s」です。"
 
 #. type: Plain text
 #: ../man/direnv.toml.1.md:64
@@ -209,7 +214,7 @@ msgstr ""
 #: ../man/direnv.toml.1.md:68
 #, no-wrap
 msgid "`hide_env_diff`"
-msgstr ""
+msgstr "`hide_env_diff`"
 
 #. type: Plain text
 #: ../man/direnv.toml.1.md:72
@@ -217,12 +222,14 @@ msgid ""
 "Set to `true` to hide the diff of the environment variables when loading the "
 "`.envrc`. Defaults to `false`."
 msgstr ""
+"`true`に設定すると、`.envrc`を読み込んだときに環境変数の差分を隠します。\n"
+"既定で`false`です。"
 
 #. type: Title ###
 #: ../man/direnv.toml.1.md:73
 #, no-wrap
 msgid "`log_format`"
-msgstr ""
+msgstr "`log_format`"
 
 #. type: Plain text
 #: ../man/direnv.toml.1.md:76
@@ -230,29 +237,31 @@ msgid ""
 "Sets the log format for direnv outputs. Set to \"-\" to disable normal "
 "logging."
 msgstr ""
+"履歴の形式をdirenvの出力に設定します。\n"
+"「-」に設定すると通常の履歴が無効になります。"
 
 #. type: Plain text
 #: ../man/direnv.toml.1.md:78 ../man/direnv.toml.1.md:84
 #, no-wrap
 msgid "> direnv >= 2.36.0 is required\n"
-msgstr ""
+msgstr "> direnv >= 2.36.0が必要です。\n"
 
 #. type: Title ###
 #: ../man/direnv.toml.1.md:79
 #, no-wrap
 msgid "`log_filter`"
-msgstr ""
+msgstr "`log_filter`"
 
 #. type: Plain text
 #: ../man/direnv.toml.1.md:82
 msgid "A Regexp that can be used to filter out some of the logs."
-msgstr ""
+msgstr "正規表現を使って、何らかの履歴に絞り込めます。"
 
 #. type: Title ##
 #: ../man/direnv.toml.1.md:85
 #, no-wrap
 msgid "[whitelist]"
-msgstr ""
+msgstr "[whitelist]"
 
 #. type: Plain text
 #: ../man/direnv.toml.1.md:88
@@ -268,13 +277,13 @@ msgstr ""
 #. type: Plain text
 #: ../man/direnv.toml.1.md:90
 msgid "There are two types of whitelist directives supported:"
-msgstr ""
+msgstr "2種類の許可リストのディレクティブに対応しています。"
 
 #. type: Title ###
 #: ../man/direnv.toml.1.md:91
 #, no-wrap
 msgid "`prefix`"
-msgstr ""
+msgstr "`prefix`"
 
 #. type: Plain text
 #: ../man/direnv.toml.1.md:94
@@ -291,36 +300,38 @@ msgid ""
 "[whitelist]\n"
 "prefix = [ \"/home/user/code/project-a\", \"~/code/project-b\" ]\n"
 msgstr ""
+"[whitelist]\n"
+"prefix = [ \"/home/user/code/project-a\", \"~/code/project-b\" ]\n"
 
 #. type: Plain text
 #: ../man/direnv.toml.1.md:103
 msgid "In this example, the following .envrc files will be implicitly allowed:"
-msgstr ""
+msgstr "この例では、以下の.envrcファイルが暗に許可されます。"
 
 #. type: Bullet: '* '
 #: ../man/direnv.toml.1.md:109 ../man/direnv.toml.1.md:130
 msgid "`/home/user/code/project-a/.envrc`"
-msgstr ""
+msgstr "`/home/user/code/project-a/.envrc`"
 
 #. type: Bullet: '* '
 #: ../man/direnv.toml.1.md:109
 msgid "`/home/user/code/project-a/subdir/.envrc`"
-msgstr ""
+msgstr "`/home/user/code/project-a/subdir/.envrc`"
 
 #. type: Bullet: '* '
 #: ../man/direnv.toml.1.md:109
 msgid "`~/code/project-b/.envrc`"
-msgstr ""
+msgstr "`~/code/project-b/.envrc`"
 
 #. type: Bullet: '* '
 #: ../man/direnv.toml.1.md:109
 msgid "`~/code/project-b/subdir/.envrc`"
-msgstr ""
+msgstr "`~/code/project-b/subdir/.envrc`"
 
 #. type: Bullet: '* '
 #: ../man/direnv.toml.1.md:109
 msgid "and so on"
-msgstr ""
+msgstr "などなど"
 
 #. type: Plain text
 #: ../man/direnv.toml.1.md:111 ../man/direnv.toml.1.md:132
@@ -332,18 +343,18 @@ msgstr ""
 #. type: Bullet: '* '
 #: ../man/direnv.toml.1.md:114
 msgid "`/home/user/project-c/.envrc`"
-msgstr ""
+msgstr "`/home/user/project-c/.envrc`"
 
 #. type: Bullet: '* '
 #: ../man/direnv.toml.1.md:114
 msgid "`/opt/random/.envrc`"
-msgstr ""
+msgstr "`/opt/random/.envrc`"
 
 #. type: Title ###
 #: ../man/direnv.toml.1.md:115
 #, no-wrap
 msgid "`exact`"
-msgstr ""
+msgstr "`exact`"
 
 #. type: Plain text
 #: ../man/direnv.toml.1.md:118
@@ -364,6 +375,8 @@ msgid ""
 "[whitelist]\n"
 "exact = [ \"/home/user/project-a/.envrc\", \"~/project-b/subdir-a\" ]\n"
 msgstr ""
+"[whitelist]\n"
+"exact = [ \"/home/user/project-a/.envrc\", \"~/project-b/subdir-a\" ]\n"
 
 #. type: Plain text
 #: ../man/direnv.toml.1.md:127
@@ -375,17 +388,17 @@ msgstr ""
 #. type: Bullet: '* '
 #: ../man/direnv.toml.1.md:130
 msgid "`~/project-b/subdir-a`"
-msgstr ""
+msgstr "`~/project-b/subdir-a`"
 
 #. type: Bullet: '* '
 #: ../man/direnv.toml.1.md:135
 msgid "`/home/user/code/project-b/subproject-c/.envrc`"
-msgstr ""
+msgstr "`/home/user/code/project-b/subproject-c/.envrc`"
 
 #. type: Bullet: '* '
 #: ../man/direnv.toml.1.md:135
 msgid "`~/code/.envrc`"
-msgstr ""
+msgstr "`~/code/.envrc`"
 
 #. type: Title -
 #: ../man/direnv.toml.1.md:137 ../README.md:194 ../man/direnv-stdlib.1.md:445
@@ -409,10 +422,8 @@ msgstr "こちらも参照"
 
 #. type: Plain text
 #: ../man/direnv.toml.1.md:144
-#, fuzzy
-#| msgid "direnv(1), direnv.toml(1)"
 msgid "direnv(1), direnv-stdlib(1)"
-msgstr "direnv(1), direnv.toml(1)"
+msgstr "direnv(1), direnv-stdlib(1)"
 
 #. type: Title =
 #: ../README.md:2
