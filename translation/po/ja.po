@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Direnv\n"
 "POT-Creation-Date: 2025-05-05 18:26+0900\n"
-"PO-Revision-Date: 2025-05-05 21:47+0900\n"
+"PO-Revision-Date: 2025-05-05 21:51+0900\n"
 "Last-Translator: gemmaro\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -429,7 +429,7 @@ msgstr "direnv(1), direnv-stdlib(1)"
 #: ../README.md:2
 #, no-wrap
 msgid "direnv -- unclutter your .profile"
-msgstr "direnv -- .profileを整頓"
+msgstr "direnv -- .profileを散らかさない"
 
 #. type: Plain text
 #: ../README.md:8
@@ -2311,7 +2311,7 @@ msgstr ""
 #. type: Plain text
 #: ../man/direnv.1.md:8
 msgid "direnv - unclutter your .profile"
-msgstr "direnv - .profileを整頓"
+msgstr "direnv - .profileを散らかさない"
 
 #. type: Plain text
 #: ../man/direnv.1.md:13
