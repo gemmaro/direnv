@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Direnv\n"
 "POT-Creation-Date: 2025-05-05 18:26+0900\n"
-"PO-Revision-Date: 2025-05-05 21:51+0900\n"
+"PO-Revision-Date: 2025-05-26 22:31+0900\n"
 "Last-Translator: gemmaro\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -49,6 +49,8 @@ msgid ""
 "`$XDG_CONFIG_HOME/direnv/direnv.toml` (typically ~/.config/direnv/direnv."
 "toml)."
 msgstr ""
+"構成ファイルは[TOML](https://github.com/toml-lang/toml)形式で、direnvの様々な構成オプションを指定できます。\n"
+"ファイルは`$XDG_CONFIG_HOME/direnv/direnv.toml`（普通は~/.config/direnv/direnv.toml）から読み込まれます。"
 
 #. type: Plain text
 #: ../man/direnv.toml.1.md:15
@@ -82,6 +84,8 @@ msgid ""
 "level [tables](https://github.com/toml-lang/toml#table), with key/value "
 "pairs specified in each section."
 msgstr ""
+"構成は節で指定され、それぞれの節には最上位の[テーブル](https://github.com/toml-lang/toml#table)があります。\n"
+"これらのテーブルはキーバリューの対からなり、各節で指定されます。"
 
 #. type: Plain text
 #: ../man/direnv.toml.1.md:27 ../man/direnv.toml.1.md:96
@@ -162,6 +166,8 @@ msgid ""
 "files. If both `.envrc` and `.env` files exist, the `.envrc` will always be "
 "chosen first."
 msgstr ""
+"`true`に設定すると、`.env`ファイルを探し、`.envrc`ファイルの最上位で読み込みます。\n"
+"`.envrc`と`.env`のファイルが両方とも存在するとき、`.envrc`が必ず最初に選ばれます。"
 
 #. type: Title ###
 #: ../man/direnv.toml.1.md:51
@@ -201,6 +207,10 @@ msgid ""
 "\"2h45m\".  Valid time units are \"ns\", \"us\" (or \"µs\"), \"ms\", \"s\", "
 "\"m\", \"h\"."
 msgstr ""
+"時間間隔の文字列は、符号付きの10進の数字の並びを取りえます。\n"
+"端数や単位が後ろにあっても構いません。\n"
+"例えば「300ms」「-1.5h」「2h45m」です。\n"
+"有効な時間の単位は「ns」「us」（または「µs」）「ms」「s」「m」「h」です。"
 
 #. type: Plain text
 #: ../man/direnv.toml.1.md:67
@@ -209,6 +219,8 @@ msgid ""
 "overwritten if the environment variable `DIRENV_WARN_TIMEOUT` is set to any "
 "of the above values."
 msgstr ""
+"この機能は時間間隔がゼロ以下のとき無効になります。\n"
+"環境変数`DIRENV_WARN_TIMEOUT`が前述の何れかの値に設定されているとき、上書きされます。"
 
 #. type: Title ###
 #: ../man/direnv.toml.1.md:68
