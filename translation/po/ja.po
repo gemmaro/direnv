@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Direnv\n"
 "POT-Creation-Date: 2025-05-05 18:26+0900\n"
-"PO-Revision-Date: 2025-05-26 22:31+0900\n"
+"PO-Revision-Date: 2025-05-29 21:29+0900\n"
 "Last-Translator: gemmaro\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -285,6 +285,10 @@ msgid ""
 "to write files to that directory (including collaborators on VCS "
 "repositories) will be able to execute arbitrary code on your computer."
 msgstr ""
+"ホワイトリストのディレクティブを指定すると、特定のディレクトリ階層または特定のディレクトリには、「信頼済み」の印が付きます。\n"
+"一致する`.envrc`ファイルは、それが個別に許可されているかどうかに関係なく、direnvにより評価されます。  \n"
+"**この機能を使うときはよく注意してください**。\n"
+"そのディレクトリにファイルを書き込める人（VCSリポジトリの共同作業者を含む）が、コンピューター上で任意のコードを実行できるようになる可能性があります。"
 
 #. type: Plain text
 #: ../man/direnv.toml.1.md:90
@@ -304,6 +308,9 @@ msgid ""
 "of an .envrc file's absolute path, that file will be implicitly allowed, "
 "regardless of contents or past usage of `direnv allow` or `direnv deny`."
 msgstr ""
+"文字列の配列を受け付けます。\n"
+"このリストの文字列のどれかが、.envrc ファイルの絶対パスの前の部分であるとき、そのファイルは暗に許可されます。\n"
+"内容がどうであれ、またそれまでに`direnv allow`または`direnv deny`されていようと、関係ありません。"
 
 #. type: Fenced code block (toml)
 #: ../man/direnv.toml.1.md:97
@@ -350,7 +357,7 @@ msgstr "などなど"
 msgid ""
 "In this example, the following .envrc files will not be implicitly allowed "
 "(although they can be explicitly allowed by running `direnv allow`):"
-msgstr ""
+msgstr "この例では、以下の .envrc ファイルは暗に許可されません（ただし`direnv allow`で明示的に許可できます）。"
 
 #. type: Bullet: '* '
 #: ../man/direnv.toml.1.md:114
@@ -379,6 +386,12 @@ msgid ""
 "implicitly allowed, regardless of contents or past usage of `direnv allow` "
 "or `direnv deny`."
 msgstr ""
+"文字列の配列を受け付けます。\n"
+"各文字列はディレクトリ名または`.envrc`ファイルへの完全なパスを取り得ます。\n"
+"ディレクトリ名が渡された場合、それに`/.envrc`を後に付けたものが渡されたかのように扱います。\n"
+"ファイル名を解決した後、各文字列は`.envrc`ファイルの絶対パスと完全一致するかどうか検査されます。\n"
+"完全に一致する場合、その`.envrc`ファイルは暗に許可されます。\n"
+"内容がどうであれ、またそれまでに`direnv allow`または`direnv deny`をしていようと無関係です。"
 
 #. type: Fenced code block (toml)
 #: ../man/direnv.toml.1.md:121
@@ -396,6 +409,8 @@ msgid ""
 "In this example, the following .envrc files will be implicitly allowed, and "
 "no others:"
 msgstr ""
+"この例では、以下の .envrc ファイルは暗に許可されます。\n"
+"それ以外は許可されません。"
 
 #. type: Bullet: '* '
 #: ../man/direnv.toml.1.md:130
