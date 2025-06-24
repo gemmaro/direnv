@@ -7,8 +7,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Direnv\n"
-"POT-Creation-Date: 2025-05-05 18:26+0900\n"
-"PO-Revision-Date: 2025-05-29 21:29+0900\n"
+"POT-Creation-Date: 2025-06-24 20:20+0900\n"
+"PO-Revision-Date: 2025-06-24 20:28+0900\n"
 "Last-Translator: gemmaro\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -49,8 +49,10 @@ msgid ""
 "`$XDG_CONFIG_HOME/direnv/direnv.toml` (typically ~/.config/direnv/direnv."
 "toml)."
 msgstr ""
-"構成ファイルは[TOML](https://github.com/toml-lang/toml)形式で、direnvの様々な構成オプションを指定できます。\n"
-"ファイルは`$XDG_CONFIG_HOME/direnv/direnv.toml`（普通は~/.config/direnv/direnv.toml）から読み込まれます。"
+"構成ファイルは[TOML](https://github.com/toml-lang/toml)形式で、direnvの様々な"
+"構成オプションを指定できます。\n"
+"ファイルは`$XDG_CONFIG_HOME/direnv/direnv.toml`（普通は~/.config/direnv/"
+"direnv.toml）から読み込まれます。"
 
 #. type: Plain text
 #: ../man/direnv.toml.1.md:15
@@ -69,7 +71,9 @@ msgstr "形式"
 msgid ""
 "See the [TOML GitHub Repository](https://github.com/toml-lang/toml) for "
 "details about the syntax of the configuration file."
-msgstr "構成ファイルの構文について、詳しくは[TOMLのGitHubリポジトリ](https://github.com/toml-lang/toml)をご参照ください。"
+msgstr ""
+"構成ファイルの構文について、詳しくは[TOMLのGitHubリポジトリ](https://github."
+"com/toml-lang/toml)をご参照ください。"
 
 #. type: Title -
 #: ../man/direnv.toml.1.md:22
@@ -84,7 +88,8 @@ msgid ""
 "level [tables](https://github.com/toml-lang/toml#table), with key/value "
 "pairs specified in each section."
 msgstr ""
-"構成は節で指定され、それぞれの節には最上位の[テーブル](https://github.com/toml-lang/toml#table)があります。\n"
+"構成は節で指定され、それぞれの節には最上位の[テーブル](https://github.com/"
+"toml-lang/toml#table)があります。\n"
 "これらのテーブルはキーバリューの対からなり、各節で指定されます。"
 
 #. type: Plain text
@@ -132,7 +137,8 @@ msgid ""
 "this to avoid having direnv to fail when PATH is being mutated."
 msgstr ""
 "これにより、bashの場所をハードコードできます。\n"
-"PATHが改変されたときにdirenvの実行が失敗することを避ける上で、これを設定すると便利かもしれません。"
+"PATHが改変されたときにdirenvの実行が失敗することを避ける上で、これを設定する"
+"と便利かもしれません。"
 
 #. type: Title ###
 #: ../man/direnv.toml.1.md:41
@@ -145,7 +151,9 @@ msgstr "`disable_stdin`"
 msgid ""
 "If set to `true`, stdin is disabled (redirected to /dev/null) during the `."
 "envrc` evaluation."
-msgstr "`true`に設定したとき、`.envrc`の評価時に標準入力が無効になります（/dev/nullにリダイレクトされます）。"
+msgstr ""
+"`true`に設定したとき、`.envrc`の評価時に標準入力が無効になります（/dev/nullに"
+"リダイレクトされます）。"
 
 #. type: Title ###
 #: ../man/direnv.toml.1.md:45
@@ -166,8 +174,10 @@ msgid ""
 "files. If both `.envrc` and `.env` files exist, the `.envrc` will always be "
 "chosen first."
 msgstr ""
-"`true`に設定すると、`.env`ファイルを探し、`.envrc`ファイルの最上位で読み込みます。\n"
-"`.envrc`と`.env`のファイルが両方とも存在するとき、`.envrc`が必ず最初に選ばれます。"
+"`true`に設定すると、`.env`ファイルを探し、`.envrc`ファイルの最上位で読み込み"
+"ます。\n"
+"`.envrc`と`.env`のファイルが両方とも存在するとき、`.envrc`が必ず最初に選ばれ"
+"ます。"
 
 #. type: Title ###
 #: ../man/direnv.toml.1.md:51
@@ -196,7 +206,8 @@ msgid ""
 "Specify how long to wait before warning the user that the command is taking "
 "too long to execute. Defaults to \"5s\"."
 msgstr ""
-"コマンドの実行が長く掛かり過ぎていることを利用者に警告するまでどれだけ待つか指定します。\n"
+"コマンドの実行が長く掛かり過ぎていることを利用者に警告するまでどれだけ待つか"
+"指定します。\n"
 "既定は「5s」です。"
 
 #. type: Plain text
@@ -220,7 +231,8 @@ msgid ""
 "of the above values."
 msgstr ""
 "この機能は時間間隔がゼロ以下のとき無効になります。\n"
-"環境変数`DIRENV_WARN_TIMEOUT`が前述の何れかの値に設定されているとき、上書きされます。"
+"環境変数`DIRENV_WARN_TIMEOUT`が前述の何れかの値に設定されているとき、上書きさ"
+"れます。"
 
 #. type: Title ###
 #: ../man/direnv.toml.1.md:68
@@ -285,10 +297,13 @@ msgid ""
 "to write files to that directory (including collaborators on VCS "
 "repositories) will be able to execute arbitrary code on your computer."
 msgstr ""
-"ホワイトリストのディレクティブを指定すると、特定のディレクトリ階層または特定のディレクトリには、「信頼済み」の印が付きます。\n"
-"一致する`.envrc`ファイルは、それが個別に許可されているかどうかに関係なく、direnvにより評価されます。  \n"
+"ホワイトリストのディレクティブを指定すると、特定のディレクトリ階層または特定"
+"のディレクトリには、「信頼済み」の印が付きます。\n"
+"一致する`.envrc`ファイルは、それが個別に許可されているかどうかに関係なく、"
+"direnvにより評価されます。  \n"
 "**この機能を使うときはよく注意してください**。\n"
-"そのディレクトリにファイルを書き込める人（VCSリポジトリの共同作業者を含む）が、コンピューター上で任意のコードを実行できるようになる可能性があります。"
+"そのディレクトリにファイルを書き込める人（VCSリポジトリの共同作業者を含む）"
+"が、コンピューター上で任意のコードを実行できるようになる可能性があります。"
 
 #. type: Plain text
 #: ../man/direnv.toml.1.md:90
@@ -309,8 +324,10 @@ msgid ""
 "regardless of contents or past usage of `direnv allow` or `direnv deny`."
 msgstr ""
 "文字列の配列を受け付けます。\n"
-"このリストの文字列のどれかが、.envrc ファイルの絶対パスの前の部分であるとき、そのファイルは暗に許可されます。\n"
-"内容がどうであれ、またそれまでに`direnv allow`または`direnv deny`されていようと、関係ありません。"
+"このリストの文字列のどれかが、.envrc ファイルの絶対パスの前の部分であるとき、"
+"そのファイルは暗に許可されます。\n"
+"内容がどうであれ、またそれまでに`direnv allow`または`direnv deny`されていよう"
+"と、関係ありません。"
 
 #. type: Fenced code block (toml)
 #: ../man/direnv.toml.1.md:97
@@ -357,7 +374,9 @@ msgstr "などなど"
 msgid ""
 "In this example, the following .envrc files will not be implicitly allowed "
 "(although they can be explicitly allowed by running `direnv allow`):"
-msgstr "この例では、以下の .envrc ファイルは暗に許可されません（ただし`direnv allow`で明示的に許可できます）。"
+msgstr ""
+"この例では、以下の .envrc ファイルは暗に許可されません（ただし`direnv allow`"
+"で明示的に許可できます）。"
 
 #. type: Bullet: '* '
 #: ../man/direnv.toml.1.md:114
@@ -388,10 +407,13 @@ msgid ""
 msgstr ""
 "文字列の配列を受け付けます。\n"
 "各文字列はディレクトリ名または`.envrc`ファイルへの完全なパスを取り得ます。\n"
-"ディレクトリ名が渡された場合、それに`/.envrc`を後に付けたものが渡されたかのように扱います。\n"
-"ファイル名を解決した後、各文字列は`.envrc`ファイルの絶対パスと完全一致するかどうか検査されます。\n"
+"ディレクトリ名が渡された場合、それに`/.envrc`を後に付けたものが渡されたかのよ"
+"うに扱います。\n"
+"ファイル名を解決した後、各文字列は`.envrc`ファイルの絶対パスと完全一致するか"
+"どうか検査されます。\n"
 "完全に一致する場合、その`.envrc`ファイルは暗に許可されます。\n"
-"内容がどうであれ、またそれまでに`direnv allow`または`direnv deny`をしていようと無関係です。"
+"内容がどうであれ、またそれまでに`direnv allow`または`direnv deny`をしていよう"
+"と無関係です。"
 
 #. type: Fenced code block (toml)
 #: ../man/direnv.toml.1.md:121
@@ -429,20 +451,20 @@ msgstr "`~/code/.envrc`"
 
 #. type: Title -
 #: ../man/direnv.toml.1.md:137 ../README.md:194 ../man/direnv-stdlib.1.md:445
-#: ../man/direnv.1.md:202
+#: ../man/direnv.1.md:245
 #, no-wrap
 msgid "COPYRIGHT"
 msgstr "著作情報"
 
 #. type: Plain text
 #: ../man/direnv.toml.1.md:140 ../man/direnv-stdlib.1.md:448
-#: ../man/direnv.1.md:205
+#: ../man/direnv.1.md:248
 msgid "MIT licence - Copyright (C) 2019 @zimbatm and contributors"
 msgstr "MIT licence - Copyright (C) 2019 @zimbatm and contributors"
 
 #. type: Title -
 #: ../man/direnv.toml.1.md:142 ../man/direnv-stdlib.1.md:450
-#: ../man/direnv.1.md:207
+#: ../man/direnv.1.md:250
 #, no-wrap
 msgid "SEE ALSO"
 msgstr "こちらも参照"
@@ -2612,13 +2634,104 @@ msgid "direnv hook murex -> source\n"
 msgstr "direnv hook murex -> source\n"
 
 #. type: Title -
-#: ../man/direnv.1.md:135
+#: ../man/direnv.1.md:136
+#, no-wrap
+msgid "COMMANDS"
+msgstr "コマンド"
+
+#. type: Plain text
+#: ../man/direnv.1.md:140
+msgid ""
+"`direnv allow [PATH_TO_RC]` : Grants direnv permission to load the given ."
+"envrc or .env file."
+msgstr "`direnv allow [rcへのパス]` : 与えられた.envrcや.envファイルを読み込むことを許可します。"
+
+#. type: Plain text
+#: ../man/direnv.1.md:143
+msgid ""
+"`direnv deny [PATH_TO_RC]` : Revokes the authorization of a given .envrc or ."
+"env file."
+msgstr "`direnv deny [rcへのパス]` : 与えられた.envrcや.envファイルの認可を失効させます。"
+
+#. type: Plain text
+#: ../man/direnv.1.md:146
+msgid ""
+"`direnv edit [PATH_TO_RC]` : Opens PATH_TO_RC or the current .envrc or .env "
+"into an $EDITOR and allow the file to be loaded afterwards."
+msgstr "`direnv edit [rcへのパス]` : rcへのパス、または現地点にある.envrc、ないし.envを$EDITORで開き、その後でファイルを読み込めるようにします。"
+
+#. type: Plain text
+#: ../man/direnv.1.md:149
+msgid ""
+"`direnv exec DIR COMMAND [...ARGS]` : Executes a command after loading the "
+"first .envrc or .env found in DIR."
+msgstr "`direnv exec ディレクトリ コマンド [...引数]` : ディレクトリで最初に見つかった.envrcないし.envを読み込んだ後でコマンドを実行します。"
+
+#. type: Plain text
+#: ../man/direnv.1.md:152
+msgid ""
+"`direnv export SHELL` : Loads an .envrc or .env and prints the diff in terms "
+"of exports. Supported shells: bash, zsh, fish, tcsh, elvish, pwsh, murex, "
+"json, vim, gha (GitHub Actions), gzenv, systemd."
+msgstr "`direnv export シェル` : .envrcないし.envを読み込み、エクスポートで使える差分を印字します。対応しているシェルは、bash, zsh, fish, tcsh, elvish, pwsh, murex, json, vim, gha (GitHub Actions), gzenv, systemdです。"
+
+#. type: Plain text
+#: ../man/direnv.1.md:155
+#, no-wrap
+msgid ""
+"`direnv fetchurl <url> [<integrity-hash>]`\n"
+": Fetches a given URL into direnv's CAS.\n"
+msgstr ""
+"`direnv fetchurl <url> [<整合性ハッシュ>]`\n"
+": 与えられたURLをdirenvのCASに取得します。\n"
+
+#. type: Plain text
+#: ../man/direnv.1.md:158
+msgid "`direnv help` : Shows this help."
+msgstr "`direnv help` : このヘルプを表示します。"
+
+#. type: Plain text
+#: ../man/direnv.1.md:161
+msgid "`direnv hook SHELL` : Used to setup the shell hook."
+msgstr "`direnv hook シェル` : シェルのフックを立ち上げるのに使います。"
+
+#. type: Plain text
+#: ../man/direnv.1.md:164
+msgid "`direnv prune` : Removes old allowed files."
+msgstr "`direnv prune` : 許可されたファイルのうち古いものを削除します。"
+
+#. type: Plain text
+#: ../man/direnv.1.md:167
+msgid "`direnv reload` : Triggers an env reload."
+msgstr "`direnv reload` : envの再読み込みを開始します。"
+
+#. type: Plain text
+#: ../man/direnv.1.md:170
+msgid "`direnv status` : Prints some debug status information."
+msgstr "`direnv status` : デバッグ状態の情報を印字します。"
+
+#. type: Plain text
+#: ../man/direnv.1.md:173
+msgid ""
+"`direnv stdlib` : Displays the stdlib available in the .envrc execution "
+"context."
+msgstr "`direnv stdlib` : .envrcの実行の文脈で使える標準ライブラリを表示します。"
+
+#. type: Plain text
+#: ../man/direnv.1.md:176
+msgid ""
+"`direnv version` : Prints the version or checks that direnv is older than "
+"VERSION_AT_LEAST."
+msgstr "`direnv version` : バージョンを印字するか、VERSION_AT_LEASTよりdirenvが古いかどうかを判定します。"
+
+#. type: Title -
+#: ../man/direnv.1.md:178
 #, no-wrap
 msgid "USAGE"
 msgstr "使い方"
 
 #. type: Plain text
-#: ../man/direnv.1.md:139
+#: ../man/direnv.1.md:182
 msgid ""
 "In some target folder, create an `.envrc` file and add some export(1)  and "
 "unset(1) directives in it."
@@ -2627,7 +2740,7 @@ msgstr ""
 "ブを加えてください。"
 
 #. type: Plain text
-#: ../man/direnv.1.md:144
+#: ../man/direnv.1.md:187
 msgid ""
 "On the next prompt you will notice that direnv complains about the `.envrc` "
 "being blocked. This is the security mechanism to avoid loading new files "
@@ -2643,7 +2756,7 @@ msgstr ""
 "ら。"
 
 #. type: Plain text
-#: ../man/direnv.1.md:149
+#: ../man/direnv.1.md:192
 msgid ""
 "So here we are pretty sure that it won't do anything bad. Type `direnv "
 "allow .` and watch direnv loading your new environment. Note that `direnv "
@@ -2656,7 +2769,7 @@ msgstr ""
 "ファイルの変更時間が変化したときに自動で再読込されます。"
 
 #. type: Plain text
-#: ../man/direnv.1.md:154
+#: ../man/direnv.1.md:197
 msgid ""
 "Now that the environment is loaded you can notice that once you `cd` out of "
 "the directory it automatically gets unloaded. If you `cd` back into it it's "
@@ -2669,7 +2782,7 @@ msgstr ""
 "以上が基本的な仕組みであり、これを使うと色々と工夫できるでしょう。"
 
 #. type: Plain text
-#: ../man/direnv.1.md:160
+#: ../man/direnv.1.md:203
 msgid ""
 "Exporting variables by hand is a bit repetitive so direnv provides a set of "
 "utility functions that are made available in the context of the `.envrc` "
@@ -2686,34 +2799,34 @@ msgstr ""
 "sh`ファイルの中に、独自の拡張を定義することもできます。"
 
 #. type: Plain text
-#: ../man/direnv.1.md:162
+#: ../man/direnv.1.md:205
 msgid "Hopefully this is enough to get you started."
 msgstr "きっとここまでで始めてみる分には充分でしょう。"
 
 #. type: Title -
-#: ../man/direnv.1.md:164
+#: ../man/direnv.1.md:207
 #, no-wrap
 msgid "ENVIRONMENT"
 msgstr "環境"
 
 #. type: Plain text
-#: ../man/direnv.1.md:168
+#: ../man/direnv.1.md:211
 msgid "`XDG_CONFIG_HOME` : Defaults to `$HOME/.config`."
 msgstr "`XDG_CONFIG_HOME`：既定で`$HOME/.config`です。"
 
 #. type: Plain text
-#: ../man/direnv.1.md:171
+#: ../man/direnv.1.md:214
 msgid "`XDG_DATA_HOME` : Defaults to `$HOME/.local/share`."
 msgstr "`XDG_DATA_HOME`：既定で`$HOME/.local/share`です。"
 
 #. type: Title -
-#: ../man/direnv.1.md:173
+#: ../man/direnv.1.md:216
 #, no-wrap
 msgid "FILES"
 msgstr "ファイル"
 
 #. type: Plain text
-#: ../man/direnv.1.md:177
+#: ../man/direnv.1.md:220
 msgid ""
 "`$XDG_CONFIG_HOME/direnv/direnv.toml` : Direnv configuration. See direnv."
 "toml(1)."
@@ -2722,7 +2835,7 @@ msgstr ""
 "照。"
 
 #. type: Plain text
-#: ../man/direnv.1.md:180
+#: ../man/direnv.1.md:223
 msgid ""
 "`$XDG_CONFIG_HOME/direnv/direnvrc` : Bash code loaded before every `.envrc`. "
 "Good for personal extensions."
@@ -2731,7 +2844,7 @@ msgstr ""
 "ドです。個人用の拡張に好適です。"
 
 #. type: Plain text
-#: ../man/direnv.1.md:183
+#: ../man/direnv.1.md:226
 msgid ""
 "`$XDG_CONFIG_HOME/direnv/lib/*.sh` : Bash code loaded before every `.envrc`. "
 "Good for third-party extensions."
@@ -2740,7 +2853,7 @@ msgstr ""
 "ドです。サードパーティの拡張に好適です。"
 
 #. type: Plain text
-#: ../man/direnv.1.md:186
+#: ../man/direnv.1.md:229
 msgid ""
 "`$XDG_DATA_HOME/direnv/allow` : Records which `.envrc` files have been "
 "`direnv allow`ed."
@@ -2749,18 +2862,18 @@ msgstr ""
 "記録しているところです。"
 
 #. type: Title -
-#: ../man/direnv.1.md:188
+#: ../man/direnv.1.md:231
 #, no-wrap
 msgid "CONTRIBUTE"
 msgstr "貢献"
 
 #. type: Plain text
-#: ../man/direnv.1.md:191
+#: ../man/direnv.1.md:234
 msgid "Bug reports, contributions and forks are welcome."
 msgstr "不具合の報告、貢献、フォークを歓迎します。"
 
 #. type: Plain text
-#: ../man/direnv.1.md:194
+#: ../man/direnv.1.md:237
 msgid ""
 "All bugs or other forms of discussion happen on <http://github.com/direnv/"
 "direnv/issues>"
@@ -2769,7 +2882,7 @@ msgstr ""
 "います"
 
 #. type: Plain text
-#: ../man/direnv.1.md:197
+#: ../man/direnv.1.md:240
 msgid ""
 "There is also a wiki available where you can share your usage patterns or "
 "other tips and tricks <https://github.com/direnv/direnv/wiki>"
@@ -2778,7 +2891,7 @@ msgstr ""
 "とができます：<https://github.com/direnv/direnv/wiki>"
 
 #. type: Plain text
-#: ../man/direnv.1.md:200
+#: ../man/direnv.1.md:243
 msgid ""
 "Or drop by on the [#direnv channel on FreeNode](irc://#direnv@FreeNode) to "
 "have a chat."
@@ -2787,7 +2900,7 @@ msgstr ""
 "#direnv@FreeNode)にお立ち寄りください。"
 
 #. type: Plain text
-#: ../man/direnv.1.md:209
+#: ../man/direnv.1.md:252
 msgid "direnv-stdlib(1), direnv.toml(1), direnv-fetchurl(1)"
 msgstr "direnv-stdlib(1), direnv.toml(1), direnv-fetchurl(1)"
 
