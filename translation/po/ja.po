@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Direnv\n"
 "POT-Creation-Date: 2025-07-25 18:50+0900\n"
-"PO-Revision-Date: 2025-07-25 18:49+0900\n"
+"PO-Revision-Date: 2025-07-25 18:56+0900\n"
 "Last-Translator: gemmaro\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -3175,171 +3175,166 @@ msgstr ""
 
 #. type: Title #
 #: ../docs/installation.md:1
-#, fuzzy, no-wrap
-#| msgid "Basic Installation"
+#, no-wrap
 msgid "Installation"
-msgstr "基本的なインストール方法"
+msgstr "インストール"
 
 #. type: Plain text
 #: ../docs/installation.md:4
 msgid "The installation has two parts."
-msgstr ""
+msgstr "インストールの手順は2つに分けられます。"
 
 #. type: Bullet: '1. '
 #: ../docs/installation.md:7
 msgid "Install the package or binary, which is presented in this document"
 msgstr ""
+"パッケージないしバイナリをインストールします。\n"
+"本文書で示します。"
 
 #. type: Bullet: '2. '
 #: ../docs/installation.md:7
-#, fuzzy
-#| msgid "[Hook into your shell](docs/hook.md)"
 msgid "[hook into your shell](hook.md)."
-msgstr "[シェルにフックする](docs/hook.md)"
+msgstr "[シェルにフックする](hook.md)"
 
 #. type: Title ##
 #: ../docs/installation.md:8
 #, no-wrap
 msgid "From system packages"
-msgstr ""
+msgstr "システムのパッケージから"
 
 #. type: Plain text
 #: ../docs/installation.md:11
 msgid "direnv is packaged for a variety of systems:"
-msgstr ""
+msgstr "direnvは様々なシステムでパッケージ化されています。"
 
 #. type: Bullet: '* '
 #: ../docs/installation.md:24
 msgid "[Fedora](https://src.fedoraproject.org/rpms/direnv)"
-msgstr ""
+msgstr "[Fedora](https://src.fedoraproject.org/rpms/direnv)"
 
 #. type: Bullet: '* '
 #: ../docs/installation.md:24
 msgid "[Arch Linux](https://archlinux.org/packages/extra/x86_64/direnv/)"
-msgstr ""
+msgstr "[Arch Linux](https://archlinux.org/packages/extra/x86_64/direnv/)"
 
 #. type: Bullet: '* '
 #: ../docs/installation.md:24
 msgid ""
 "[Debian](https://packages.debian.org/search?"
 "keywords=direnv&searchon=names&suite=all&section=all)"
-msgstr ""
+msgstr "[Debian](https://packages.debian.org/search?keywords=direnv&searchon=names&suite=all&section=all)"
 
 #. type: Bullet: '* '
 #: ../docs/installation.md:24
 msgid ""
 "[Gentoo Guru](https://wiki.gentoo.org/wiki/Project:GURU/"
 "Information_for_End_Users)"
-msgstr ""
+msgstr "[Gentoo Guru](https://wiki.gentoo.org/wiki/Project:GURU/Information_for_End_Users)"
 
 #. type: Bullet: '* '
 #: ../docs/installation.md:24
 msgid "[NetBSD pkgsrc-wip](http://www.pkgsrc.org/wip/)"
-msgstr ""
+msgstr "[NetBSD pkgsrc-wip](http://www.pkgsrc.org/wip/)"
 
 #. type: Bullet: '* '
 #: ../docs/installation.md:24
 msgid "[NixOS](https://search.nixos.org/options?query=programs.direnv)"
-msgstr ""
+msgstr "[NixOS](https://search.nixos.org/options?query=programs.direnv)"
 
 #. type: Bullet: '* '
 #: ../docs/installation.md:24
 msgid "[macOS Homebrew](https://formulae.brew.sh/formula/direnv#default)"
-msgstr ""
+msgstr "[macOS Homebrew](https://formulae.brew.sh/formula/direnv#default)"
 
 #. type: Bullet: '* '
 #: ../docs/installation.md:24
 msgid ""
 "[openSUSE](https://build.opensuse.org/package/show/openSUSE%3AFactory/direnv)"
-msgstr ""
+msgstr "[openSUSE](https://build.opensuse.org/package/show/openSUSE%3AFactory/direnv)"
 
 #. type: Bullet: '* '
 #: ../docs/installation.md:24
 msgid "[MacPorts](https://ports.macports.org/port/direnv/)"
-msgstr ""
+msgstr "[MacPorts](https://ports.macports.org/port/direnv/)"
 
 #. type: Bullet: '* '
 #: ../docs/installation.md:24
 msgid ""
 "[Ubuntu](https://packages.ubuntu.com/search?"
 "keywords=direnv&searchon=names&suite=all&section=all)"
-msgstr ""
+msgstr "[Ubuntu](https://packages.ubuntu.com/search?keywords=direnv&searchon=names&suite=all&section=all)"
 
 #. type: Bullet: '* '
 #: ../docs/installation.md:24
 msgid "[GNU Guix](https://packages.guix.gnu.org/search/?query=direnv)"
-msgstr ""
+msgstr "[GNU Guix](https://packages.guix.gnu.org/search/?query=direnv)"
 
 #. type: Bullet: '* '
 #: ../docs/installation.md:24
 msgid ""
 "[Windows](https://learn.microsoft.com/en-us/windows/package-manager/winget/)"
-msgstr ""
+msgstr "[Windows](https://learn.microsoft.com/en-us/windows/package-manager/winget/)"
 
 #. type: Plain text
 #: ../docs/installation.md:26
 msgid "See also:"
-msgstr ""
+msgstr "こちらも参照。"
 
 #. type: Plain text
 #: ../docs/installation.md:28
 msgid ""
 "[![Packaging status](https://repology.org/badge/vertical-allrepos/direnv."
 "svg)](https://repology.org/metapackage/direnv)"
-msgstr ""
+msgstr "[![パッケージ化の状態](https://repology.org/badge/vertical-allrepos/direnv.svg)](https://repology.org/metapackage/direnv)"
 
 #. type: Title ##
 #: ../docs/installation.md:29
 #, no-wrap
 msgid "From binary builds"
-msgstr ""
+msgstr "バイナリのビルド成果物から"
 
 #. type: Plain text
 #: ../docs/installation.md:32
 msgid "To install binary builds you can run this bash installer:"
-msgstr ""
+msgstr "バイナリのビルド成果物をインストールするには、こちらのbashインストーラを実行してください。"
 
 #. type: Fenced code block (sh)
 #: ../docs/installation.md:33
 #, no-wrap
 msgid "curl -sfL https://direnv.net/install.sh | bash\n"
-msgstr ""
+msgstr "curl -sfL https://direnv.net/install.sh | bash\n"
 
 #. type: Plain text
 #: ../docs/installation.md:39
 msgid ""
 "Binary builds for a variety of architectures are also available for [each "
 "release](https://github.com/direnv/direnv/releases)."
-msgstr ""
+msgstr "様々なアーキテクチャ用のバイナリのビルド成果物は、[毎回のリリース](https://github.com/direnv/direnv/releases)で入手できます。"
 
 #. type: Plain text
 #: ../docs/installation.md:41
 msgid ""
 "Fetch the binary, `chmod +x direnv` and put it somewhere in your `PATH`."
-msgstr ""
+msgstr "バイナリを取得し、`chmod +x direnv`として、`PATH`にあるどこかに置いてください。"
 
 #. type: Title ##
 #: ../docs/installation.md:42
 #, no-wrap
 msgid "Compile from source"
-msgstr ""
+msgstr "ソースからコンパイル"
 
 #. type: Plain text
 #: ../docs/installation.md:45
-#, fuzzy
-#| msgid "[Develop for direnv](docs/development.md)"
 msgid "See the [Development](development.md) page."
-msgstr "[direnvの開発](docs/development.md)"
+msgstr "[開発](development.md)ページを参照。"
 
 #. type: Title #
 #: ../docs/installation.md:46
 #, no-wrap
 msgid "Next step"
-msgstr ""
+msgstr "次の工程"
 
 #. type: Plain text
 #: ../docs/installation.md:48
-#, fuzzy
-#| msgid "[Hook into your shell](docs/hook.md)"
 msgid "[hook installation](hook.md)"
-msgstr "[シェルにフックする](docs/hook.md)"
+msgstr "[シェルのインストール](hook.md)"
