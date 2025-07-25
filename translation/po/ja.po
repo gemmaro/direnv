@@ -7,8 +7,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Direnv\n"
-"POT-Creation-Date: 2025-06-24 20:20+0900\n"
-"PO-Revision-Date: 2025-06-24 20:28+0900\n"
+"POT-Creation-Date: 2025-07-25 18:48+0900\n"
+"PO-Revision-Date: 2025-07-25 18:49+0900\n"
 "Last-Translator: gemmaro\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -450,7 +450,7 @@ msgid "`~/code/.envrc`"
 msgstr "`~/code/.envrc`"
 
 #. type: Title -
-#: ../man/direnv.toml.1.md:137 ../README.md:194 ../man/direnv-stdlib.1.md:445
+#: ../man/direnv.toml.1.md:137 ../README.md:195 ../man/direnv-stdlib.1.md:445
 #: ../man/direnv.1.md:245
 #, no-wrap
 msgid "COPYRIGHT"
@@ -779,32 +779,37 @@ msgid "Docs"
 msgstr "文書"
 
 #. type: Bullet: '* '
-#: ../README.md:117
+#: ../README.md:118
 msgid "[Install direnv](docs/installation.md)"
 msgstr "[direnvのインストール](docs/installation.md)"
 
 #. type: Bullet: '* '
-#: ../README.md:117
+#: ../README.md:118
 msgid "[Hook into your shell](docs/hook.md)"
 msgstr "[シェルにフックする](docs/hook.md)"
 
 #. type: Bullet: '* '
-#: ../README.md:117
+#: ../README.md:118
 msgid "[Develop for direnv](docs/development.md)"
 msgstr "[direnvの開発](docs/development.md)"
 
 #. type: Bullet: '* '
-#: ../README.md:117
+#: ../README.md:118
 msgid "[Manage your rubies with direnv and ruby-install](docs/ruby.md)"
 msgstr "[direnvとruby-installでRubyを管理する](docs/ruby.md)"
 
 #. type: Bullet: '* '
-#: ../README.md:117
+#: ../README.md:118
+msgid "[Using direnv with GitHub Actions](docs/github-actions.md)"
+msgstr "[GitHub Actionsでdirenvを使う](docs/github-actions.md)"
+
+#. type: Bullet: '* '
+#: ../README.md:118
 msgid "[Community Wiki](https://github.com/direnv/direnv/wiki)"
 msgstr "[コミュニティのウィキ](https://github.com/direnv/direnv/wiki)"
 
 #. type: Plain text
-#: ../README.md:120
+#: ../README.md:121
 msgid ""
 "Make sure to take a look at the wiki! It contains all sorts of useful "
 "information such as common recipes, editor integration, tips-and-tricks."
@@ -814,39 +819,39 @@ msgstr ""
 "情報が含まれています。"
 
 #. type: Title ###
-#: ../README.md:121
+#: ../README.md:122
 #, no-wrap
 msgid "Man pages"
 msgstr "manページ"
 
 #. type: Bullet: '* '
-#: ../README.md:127
+#: ../README.md:128
 msgid "[direnv(1) man page](man/direnv.1.md)"
 msgstr "[direnv(1) のmanページ](man/direnv.1.md)"
 
 #. type: Bullet: '* '
-#: ../README.md:127
+#: ../README.md:128
 msgid "[direnv-fetchurl(1) man page](man/direnv-fetchurl.1.md)"
 msgstr "[direnv-fetchurl(1) のmanページ](man/direnv-fetchurl.1.md)"
 
 #. type: Bullet: '* '
-#: ../README.md:127
+#: ../README.md:128
 msgid "[direnv-stdlib(1) man page](man/direnv-stdlib.1.md)"
 msgstr "[direnv-stdlib(1)のmanページ](man/direnv-stdlib.1.md)"
 
 #. type: Bullet: '* '
-#: ../README.md:127
+#: ../README.md:128
 msgid "[direnv.toml(1) man page](man/direnv.toml.1.md)"
 msgstr "[direnv.toml(1) のmanページ](man/direnv.toml.1.md)"
 
 #. type: Title ###
-#: ../README.md:128
+#: ../README.md:129
 #, no-wrap
 msgid "FAQ"
 msgstr "よくある質問"
 
 #. type: Plain text
-#: ../README.md:132
+#: ../README.md:133
 msgid ""
 "Based on GitHub issues interactions, here are the top things that have been "
 "confusing for users:"
@@ -855,7 +860,7 @@ msgstr ""
 "ものとして以下があります。"
 
 #. type: Bullet: '1. '
-#: ../README.md:136
+#: ../README.md:137
 msgid ""
 "direnv has a standard library of functions, a collection of utilities that I "
 "found useful to have and accumulated over the years. You can find it here: "
@@ -867,7 +872,7 @@ msgstr ""
 "https://github.com/direnv/direnv/blob/master/stdlib.sh にあります。"
 
 #. type: Bullet: '2. '
-#: ../README.md:140
+#: ../README.md:141
 msgid ""
 "It's possible to override the stdlib with your own set of function by adding "
 "a bash file to `~/.config/direnv/direnvrc`. This file is loaded and its "
@@ -879,7 +884,7 @@ msgstr ""
 "なります。"
 
 #. type: Bullet: '3. '
-#: ../README.md:147
+#: ../README.md:148
 msgid ""
 "direnv is not loading the `.envrc` into the current shell. It's creating a "
 "new bash sub-process to load the stdlib, direnvrc and `.envrc`, and only "
@@ -896,13 +901,13 @@ msgstr ""
 "また、エイリアスと関数は現時点でエクスポートできないということでもあります。"
 
 #. type: Title ##
-#: ../README.md:148
+#: ../README.md:149
 #, no-wrap
 msgid "Contributing"
 msgstr "貢献"
 
 #. type: Plain text
-#: ../README.md:152
+#: ../README.md:153
 msgid ""
 "Bug reports, contributions and forks are welcome. All bugs or other forms of "
 "discussion happen on http://github.com/direnv/direnv/issues ."
@@ -912,7 +917,7 @@ msgstr ""
 "います。"
 
 #. type: Plain text
-#: ../README.md:156
+#: ../README.md:157
 msgid ""
 "Or drop by on [Matrix](https://matrix.to/#/#direnv:numtide.com) to have a "
 "chat. If you ask a question make sure to stay around as not everyone is "
@@ -924,13 +929,13 @@ msgstr ""
 "らく待ってみてください。"
 
 #. type: Title ###
-#: ../README.md:157
+#: ../README.md:158
 #, no-wrap
 msgid "Testing"
 msgstr "テスト"
 
 #. type: Plain text
-#: ../README.md:160
+#: ../README.md:161
 msgid ""
 "To run our tests, use these commands: (you may need to install [homebrew]"
 "(https://brew.sh/))"
@@ -939,7 +944,7 @@ msgstr ""
 "sh/)をインストールする必要があるかもしれません）。"
 
 #. type: Fenced code block
-#: ../README.md:161
+#: ../README.md:162
 #, no-wrap
 msgid ""
 "brew bundle\n"
@@ -949,26 +954,26 @@ msgstr ""
 "make test\n"
 
 #. type: Title ##
-#: ../README.md:166
+#: ../README.md:167
 #, no-wrap
 msgid "Complementary projects"
 msgstr "相補的なプロジェクト"
 
 #. type: Plain text
-#: ../README.md:169
+#: ../README.md:170
 msgid ""
 "Here is a list of projects you might want to look into if you are using "
 "direnv."
 msgstr "以下は、direnvを使う場合に見てみると良さそうなプロジェクトの一覧です。"
 
 #. type: Bullet: '* '
-#: ../README.md:172
+#: ../README.md:173
 msgid "[starship](https://starship.rs/) - A cross-shell prompt."
 msgstr ""
 "[starship](https://starship.rs/) - 様々なシェルで使えるプロンプトです。"
 
 #. type: Bullet: '* '
-#: ../README.md:172
+#: ../README.md:173
 msgid ""
 "[Projects for Nix integration](https://github.com/direnv/direnv/wiki/Nix) - "
 "choose from one of a variety of projects offering improvements over Direnv's "
@@ -979,13 +984,13 @@ msgstr ""
 "す。ご自由にお選びください。"
 
 #. type: Title ##
-#: ../README.md:173
+#: ../README.md:174
 #, no-wrap
 msgid "Related projects"
 msgstr "関連するプロジェクト"
 
 #. type: Plain text
-#: ../README.md:177
+#: ../README.md:178
 msgid ""
 "Here is a list of other projects found in the same design space. Feel free "
 "to submit new ones."
@@ -994,7 +999,7 @@ msgstr ""
 "新しいものがあったら遠慮なくご提案ください。"
 
 #. type: Bullet: '* '
-#: ../README.md:186
+#: ../README.md:187
 msgid ""
 "[Environment Modules](http://modules.sourceforge.net/) - one of the oldest "
 "(in a good way) environment-loading systems"
@@ -1003,7 +1008,7 @@ msgstr ""
 "環境読込みシステム"
 
 #. type: Bullet: '* '
-#: ../README.md:186
+#: ../README.md:187
 msgid ""
 "[autoenv](https://github.com/hyperupcall/autoenv) - older, popular, and "
 "lightweight."
@@ -1012,7 +1017,7 @@ msgstr ""
 "軽量です。"
 
 #. type: Bullet: '* '
-#: ../README.md:186
+#: ../README.md:187
 msgid ""
 "[zsh-autoenv](https://github.com/Tarrasch/zsh-autoenv) - a feature-rich "
 "mixture of autoenv and [smartcd](https://github.com/cxreg/smartcd): enter/"
@@ -1023,7 +1028,7 @@ msgstr ""
 "のイベント、入れ子、スタッシュがあります（Zshのみ）。"
 
 #. type: Bullet: '* '
-#: ../README.md:186
+#: ../README.md:187
 msgid ""
 "[asdf](https://github.com/asdf-vm/asdf) - a pure bash solution that has a "
 "plugin system. The [asdf-direnv](https://github.com/asdf-community/asdf-"
@@ -1035,7 +1040,7 @@ msgstr ""
 "す。"
 
 #. type: Bullet: '* '
-#: ../README.md:186
+#: ../README.md:187
 msgid ""
 "[ondir](https://github.com/alecthomas/ondir) - OnDir is a small program to "
 "automate tasks specific to certain directories"
@@ -1044,7 +1049,7 @@ msgstr ""
 "有のタスクを自動化する、小さなプログラムです"
 
 #. type: Bullet: '* '
-#: ../README.md:186
+#: ../README.md:187
 msgid ""
 "[shadowenv](https://shopify.github.io/shadowenv/) - uses an s-expression "
 "format to define environment changes that should be executed"
@@ -1053,7 +1058,7 @@ msgstr ""
 "更を定義し、それが実行されます"
 
 #. type: Bullet: '* '
-#: ../README.md:186
+#: ../README.md:187
 msgid ""
 "[quickenv](https://github.com/untitaker/quickenv) - an alternative loader "
 "for `.envrc` files that does not hook into your shell and favors speed over "
@@ -1064,7 +1069,7 @@ msgstr ""
 "す。"
 
 #. type: Bullet: '* '
-#: ../README.md:186
+#: ../README.md:187
 msgid ""
 "[mise](https://github.com/jdx/mise) - direnv, make and asdf all in one tool."
 msgstr ""
@@ -1072,18 +1077,18 @@ msgstr ""
 "たものです。"
 
 #. type: Title ##
-#: ../README.md:187
+#: ../README.md:188
 #, no-wrap
 msgid "Commercial support"
 msgstr "商業支援"
 
 #. type: Plain text
-#: ../README.md:190
+#: ../README.md:191
 msgid "Looking for help or customization?"
 msgstr "ヘルプやカスタマイズをお求めですか？"
 
 #. type: Plain text
-#: ../README.md:193
+#: ../README.md:194
 msgid ""
 "Get in touch with Numtide to get a quote. We make it easy for companies to "
 "work with Open Source projects: <https://numtide.com/contact>"
@@ -1093,7 +1098,7 @@ msgstr ""
 "<https://numtide.com/contact>"
 
 #. type: Plain text
-#: ../README.md:196
+#: ../README.md:197
 msgid ""
 "[MIT licence](LICENSE) - Copyright (C) 2019 @zimbatm and [contributors]"
 "(https://github.com/direnv/direnv/graphs/contributors)"
@@ -1522,10 +1527,10 @@ msgstr "`MANPATH_add <パス>`"
 #: ../man/direnv-stdlib.1.md:166
 msgid ""
 "Prepends the expanded *path* to the MANPATH environment variable. It takes "
-"care of man-specific heuritic."
+"care of man-specific heuristics."
 msgstr ""
 "展開された*パス*をMANPATH環境変数に前置します。\n"
-"man特有の発見的手法に対処されます。"
+"man特有の発見的手法を取り扱います。"
 
 #. type: Title ###
 #: ../man/direnv-stdlib.1.md:167
@@ -2644,28 +2649,36 @@ msgstr "コマンド"
 msgid ""
 "`direnv allow [PATH_TO_RC]` : Grants direnv permission to load the given ."
 "envrc or .env file."
-msgstr "`direnv allow [rcへのパス]` : 与えられた.envrcや.envファイルを読み込むことを許可します。"
+msgstr ""
+"`direnv allow [rcへのパス]` : 与えられた.envrcや.envファイルを読み込むことを"
+"許可します。"
 
 #. type: Plain text
 #: ../man/direnv.1.md:143
 msgid ""
 "`direnv deny [PATH_TO_RC]` : Revokes the authorization of a given .envrc or ."
 "env file."
-msgstr "`direnv deny [rcへのパス]` : 与えられた.envrcや.envファイルの認可を失効させます。"
+msgstr ""
+"`direnv deny [rcへのパス]` : 与えられた.envrcや.envファイルの認可を失効させま"
+"す。"
 
 #. type: Plain text
 #: ../man/direnv.1.md:146
 msgid ""
 "`direnv edit [PATH_TO_RC]` : Opens PATH_TO_RC or the current .envrc or .env "
 "into an $EDITOR and allow the file to be loaded afterwards."
-msgstr "`direnv edit [rcへのパス]` : rcへのパス、または現地点にある.envrc、ないし.envを$EDITORで開き、その後でファイルを読み込めるようにします。"
+msgstr ""
+"`direnv edit [rcへのパス]` : rcへのパス、または現地点にある.envrc、ないし.env"
+"を$EDITORで開き、その後でファイルを読み込めるようにします。"
 
 #. type: Plain text
 #: ../man/direnv.1.md:149
 msgid ""
 "`direnv exec DIR COMMAND [...ARGS]` : Executes a command after loading the "
 "first .envrc or .env found in DIR."
-msgstr "`direnv exec ディレクトリ コマンド [...引数]` : ディレクトリで最初に見つかった.envrcないし.envを読み込んだ後でコマンドを実行します。"
+msgstr ""
+"`direnv exec ディレクトリ コマンド [...引数]` : ディレクトリで最初に見つかっ"
+"た.envrcないし.envを読み込んだ後でコマンドを実行します。"
 
 #. type: Plain text
 #: ../man/direnv.1.md:152
@@ -2673,7 +2686,10 @@ msgid ""
 "`direnv export SHELL` : Loads an .envrc or .env and prints the diff in terms "
 "of exports. Supported shells: bash, zsh, fish, tcsh, elvish, pwsh, murex, "
 "json, vim, gha (GitHub Actions), gzenv, systemd."
-msgstr "`direnv export シェル` : .envrcないし.envを読み込み、エクスポートで使える差分を印字します。対応しているシェルは、bash, zsh, fish, tcsh, elvish, pwsh, murex, json, vim, gha (GitHub Actions), gzenv, systemdです。"
+msgstr ""
+"`direnv export シェル` : .envrcないし.envを読み込み、エクスポートで使える差分"
+"を印字します。対応しているシェルは、bash, zsh, fish, tcsh, elvish, pwsh, "
+"murex, json, vim, gha (GitHub Actions), gzenv, systemdです。"
 
 #. type: Plain text
 #: ../man/direnv.1.md:155
@@ -2715,14 +2731,17 @@ msgstr "`direnv status` : デバッグ状態の情報を印字します。"
 msgid ""
 "`direnv stdlib` : Displays the stdlib available in the .envrc execution "
 "context."
-msgstr "`direnv stdlib` : .envrcの実行の文脈で使える標準ライブラリを表示します。"
+msgstr ""
+"`direnv stdlib` : .envrcの実行の文脈で使える標準ライブラリを表示します。"
 
 #. type: Plain text
 #: ../man/direnv.1.md:176
 msgid ""
 "`direnv version` : Prints the version or checks that direnv is older than "
 "VERSION_AT_LEAST."
-msgstr "`direnv version` : バージョンを印字するか、VERSION_AT_LEASTよりdirenvが古いかどうかを判定します。"
+msgstr ""
+"`direnv version` : バージョンを印字するか、VERSION_AT_LEASTよりdirenvが古いか"
+"どうかを判定します。"
 
 #. type: Title -
 #: ../man/direnv.1.md:178
