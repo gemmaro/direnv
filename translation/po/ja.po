@@ -7,8 +7,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Direnv\n"
-"POT-Creation-Date: 2025-07-25 18:50+0900\n"
-"PO-Revision-Date: 2025-07-25 18:56+0900\n"
+"POT-Creation-Date: 2025-08-18 22:07+0900\n"
+"PO-Revision-Date: 2025-08-18 22:25+0900\n"
 "Last-Translator: gemmaro\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -46,8 +46,8 @@ msgstr "解説"
 msgid ""
 "A configuration file in [TOML](https://github.com/toml-lang/toml) format to "
 "specify a variety of configuration options for direnv. The file is read from "
-"`$XDG_CONFIG_HOME/direnv/direnv.toml` (typically ~/.config/direnv/direnv."
-"toml)."
+"`$XDG_CONFIG_HOME/direnv/direnv.toml` (typically ~/.config/direnv/"
+"direnv.toml)."
 msgstr ""
 "構成ファイルは[TOML](https://github.com/toml-lang/toml)形式で、direnvの様々な"
 "構成オプションを指定できます。\n"
@@ -72,8 +72,8 @@ msgid ""
 "See the [TOML GitHub Repository](https://github.com/toml-lang/toml) for "
 "details about the syntax of the configuration file."
 msgstr ""
-"構成ファイルの構文について、詳しくは[TOMLのGitHubリポジトリ](https://github."
-"com/toml-lang/toml)をご参照ください。"
+"構成ファイルの構文について、詳しくは[TOMLのGitHubリポジトリ](https://"
+"github.com/toml-lang/toml)をご参照ください。"
 
 #. type: Title -
 #: ../man/direnv.toml.1.md:22
@@ -149,8 +149,8 @@ msgstr "`disable_stdin`"
 #. type: Plain text
 #: ../man/direnv.toml.1.md:44
 msgid ""
-"If set to `true`, stdin is disabled (redirected to /dev/null) during the `."
-"envrc` evaluation."
+"If set to `true`, stdin is disabled (redirected to /dev/null) during the "
+"`.envrc` evaluation."
 msgstr ""
 "`true`に設定したとき、`.envrc`の評価時に標準入力が無効になります（/dev/nullに"
 "リダイレクトされます）。"
@@ -291,10 +291,10 @@ msgstr "[whitelist]"
 #: ../man/direnv.toml.1.md:88
 msgid ""
 "Specifying whitelist directives marks specific directory hierarchies or "
-"specific directories as \"trusted\" -- direnv will evaluate any matching ."
-"envrc files regardless of whether they have been specifically allowed. "
-"**This feature should be used with great care**, as anyone with the ability "
-"to write files to that directory (including collaborators on VCS "
+"specific directories as \"trusted\" -- direnv will evaluate any "
+"matching .envrc files regardless of whether they have been specifically "
+"allowed. **This feature should be used with great care**, as anyone with the "
+"ability to write files to that directory (including collaborators on VCS "
 "repositories) will be able to execute arbitrary code on your computer."
 msgstr ""
 "ホワイトリストのディレクティブを指定すると、特定のディレクトリ階層または特定"
@@ -400,10 +400,10 @@ msgid ""
 "Accepts an array of strings. Each string can be a directory name or the full "
 "path to an .envrc file. If a directory name is passed, it will be treated as "
 "if it had been passed as itself with `/.envrc` appended. After resolving the "
-"filename, each string will be checked for being an exact match with an ."
-"envrc file's absolute path. If they match exactly, that .envrc file will be "
-"implicitly allowed, regardless of contents or past usage of `direnv allow` "
-"or `direnv deny`."
+"filename, each string will be checked for being an exact match with "
+"an .envrc file's absolute path. If they match exactly, that .envrc file will "
+"be implicitly allowed, regardless of contents or past usage of `direnv "
+"allow` or `direnv deny`."
 msgstr ""
 "文字列の配列を受け付けます。\n"
 "各文字列はディレクトリ名または`.envrc`ファイルへの完全なパスを取り得ます。\n"
@@ -483,24 +483,25 @@ msgstr "direnv -- .profileを散らかさない"
 #. type: Plain text
 #: ../README.md:8
 msgid ""
-"[![Built with Nix](https://builtwithnix.org/badge.svg)](https://builtwithnix."
-"org)  [![Packaging status](https://repology.org/badge/tiny-repos/direnv.svg)]"
-"(https://repology.org/project/direnv/versions)  [![latest packaged "
-"version(s)](https://repology.org/badge/latest-versions/direnv.svg)](https://"
-"repology.org/project/direnv/versions)  [![Support room on Matrix](https://"
-"img.shields.io/matrix/direnv:numtide.com.svg?label=%23direnv%3Anumtide."
-"com&logo=matrix&server_fqdn=matrix.numtide.com)](https://matrix.to/#/#direnv:"
-"numtide.com)"
+"[![Built with Nix](https://builtwithnix.org/badge.svg)](https://"
+"builtwithnix.org)  [![Packaging status](https://repology.org/badge/tiny-"
+"repos/direnv.svg)](https://repology.org/project/direnv/versions)  [![latest "
+"packaged version(s)](https://repology.org/badge/latest-versions/direnv.svg)]"
+"(https://repology.org/project/direnv/versions)  [![Support room on Matrix]"
+"(https://img.shields.io/matrix/direnv:numtide.com.svg?"
+"label=%23direnv%3Anumtide.com&logo=matrix&server_fqdn=matrix.numtide.com)]"
+"(https://matrix.to/#/#direnv:numtide.com)"
 msgstr ""
-"[![Nixでビルド](https://builtwithnix.org/badge.svg)](https://builtwithnix."
-"org)\n"
+"[![Nixでビルド](https://builtwithnix.org/badge.svg)](https://"
+"builtwithnix.org)\n"
 "[![パッケージ化の状態](https://repology.org/badge/tiny-repos/direnv.svg)]"
 "(https://repology.org/project/direnv/versions)\n"
 "[![最新のパッケージバージョン](https://repology.org/badge/latest-versions/"
 "direnv.svg)](https://repology.org/project/direnv/versions)\n"
-"[![Matrixのサポート場所](https://img.shields.io/matrix/direnv:numtide.com."
-"svg?label=%23direnv%3Anumtide.com&logo=matrix&server_fqdn=matrix.numtide."
-"com)](https://matrix.to/#/#direnv:numtide.com)"
+"[![Matrixのサポート場所](https://img.shields.io/matrix/"
+"direnv:numtide.com.svg?"
+"label=%23direnv%3Anumtide.com&logo=matrix&server_fqdn=matrix.numtide.com)]"
+"(https://matrix.to/#/#direnv:numtide.com)"
 
 #. type: Plain text
 #: ../README.md:12
@@ -765,8 +766,8 @@ msgstr ""
 msgid ""
 "Note that this functionality is not supported in `.env` files. If the "
 "coexistence of both is needed, one can use `.envrc` for leveraging stdlib "
-"and append `dotenv` at the end of it to instruct direnv to also read the `."
-"env` file next."
+"and append `dotenv` at the end of it to instruct direnv to also read the "
+"`.env` file next."
 msgstr ""
 "なお、この機能は`.env`ファイルでは対応していません。両方を共存させる必要があ"
 "るときは、`.envrc`の標準ライブラリを活用し、末尾に`dotenv`を付けることで、次"
@@ -940,8 +941,8 @@ msgid ""
 "To run our tests, use these commands: (you may need to install [homebrew]"
 "(https://brew.sh/))"
 msgstr ""
-"テストを実行するには、次のコマンドを使ってください（[homebrew](https://brew."
-"sh/)をインストールする必要があるかもしれません）。"
+"テストを実行するには、次のコマンドを使ってください（[homebrew](https://"
+"brew.sh/)をインストールする必要があるかもしれません）。"
 
 #. type: Fenced code block
 #: ../README.md:162
@@ -1769,8 +1770,8 @@ msgstr "`layout perl`"
 #. type: Plain text
 #: ../man/direnv-stdlib.1.md:255
 msgid ""
-"Setup environment variables required by perl's local::lib See http://search."
-"cpan.org/dist/local-lib/lib/local/lib.pm for more details."
+"Setup environment variables required by perl's local::lib See http://"
+"search.cpan.org/dist/local-lib/lib/local/lib.pm for more details."
 msgstr ""
 "perlのlocal::libで必要な環境変数を準備します。\n"
 "詳細は http://search.cpan.org/dist/local-lib/lib/local/lib.pm を参照。"
@@ -1796,8 +1797,8 @@ msgstr ""
 #: ../man/direnv-stdlib.1.md:261
 msgid ""
 "Note that unlike invoking Pipenv manually, this does not load environment "
-"variables from a `.env` file automatically. You may want to add `dotenv ."
-"env` to copy that behavior."
+"variables from a `.env` file automatically. You may want to add "
+"`dotenv .env` to copy that behavior."
 msgstr ""
 "なお、Pipenvを手動で呼び出すのとは異なり、自動で`.env`ファイルから環境変数を"
 "読み込みません。\n"
@@ -2471,25 +2472,25 @@ msgstr ""
 "direnvが適切に機能するためには、シェルにフックする必要があります。\n"
 "それぞれのシェルには、独自の拡張の仕組みがあります。"
 
-#. type: Title ###
-#: ../man/direnv.1.md:59
+#. type: Title ##
+#: ../man/direnv.1.md:59 ../docs/hook.md:8
 #, no-wrap
 msgid "BASH"
 msgstr "BASH"
 
 #. type: Plain text
-#: ../man/direnv.1.md:62
+#: ../man/direnv.1.md:62 ../docs/hook.md:11
 msgid "Add the following line at the end of the `~/.bashrc` file:"
 msgstr "以下の行を`~/.bashrc`ファイルの末尾に加えてください。"
 
 #. type: Fenced code block (sh)
-#: ../man/direnv.1.md:63
+#: ../man/direnv.1.md:63 ../docs/hook.md:12
 #, no-wrap
 msgid "eval \"$(direnv hook bash)\"\n"
 msgstr "eval \"$(direnv hook bash)\"\n"
 
 #. type: Plain text
-#: ../man/direnv.1.md:69
+#: ../man/direnv.1.md:69 ../docs/hook.md:18
 msgid ""
 "Make sure it appears even after rvm, git-prompt and other shell extensions "
 "that manipulate the prompt."
@@ -2497,25 +2498,25 @@ msgstr ""
 "必ず、rvm、git-promptやその他のプロンプトを操作するシェルの拡張より後にくるよ"
 "うにしてください。"
 
-#. type: Title ###
-#: ../man/direnv.1.md:70
+#. type: Title ##
+#: ../man/direnv.1.md:70 ../docs/hook.md:19
 #, no-wrap
 msgid "ZSH"
 msgstr "ZSH"
 
 #. type: Plain text
-#: ../man/direnv.1.md:73
+#: ../man/direnv.1.md:73 ../docs/hook.md:22
 msgid "Add the following line at the end of the `~/.zshrc` file:"
 msgstr "以下の行を`~/.zshrc`ファイルの末尾に加えてください。"
 
 #. type: Fenced code block (sh)
-#: ../man/direnv.1.md:74
+#: ../man/direnv.1.md:74 ../docs/hook.md:23
 #, no-wrap
 msgid "eval \"$(direnv hook zsh)\"\n"
 msgstr "eval \"$(direnv hook zsh)\"\n"
 
-#. type: Title ###
-#: ../man/direnv.1.md:78
+#. type: Title ##
+#: ../man/direnv.1.md:78 ../docs/hook.md:37
 #, no-wrap
 msgid "FISH"
 msgstr "FISH"
@@ -2529,13 +2530,13 @@ msgstr ""
 "以下の行を`$XDG_CONFIG_HOME/fish/config.fish`ファイルの末尾に加えてください。"
 
 #. type: Fenced code block (fish)
-#: ../man/direnv.1.md:82
+#: ../man/direnv.1.md:82 ../docs/hook.md:41
 #, no-wrap
 msgid "direnv hook fish | source\n"
 msgstr "direnv hook fish | source\n"
 
 #. type: Plain text
-#: ../man/direnv.1.md:87
+#: ../man/direnv.1.md:87 ../docs/hook.md:46
 msgid ""
 "Fish supports 3 modes you can set with the global environment variable "
 "`direnv_fish_mode`:"
@@ -2544,7 +2545,7 @@ msgstr ""
 "す。"
 
 #. type: Fenced code block (fish)
-#: ../man/direnv.1.md:88
+#: ../man/direnv.1.md:88 ../docs/hook.md:47
 #, no-wrap
 msgid ""
 "set -g direnv_fish_mode eval_on_arrow    # trigger direnv at prompt, and on every arrow-based directory change (default)\n"
@@ -2555,19 +2556,19 @@ msgstr ""
 "set -g direnv_fish_mode eval_after_arrow # プロンプト、及び実行コマンド前の矢印ベースのディレクトリの変更でのみdirenvを開始\n"
 "set -g direnv_fish_mode disable_arrow    # プロンプトでのみdirenvを開始。元々の動作と似た機能性です\n"
 
-#. type: Title ###
-#: ../man/direnv.1.md:95
+#. type: Title ##
+#: ../man/direnv.1.md:95 ../docs/hook.md:53
 #, no-wrap
 msgid "TCSH"
 msgstr "TCSH"
 
 #. type: Plain text
-#: ../man/direnv.1.md:98
+#: ../man/direnv.1.md:98 ../docs/hook.md:56
 msgid "Add the following line at the end of the `~/.cshrc` file:"
 msgstr "以下の行を`~/.cshrc`ファイルの末尾に加えてください。"
 
 #. type: Fenced code block (sh)
-#: ../man/direnv.1.md:99
+#: ../man/direnv.1.md:99 ../docs/hook.md:57
 #, no-wrap
 msgid "eval `direnv hook tcsh`\n"
 msgstr "eval `direnv hook tcsh`\n"
@@ -2579,12 +2580,12 @@ msgid "Elvish"
 msgstr "Elvish"
 
 #. type: Plain text
-#: ../man/direnv.1.md:106
+#: ../man/direnv.1.md:106 ../docs/hook.md:64
 msgid "Run:"
 msgstr "以下を実行してください。"
 
 #. type: Fenced code block
-#: ../man/direnv.1.md:107
+#: ../man/direnv.1.md:107 ../docs/hook.md:65
 #, no-wrap
 msgid ""
 "~> mkdir -p ~/.config/elvish/lib\n"
@@ -2594,35 +2595,35 @@ msgstr ""
 "~> direnv hook elvish > ~/.config/elvish/lib/direnv.elv\n"
 
 #. type: Plain text
-#: ../man/direnv.1.md:113
+#: ../man/direnv.1.md:113 ../docs/hook.md:71
 msgid "and add the following line to your `~/.config/elvish/rc.elv` file:"
 msgstr "そして、以下の行を`~/.config/elvish/rc.elv`ファイルに加えてください。"
 
 #. type: Fenced code block
-#: ../man/direnv.1.md:114
+#: ../man/direnv.1.md:114 ../docs/hook.md:72
 #, no-wrap
 msgid "use direnv\n"
 msgstr "use direnv\n"
 
 #. type: Title ###
-#: ../man/direnv.1.md:118
+#: ../man/direnv.1.md:118 ../docs/hook.md:93
 #, no-wrap
 msgid "PowerShell"
 msgstr "PowerShell"
 
 #. type: Plain text
-#: ../man/direnv.1.md:121
+#: ../man/direnv.1.md:121 ../docs/hook.md:96
 msgid "Add the following line to your `$PROFILE`:"
 msgstr "以下の行を`$PROFILE`に加えてください。"
 
 #. type: Fenced code block (powershell)
-#: ../man/direnv.1.md:122
+#: ../man/direnv.1.md:122 ../docs/hook.md:97
 #, no-wrap
 msgid "Invoke-Expression \"$(direnv hook pwsh)\"\n"
 msgstr "Invoke-Expression \"$(direnv hook pwsh)\"\n"
 
-#. type: Title ###
-#: ../man/direnv.1.md:126
+#. type: Title ##
+#: ../man/direnv.1.md:126 ../docs/hook.md:101
 #, no-wrap
 msgid "Murex"
 msgstr "Murex"
@@ -2632,8 +2633,8 @@ msgstr "Murex"
 msgid "Add the following line to your `~/.murex_profile`:"
 msgstr "以下の行を`~/.murex_profile`に加えてください。"
 
-#. type: Fenced code block
-#: ../man/direnv.1.md:130
+#. type: Fenced code block (sh)
+#: ../man/direnv.1.md:130 ../docs/hook.md:105
 #, no-wrap
 msgid "direnv hook murex -> source\n"
 msgstr "direnv hook murex -> source\n"
@@ -2647,8 +2648,8 @@ msgstr "コマンド"
 #. type: Plain text
 #: ../man/direnv.1.md:140
 msgid ""
-"`direnv allow [PATH_TO_RC]` : Grants direnv permission to load the given ."
-"envrc or .env file."
+"`direnv allow [PATH_TO_RC]` : Grants direnv permission to load the "
+"given .envrc or .env file."
 msgstr ""
 "`direnv allow [rcへのパス]` : 与えられた.envrcや.envファイルを読み込むことを"
 "許可します。"
@@ -2656,8 +2657,8 @@ msgstr ""
 #. type: Plain text
 #: ../man/direnv.1.md:143
 msgid ""
-"`direnv deny [PATH_TO_RC]` : Revokes the authorization of a given .envrc or ."
-"env file."
+"`direnv deny [PATH_TO_RC]` : Revokes the authorization of a given .envrc "
+"or .env file."
 msgstr ""
 "`direnv deny [rcへのパス]` : 与えられた.envrcや.envファイルの認可を失効させま"
 "す。"
@@ -2814,8 +2815,8 @@ msgstr ""
 "そこでdirenvでは、いろいろな補助関数が提供されており、`.envrc`ファイルの文脈"
 "で使えるようになっています。\n"
 "詳しくはdirenv-stdlib(1)のmanページをご確認ください。\n"
-"また、`$XDG_CONFIG_HOME/direnv/direnvrc`ないし`$XDG_CONFIG_HOME/direnv/lib/*."
-"sh`ファイルの中に、独自の拡張を定義することもできます。"
+"また、`$XDG_CONFIG_HOME/direnv/direnvrc`ないし`$XDG_CONFIG_HOME/direnv/lib/"
+"*.sh`ファイルの中に、独自の拡張を定義することもできます。"
 
 #. type: Plain text
 #: ../man/direnv.1.md:205
@@ -2847,8 +2848,8 @@ msgstr "ファイル"
 #. type: Plain text
 #: ../man/direnv.1.md:220
 msgid ""
-"`$XDG_CONFIG_HOME/direnv/direnv.toml` : Direnv configuration. See direnv."
-"toml(1)."
+"`$XDG_CONFIG_HOME/direnv/direnv.toml` : Direnv configuration. See "
+"direnv.toml(1)."
 msgstr ""
 "`$XDG_CONFIG_HOME/direnv/direnv.toml`：Direnvの構成です。direnv.toml(1)を参"
 "照。"
@@ -3017,8 +3018,8 @@ msgstr ""
 #: ../docs/ruby.md:41
 msgid ""
 "For that regard we are going to use a couple of commands available in the "
-"[direnv stdlib](/man/direnv-stdlib.1.md) and expand it a bit in the `~/."
-"config/direnv/direnvrc` file."
+"[direnv stdlib](/man/direnv-stdlib.1.md) and expand it a bit in the "
+"`~/.config/direnv/direnvrc` file."
 msgstr ""
 "このため、[direnvの標準ライブラリ](/man/direnv-stdlib.1.md)で使えるコマンドを"
 "使います。\n"
@@ -3222,14 +3223,18 @@ msgstr "[Arch Linux](https://archlinux.org/packages/extra/x86_64/direnv/)"
 msgid ""
 "[Debian](https://packages.debian.org/search?"
 "keywords=direnv&searchon=names&suite=all&section=all)"
-msgstr "[Debian](https://packages.debian.org/search?keywords=direnv&searchon=names&suite=all&section=all)"
+msgstr ""
+"[Debian](https://packages.debian.org/search?"
+"keywords=direnv&searchon=names&suite=all&section=all)"
 
 #. type: Bullet: '* '
 #: ../docs/installation.md:24
 msgid ""
 "[Gentoo Guru](https://wiki.gentoo.org/wiki/Project:GURU/"
 "Information_for_End_Users)"
-msgstr "[Gentoo Guru](https://wiki.gentoo.org/wiki/Project:GURU/Information_for_End_Users)"
+msgstr ""
+"[Gentoo Guru](https://wiki.gentoo.org/wiki/Project:GURU/"
+"Information_for_End_Users)"
 
 #. type: Bullet: '* '
 #: ../docs/installation.md:24
@@ -3250,7 +3255,8 @@ msgstr "[macOS Homebrew](https://formulae.brew.sh/formula/direnv#default)"
 #: ../docs/installation.md:24
 msgid ""
 "[openSUSE](https://build.opensuse.org/package/show/openSUSE%3AFactory/direnv)"
-msgstr "[openSUSE](https://build.opensuse.org/package/show/openSUSE%3AFactory/direnv)"
+msgstr ""
+"[openSUSE](https://build.opensuse.org/package/show/openSUSE%3AFactory/direnv)"
 
 #. type: Bullet: '* '
 #: ../docs/installation.md:24
@@ -3262,7 +3268,9 @@ msgstr "[MacPorts](https://ports.macports.org/port/direnv/)"
 msgid ""
 "[Ubuntu](https://packages.ubuntu.com/search?"
 "keywords=direnv&searchon=names&suite=all&section=all)"
-msgstr "[Ubuntu](https://packages.ubuntu.com/search?keywords=direnv&searchon=names&suite=all&section=all)"
+msgstr ""
+"[Ubuntu](https://packages.ubuntu.com/search?"
+"keywords=direnv&searchon=names&suite=all&section=all)"
 
 #. type: Bullet: '* '
 #: ../docs/installation.md:24
@@ -3273,7 +3281,8 @@ msgstr "[GNU Guix](https://packages.guix.gnu.org/search/?query=direnv)"
 #: ../docs/installation.md:24
 msgid ""
 "[Windows](https://learn.microsoft.com/en-us/windows/package-manager/winget/)"
-msgstr "[Windows](https://learn.microsoft.com/en-us/windows/package-manager/winget/)"
+msgstr ""
+"[Windows](https://learn.microsoft.com/en-us/windows/package-manager/winget/)"
 
 #. type: Plain text
 #: ../docs/installation.md:26
@@ -3283,9 +3292,11 @@ msgstr "こちらも参照。"
 #. type: Plain text
 #: ../docs/installation.md:28
 msgid ""
-"[![Packaging status](https://repology.org/badge/vertical-allrepos/direnv."
-"svg)](https://repology.org/metapackage/direnv)"
-msgstr "[![パッケージ化の状態](https://repology.org/badge/vertical-allrepos/direnv.svg)](https://repology.org/metapackage/direnv)"
+"[![Packaging status](https://repology.org/badge/vertical-allrepos/"
+"direnv.svg)](https://repology.org/metapackage/direnv)"
+msgstr ""
+"[![パッケージ化の状態](https://repology.org/badge/vertical-allrepos/"
+"direnv.svg)](https://repology.org/metapackage/direnv)"
 
 #. type: Title ##
 #: ../docs/installation.md:29
@@ -3296,7 +3307,9 @@ msgstr "バイナリのビルド成果物から"
 #. type: Plain text
 #: ../docs/installation.md:32
 msgid "To install binary builds you can run this bash installer:"
-msgstr "バイナリのビルド成果物をインストールするには、こちらのbashインストーラを実行してください。"
+msgstr ""
+"バイナリのビルド成果物をインストールするには、こちらのbashインストーラを実行"
+"してください。"
 
 #. type: Fenced code block (sh)
 #: ../docs/installation.md:33
@@ -3309,13 +3322,17 @@ msgstr "curl -sfL https://direnv.net/install.sh | bash\n"
 msgid ""
 "Binary builds for a variety of architectures are also available for [each "
 "release](https://github.com/direnv/direnv/releases)."
-msgstr "様々なアーキテクチャ用のバイナリのビルド成果物は、[毎回のリリース](https://github.com/direnv/direnv/releases)で入手できます。"
+msgstr ""
+"様々なアーキテクチャ用のバイナリのビルド成果物は、[毎回のリリース](https://"
+"github.com/direnv/direnv/releases)で入手できます。"
 
 #. type: Plain text
 #: ../docs/installation.md:41
 msgid ""
 "Fetch the binary, `chmod +x direnv` and put it somewhere in your `PATH`."
-msgstr "バイナリを取得し、`chmod +x direnv`として、`PATH`にあるどこかに置いてください。"
+msgstr ""
+"バイナリを取得し、`chmod +x direnv`として、`PATH`にあるどこかに置いてくださ"
+"い。"
 
 #. type: Title ##
 #: ../docs/installation.md:42
@@ -3338,3 +3355,109 @@ msgstr "次の工程"
 #: ../docs/installation.md:48
 msgid "[hook installation](hook.md)"
 msgstr "[シェルのインストール](hook.md)"
+
+#. type: Title #
+#: ../docs/hook.md:1
+#, no-wrap
+msgid "Setup"
+msgstr "準備"
+
+#. type: Plain text
+#: ../docs/hook.md:5
+msgid ""
+"For direnv to work properly it needs to be hooked into the shell. Each shell "
+"has its own extension mechanism."
+msgstr ""
+"direnvが適切に機能するためには、シェルにフックする必要があります。\n"
+"それぞれのシェルには、独自の拡張の仕組みがあります。"
+
+#. type: Plain text
+#: ../docs/hook.md:7
+msgid ""
+"Once the hook is configured, restart your shell for direnv to be activated."
+msgstr "フックが構成されたら、シェルを再起動するとdirenvが活性化します。"
+
+#. type: Title ##
+#: ../docs/hook.md:27
+#, no-wrap
+msgid "Oh my zsh"
+msgstr "Oh my zsh"
+
+#. type: Plain text
+#: ../docs/hook.md:30
+msgid ""
+"Oh my zsh has [a core plugin with direnv](https://github.com/ohmyzsh/ohmyzsh/"
+"tree/master/plugins/direnv) support."
+msgstr "Oh my zshには[direnvの中核プラグイン](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/direnv)の対応が備わっています。"
+
+#. type: Plain text
+#: ../docs/hook.md:32
+msgid "Add direnv to the plugins array in your zshrc file:"
+msgstr "zshrcファイルでdirenvをプラグインの配列を加えてください。"
+
+#. type: Fenced code block (sh)
+#: ../docs/hook.md:33
+#, no-wrap
+msgid "plugins=(... direnv)\n"
+msgstr "plugins=(... direnv)\n"
+
+#. type: Plain text
+#: ../docs/hook.md:40
+msgid ""
+"Add the following line at the end of the `~/.config/fish/config.fish` file:"
+msgstr "以下の行を`~/.config/fish/config.fish`ファイルの末尾に加えてください。"
+
+#. type: Title ##
+#: ../docs/hook.md:61
+#, no-wrap
+msgid "Elvish (0.12+)"
+msgstr "Elvish (0.12+)"
+
+#. type: Title ##
+#: ../docs/hook.md:76
+#, no-wrap
+msgid "Nushell"
+msgstr "Nushell"
+
+#. type: Plain text
+#: ../docs/hook.md:79
+msgid ""
+"Add the following hook to your `$env.config.hooks.env_change.PWD` list in "
+"`config.nu`:"
+msgstr "`config.nu`で以下のフックを`$env.config.hooks.env_change.PWD`リストを加えてください。"
+
+#. type: Fenced code block (nushell)
+#: ../docs/hook.md:79
+#, no-wrap
+msgid ""
+"{ ||\n"
+"    if (which direnv | is-empty) {\n"
+"        return\n"
+"    }\n"
+"\n"
+"    direnv export json | from json | default {} | load-env\n"
+"}\n"
+msgstr ""
+"{ ||\n"
+"    if (which direnv | is-empty) {\n"
+"        return\n"
+"    }\n"
+"\n"
+"    direnv export json | from json | default {} | load-env\n"
+"}\n"
+
+#. type: Plain text
+#: ../docs/hook.md:92
+#, no-wrap
+msgid ""
+"> **Note**\n"
+"> you can follow the [`nu_scripts` of Nushell](https://github.com/nushell/nu_scripts/blob/main/nu-hooks/nu-hooks/direnv/config.nu)\n"
+"> for the always up-to-date version of the hook above\n"
+msgstr ""
+"> **補足**\n"
+"> [Nushellの`nu_scripts`](https://github.com/nushell/nu_scripts/blob/main/nu-hooks/nu-hooks/direnv/config.nu)に従うことで、上記のフックを常に最新のバージョンで使えます。\n"
+
+#. type: Plain text
+#: ../docs/hook.md:104
+msgid "Add the following line to your `~/.murex_profile` file:"
+msgstr "以下の行を`~/.murex_profile`に加えてください。"
