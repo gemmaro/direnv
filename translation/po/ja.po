@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Direnv\n"
 "POT-Creation-Date: 2025-08-31 07:32+0900\n"
-"PO-Revision-Date: 2025-08-31 07:50+0900\n"
+"PO-Revision-Date: 2025-08-31 07:58+0900\n"
 "Last-Translator: gemmaro\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -122,6 +122,9 @@ msgid ""
 "    A HTTP URL that returns content on HTTP GET requests. 301 and other\n"
 "    redirects are followed.\n"
 msgstr ""
+"<URL>\n"
+"    HTTPのURLで、HTTPのGET要求で内容を返すものです。\n"
+"    301やその他のリダイレクトには従います。\n"
 
 #. type: Plain text
 #: ../man/direnv-fetchurl.1.md:47
@@ -132,25 +135,28 @@ msgid ""
 "    against the given hash. The hash encoding is based on the SRI W3C\n"
 "    specification (see https://www.w3.org/TR/SRI/ ).\n"
 msgstr ""
+"<正統性のためのハッシュ>\n"
+"    これを渡したとき、取得された内容の正統性が与えられたハッシュで検証されます。\n"
+"    ハッシュの符号化はSRIのW3C仕様に基づきます（ https://www.w3.org/TR/SRI/ 参照）。\n"
 
 #. type: Title -
 #: ../man/direnv-fetchurl.1.md:49
 #, no-wrap
 msgid "OUTPUT"
-msgstr ""
+msgstr "出力"
 
 #. type: Plain text
 #: ../man/direnv-fetchurl.1.md:52
 #, no-wrap
 msgid "*direnv fetchurl* outputs different content based on the argument.\n"
-msgstr ""
+msgstr "*direnv fetchurl* は引数によって異なる内容を出力します。\n"
 
 #. type: Plain text
 #: ../man/direnv-fetchurl.1.md:55
 msgid ""
 "If the `integrity-hash` is being passed, it will output the path to the on-"
 "disk location, if the retrieval was successful."
-msgstr ""
+msgstr "`正統性のためのハッシュ` が渡されたとき、その取得に成功したら、ディスク上の場所のパスを出力します。"
 
 #. type: Plain text
 #: ../man/direnv-fetchurl.1.md:59
@@ -159,6 +165,8 @@ msgid ""
 "human-readable instruction. If stdout is not a tty, only the hash will be "
 "displayed."
 msgstr ""
+"`url`だけが渡されたら、ハッシュと人間が読みやすい説明が出力されます。\n"
+"標準出力がttyでなければ、ハッシュだけが表示されます。"
 
 #. type: Title -
 #: ../man/direnv-fetchurl.1.md:61 ../man/direnv.1.md:32
@@ -173,12 +181,14 @@ msgid ""
 "    $ ./direnv fetchurl https://releases.nixos.org/nix/nix-2.3.7/install\n"
 "    Found hash: sha256-7Gxl5GzI9juc/U30Igh/pY+p6+gj5Waohfwql3jHIds=\n"
 msgstr ""
+"    $ ./direnv fetchurl https://releases.nixos.org/nix/nix-2.3.7/install\n"
+"    Found hash: sha256-7Gxl5GzI9juc/U30Igh/pY+p6+gj5Waohfwql3jHIds=\n"
 
 #. type: Plain text
 #: ../man/direnv-fetchurl.1.md:67
 #, no-wrap
 msgid "    Invoke fetchurl again with the hash as an argument to get the disk location:\n"
-msgstr ""
+msgstr "    Invoke fetchurl again with the hash as an argument to get the disk location:\n"
 
 #. type: Plain text
 #: ../man/direnv-fetchurl.1.md:70
@@ -187,6 +197,8 @@ msgid ""
 "      direnv fetchurl \"https://releases.nixos.org/nix/nix-2.3.7/install\" \"sha256-7Gxl5GzI9juc/U30Igh/pY+p6+gj5Waohfwql3jHIds=\"\n"
 "      #=> /home/zimbatm/.cache/direnv/cas/sha256-7Gxl5GzI9juc_U30Igh_pY+p6+gj5Waohfwql3jHIds=\n"
 msgstr ""
+"      direnv fetchurl \"https://releases.nixos.org/nix/nix-2.3.7/install\" \"sha256-7Gxl5GzI9juc/U30Igh/pY+p6+gj5Waohfwql3jHIds=\"\n"
+"      #=> /home/zimbatm/.cache/direnv/cas/sha256-7Gxl5GzI9juc_U30Igh_pY+p6+gj5Waohfwql3jHIds=\n"
 
 #. type: Title -
 #: ../man/direnv-fetchurl.1.md:72
@@ -203,6 +215,9 @@ msgid ""
 "    as `$XDG_CACHE_HOME/direnv/cas`. If **XDG_CACHE_HOME** is unset or empty,\n"
 "    defaults to `$HOME/.cache`.\n"
 msgstr ""
+"**XDG_CACHE_HOME**\n"
+"    この変数は取得されたURLのディスク上の場所を`$XDG_CACHE_HOME/direnv/cas`のように選択するときに使います。\n"
+"    **XDG_CACHE_HOME** が未設定ないし空のときは、既定で`$HOME/.cache`になります。\n"
 
 #. type: Title -
 #: ../man/direnv-fetchurl.1.md:80 ../man/direnv.toml.1.md:137 ../README.md:195
