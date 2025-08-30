@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Direnv\n"
 "POT-Creation-Date: 2025-08-31 07:32+0900\n"
-"PO-Revision-Date: 2025-08-31 07:35+0900\n"
+"PO-Revision-Date: 2025-08-31 07:50+0900\n"
 "Last-Translator: gemmaro\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -33,7 +33,7 @@ msgstr "名称"
 #. type: Plain text
 #: ../man/direnv-fetchurl.1.md:8
 msgid "direnv fetchurl - Fetch a URL to disk"
-msgstr ""
+msgstr "direnv fetchurl - URLから取得して保存"
 
 #. type: Title -
 #: ../man/direnv-fetchurl.1.md:10 ../man/direnv-stdlib.1.md:10
@@ -61,6 +61,8 @@ msgid ""
 "This command downloads the given URL into a fixed disk location, based on "
 "the content of the retrieved file."
 msgstr ""
+"このコマンドは与えられたURLからダウンロードして決まった場所に保存します。\n"
+"場所は取得されたファイルの内容に基づきます。"
 
 #. type: Plain text
 #: ../man/direnv-fetchurl.1.md:23
@@ -70,21 +72,24 @@ msgid ""
 "promoting a more secure way to fetch data from the Internet. Use this instead\n"
 "of `curl <url> | sh`.\n"
 msgstr ""
+"この機能は`curl`や`wget`への依存を避けるために導入されました。\n"
+"インターネットからより安全にデータを取得する方法を促進するものでもあります。\n"
+"`curl <URL> | sh`の代わりにお使いください。\n"
 
 #. type: Plain text
 #: ../man/direnv-fetchurl.1.md:25
 msgid "This command has two modes of operation:"
-msgstr ""
+msgstr "このコマンドには2つの操作モードがあります。"
 
 #. type: Bullet: '1. '
 #: ../man/direnv-fetchurl.1.md:28
 msgid "Just pass the URL to discover the integrity hash."
-msgstr ""
+msgstr "単にURLを渡し、正統性のためのハッシュを調べます。"
 
 #. type: Bullet: '2. '
 #: ../man/direnv-fetchurl.1.md:28
 msgid "Pass the URL *and* the integrity hash to get back the on-disk location."
-msgstr ""
+msgstr "URL *と* 正統性のためのハッシュを渡し、ディスク上の場所を返します。"
 
 #. type: Plain text
 #: ../man/direnv-fetchurl.1.md:32
@@ -93,19 +98,21 @@ msgid ""
 "One implication of this design is that URLs must be stable and always return "
 "the same content."
 msgstr ""
+"ディスク上の場所はハッシュに基づくため、キャッシュとしてもはたらきます。\n"
+"この設計では暗に、URLが安定で常に同じ内容を返すものとしています。"
 
 #. type: Plain text
 #: ../man/direnv-fetchurl.1.md:35
 msgid ""
 "Downloaded files are marked as read-only and executable so it can also be "
 "used to fetch and execute static binaries."
-msgstr ""
+msgstr "ダウンロードされたファイルは読取のみ実行可能となるため、静的バイナリを取得して実行することにも使えます。"
 
 #. type: Title -
 #: ../man/direnv-fetchurl.1.md:37
 #, no-wrap
 msgid "OPTIONS"
-msgstr ""
+msgstr "オプション"
 
 #. type: Plain text
 #: ../man/direnv-fetchurl.1.md:42
