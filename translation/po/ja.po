@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Direnv\n"
-"POT-Creation-Date: 2025-08-18 22:07+0900\n"
+"POT-Creation-Date: 2025-08-31 07:32+0900\n"
 "PO-Revision-Date: 2025-08-18 22:25+0900\n"
 "Last-Translator: gemmaro\n"
 "Language-Team: none\n"
@@ -18,28 +18,225 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #. type: Title =
-#: ../man/direnv.toml.1.md:2
-#, no-wrap
-msgid "DIRENV.TOML 1 \"2019\" direnv \"User Manuals\""
-msgstr "DIRENV.TOML 1 \"2019\" direnv 「利用者便覧」"
+#: ../man/direnv-fetchurl.1.md:2
+#, fuzzy, no-wrap
+#| msgid "DIRENV-STDLIB 1 \"2019\" direnv \"User Manuals\""
+msgid "DIRENV-FETCHURL 1 \"2019\" direnv \"User Manuals\""
+msgstr "DIRENV-STDLIB 1 \"2019\" direnv 「利用者用マニュアル」"
 
 #. type: Title -
-#: ../man/direnv.toml.1.md:5 ../man/direnv-stdlib.1.md:5 ../man/direnv.1.md:5
+#: ../man/direnv-fetchurl.1.md:5 ../man/direnv.toml.1.md:5
+#: ../man/direnv-stdlib.1.md:5 ../man/direnv.1.md:5
 #, no-wrap
 msgid "NAME"
 msgstr "名称"
 
 #. type: Plain text
-#: ../man/direnv.toml.1.md:8
-msgid "direnv.toml - the direnv configuration file"
-msgstr "direnv.toml - direnvの構成ファイル"
+#: ../man/direnv-fetchurl.1.md:8
+msgid "direnv fetchurl - Fetch a URL to disk"
+msgstr ""
 
 #. type: Title -
-#: ../man/direnv.toml.1.md:10 ../man/direnv-stdlib.1.md:15
-#: ../man/direnv.1.md:15
+#: ../man/direnv-fetchurl.1.md:10 ../man/direnv-stdlib.1.md:10
+#: ../man/direnv.1.md:10
+#, no-wrap
+msgid "SYNOPSIS"
+msgstr "処方"
+
+#. type: Plain text
+#: ../man/direnv-fetchurl.1.md:13
+#, fuzzy, no-wrap
+#| msgid "`fetchurl <url> [<integrity-hash>]`"
+msgid "*direnv fetchurl* <url> [<integrity-hash>]\n"
+msgstr "`fetchurl <URL> [<正統性のためのハッシュ>]`"
+
+#. type: Title -
+#: ../man/direnv-fetchurl.1.md:15 ../man/direnv.toml.1.md:10
+#: ../man/direnv-stdlib.1.md:15 ../man/direnv.1.md:15
 #, no-wrap
 msgid "DESCRIPTION"
 msgstr "解説"
+
+#. type: Plain text
+#: ../man/direnv-fetchurl.1.md:19
+msgid ""
+"This command downloads the given URL into a fixed disk location, based on "
+"the content of the retrieved file."
+msgstr ""
+
+#. type: Plain text
+#: ../man/direnv-fetchurl.1.md:23
+#, no-wrap
+msgid ""
+"This has been introduced to avoid a dependency on `curl` or `wget`, while also\n"
+"promoting a more secure way to fetch data from the Internet. Use this instead\n"
+"of `curl <url> | sh`.\n"
+msgstr ""
+
+#. type: Plain text
+#: ../man/direnv-fetchurl.1.md:25
+msgid "This command has two modes of operation:"
+msgstr ""
+
+#. type: Bullet: '1. '
+#: ../man/direnv-fetchurl.1.md:28
+msgid "Just pass the URL to discover the integrity hash."
+msgstr ""
+
+#. type: Bullet: '2. '
+#: ../man/direnv-fetchurl.1.md:28
+msgid "Pass the URL *and* the integrity hash to get back the on-disk location."
+msgstr ""
+
+#. type: Plain text
+#: ../man/direnv-fetchurl.1.md:32
+msgid ""
+"Since the on-disk location is based on the hash, it also acts as a cache. "
+"One implication of this design is that URLs must be stable and always return "
+"the same content."
+msgstr ""
+
+#. type: Plain text
+#: ../man/direnv-fetchurl.1.md:35
+msgid ""
+"Downloaded files are marked as read-only and executable so it can also be "
+"used to fetch and execute static binaries."
+msgstr ""
+
+#. type: Title -
+#: ../man/direnv-fetchurl.1.md:37
+#, no-wrap
+msgid "OPTIONS"
+msgstr ""
+
+#. type: Plain text
+#: ../man/direnv-fetchurl.1.md:42
+#, no-wrap
+msgid ""
+"<url>\n"
+"    A HTTP URL that returns content on HTTP GET requests. 301 and other\n"
+"    redirects are followed.\n"
+msgstr ""
+
+#. type: Plain text
+#: ../man/direnv-fetchurl.1.md:47
+#, no-wrap
+msgid ""
+"<integrity-hash>\n"
+"    When passed, the integrity of the retrieved content will be validated\n"
+"    against the given hash. The hash encoding is based on the SRI W3C\n"
+"    specification (see https://www.w3.org/TR/SRI/ ).\n"
+msgstr ""
+
+#. type: Title -
+#: ../man/direnv-fetchurl.1.md:49
+#, no-wrap
+msgid "OUTPUT"
+msgstr ""
+
+#. type: Plain text
+#: ../man/direnv-fetchurl.1.md:52
+#, no-wrap
+msgid "*direnv fetchurl* outputs different content based on the argument.\n"
+msgstr ""
+
+#. type: Plain text
+#: ../man/direnv-fetchurl.1.md:55
+msgid ""
+"If the `integrity-hash` is being passed, it will output the path to the on-"
+"disk location, if the retrieval was successful."
+msgstr ""
+
+#. type: Plain text
+#: ../man/direnv-fetchurl.1.md:59
+msgid ""
+"If only the `url` is being passed, it will output the hash as well as some "
+"human-readable instruction. If stdout is not a tty, only the hash will be "
+"displayed."
+msgstr ""
+
+#. type: Title -
+#: ../man/direnv-fetchurl.1.md:61 ../man/direnv.1.md:32
+#, no-wrap
+msgid "EXAMPLE"
+msgstr "例"
+
+#. type: Plain text
+#: ../man/direnv-fetchurl.1.md:65
+#, no-wrap
+msgid ""
+"    $ ./direnv fetchurl https://releases.nixos.org/nix/nix-2.3.7/install\n"
+"    Found hash: sha256-7Gxl5GzI9juc/U30Igh/pY+p6+gj5Waohfwql3jHIds=\n"
+msgstr ""
+
+#. type: Plain text
+#: ../man/direnv-fetchurl.1.md:67
+#, no-wrap
+msgid "    Invoke fetchurl again with the hash as an argument to get the disk location:\n"
+msgstr ""
+
+#. type: Plain text
+#: ../man/direnv-fetchurl.1.md:70
+#, no-wrap
+msgid ""
+"      direnv fetchurl \"https://releases.nixos.org/nix/nix-2.3.7/install\" \"sha256-7Gxl5GzI9juc/U30Igh/pY+p6+gj5Waohfwql3jHIds=\"\n"
+"      #=> /home/zimbatm/.cache/direnv/cas/sha256-7Gxl5GzI9juc_U30Igh_pY+p6+gj5Waohfwql3jHIds=\n"
+msgstr ""
+
+#. type: Title -
+#: ../man/direnv-fetchurl.1.md:72
+#, fuzzy, no-wrap
+#| msgid "ENVIRONMENT"
+msgid "ENVIRONMENT VARIABLES"
+msgstr "環境"
+
+#. type: Plain text
+#: ../man/direnv-fetchurl.1.md:78
+#, no-wrap
+msgid ""
+"**XDG_CACHE_HOME**\n"
+"    This variable is used to select the on-disk location of the fetched URLs\n"
+"    as `$XDG_CACHE_HOME/direnv/cas`. If **XDG_CACHE_HOME** is unset or empty,\n"
+"    defaults to `$HOME/.cache`.\n"
+msgstr ""
+
+#. type: Title -
+#: ../man/direnv-fetchurl.1.md:80 ../man/direnv.toml.1.md:137 ../README.md:195
+#: ../man/direnv-stdlib.1.md:445 ../man/direnv.1.md:245
+#, no-wrap
+msgid "COPYRIGHT"
+msgstr "著作情報"
+
+#. type: Plain text
+#: ../man/direnv-fetchurl.1.md:83 ../man/direnv.toml.1.md:140
+#: ../man/direnv-stdlib.1.md:448 ../man/direnv.1.md:248
+msgid "MIT licence - Copyright (C) 2019 @zimbatm and contributors"
+msgstr "MIT licence - Copyright (C) 2019 @zimbatm and contributors"
+
+#. type: Title -
+#: ../man/direnv-fetchurl.1.md:85 ../man/direnv.toml.1.md:142
+#: ../man/direnv-stdlib.1.md:450 ../man/direnv.1.md:250
+#, no-wrap
+msgid "SEE ALSO"
+msgstr "こちらも参照"
+
+#. type: Plain text
+#: ../man/direnv-fetchurl.1.md:87
+#, fuzzy
+#| msgid "`direnv stdlib`"
+msgid "direnv-stdlib(1)"
+msgstr "`direnv stdlib`"
+
+#. type: Title =
+#: ../man/direnv.toml.1.md:2
+#, no-wrap
+msgid "DIRENV.TOML 1 \"2019\" direnv \"User Manuals\""
+msgstr "DIRENV.TOML 1 \"2019\" direnv 「利用者便覧」"
+
+#. type: Plain text
+#: ../man/direnv.toml.1.md:8
+msgid "direnv.toml - the direnv configuration file"
+msgstr "direnv.toml - direnvの構成ファイル"
 
 #. type: Plain text
 #: ../man/direnv.toml.1.md:13
@@ -448,26 +645,6 @@ msgstr "`/home/user/code/project-b/subproject-c/.envrc`"
 #: ../man/direnv.toml.1.md:135
 msgid "`~/code/.envrc`"
 msgstr "`~/code/.envrc`"
-
-#. type: Title -
-#: ../man/direnv.toml.1.md:137 ../README.md:195 ../man/direnv-stdlib.1.md:445
-#: ../man/direnv.1.md:245
-#, no-wrap
-msgid "COPYRIGHT"
-msgstr "著作情報"
-
-#. type: Plain text
-#: ../man/direnv.toml.1.md:140 ../man/direnv-stdlib.1.md:448
-#: ../man/direnv.1.md:248
-msgid "MIT licence - Copyright (C) 2019 @zimbatm and contributors"
-msgstr "MIT licence - Copyright (C) 2019 @zimbatm and contributors"
-
-#. type: Title -
-#: ../man/direnv.toml.1.md:142 ../man/direnv-stdlib.1.md:450
-#: ../man/direnv.1.md:250
-#, no-wrap
-msgid "SEE ALSO"
-msgstr "こちらも参照"
 
 #. type: Plain text
 #: ../man/direnv.toml.1.md:144
@@ -1117,12 +1294,6 @@ msgstr "DIRENV-STDLIB 1 \"2019\" direnv 「利用者用マニュアル」"
 #: ../man/direnv-stdlib.1.md:8
 msgid "direnv-stdlib - functions for the `.envrc`"
 msgstr "direnv-stdlib - `.envrc`用の関数"
-
-#. type: Title -
-#: ../man/direnv-stdlib.1.md:10 ../man/direnv.1.md:10
-#, no-wrap
-msgid "SYNOPSIS"
-msgstr "処方"
 
 #. type: Plain text
 #: ../man/direnv-stdlib.1.md:13
@@ -2413,12 +2584,6 @@ msgstr ""
 "また言語に依らないため、rbenv、pyenv、phpenv等に似たソリューションの構築に使"
 "えます。"
 
-#. type: Title -
-#: ../man/direnv.1.md:32
-#, no-wrap
-msgid "EXAMPLE"
-msgstr "例"
-
 #. type: Fenced code block
 #: ../man/direnv.1.md:34
 #, no-wrap
@@ -3388,7 +3553,9 @@ msgstr "Oh my zsh"
 msgid ""
 "Oh my zsh has [a core plugin with direnv](https://github.com/ohmyzsh/ohmyzsh/"
 "tree/master/plugins/direnv) support."
-msgstr "Oh my zshには[direnvの中核プラグイン](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/direnv)の対応が備わっています。"
+msgstr ""
+"Oh my zshには[direnvの中核プラグイン](https://github.com/ohmyzsh/ohmyzsh/"
+"tree/master/plugins/direnv)の対応が備わっています。"
 
 #. type: Plain text
 #: ../docs/hook.md:32
@@ -3424,7 +3591,9 @@ msgstr "Nushell"
 msgid ""
 "Add the following hook to your `$env.config.hooks.env_change.PWD` list in "
 "`config.nu`:"
-msgstr "`config.nu`で以下のフックを`$env.config.hooks.env_change.PWD`リストを加えてください。"
+msgstr ""
+"`config.nu`で以下のフックを`$env.config.hooks.env_change.PWD`リストを加えてく"
+"ださい。"
 
 #. type: Fenced code block (nushell)
 #: ../docs/hook.md:79
