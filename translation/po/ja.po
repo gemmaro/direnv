@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Direnv\n"
 "POT-Creation-Date: 2025-08-31 07:32+0900\n"
-"PO-Revision-Date: 2025-08-18 22:25+0900\n"
+"PO-Revision-Date: 2025-08-31 07:35+0900\n"
 "Last-Translator: gemmaro\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -19,10 +19,9 @@ msgstr ""
 
 #. type: Title =
 #: ../man/direnv-fetchurl.1.md:2
-#, fuzzy, no-wrap
-#| msgid "DIRENV-STDLIB 1 \"2019\" direnv \"User Manuals\""
+#, no-wrap
 msgid "DIRENV-FETCHURL 1 \"2019\" direnv \"User Manuals\""
-msgstr "DIRENV-STDLIB 1 \"2019\" direnv 「利用者用マニュアル」"
+msgstr "DIRENV-FETCHURL 1 \"2019\" direnv 「利用者用マニュアル」"
 
 #. type: Title -
 #: ../man/direnv-fetchurl.1.md:5 ../man/direnv.toml.1.md:5
@@ -45,10 +44,9 @@ msgstr "処方"
 
 #. type: Plain text
 #: ../man/direnv-fetchurl.1.md:13
-#, fuzzy, no-wrap
-#| msgid "`fetchurl <url> [<integrity-hash>]`"
+#, no-wrap
 msgid "*direnv fetchurl* <url> [<integrity-hash>]\n"
-msgstr "`fetchurl <URL> [<正統性のためのハッシュ>]`"
+msgstr "*direnv fetchurl* <URL> [<正統性のためのハッシュ>]\n"
 
 #. type: Title -
 #: ../man/direnv-fetchurl.1.md:15 ../man/direnv.toml.1.md:10
@@ -185,10 +183,9 @@ msgstr ""
 
 #. type: Title -
 #: ../man/direnv-fetchurl.1.md:72
-#, fuzzy, no-wrap
-#| msgid "ENVIRONMENT"
+#, no-wrap
 msgid "ENVIRONMENT VARIABLES"
-msgstr "環境"
+msgstr "環境変数"
 
 #. type: Plain text
 #: ../man/direnv-fetchurl.1.md:78
@@ -222,10 +219,8 @@ msgstr "こちらも参照"
 
 #. type: Plain text
 #: ../man/direnv-fetchurl.1.md:87
-#, fuzzy
-#| msgid "`direnv stdlib`"
 msgid "direnv-stdlib(1)"
-msgstr "`direnv stdlib`"
+msgstr "direnv-stdlib(1)"
 
 #. type: Title =
 #: ../man/direnv.toml.1.md:2
