@@ -7,8 +7,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Direnv\n"
-"POT-Creation-Date: 2025-08-31 07:32+0900\n"
-"PO-Revision-Date: 2025-08-31 07:58+0900\n"
+"POT-Creation-Date: 2025-11-19 18:06+0900\n"
+"PO-Revision-Date: 2025-11-19 18:08+0900\n"
 "Last-Translator: gemmaro\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -106,7 +106,9 @@ msgstr ""
 msgid ""
 "Downloaded files are marked as read-only and executable so it can also be "
 "used to fetch and execute static binaries."
-msgstr "ダウンロードされたファイルは読取のみ実行可能となるため、静的バイナリを取得して実行することにも使えます。"
+msgstr ""
+"ダウンロードされたファイルは読取のみ実行可能となるため、静的バイナリを取得し"
+"て実行することにも使えます。"
 
 #. type: Title -
 #: ../man/direnv-fetchurl.1.md:37
@@ -156,7 +158,9 @@ msgstr "*direnv fetchurl* は引数によって異なる内容を出力します
 msgid ""
 "If the `integrity-hash` is being passed, it will output the path to the on-"
 "disk location, if the retrieval was successful."
-msgstr "`正統性のためのハッシュ` が渡されたとき、その取得に成功したら、ディスク上の場所のパスを出力します。"
+msgstr ""
+"`正統性のためのハッシュ` が渡されたとき、その取得に成功したら、ディスク上の場"
+"所のパスを出力します。"
 
 #. type: Plain text
 #: ../man/direnv-fetchurl.1.md:59
@@ -221,20 +225,20 @@ msgstr ""
 
 #. type: Title -
 #: ../man/direnv-fetchurl.1.md:80 ../man/direnv.toml.1.md:137 ../README.md:195
-#: ../man/direnv-stdlib.1.md:445 ../man/direnv.1.md:245
+#: ../man/direnv-stdlib.1.md:455 ../man/direnv.1.md:245
 #, no-wrap
 msgid "COPYRIGHT"
 msgstr "著作情報"
 
 #. type: Plain text
 #: ../man/direnv-fetchurl.1.md:83 ../man/direnv.toml.1.md:140
-#: ../man/direnv-stdlib.1.md:448 ../man/direnv.1.md:248
+#: ../man/direnv-stdlib.1.md:458 ../man/direnv.1.md:248
 msgid "MIT licence - Copyright (C) 2019 @zimbatm and contributors"
 msgstr "MIT licence - Copyright (C) 2019 @zimbatm and contributors"
 
 #. type: Title -
 #: ../man/direnv-fetchurl.1.md:85 ../man/direnv.toml.1.md:142
-#: ../man/direnv-stdlib.1.md:450 ../man/direnv.1.md:250
+#: ../man/direnv-stdlib.1.md:460 ../man/direnv.1.md:250
 #, no-wrap
 msgid "SEE ALSO"
 msgstr "こちらも参照"
@@ -2358,7 +2362,8 @@ msgstr ""
 "ファイルが変わったら、direnvは次のプロンプトで環境を再読込みします。"
 
 #. type: Plain text
-#: ../man/direnv-stdlib.1.md:377 ../man/direnv-stdlib.1.md:434
+#: ../man/direnv-stdlib.1.md:377 ../man/direnv-stdlib.1.md:387
+#: ../man/direnv-stdlib.1.md:444
 msgid "Example (.envrc):"
 msgstr "例 (.envrc) は次の通り。"
 
@@ -2371,11 +2376,33 @@ msgstr "    watch_file Gemfile\n"
 #. type: Title ###
 #: ../man/direnv-stdlib.1.md:380
 #, no-wrap
+msgid "`watch_dir <dir>`"
+msgstr "`watch_dir <ディレクトリ>`"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:385
+msgid ""
+"Adds the directory to direnv's recursive watch-list. If any file within the "
+"directory or its subdirectories changes, direnv will reload the environment "
+"on the next prompt."
+msgstr ""
+"各ファイルをdirenvの再帰的な監視リストに加えます。\n"
+"そのディレクトリやその配下ディレクトリの中のファイルが変わったときは、direnvは次のプロンプトで環境を再読込みします。"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:389
+#, no-wrap
+msgid "    watch_dir src\n"
+msgstr "    watch_dir src\n"
+
+#. type: Title ###
+#: ../man/direnv-stdlib.1.md:390
+#, no-wrap
 msgid "`direnv_version <version_at_least>`"
 msgstr "`direnv_version <最低バージョン>`"
 
 #. type: Plain text
-#: ../man/direnv-stdlib.1.md:385
+#: ../man/direnv-stdlib.1.md:395
 msgid ""
 "Checks that the direnv version is at least old as `version_at_least`. This "
 "can be useful when sharing an `.envrc` and to make sure that the users are "
@@ -2387,13 +2414,13 @@ msgstr ""
 "とがあります。"
 
 #. type: Title ###
-#: ../man/direnv-stdlib.1.md:386
+#: ../man/direnv-stdlib.1.md:396
 #, no-wrap
 msgid "`strict_env [<command> ...]`"
 msgstr "`strict_env [<コマンド> ...]`"
 
 #. type: Plain text
-#: ../man/direnv-stdlib.1.md:390
+#: ../man/direnv-stdlib.1.md:400
 msgid ""
 "Turns on shell execution strictness. This will force the .envrc evaluation "
 "context to exit immediately if:"
@@ -2402,7 +2429,7 @@ msgstr ""
 "こうすると .envrc の評価の文脈が、次のときに直ちに終了するようにします。"
 
 #. type: Bullet: '- '
-#: ../man/direnv-stdlib.1.md:397
+#: ../man/direnv-stdlib.1.md:407
 msgid ""
 "any command in a pipeline returns a non-zero exit status that is not "
 "otherwise handled as part of `if`, `while`, or `until` tests, return value "
@@ -2413,7 +2440,7 @@ msgstr ""
 "の連鎖の一部を返します。"
 
 #. type: Bullet: '- '
-#: ../man/direnv-stdlib.1.md:397
+#: ../man/direnv-stdlib.1.md:407
 msgid ""
 "any variable that has not explicitly been set or declared (with either "
 "`declare` or `local`) is referenced."
@@ -2422,19 +2449,19 @@ msgstr ""
 "が参照されたとき、"
 
 #. type: Plain text
-#: ../man/direnv-stdlib.1.md:400
+#: ../man/direnv-stdlib.1.md:410
 msgid ""
 "If followed by a command-line, the strictness applies for the duration of "
 "the command."
 msgstr "コマンドラインが後続するとき、厳密性はそのコマンドの間、適用されます。"
 
 #. type: Plain text
-#: ../man/direnv-stdlib.1.md:402 ../man/direnv-stdlib.1.md:416
+#: ../man/direnv-stdlib.1.md:412 ../man/direnv-stdlib.1.md:426
 msgid "Example (Whole Script):"
 msgstr "例（スクリプト全体）は次の通りです。"
 
 #. type: Plain text
-#: ../man/direnv-stdlib.1.md:405
+#: ../man/direnv-stdlib.1.md:415
 #, no-wrap
 msgid ""
 "    strict_env\n"
@@ -2444,24 +2471,24 @@ msgstr ""
 "    has curl\n"
 
 #. type: Plain text
-#: ../man/direnv-stdlib.1.md:407 ../man/direnv-stdlib.1.md:421
+#: ../man/direnv-stdlib.1.md:417 ../man/direnv-stdlib.1.md:431
 msgid "Example (Command):"
 msgstr "（コマンドの）例は次の通りです。"
 
 #. type: Plain text
-#: ../man/direnv-stdlib.1.md:409
+#: ../man/direnv-stdlib.1.md:419
 #, no-wrap
 msgid "    strict_env has curl\n"
 msgstr "    strict_env has curl\n"
 
 #. type: Title ####
-#: ../man/direnv-stdlib.1.md:410
+#: ../man/direnv-stdlib.1.md:420
 #, no-wrap
 msgid "`unstrict_env [<command> ...]`"
 msgstr "`unstrict_env [<コマンド> ...]`"
 
 #. type: Plain text
-#: ../man/direnv-stdlib.1.md:414
+#: ../man/direnv-stdlib.1.md:424
 msgid ""
 "Turns off shell execution strictness. If followed by a command-line, the "
 "strictness applies for the duration of the command."
@@ -2470,7 +2497,7 @@ msgstr ""
 "コマンドラインが後続するとき、厳密性はコマンドの間、適用されます。"
 
 #. type: Plain text
-#: ../man/direnv-stdlib.1.md:419
+#: ../man/direnv-stdlib.1.md:429
 #, no-wrap
 msgid ""
 "    unstrict_env\n"
@@ -2480,19 +2507,19 @@ msgstr ""
 "    has curl\n"
 
 #. type: Plain text
-#: ../man/direnv-stdlib.1.md:423
+#: ../man/direnv-stdlib.1.md:433
 #, no-wrap
 msgid "    unstrict_env has curl\n"
 msgstr "    unstrict_env has curl\n"
 
 #. type: Title ###
-#: ../man/direnv-stdlib.1.md:424
+#: ../man/direnv-stdlib.1.md:434
 #, no-wrap
 msgid "`on_git_branch [<branch_name>]`"
 msgstr "`on_git_branch [<ブランチ名>]`"
 
 #. type: Plain text
-#: ../man/direnv-stdlib.1.md:429
+#: ../man/direnv-stdlib.1.md:439
 msgid ""
 "Returns 0 if within a git repository with given `branch_name`. If no branch "
 "name is provided, then returns 0 when within _any_ branch. Requires the git "
@@ -2504,7 +2531,7 @@ msgstr ""
 "そうでなければ1を返します。"
 
 #. type: Plain text
-#: ../man/direnv-stdlib.1.md:432
+#: ../man/direnv-stdlib.1.md:442
 msgid ""
 "When a branch is specified, then `.git/HEAD` is watched so that entering/"
 "exiting a branch triggers a reload."
@@ -2513,7 +2540,7 @@ msgstr ""
 "そのため、ブランチに入ったり出たりすると再読込が引き起こされます。"
 
 #. type: Plain text
-#: ../man/direnv-stdlib.1.md:438
+#: ../man/direnv-stdlib.1.md:448
 #, no-wrap
 msgid ""
 "    if on_git_branch child_changes; then\n"
@@ -2522,22 +2549,22 @@ msgid ""
 msgstr ""
 "    if on_git_branch child_changes; then\n"
 "      export MERGE_BASE_BRANCH=parent_changes\n"
-"    fi\n"
-
-#. type: Plain text
-#: ../man/direnv-stdlib.1.md:442
-#, no-wrap
-msgid ""
-"    if on_git_branch; then\n"
-"      echo \"Thanks for contributing to a GitHub project!\"\n"
-"    fi\n"
-msgstr ""
-"    if on_git_branch; then\n"
-"      echo \"Thanks for contributing to a GitHub project!\"\n"
 "    fi\n"
 
 #. type: Plain text
 #: ../man/direnv-stdlib.1.md:452
+#, no-wrap
+msgid ""
+"    if on_git_branch; then\n"
+"      echo \"Thanks for contributing to a GitHub project!\"\n"
+"    fi\n"
+msgstr ""
+"    if on_git_branch; then\n"
+"      echo \"Thanks for contributing to a GitHub project!\"\n"
+"    fi\n"
+
+#. type: Plain text
+#: ../man/direnv-stdlib.1.md:462
 msgid "direnv(1), direnv.toml(1)"
 msgstr "direnv(1), direnv.toml(1)"
 
@@ -2787,7 +2814,7 @@ msgstr "そして、以下の行を`~/.config/elvish/rc.elv`ファイルに加�
 msgid "use direnv\n"
 msgstr "use direnv\n"
 
-#. type: Title ###
+#. type: Title ##
 #: ../man/direnv.1.md:118 ../docs/hook.md:93
 #, no-wrap
 msgid "PowerShell"
