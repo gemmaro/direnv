@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Direnv\n"
 "POT-Creation-Date: 2026-05-25 20:26+0900\n"
-"PO-Revision-Date: 2026-01-11 14:30+0900\n"
+"PO-Revision-Date: 2026-05-25 20:27+0900\n"
 "Last-Translator: gemmaro\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -3096,17 +3096,14 @@ msgstr ""
 
 #. type: Plain text
 #: ../docs/development.md:6
-#, fuzzy, no-wrap
-#| msgid "> direnv >= 2.31.0 is required\n"
+#, no-wrap
 msgid "> go >= 1.24 is required\n"
-msgstr "> direnv >= 2.31.0が必要です。\n"
+msgstr "> go >= 1.24が必要です。\n"
 
 #. type: Plain text
 #: ../docs/development.md:8
-#, fuzzy
-#| msgid "Related projects"
 msgid "Clone the project:"
-msgstr "関連するプロジェクト"
+msgstr "プロジェクトをクローンします："
 
 #. type: Plain text
 #: ../docs/development.md:10
@@ -3129,10 +3126,8 @@ msgstr ""
 
 #. type: Plain text
 #: ../docs/development.md:17
-#, fuzzy
-#| msgid "Related projects"
 msgid "Test the projects:"
-msgstr "関連するプロジェクト"
+msgstr "プロジェクトをテストします："
 
 #. type: Plain text
 #: ../docs/development.md:19
