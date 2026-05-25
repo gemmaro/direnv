@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Direnv\n"
 "POT-Creation-Date: 2026-05-25 20:28+0900\n"
-"PO-Revision-Date: 2026-05-25 20:27+0900\n"
+"PO-Revision-Date: 2026-05-25 21:06+0900\n"
 "Last-Translator: gemmaro\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -45,10 +45,9 @@ msgstr "処方"
 
 #. type: paragraph
 #: ../man/direnv-fetchurl.1.md:12
-#, fuzzy, no-wrap
-#| msgid "*direnv fetchurl* <url> [<integrity-hash>]\n"
+#, no-wrap
 msgid "*direnv fetchurl* <url> \\[<integrity-hash>\\]"
-msgstr "*direnv fetchurl* <URL> [<正統性のためのハッシュ>]\n"
+msgstr "*direnv fetchurl* <URL> \\[<正統性のためのハッシュ>\\]"
 
 #. type: heading2
 #: ../man/direnv-fetchurl.1.md:14 ../man/direnv.toml.1.md:9
@@ -67,16 +66,11 @@ msgstr ""
 
 #. type: paragraph
 #: ../man/direnv-fetchurl.1.md:20
-#, fuzzy, no-wrap
-#| msgid ""
-#| "This has been introduced to avoid a dependency on `curl` or `wget`, while also\n"
-#| "promoting a more secure way to fetch data from the Internet. Use this instead\n"
-#| "of `curl <url> | sh`.\n"
+#, no-wrap
 msgid "This has been introduced to avoid a dependency on `curl` or `wget`, while also promoting a more secure way to fetch data from the Internet. Use this instead of `curl <url> | sh`."
 msgstr ""
-"この機能は`curl`や`wget`への依存を避けるために導入されました。\n"
-"インターネットからより安全にデータを取得する方法を促進するものでもあります。\n"
-"`curl <URL> | sh`の代わりにお使いください。\n"
+"これは`curl`や`wget`への依存を避けるために導入されましたが、インターネットからより安全にデータを取得する方法を促進するものでもあります。\n"
+"`curl <URL> | sh`の代わりにお使いください。"
 
 #. type: paragraph
 #: ../man/direnv-fetchurl.1.md:24
@@ -118,28 +112,19 @@ msgstr "オプション"
 
 #. type: html_block
 #: ../man/direnv-fetchurl.1.md:39
-#, fuzzy, no-wrap
-#| msgid ""
-#| "<url>\n"
-#| "    A HTTP URL that returns content on HTTP GET requests. 301 and other\n"
-#| "    redirects are followed.\n"
+#, no-wrap
 msgid ""
 "<url>\n"
 "    A HTTP URL that returns content on HTTP GET requests. 301 and other\n"
 "    redirects are followed."
 msgstr ""
 "<URL>\n"
-"    HTTPのURLで、HTTPのGET要求で内容を返すものです。\n"
-"    301やその他のリダイレクトには従います。\n"
+"    HTTPのGET要求で内容を返すHTTPのURL。\n"
+"    301やその他のリダイレクトには従います。"
 
 #. type: html_block
 #: ../man/direnv-fetchurl.1.md:43
-#, fuzzy, no-wrap
-#| msgid ""
-#| "<integrity-hash>\n"
-#| "    When passed, the integrity of the retrieved content will be validated\n"
-#| "    against the given hash. The hash encoding is based on the SRI W3C\n"
-#| "    specification (see https://www.w3.org/TR/SRI/ ).\n"
+#, no-wrap
 msgid ""
 "<integrity-hash>\n"
 "    When passed, the integrity of the retrieved content will be validated\n"
@@ -148,7 +133,7 @@ msgid ""
 msgstr ""
 "<正統性のためのハッシュ>\n"
 "    これを渡したとき、取得された内容の正統性が与えられたハッシュで検証されます。\n"
-"    ハッシュの符号化はSRIのW3C仕様に基づきます（ https://www.w3.org/TR/SRI/ 参照）。\n"
+"    ハッシュの符号化はSRIのW3C仕様に基づきます（ https://www.w3.org/TR/SRI/ 参照）。"
 
 #. type: heading2
 #: ../man/direnv-fetchurl.1.md:48
@@ -158,10 +143,9 @@ msgstr "出力"
 
 #. type: paragraph
 #: ../man/direnv-fetchurl.1.md:51
-#, fuzzy, no-wrap
-#| msgid "*direnv fetchurl* outputs different content based on the argument.\n"
+#, no-wrap
 msgid "*direnv fetchurl* outputs different content based on the argument."
-msgstr "*direnv fetchurl* は引数によって異なる内容を出力します。\n"
+msgstr "*direnv fetchurl* は引数によって異なる内容を出力します。"
 
 #. type: paragraph
 #: ../man/direnv-fetchurl.1.md:53
@@ -185,10 +169,7 @@ msgstr "例"
 
 #. type: code_block
 #: ../man/direnv-fetchurl.1.md:63
-#, fuzzy, no-wrap
-#| msgid ""
-#| "      direnv fetchurl \"https://releases.nixos.org/nix/nix-2.3.7/install\" \"sha256-7Gxl5GzI9juc/U30Igh/pY+p6+gj5Waohfwql3jHIds=\"\n"
-#| "      #=> /home/zimbatm/.cache/direnv/cas/sha256-7Gxl5GzI9juc_U30Igh_pY+p6+gj5Waohfwql3jHIds=\n"
+#, no-wrap
 msgid ""
 "$ ./direnv fetchurl https://releases.nixos.org/nix/nix-2.3.7/install\n"
 "Found hash: sha256-7Gxl5GzI9juc/U30Igh/pY+p6+gj5Waohfwql3jHIds=\n"
@@ -198,8 +179,13 @@ msgid ""
 "  direnv fetchurl \"https://releases.nixos.org/nix/nix-2.3.7/install\" \"sha256-7Gxl5GzI9juc/U30Igh/pY+p6+gj5Waohfwql3jHIds=\"\n"
 "  #=> /home/zimbatm/.cache/direnv/cas/sha256-7Gxl5GzI9juc_U30Igh_pY+p6+gj5Waohfwql3jHIds="
 msgstr ""
-"      direnv fetchurl \"https://releases.nixos.org/nix/nix-2.3.7/install\" \"sha256-7Gxl5GzI9juc/U30Igh/pY+p6+gj5Waohfwql3jHIds=\"\n"
-"      #=> /home/zimbatm/.cache/direnv/cas/sha256-7Gxl5GzI9juc_U30Igh_pY+p6+gj5Waohfwql3jHIds=\n"
+"$ ./direnv fetchurl https://releases.nixos.org/nix/nix-2.3.7/install\n"
+"Found hash: sha256-7Gxl5GzI9juc/U30Igh/pY+p6+gj5Waohfwql3jHIds=\n"
+"\n"
+"Invoke fetchurl again with the hash as an argument to get the disk location:\n"
+"\n"
+"  direnv fetchurl \"https://releases.nixos.org/nix/nix-2.3.7/install\" \"sha256-7Gxl5GzI9juc/U30Igh/pY+p6+gj5Waohfwql3jHIds=\"\n"
+"  #=> /home/zimbatm/.cache/direnv/cas/sha256-7Gxl5GzI9juc_U30Igh_pY+p6+gj5Waohfwql3jHIds="
 
 #. type: heading2
 #: ../man/direnv-fetchurl.1.md:71
@@ -209,17 +195,12 @@ msgstr "環境変数"
 
 #. type: paragraph
 #: ../man/direnv-fetchurl.1.md:74
-#, fuzzy, no-wrap
-#| msgid ""
-#| "**XDG_CACHE_HOME**\n"
-#| "    This variable is used to select the on-disk location of the fetched URLs\n"
-#| "    as `$XDG_CACHE_HOME/direnv/cas`. If **XDG_CACHE_HOME** is unset or empty,\n"
-#| "    defaults to `$HOME/.cache`.\n"
+#, no-wrap
 msgid "**XDG\\_CACHE\\_HOME** This variable is used to select the on-disk location of the fetched URLs as `$XDG_CACHE_HOME/direnv/cas`. If **XDG\\_CACHE\\_HOME** is unset or empty, defaults to `$HOME/.cache`."
 msgstr ""
-"**XDG_CACHE_HOME**\n"
-"    この変数は取得されたURLのディスク上の場所を`$XDG_CACHE_HOME/direnv/cas`のように選択するときに使います。\n"
-"    **XDG_CACHE_HOME** が未設定ないし空のときは、既定で`$HOME/.cache`になります。\n"
+"**XDG\\_CACHE\\_HOME**\n"
+"この変数は取得されたURLのディスク上の場所を`$XDG_CACHE_HOME/direnv/cas`のように選択するために使います。\n"
+"**XDG_CACHE_HOME** が未設定ないし空のときは、既定で`$HOME/.cache`になります。"
 
 #. type: heading2
 #: ../man/direnv-fetchurl.1.md:79 ../man/direnv.toml.1.md:136
@@ -270,10 +251,9 @@ msgstr ""
 
 #. type: block_quote / paragraph
 #: ../man/direnv.toml.1.md:14
-#, fuzzy, no-wrap
-#| msgid "> For versions v2.21.0 and below use config.toml instead of direnv.toml\n"
+#, no-wrap
 msgid "For versions v2.21.0 and below use config.toml instead of direnv.toml"
-msgstr "> バージョンv2.21.0以前については、direnv.tomlではなくconfig.tomlを使ってください。\n"
+msgstr "バージョンv2.21.0以前については、direnv.tomlではなくconfig.tomlを使ってください。"
 
 #. type: heading2
 #: ../man/direnv.toml.1.md:16
@@ -315,16 +295,13 @@ msgstr "例は次の通り。"
 
 #. type: code_block (toml)
 #: ../man/direnv.toml.1.md:28
-#, fuzzy, no-wrap
-#| msgid ""
-#| "[section]\n"
-#| "key = \"value\"\n"
+#, no-wrap
 msgid ""
 "[section]\n"
 "key = \"value\""
 msgstr ""
 "[節]\n"
-"キー = \"バリュー\"\n"
+"キー = \"バリュー\""
 
 #. type: paragraph
 #: ../man/direnv.toml.1.md:33
@@ -334,10 +311,9 @@ msgstr "以下の節に対応しています。"
 
 #. type: heading2
 #: ../man/direnv.toml.1.md:35
-#, fuzzy, no-wrap
-#| msgid "[global]"
+#, no-wrap
 msgid "\\[global\\]"
-msgstr "[global]"
+msgstr "\\[global\\]"
 
 #. type: heading3
 #: ../man/direnv.toml.1.md:37
@@ -373,10 +349,9 @@ msgstr "`load_dotenv`"
 
 #. type: block_quote / paragraph
 #: ../man/direnv.toml.1.md:47
-#, fuzzy, no-wrap
-#| msgid "> direnv >= 2.31.0 is required\n"
+#, no-wrap
 msgid "direnv \\>= 2.31.0 is required"
-msgstr "> direnv >= 2.31.0が必要です。\n"
+msgstr "direnv >= 2.31.0が要求されます。"
 
 #. type: paragraph
 #: ../man/direnv.toml.1.md:49
@@ -416,19 +391,15 @@ msgstr ""
 
 #. type: paragraph
 #: ../man/direnv.toml.1.md:61
-#, fuzzy, no-wrap
-#| msgid "A duration string is a possibly signed sequence of decimal numbers, each with optional fraction and a unit suffix, such as \"300ms\", \"-1.5h\" or \"2h45m\".  Valid time units are \"ns\", \"us\" (or \"µs\"), \"ms\", \"s\", \"m\", \"h\"."
+#, no-wrap
 msgid "A duration string is a possibly signed sequence of decimal numbers, each with optional fraction and a unit suffix, such as \"300ms\", \"-1.5h\" or \"2h45m\". Valid time units are \"ns\", \"us\" (or \"µs\"), \"ms\", \"s\", \"m\", \"h\"."
 msgstr ""
-"時間間隔の文字列は、符号付きの10進の数字の並びを取りえます。\n"
-"端数や単位が後ろにあっても構いません。\n"
-"例えば「300ms」「-1.5h」「2h45m」です。\n"
-"有効な時間の単位は「ns」「us」（または「µs」）「ms」「s」「m」「h」です。"
+"時間間隔の文字列は、符号付きになりうる10進の数字の並びであり、「300ms」「-1.5h」「2h45m」といったように、それぞれに省略可能な端数や単位を伴います。\n"
+"適正な時間の単位は「ns」「us」（または「µs」）「ms」「s」「m」「h」です。"
 
 #. type: paragraph
 #: ../man/direnv.toml.1.md:65
-#, fuzzy, no-wrap
-#| msgid "This feature is disabled if the duration is lower or equal to zero.  Will be overwritten if the environment variable `DIRENV_WARN_TIMEOUT` is set to any of the above values."
+#, no-wrap
 msgid "This feature is disabled if the duration is lower or equal to zero. Will be overwritten if the environment variable `DIRENV_WARN_TIMEOUT` is set to any of the above values."
 msgstr ""
 "この機能は時間間隔がゼロ以下のとき無効になります。\n"
@@ -464,10 +435,9 @@ msgstr ""
 
 #. type: block_quote / paragraph
 #: ../man/direnv.toml.1.md:77 ../man/direnv.toml.1.md:83
-#, fuzzy, no-wrap
-#| msgid "> direnv >= 2.36.0 is required\n"
+#, no-wrap
 msgid "direnv \\>= 2.36.0 is required"
-msgstr "> direnv >= 2.36.0が必要です。\n"
+msgstr "direnv >= 2.36.0が要求されます。"
 
 #. type: heading3
 #: ../man/direnv.toml.1.md:79
@@ -483,10 +453,9 @@ msgstr "正規表現を使って、何らかの履歴に絞り込めます。"
 
 #. type: heading2
 #: ../man/direnv.toml.1.md:85
-#, fuzzy, no-wrap
-#| msgid "[whitelist]"
+#, no-wrap
 msgid "\\[whitelist\\]"
-msgstr "[whitelist]"
+msgstr "\\[whitelist\\]"
 
 #. type: paragraph
 #: ../man/direnv.toml.1.md:87
@@ -521,16 +490,13 @@ msgstr ""
 
 #. type: code_block (toml)
 #: ../man/direnv.toml.1.md:97
-#, fuzzy, no-wrap
-#| msgid ""
-#| "[whitelist]\n"
-#| "prefix = [ \"/home/user/code/project-a\", \"~/code/project-b\" ]\n"
+#, no-wrap
 msgid ""
 "[whitelist]\n"
 "prefix = [ \"/home/user/code/project-a\", \"~/code/project-b\" ]"
 msgstr ""
 "[whitelist]\n"
-"prefix = [ \"/home/user/code/project-a\", \"~/code/project-b\" ]\n"
+"prefix = [ \"/home/user/code/project-a\", \"~/code/project-b\" ]"
 
 #. type: paragraph
 #: ../man/direnv.toml.1.md:102
@@ -606,16 +572,13 @@ msgstr ""
 
 #. type: code_block (toml)
 #: ../man/direnv.toml.1.md:121
-#, fuzzy, no-wrap
-#| msgid ""
-#| "[whitelist]\n"
-#| "exact = [ \"/home/user/project-a/.envrc\", \"~/project-b/subdir-a\" ]\n"
+#, no-wrap
 msgid ""
 "[whitelist]\n"
 "exact = [ \"/home/user/project-a/.envrc\", \"~/project-b/subdir-a\" ]"
 msgstr ""
 "[whitelist]\n"
-"exact = [ \"/home/user/project-a/.envrc\", \"~/project-b/subdir-a\" ]\n"
+"exact = [ \"/home/user/project-a/.envrc\", \"~/project-b/subdir-a\" ]"
 
 #. type: paragraph
 #: ../man/direnv.toml.1.md:126
@@ -699,19 +662,15 @@ msgstr ""
 
 #. type: code_block
 #: ../man/direnv-stdlib.1.md:28
-#, fuzzy, no-wrap
-#| msgid ""
-#| "    if has curl; then\n"
-#| "      echo \"Yes we do\"\n"
-#| "    fi\n"
+#, no-wrap
 msgid ""
 "if has curl; then\n"
 "  echo \"Yes we do\"\n"
 "fi"
 msgstr ""
-"    if has curl; then\n"
-"      echo \"Yes we do\"\n"
-"    fi\n"
+"if has curl; then\n"
+"  echo \"Yes we do\"\n"
+"fi"
 
 #. type: heading3
 #: ../man/direnv-stdlib.1.md:32
@@ -721,26 +680,21 @@ msgstr "`expand_path <相対パス> [<相対元>]`"
 
 #. type: paragraph
 #: ../man/direnv-stdlib.1.md:34
-#, fuzzy, no-wrap
-#| msgid "Outputs the absolute path of *rel_path* relative to *relative_to* or the current directory."
+#, no-wrap
 msgid "Outputs the absolute path of *rel\\_path* relative to *relative\\_to* or the current directory."
-msgstr "*相対パス*の、*相対元*または現在ディレクトリから見た、絶対パスを返します。"
+msgstr "*相対元* または現在ディレクトリに対して相対な *相対パス* の 絶対パスを出力します。"
 
 #. type: code_block
 #: ../man/direnv-stdlib.1.md:38
-#, fuzzy, no-wrap
-#| msgid ""
-#| "    cd /usr/local/games\n"
-#| "    expand_path ../foo\n"
-#| "    # output: /usr/local/foo\n"
+#, no-wrap
 msgid ""
 "cd /usr/local/games\n"
 "expand_path ../foo\n"
 "# output: /usr/local/foo"
 msgstr ""
-"    cd /usr/local/games\n"
-"    expand_path ../foo\n"
-"    # 出力：/usr/local/foo\n"
+"cd /usr/local/games\n"
+"expand_path ../foo\n"
+"# 出力：/usr/local/foo"
 
 #. type: heading3
 #: ../man/direnv-stdlib.1.md:42
@@ -776,21 +730,13 @@ msgstr "`user_rel_path <絶対パス>`"
 
 #. type: paragraph
 #: ../man/direnv-stdlib.1.md:52
-#, fuzzy, no-wrap
-#| msgid "Transforms an absolute path *abs_path* into a user-relative path if possible."
+#, no-wrap
 msgid "Transforms an absolute path *abs\\_path* into a user-relative path if possible."
-msgstr "可能なとき、*絶対パス*を利用者にとっての相対パスへ変換します。"
+msgstr "可能なら *絶対パス* を利用者にとっての相対パスへ変換します。"
 
 #. type: code_block
 #: ../man/direnv-stdlib.1.md:56
-#, fuzzy, no-wrap
-#| msgid ""
-#| "    echo $HOME\n"
-#| "    # output: /home/user\n"
-#| "    user_rel_path /home/user/my/project\n"
-#| "    # output: ~/my/project\n"
-#| "    user_rel_path /usr/local/lib\n"
-#| "    # output: /usr/local/lib\n"
+#, no-wrap
 msgid ""
 "echo $HOME\n"
 "# output: /home/user\n"
@@ -799,12 +745,12 @@ msgid ""
 "user_rel_path /usr/local/lib\n"
 "# output: /usr/local/lib"
 msgstr ""
-"    echo $HOME\n"
-"    # 出力：/home/user\n"
-"    user_rel_path /home/user/my/project\n"
-"    # 出力：~/my/project\n"
-"    user_rel_path /usr/local/lib\n"
-"    # 出力：/usr/local/lib\n"
+"echo $HOME\n"
+"# 出力：/home/user\n"
+"user_rel_path /home/user/my/project\n"
+"# 出力：~/my/project\n"
+"user_rel_path /usr/local/lib\n"
+"# 出力：/usr/local/lib"
 
 #. type: heading3
 #: ../man/direnv-stdlib.1.md:63
@@ -822,14 +768,7 @@ msgstr ""
 
 #. type: code_block
 #: ../man/direnv-stdlib.1.md:69
-#, fuzzy, no-wrap
-#| msgid ""
-#| "    cd /usr/local/my\n"
-#| "    mkdir -p project/foo\n"
-#| "    touch bar\n"
-#| "    cd project/foo\n"
-#| "    find_up bar\n"
-#| "    # output: /usr/local/my/bar\n"
+#, no-wrap
 msgid ""
 "cd /usr/local/my\n"
 "mkdir -p project/foo\n"
@@ -838,12 +777,12 @@ msgid ""
 "find_up bar\n"
 "# output: /usr/local/my/bar"
 msgstr ""
-"    cd /usr/local/my\n"
-"    mkdir -p project/foo\n"
-"    touch bar\n"
-"    cd project/foo\n"
-"    find_up bar\n"
-"    # 出力：/usr/local/my/bar\n"
+"cd /usr/local/my\n"
+"mkdir -p project/foo\n"
+"touch bar\n"
+"cd project/foo\n"
+"find_up bar\n"
+"# 出力：/usr/local/my/bar"
 
 #. type: heading3
 #: ../man/direnv-stdlib.1.md:76
@@ -880,21 +819,17 @@ msgstr ""
 
 #. type: paragraph
 #: ../man/direnv-stdlib.1.md:86
-#, fuzzy, no-wrap
-#| msgid ""
-#| "NOTE: contrary to `source_env`, this only works when passing a path to a file,\n"
-#| "      not a directory.\n"
+#, no-wrap
 msgid "NOTE: contrary to `source_env`, this only works when passing a path to a file, not a directory."
 msgstr ""
 "補足：`source_env`とは対照的に、この機能はファイルへのパスを渡されたときのみ動作します。\n"
-"ディレクトリではありまません。\n"
+"ディレクトリではありません。"
 
 #. type: code_block
 #: ../man/direnv-stdlib.1.md:91
-#, fuzzy, no-wrap
-#| msgid "    source_env_if_exists .envrc.private\n"
+#, no-wrap
 msgid "source_env_if_exists .envrc.private"
-msgstr "    source_env_if_exists .envrc.private\n"
+msgstr "source_env_if_exists .envrc.private"
 
 #. type: heading3
 #: ../man/direnv-stdlib.1.md:93
@@ -904,31 +839,27 @@ msgstr "`env_vars_required <変数名> [<変数名> ...]`"
 
 #. type: paragraph
 #: ../man/direnv-stdlib.1.md:95
-#, fuzzy, no-wrap
-#| msgid "Logs error for every variable not present in the environment or having an empty value.  \n"
+#, no-wrap
 msgid ""
 "Logs error for every variable not present in the environment or having an empty value.  \n"
 "Typically this is used in combination with source\\_env and source\\_env\\_if\\_exists."
-msgstr "環境に存在しない変数や空の値の変数に対して、エラーのログを出します。\n"
+msgstr ""
+"環境に存在しないか空の値を持つすべての変数に対してエラーをログ出力します。  \n"
+"普通これはsource\\_envやsource\\_env\\_if\\_existsと組み合わせて使われます。"
 
 #. type: code_block
 #: ../man/direnv-stdlib.1.md:100
-#, fuzzy, no-wrap
-#| msgid ""
-#| "    # expect .envrc.private to provide tokens\n"
-#| "    source_env .envrc.private\n"
-#| "    # check presence of tokens\n"
-#| "    env_vars_required GITHUB_TOKEN OTHER_TOKEN\n"
+#, no-wrap
 msgid ""
 "# expect .envrc.private to provide tokens\n"
 "source_env .envrc.private\n"
 "# check presence of tokens\n"
 "env_vars_required GITHUB_TOKEN OTHER_TOKEN"
 msgstr ""
-"    # .envrc.private によりトークンが提供されることを期待\n"
-"    source_env .envrc.private\n"
-"    # トークンが存在することを確認\n"
-"    env_vars_required GITHUB_TOKEN OTHER_TOKEN\n"
+"# .envrc.private によりトークンが提供されることを期待\n"
+"source_env .envrc.private\n"
+"# トークンが存在することを確認\n"
+"env_vars_required GITHUB_TOKEN OTHER_TOKEN"
 
 #. type: heading3
 #: ../man/direnv-stdlib.1.md:106
@@ -938,12 +869,11 @@ msgstr "`source_up [<ファイル名>]`"
 
 #. type: paragraph
 #: ../man/direnv-stdlib.1.md:108
-#, fuzzy, no-wrap
-#| msgid "Loads another `.envrc` if found with the find_up command. Returns 1 if no file is found."
+#, no-wrap
 msgid "Loads another `.envrc` if found with the find\\_up command. Returns 1 if no file is found."
 msgstr ""
-"find_up コマンドで別の「.envrc」が見付かったら、それを読み込みます。\n"
-"ファイルが見つからなかったときは1を返します。"
+"find\\_up コマンドで別の`.envrc`が見付かれば読み込みます。\n"
+"ファイルが見つからなければ1を返します。"
 
 #. type: heading3
 #: ../man/direnv-stdlib.1.md:113
@@ -953,11 +883,10 @@ msgstr "`source_up_if_exists [<ファイル名>]`"
 
 #. type: paragraph
 #: ../man/direnv-stdlib.1.md:115
-#, fuzzy, no-wrap
-#| msgid "Loads another `.envrc` if found with the find_up command. If one is not found, nothing happens."
+#, no-wrap
 msgid "Loads another `.envrc` if found with the find\\_up command. If one is not found, nothing happens."
 msgstr ""
-"find_up コマンドで別の`.envrc`が見つかったときは、それを読み込みます。\n"
+"find\\_up コマンドで別の`.envrc`が見つかれば読み込みます。\n"
 "何も見つからなければ、何も起きません。"
 
 #. type: heading3
@@ -976,14 +905,9 @@ msgstr ""
 
 #. type: paragraph
 #: ../man/direnv-stdlib.1.md:125
-#, fuzzy, no-wrap
-#| msgid ""
-#| "To find the value of the `integrity-hash`, call `direnv fetchurl <url>` and\n"
-#| "extract the hash from the outputted message.\n"
+#, no-wrap
 msgid "To find the value of the `integrity-hash`, call `direnv fetchurl <url>` and extract the hash from the outputted message."
-msgstr ""
-"`正統性のためのハッシュ`の値を調べるには、`direnv fetchurl <URL>`を呼びます。\n"
-"出力された伝文からハッシュを抽出してください。\n"
+msgstr "`正統性のためのハッシュ`の値を調べるには、`direnv fetchurl <URL>`を呼んで出力された伝文からハッシュを抽出してください。"
 
 #. type: paragraph
 #: ../man/direnv-stdlib.1.md:128 ../man/direnv-stdlib.1.md:137
@@ -1031,20 +955,17 @@ msgstr "`direnv_load [<コマンドにより生成されたダンプ出力>]`"
 
 #. type: paragraph
 #: ../man/direnv-stdlib.1.md:145
-#, fuzzy, no-wrap
-#| msgid "Applies the environment generated by running *argv* as a command. This is useful for adopting the environment of a child process - cause that process to run \"direnv dump\" and then wrap the results with direnv_load."
+#, no-wrap
 msgid "Applies the environment generated by running *argv* as a command. This is useful for adopting the environment of a child process - cause that process to run \"direnv dump\" and then wrap the results with direnv\\_load."
 msgstr ""
-"*引数のリスト*をコマンドとして走らせることで生成された環境を適用します。\n"
-"これは、子プロセスの環境を適用するのに便利です。\n"
-"プロセスで「direnv dump」を走らせ、その結果を direnv_load で包めばよいからです。"
+"*引数のリスト* をコマンドとして走らせることで生成された環境を適用します。\n"
+"これは、子プロセスの環境を適用するのに便利です――そのプロセスで「direnv dump」を走らせてその結果が direnv\\_load で包まれます。"
 
 #. type: code_block
 #: ../man/direnv-stdlib.1.md:149
-#, fuzzy, no-wrap
-#| msgid "    direnv_load opam exec direnv dump\n"
+#, no-wrap
 msgid "direnv_load opam exec direnv dump"
-msgstr "    direnv_load opam exec direnv dump\n"
+msgstr "direnv_load opam exec direnv dump"
 
 #. type: heading3
 #: ../man/direnv-stdlib.1.md:151
@@ -1062,13 +983,7 @@ msgstr ""
 
 #. type: code_block
 #: ../man/direnv-stdlib.1.md:157
-#, fuzzy, no-wrap
-#| msgid ""
-#| "    pwd\n"
-#| "    # output: /home/user/my/project\n"
-#| "    PATH_add bin\n"
-#| "    echo $PATH\n"
-#| "    # output: /home/user/my/project/bin:/usr/bin:/bin\n"
+#, no-wrap
 msgid ""
 "pwd\n"
 "# output: /home/user/my/project\n"
@@ -1076,11 +991,11 @@ msgid ""
 "echo $PATH\n"
 "# output: /home/user/my/project/bin:/usr/bin:/bin"
 msgstr ""
-"    pwd\n"
-"    # 出力：/home/user/my/project\n"
-"    PATH_add bin\n"
-"    echo $PATH\n"
-"    # 出力：/home/user/my/project/bin:/usr/bin:/bin\n"
+"pwd\n"
+"# 出力：/home/user/my/project\n"
+"PATH_add bin\n"
+"echo $PATH\n"
+"# 出力：/home/user/my/project/bin:/usr/bin:/bin"
 
 #. type: heading3
 #: ../man/direnv-stdlib.1.md:163
@@ -1124,24 +1039,13 @@ msgstr ""
 
 #. type: paragraph
 #: ../man/direnv-stdlib.1.md:175
-#, fuzzy, no-wrap
-#| msgid ""
-#| "Bash pattern syntax:\n"
-#| "  https://www.gnu.org/software/bash/manual/html_node/Pattern-Matching.html\n"
+#, no-wrap
 msgid "Bash pattern syntax: https://www.gnu.org/software/bash/manual/html\\_node/Pattern-Matching.html"
-msgstr ""
-"Bashのパターン構文：\n"
-"  https://www.gnu.org/software/bash/manual/html_node/Pattern-Matching.html\n"
+msgstr "Bashのパターン構文： https://www.gnu.org/software/bash/manual/html\\_node/Pattern-Matching.html"
 
 #. type: code_block
 #: ../man/direnv-stdlib.1.md:180
-#, fuzzy, no-wrap
-#| msgid ""
-#| "    echo $PATH\n"
-#| "    # output: /dontremove/me:/remove/me:/usr/local/bin/:...\n"
-#| "    PATH_rm '/remove/*'\n"
-#| "    echo $PATH\n"
-#| "    # output: /dontremove/me:/usr/local/bin/:...\n"
+#, no-wrap
 msgid ""
 "echo $PATH\n"
 "# output: /dontremove/me:/remove/me:/usr/local/bin/:...\n"
@@ -1149,11 +1053,11 @@ msgid ""
 "echo $PATH\n"
 "# output: /dontremove/me:/usr/local/bin/:..."
 msgstr ""
-"    echo $PATH\n"
-"    # 出力：/dontremove/me:/remove/me:/usr/local/bin/:...\n"
-"    PATH_rm '/remove/*'\n"
-"    echo $PATH\n"
-"    # 出力：/dontremove/me:/usr/local/bin/:...\n"
+"echo $PATH\n"
+"# 出力：/dontremove/me:/remove/me:/usr/local/bin/:...\n"
+"PATH_rm '/remove/*'\n"
+"echo $PATH\n"
+"# 出力：/dontremove/me:/usr/local/bin/:..."
 
 #. type: heading3
 #: ../man/direnv-stdlib.1.md:187
@@ -1163,12 +1067,11 @@ msgstr "`load_prefix <接頭辞パス>`"
 
 #. type: paragraph
 #: ../man/direnv-stdlib.1.md:189
-#, fuzzy, no-wrap
-#| msgid "Expands some common path variables for the given *prefix_path* prefix. This is useful if you installed something in the *prefix_path* using `./configure --prefix=$prefix_path && make install` and want to use it in the project."
+#, no-wrap
 msgid "Expands some common path variables for the given *prefix\\_path* prefix. This is useful if you installed something in the *prefix\\_path* using `./configure --prefix=$prefix_path && make install` and want to use it in the project."
 msgstr ""
-"与えられた*接頭辞パス*について、よくあるパス変数を展開します。\n"
-"`./configure --prefix=$prefix_path && make install`を使って*接頭辞パス*に何かをインストールしており、プロジェクトで使いたいときに便利です。"
+"与えられた *接頭辞パス* について、よくあるパス変数を展開します。\n"
+"`./configure --prefix=$prefix_path && make install`を使って *接頭辞パス* に何かをインストールしており、プロジェクトで使いたいときに便利です。"
 
 #. type: paragraph
 #: ../man/direnv-stdlib.1.md:191
@@ -1178,14 +1081,7 @@ msgstr "設定される変数は以下です。"
 
 #. type: code_block
 #: ../man/direnv-stdlib.1.md:193
-#, fuzzy, no-wrap
-#| msgid ""
-#| "    CPATH\n"
-#| "    LD_LIBRARY_PATH\n"
-#| "    LIBRARY_PATH\n"
-#| "    MANPATH\n"
-#| "    PATH\n"
-#| "    PKG_CONFIG_PATH\n"
+#, no-wrap
 msgid ""
 "CPATH\n"
 "LD_LIBRARY_PATH\n"
@@ -1194,31 +1090,26 @@ msgid ""
 "PATH\n"
 "PKG_CONFIG_PATH"
 msgstr ""
-"    CPATH\n"
-"    LD_LIBRARY_PATH\n"
-"    LIBRARY_PATH\n"
-"    MANPATH\n"
-"    PATH\n"
-"    PKG_CONFIG_PATH\n"
+"CPATH\n"
+"LD_LIBRARY_PATH\n"
+"LIBRARY_PATH\n"
+"MANPATH\n"
+"PATH\n"
+"PKG_CONFIG_PATH"
 
 #. type: code_block
 #: ../man/direnv-stdlib.1.md:202
-#, fuzzy, no-wrap
-#| msgid ""
-#| "    ./configure --prefix=$HOME/rubies/ruby-1.9.3\n"
-#| "    make && make install\n"
-#| "    # Then in the .envrc\n"
-#| "    load_prefix ~/rubies/ruby-1.9.3\n"
+#, no-wrap
 msgid ""
 "./configure --prefix=$HOME/rubies/ruby-1.9.3\n"
 "make && make install\n"
 "# Then in the .envrc\n"
 "load_prefix ~/rubies/ruby-1.9.3"
 msgstr ""
-"    ./configure --prefix=$HOME/rubies/ruby-1.9.3\n"
-"    make && make install\n"
-"    # そして.envrcで次のようにします\n"
-"    load_prefix ~/rubies/ruby-1.9.3\n"
+"./configure --prefix=$HOME/rubies/ruby-1.9.3\n"
+"make && make install\n"
+"# そして.envrcで次のようにします\n"
+"load_prefix ~/rubies/ruby-1.9.3"
 
 #. type: heading3
 #: ../man/direnv-stdlib.1.md:208
@@ -1240,20 +1131,7 @@ msgstr "例は次の通り。"
 
 #. type: code_block
 #: ../man/direnv-stdlib.1.md:214
-#, fuzzy, no-wrap
-#| msgid ""
-#| "    $ tree .\n"
-#| "    .\n"
-#| "    |-- dir\n"
-#| "        |-- program-1.4.0\n"
-#| "        |-- program-1.4.1\n"
-#| "        |-- program-1.5.0\n"
-#| "    $ semver_search \"dir\" \"program-\" \"1.4.0\"\n"
-#| "    1.4.0\n"
-#| "    $ semver_search \"dir\" \"program-\" \"1.4\"\n"
-#| "    1.4.1\n"
-#| "    $ semver_search \"dir\" \"program-\" \"1\"\n"
-#| "    1.5.0\n"
+#, no-wrap
 msgid ""
 "$ tree .\n"
 ".\n"
@@ -1268,18 +1146,18 @@ msgid ""
 "$ semver_search \"dir\" \"program-\" \"1\"\n"
 "1.5.0"
 msgstr ""
-"    $ tree .\n"
-"    .\n"
-"    |-- dir\n"
-"        |-- program-1.4.0\n"
-"        |-- program-1.4.1\n"
-"        |-- program-1.5.0\n"
-"    $ semver_search \"dir\" \"program-\" \"1.4.0\"\n"
-"    1.4.0\n"
-"    $ semver_search \"dir\" \"program-\" \"1.4\"\n"
-"    1.4.1\n"
-"    $ semver_search \"dir\" \"program-\" \"1\"\n"
-"    1.5.0\n"
+"$ tree .\n"
+".\n"
+"|-- dir\n"
+"    |-- program-1.4.0\n"
+"    |-- program-1.4.1\n"
+"    |-- program-1.5.0\n"
+"$ semver_search \"dir\" \"program-\" \"1.4.0\"\n"
+"1.4.0\n"
+"$ semver_search \"dir\" \"program-\" \"1.4\"\n"
+"1.4.1\n"
+"$ semver_search \"dir\" \"program-\" \"1\"\n"
+"1.5.0"
 
 #. type: heading3
 #: ../man/direnv-stdlib.1.md:227
@@ -1301,11 +1179,10 @@ msgstr "`layout go`"
 
 #. type: paragraph
 #: ../man/direnv-stdlib.1.md:233
-#, fuzzy, no-wrap
-#| msgid "Adds \"$(direnv_layout_dir)/go\" to the GOPATH environment variable.  And also adds \"$PWD/bin\" to the PATH environment variable."
+#, no-wrap
 msgid "Adds \"$(direnv\\_layout\\_dir)/go\" to the GOPATH environment variable. And also adds \"$PWD/bin\" to the PATH environment variable."
 msgstr ""
-"「$(direnv_layout_dir)/go」をGOPATH環境変数に加えます。\n"
+"「$(direnv\\_layout\\_dir)/go」をGOPATH環境変数に加えます。\n"
 "また、「$PWD/bin」をPATH環境変数に加えます。"
 
 #. type: heading3
@@ -1328,10 +1205,9 @@ msgstr "`layout node`"
 
 #. type: paragraph
 #: ../man/direnv-stdlib.1.md:242
-#, fuzzy, no-wrap
-#| msgid "Adds \"$PWD/node_modules/.bin\" to the PATH environment variable."
+#, no-wrap
 msgid "Adds \"$PWD/node\\_modules/.bin\" to the PATH environment variable."
-msgstr "「$PWD/node_modules/.bin」をPATH環境変数に加えます。"
+msgstr "「$PWD/node\\_modules/.bin」をPATH環境変数に加えます。"
 
 #. type: heading3
 #: ../man/direnv-stdlib.1.md:244
@@ -1459,11 +1335,10 @@ msgstr "`layout ruby`"
 
 #. type: paragraph
 #: ../man/direnv-stdlib.1.md:282
-#, fuzzy, no-wrap
-#| msgid "Sets the GEM_HOME environment variable to `$PWD/.direnv/ruby/RUBY_VERSION`. This forces the installation of any gems into the project's sub-folder. If you're using bundler it will create wrapper programs that can be invoked directly instead of using the `bundle exec` prefix."
+#, no-wrap
 msgid "Sets the GEM\\_HOME environment variable to `$PWD/.direnv/ruby/RUBY_VERSION`. This forces the installation of any gems into the project's sub-folder. If you're using bundler it will create wrapper programs that can be invoked directly instead of using the `bundle exec` prefix."
 msgstr ""
-"GEM_HOME環境変数を`$PWD/.direnv/ruby/RUBY_VERSION`に設定します。\n"
+"GEM\\_HOME環境変数を`$PWD/.direnv/ruby/RUBY_VERSION`に設定します。\n"
 "これにより、全てのgemがプロジェクトの副フォルダへ強制的にインストールされます。\n"
 "bundlerを使っている場合、`bundle exec`の接頭辞を使う代わりに、そのまま呼び出せるようにラッパープログラムが作られます。"
 
@@ -1481,13 +1356,7 @@ msgstr "外部の依存関係を環境に読み込むことを目的とした、
 
 #. type: code_block
 #: ../man/direnv-stdlib.1.md:290
-#, fuzzy, no-wrap
-#| msgid ""
-#| "    use_ruby() {\n"
-#| "      echo \"Ruby $1\"\n"
-#| "    }\n"
-#| "    use ruby 1.9.3\n"
-#| "    # output: Ruby 1.9.3\n"
+#, no-wrap
 msgid ""
 "use_ruby() {\n"
 "  echo \"Ruby $1\"\n"
@@ -1495,11 +1364,11 @@ msgid ""
 "use ruby 1.9.3\n"
 "# output: Ruby 1.9.3"
 msgstr ""
-"    use_ruby() {\n"
-"      echo \"Ruby $1\"\n"
-"    }\n"
-"    use ruby 1.9.3\n"
-"    # 出力：Ruby 1.9.3\n"
+"use_ruby() {\n"
+"  echo \"Ruby $1\"\n"
+"}\n"
+"use ruby 1.9.3\n"
+"# 出力：Ruby 1.9.3"
 
 #. type: heading3
 #: ../man/direnv-stdlib.1.md:296
@@ -1509,19 +1378,13 @@ msgstr "`use julia <バージョン>`"
 
 #. type: paragraph
 #: ../man/direnv-stdlib.1.md:298
-#, fuzzy, no-wrap
-#| msgid ""
-#| "Loads the specified Julia version. You must specify a path to the directory with\n"
-#| "installed Julia versions using $JULIA_VERSIONS. You can optionally override the\n"
-#| "prefix for folders inside $JULIA_VERSIONS (default `julia-`) using $JULIA_VERSION_PREFIX.\n"
-#| "If no exact match for `<version>` is found a search will be performed and the latest\n"
-#| "version will be loaded.\n"
+#, no-wrap
 msgid "Loads the specified Julia version. You must specify a path to the directory with installed Julia versions using $JULIA\\_VERSIONS. You can optionally override the prefix for folders inside $JULIA\\_VERSIONS (default `julia-`) using $JULIA\\_VERSION\\_PREFIX. If no exact match for `<version>` is found a search will be performed and the latest version will be loaded."
 msgstr ""
 "指定されたJuliaのバージョンを読み込みます。\n"
-"$JULIA_VERSIONSを使って、インストールされたJuliaのバージョンのあるディレクトリへのパスを指定しなければなりません。\n"
-"$JULIA_VERSION_PREFIX（既定は`julia-`）を使い、$JULIA_VERSIONS内のフォルダの接頭辞を上塗りできますが、省けます。\n"
-"`<バージョン>`にちょうと合致するものが見つからなければ、検索が実行され、最新版が読み込まれます。\n"
+"$JULIA\\_VERSIONSを使って、インストールされたJuliaのバージョンのあるディレクトリへのパスを指定しなければなりません。\n"
+"$JULIA\\_VERSION_PREFIX（既定は`julia-`）を使い、$JULIA_VERSIONS内のフォルダの接頭辞を上塗りできますが、省けます。\n"
+"`<バージョン>`にちょうと合致するものが見つからなければ、検索が実行され、最新版が読み込まれます。"
 
 #. type: paragraph
 #: ../man/direnv-stdlib.1.md:304
@@ -1531,19 +1394,15 @@ msgstr "例 (.envrc) は次の通りです。"
 
 #. type: code_block
 #: ../man/direnv-stdlib.1.md:306
-#, fuzzy, no-wrap
-#| msgid ""
-#| "    use julia 1.5.1   # loads $JULIA_VERSIONS/julia-1.5.1\n"
-#| "    use julia 1.5     # loads $JULIA_VERSIONS/julia-1.5.1\n"
-#| "    use julia master  # loads $JULIA_VERSIONS/julia-master\n"
+#, no-wrap
 msgid ""
 "use julia 1.5.1   # loads $JULIA_VERSIONS/julia-1.5.1\n"
 "use julia 1.5     # loads $JULIA_VERSIONS/julia-1.5.1\n"
 "use julia master  # loads $JULIA_VERSIONS/julia-master"
 msgstr ""
-"    use julia 1.5.1   # $JULIA_VERSIONS/julia-1.5.1 を読み込みます\n"
-"    use julia 1.5     # $JULIA_VERSIONS/julia-1.5.1 を読み込みます\n"
-"    use julia master  # $JULIA_VERSIONS/julia-master を読み込みます\n"
+"use julia 1.5.1   # $JULIA_VERSIONS/julia-1.5.1 を読み込みます\n"
+"use julia 1.5     # $JULIA_VERSIONS/julia-1.5.1 を読み込みます\n"
+"use julia master  # $JULIA_VERSIONS/julia-master を読み込みます"
 
 #. type: heading3
 #: ../man/direnv-stdlib.1.md:310
@@ -1579,10 +1438,9 @@ msgstr ""
 
 #. type: paragraph
 #: ../man/direnv-stdlib.1.md:320
-#, fuzzy, no-wrap
-#| msgid "See http://nixos.org/nix/manual/#sec-nix-shell"
+#, no-wrap
 msgid "See http://nixos.org/nix/manual/\\#sec-nix-shell"
-msgstr "http://nixos.org/nix/manual/#sec-nix-shell を参照"
+msgstr "http://nixos.org/nix/manual/\\#sec-nix-shell を参照"
 
 #. type: heading3
 #: ../man/direnv-stdlib.1.md:322
@@ -1600,12 +1458,11 @@ msgstr ""
 
 #. type: paragraph
 #: ../man/direnv-stdlib.1.md:326
-#, fuzzy, no-wrap
-#| msgid "By default it will load the current folder flake.nix devShell attribute. Or pass an \"installable\" like \"nixpkgs#hello\" to load all the build dependencies of the hello package from the latest nixpkgs."
+#, no-wrap
 msgid "By default it will load the current folder flake.nix devShell attribute. Or pass an \"installable\" like \"nixpkgs\\#hello\" to load all the build dependencies of the hello package from the latest nixpkgs."
 msgstr ""
 "既定で現在のフォルダにflake.nixのdevShell属性を読み込みます。\n"
-"あるいは、「nixpkgs#hello」のように「インストール可能な対象」を渡して、最新のnixpkgsからhelloパッケージの構築の依存関係を全て読み込みます。"
+"あるいは、「nixpkgs\\#hello」のように「インストール可能な対象」を渡して、最新のnixpkgsからhelloパッケージの構築の依存関係を全て読み込みます。"
 
 #. type: paragraph
 #: ../man/direnv-stdlib.1.md:330
@@ -1641,10 +1498,9 @@ msgstr ""
 
 #. type: paragraph
 #: ../man/direnv-stdlib.1.md:339
-#, fuzzy, no-wrap
-#| msgid "See https://guix.gnu.org/manual/en/guix.html#Invoking-guix-shell"
+#, no-wrap
 msgid "See https://guix.gnu.org/manual/en/guix.html\\#Invoking-guix-shell"
-msgstr "https://guix.gnu.org/manual/en/guix.html#Invoking-guix-shell を参照"
+msgstr "https://guix.gnu.org/manual/en/guix.html\\#Invoking-guix-shell を参照"
 
 #. type: heading3
 #: ../man/direnv-stdlib.1.md:341
@@ -1690,21 +1546,19 @@ msgstr "環境変数は次の通りです。"
 
 #. type: bullet list / item / paragraph
 #: ../man/direnv-stdlib.1.md:357
-#, fuzzy, no-wrap
-#| msgid "$NODE_VERSIONS (required)  Points to a folder that contains all the installed Node versions. That folder must exist."
+#, no-wrap
 msgid "$NODE\\_VERSIONS (required) Points to a folder that contains all the installed Node versions. That folder must exist."
 msgstr ""
-"$NODE_VERSIONS（必須）\n"
+"$NODE\\_VERSIONS（必須）\n"
 "全てのインストールされたNodeのバージョンを含むフォルダを指します。\n"
 "フォルダは存在しなければなりません。"
 
 #. type: bullet list / item / paragraph
 #: ../man/direnv-stdlib.1.md:361
-#, fuzzy, no-wrap
-#| msgid "$NODE_VERSION_PREFIX (optional) [default=\"node-v\"] Overrides the default version prefix."
+#, no-wrap
 msgid "$NODE\\_VERSION\\_PREFIX (optional) \\[default=\"node-v\"\\] Overrides the default version prefix."
 msgstr ""
-"$NODE_VERSION_PREFIX（省略可能）［既定では「node-v」］\n"
+"$NODE\\_VERSION\\_PREFIX（省略可能）［既定では「node-v」］\n"
 "既定のバージョンの接頭辞を上塗りします。"
 
 #. type: heading3
@@ -1750,10 +1604,9 @@ msgstr "例 (.envrc) は次の通り。"
 
 #. type: code_block
 #: ../man/direnv-stdlib.1.md:378
-#, fuzzy, no-wrap
-#| msgid "    watch_file Gemfile\n"
+#, no-wrap
 msgid "watch_file Gemfile"
-msgstr "    watch_file Gemfile\n"
+msgstr "watch_file Gemfile"
 
 #. type: heading3
 #: ../man/direnv-stdlib.1.md:380
@@ -1771,10 +1624,9 @@ msgstr ""
 
 #. type: code_block
 #: ../man/direnv-stdlib.1.md:388
-#, fuzzy, no-wrap
-#| msgid "    watch_dir src\n"
+#, no-wrap
 msgid "watch_dir src"
-msgstr "    watch_dir src\n"
+msgstr "watch_dir src"
 
 #. type: heading3
 #: ../man/direnv-stdlib.1.md:390
@@ -1784,18 +1636,16 @@ msgstr "`require_allowed <パス> [<パス> ...]`"
 
 #. type: block_quote / paragraph
 #: ../man/direnv-stdlib.1.md:392
-#, fuzzy, no-wrap
-#| msgid "> direnv >= 2.38.0 is required\n"
+#, no-wrap
 msgid "direnv \\>= 2.38.0 is required"
-msgstr "> direnv >= 2.38.0が必要です。\n"
+msgstr "direnv >= 2.38.0が要求されます"
 
 #. type: paragraph
 #: ../man/direnv-stdlib.1.md:394
-#, fuzzy, no-wrap
-#| msgid "Adds a list of files to the allow-list for `.envrc` using the `require_allowed` command.  If any of the specified files are modified, removed, or new files in the list appear, direnv will require you to run `direnv allow` again to re-authorize the environment.  This increases security by ensuring that only changes to files you have explicitly allowed will take effect.  You should use this in direnv configurations where you execute code from the lockfile (for example pixi's activation scripts or npm postinstall scripts)."
+#, no-wrap
 msgid "Adds a list of files to the allow-list for `.envrc` using the `require_allowed` command. If any of the specified files are modified, removed, or new files in the list appear, direnv will require you to run `direnv allow` again to re-authorize the environment. This increases security by ensuring that only changes to files you have explicitly allowed will take effect. You should use this in direnv configurations where you execute code from the lockfile (for example pixi's activation scripts or npm postinstall scripts)."
 msgstr ""
-"`require_allowed`コマンドを使うと、ファイルのリストが`.envrc`の許可リストに追加されます。\n"
+"`require_allowed`コマンドを使っている`.envrc`についてファイルのリストが許可リストに追加されます。\n"
 "指定されたファイルの何れかが変更、削除、ないしリスト中の新規ファイルが出現すると、direnvにより`direnv allow`を再実行することが要求されます。\n"
 "再実行により再びその環境が認可されます。\n"
 "これは、陽に許可したファイルの変更のみに効果があるようにすることで、安全性を上げるためのものです。\n"
@@ -1803,10 +1653,9 @@ msgstr ""
 
 #. type: code_block
 #: ../man/direnv-stdlib.1.md:403
-#, fuzzy, no-wrap
-#| msgid "    require_allowed pixi.toml pixi.lock\n"
+#, no-wrap
 msgid "require_allowed pixi.toml pixi.lock"
-msgstr "    require_allowed pixi.toml pixi.lock\n"
+msgstr "require_allowed pixi.toml pixi.lock"
 
 #. type: heading3
 #: ../man/direnv-stdlib.1.md:405
@@ -1838,8 +1687,7 @@ msgstr ""
 
 #. type: bullet list / item / paragraph
 #: ../man/direnv-stdlib.1.md:416
-#, fuzzy, no-wrap
-#| msgid "any command in a pipeline returns a non-zero exit status that is not otherwise handled as part of `if`, `while`, or `until` tests, return value negation (`!`), or part of a boolean (`&&` or `||`)  chain."
+#, no-wrap
 msgid "any command in a pipeline returns a non-zero exit status that is not otherwise handled as part of `if`, `while`, or `until` tests, return value negation (`!`), or part of a boolean (`&&` or `||`) chain."
 msgstr "パイプライン中のコマンドのどれかがゼロでない終了状態を返し、`if`、`while`、`until`の条件で扱われなければ、値の否定 (`!`) ないし真偽値（`&&`または`||`）の連鎖の一部を返します。"
 
@@ -1863,12 +1711,13 @@ msgstr "例（スクリプト全体）は次の通りです。"
 
 #. type: code_block
 #: ../man/direnv-stdlib.1.md:428
-#, fuzzy, no-wrap
-#| msgid "    strict_env has curl\n"
+#, no-wrap
 msgid ""
 "strict_env\n"
 "has curl"
-msgstr "    strict_env has curl\n"
+msgstr ""
+"strict_env\n"
+"has curl"
 
 #. type: paragraph
 #: ../man/direnv-stdlib.1.md:431 ../man/direnv-stdlib.1.md:445
@@ -1878,10 +1727,9 @@ msgstr "（コマンドの）例は次の通りです。"
 
 #. type: code_block
 #: ../man/direnv-stdlib.1.md:433
-#, fuzzy, no-wrap
-#| msgid "    strict_env has curl\n"
+#, no-wrap
 msgid "strict_env has curl"
-msgstr "    strict_env has curl\n"
+msgstr "strict_env has curl"
 
 #. type: heading4
 #: ../man/direnv-stdlib.1.md:435
@@ -1899,19 +1747,19 @@ msgstr ""
 
 #. type: code_block
 #: ../man/direnv-stdlib.1.md:442
-#, fuzzy, no-wrap
-#| msgid "    unstrict_env has curl\n"
+#, no-wrap
 msgid ""
 "unstrict_env\n"
 "has curl"
-msgstr "    unstrict_env has curl\n"
+msgstr ""
+"unstrict_env\n"
+"has curl"
 
 #. type: code_block
 #: ../man/direnv-stdlib.1.md:447
-#, fuzzy, no-wrap
-#| msgid "    unstrict_env has curl\n"
+#, no-wrap
 msgid "unstrict_env has curl"
-msgstr "    unstrict_env has curl\n"
+msgstr "unstrict_env has curl"
 
 #. type: heading3
 #: ../man/direnv-stdlib.1.md:449
@@ -1921,12 +1769,11 @@ msgstr "`on_git_branch [<ブランチ名>]`"
 
 #. type: paragraph
 #: ../man/direnv-stdlib.1.md:451
-#, fuzzy, no-wrap
-#| msgid "Returns 0 if within a git repository with given `branch_name`. If no branch name is provided, then returns 0 when within _any_ branch. Requires the git command to be installed. Returns 1 otherwise."
+#, no-wrap
 msgid "Returns 0 if within a git repository with given `branch_name`. If no branch name is provided, then returns 0 when within *any* branch. Requires the git command to be installed. Returns 1 otherwise."
 msgstr ""
 "gitリポジトリにあり、与えられた`ブランチ名`のときは0を返します。\n"
-"ブランチ名がなければ、 _どの_ ブランチにいても0を返します。\n"
+"ブランチ名がなければ、 *どの* ブランチにいても0を返します。\n"
 "gitコマンドがインストールされていることが必須です。\n"
 "そうでなければ1を返します。"
 
@@ -1940,11 +1787,7 @@ msgstr ""
 
 #. type: code_block
 #: ../man/direnv-stdlib.1.md:460
-#, fuzzy, no-wrap
-#| msgid ""
-#| "    if on_git_branch child_changes; then\n"
-#| "      export MERGE_BASE_BRANCH=parent_changes\n"
-#| "    fi\n"
+#, no-wrap
 msgid ""
 "if on_git_branch child_changes; then\n"
 "  export MERGE_BASE_BRANCH=parent_changes\n"
@@ -1954,9 +1797,13 @@ msgid ""
 "  echo \"Thanks for contributing to a GitHub project!\"\n"
 "fi"
 msgstr ""
-"    if on_git_branch child_changes; then\n"
-"      export MERGE_BASE_BRANCH=parent_changes\n"
-"    fi\n"
+"if on_git_branch child_changes; then\n"
+"  export MERGE_BASE_BRANCH=parent_changes\n"
+"fi\n"
+"\n"
+"if on_git_branch; then\n"
+"  echo \"Thanks for contributing to a GitHub project!\"\n"
+"fi"
 
 #. type: paragraph
 #: ../man/direnv-stdlib.1.md:477
@@ -1966,10 +1813,9 @@ msgstr "direnv(1), direnv.toml(1)"
 
 #. type: heading1
 #: ../man/direnv.1.md:1
-#, fuzzy, no-wrap
-#| msgid "DIRENV.TOML 1 \"2019\" direnv \"User Manuals\""
+#, no-wrap
 msgid "DIRENV 1 \"2019\" direnv \"User Manuals\""
-msgstr "DIRENV.TOML 1 \"2019\" direnv 「利用者便覧」"
+msgstr "DIRENV 1 \"2019\" direnv 「利用者便覧」"
 
 #. type: paragraph
 #: ../man/direnv.1.md:7
@@ -2011,24 +1857,7 @@ msgstr ""
 
 #. type: code_block
 #: ../man/direnv.1.md:34
-#, fuzzy, no-wrap
-#| msgid ""
-#| "$ cd ~/my_project\n"
-#| "$ echo ${FOO-nope}\n"
-#| "nope\n"
-#| "$ echo export FOO=foo > .envrc\n"
-#| "\\.envrc is not allowed\n"
-#| "$ direnv allow .\n"
-#| "direnv: reloading\n"
-#| "direnv: loading .envrc\n"
-#| "direnv export: +FOO\n"
-#| "$ echo ${FOO-nope}\n"
-#| "foo\n"
-#| "$ cd ..\n"
-#| "direnv: unloading\n"
-#| "direnv export: ~PATH\n"
-#| "$ echo ${FOO-nope}\n"
-#| "nope\n"
+#, no-wrap
 msgid ""
 "$ cd ~/my_project\n"
 "$ echo ${FOO-nope}\n"
@@ -2062,7 +1891,7 @@ msgstr ""
 "direnv: unloading\n"
 "direnv export: ~PATH\n"
 "$ echo ${FOO-nope}\n"
-"nope\n"
+"nope"
 
 #. type: heading2
 #: ../man/direnv.1.md:53
@@ -2092,10 +1921,9 @@ msgstr "以下の行を`~/.bashrc`ファイルの末尾に加えてください�
 
 #. type: code_block (sh)
 #: ../man/direnv.1.md:63 ../docs/hook.md:12
-#, fuzzy, no-wrap
-#| msgid "eval \"$(direnv hook bash)\"\n"
+#, no-wrap
 msgid "eval \"$(direnv hook bash)\""
-msgstr "eval \"$(direnv hook bash)\"\n"
+msgstr "eval \"$(direnv hook bash)\""
 
 #. type: paragraph
 #: ../man/direnv.1.md:67 ../docs/hook.md:16
@@ -2117,10 +1945,9 @@ msgstr "以下の行を`~/.zshrc`ファイルの末尾に加えてください�
 
 #. type: code_block (sh)
 #: ../man/direnv.1.md:74 ../docs/hook.md:23
-#, fuzzy, no-wrap
-#| msgid "eval \"$(direnv hook zsh)\"\n"
+#, no-wrap
 msgid "eval \"$(direnv hook zsh)\""
-msgstr "eval \"$(direnv hook zsh)\"\n"
+msgstr "eval \"$(direnv hook zsh)\""
 
 #. type: heading2
 #: ../man/direnv.1.md:78 ../docs/hook.md:37
@@ -2136,10 +1963,9 @@ msgstr "以下の行を`$XDG_CONFIG_HOME/fish/config.fish`ファイルの末尾�
 
 #. type: code_block (fish)
 #: ../man/direnv.1.md:82 ../docs/hook.md:41
-#, fuzzy, no-wrap
-#| msgid "direnv hook fish | source\n"
+#, no-wrap
 msgid "direnv hook fish | source"
-msgstr "direnv hook fish | source\n"
+msgstr "direnv hook fish | source"
 
 #. type: paragraph
 #: ../man/direnv.1.md:86 ../docs/hook.md:45
@@ -2149,11 +1975,7 @@ msgstr "Fishは3つのモードに対応しており、大域環境変数`direnv
 
 #. type: code_block (fish)
 #: ../man/direnv.1.md:88 ../docs/hook.md:47
-#, fuzzy, no-wrap
-#| msgid ""
-#| "set -g direnv_fish_mode eval_on_arrow    # trigger direnv at prompt, and on every arrow-based directory change (default)\n"
-#| "set -g direnv_fish_mode eval_after_arrow # trigger direnv at prompt, and only after arrow-based directory changes before executing command\n"
-#| "set -g direnv_fish_mode disable_arrow    # trigger direnv at prompt only, this is similar functionality to the original behavior\n"
+#, no-wrap
 msgid ""
 "set -g direnv_fish_mode eval_on_arrow    # trigger direnv at prompt, and on every arrow-based directory change (default)\n"
 "set -g direnv_fish_mode eval_after_arrow # trigger direnv at prompt, and only after arrow-based directory changes before executing command\n"
@@ -2161,7 +1983,7 @@ msgid ""
 msgstr ""
 "set -g direnv_fish_mode eval_on_arrow    # プロンプト、及び矢印ベースのディレクトリの変更でdirenvを開始（既定）\n"
 "set -g direnv_fish_mode eval_after_arrow # プロンプト、及び実行コマンド前の矢印ベースのディレクトリの変更でのみdirenvを開始\n"
-"set -g direnv_fish_mode disable_arrow    # プロンプトでのみdirenvを開始。元々の動作と似た機能性です\n"
+"set -g direnv_fish_mode disable_arrow    # プロンプトでのみdirenvを開始。元々の動作と似た機能性です"
 
 #. type: heading2
 #: ../man/direnv.1.md:95 ../docs/hook.md:53
@@ -2177,10 +1999,9 @@ msgstr "以下の行を`~/.cshrc`ファイルの末尾に加えてください�
 
 #. type: code_block (sh)
 #: ../man/direnv.1.md:99 ../docs/hook.md:57
-#, fuzzy, no-wrap
-#| msgid "eval `direnv hook tcsh`\n"
+#, no-wrap
 msgid "eval `direnv hook tcsh`"
-msgstr "eval `direnv hook tcsh`\n"
+msgstr "eval `direnv hook tcsh`"
 
 #. type: heading3
 #: ../man/direnv.1.md:103
@@ -2196,16 +2017,13 @@ msgstr "以下を実行してください。"
 
 #. type: code_block
 #: ../man/direnv.1.md:107 ../docs/hook.md:65
-#, fuzzy, no-wrap
-#| msgid ""
-#| "~> mkdir -p ~/.config/elvish/lib\n"
-#| "~> direnv hook elvish > ~/.config/elvish/lib/direnv.elv\n"
+#, no-wrap
 msgid ""
 "~> mkdir -p ~/.config/elvish/lib\n"
 "~> direnv hook elvish > ~/.config/elvish/lib/direnv.elv"
 msgstr ""
 "~> mkdir -p ~/.config/elvish/lib\n"
-"~> direnv hook elvish > ~/.config/elvish/lib/direnv.elv\n"
+"~> direnv hook elvish > ~/.config/elvish/lib/direnv.elv"
 
 #. type: paragraph
 #: ../man/direnv.1.md:112 ../docs/hook.md:70
@@ -2215,10 +2033,9 @@ msgstr "そして、以下の行を`~/.config/elvish/rc.elv`ファイルに加�
 
 #. type: code_block
 #: ../man/direnv.1.md:114 ../docs/hook.md:72
-#, fuzzy, no-wrap
-#| msgid "use direnv\n"
+#, no-wrap
 msgid "use direnv"
-msgstr "use direnv\n"
+msgstr "use direnv"
 
 #. type: heading2
 #: ../man/direnv.1.md:118 ../docs/hook.md:93
@@ -2234,10 +2051,9 @@ msgstr "以下の行を`$PROFILE`に加えてください。"
 
 #. type: code_block (powershell)
 #: ../man/direnv.1.md:122 ../docs/hook.md:97
-#, fuzzy, no-wrap
-#| msgid "Invoke-Expression \"$(direnv hook pwsh)\"\n"
+#, no-wrap
 msgid "Invoke-Expression \"$(direnv hook pwsh)\""
-msgstr "Invoke-Expression \"$(direnv hook pwsh)\"\n"
+msgstr "Invoke-Expression \"$(direnv hook pwsh)\""
 
 #. type: heading2
 #: ../man/direnv.1.md:126 ../docs/hook.md:101
@@ -2253,10 +2069,9 @@ msgstr "以下の行を`~/.murex_profile`に加えてください。"
 
 #. type: code_block (sh)
 #: ../man/direnv.1.md:130 ../docs/hook.md:105
-#, fuzzy, no-wrap
-#| msgid "direnv hook murex -> source\n"
+#, no-wrap
 msgid "direnv hook murex -> source"
-msgstr "direnv hook murex -> source\n"
+msgstr "direnv hook murex -> source"
 
 #. type: heading2
 #: ../man/direnv.1.md:135
@@ -2278,8 +2093,7 @@ msgstr "`direnv deny [rcへのパス]` : 与えられた.envrcや.envファイ�
 
 #. type: paragraph
 #: ../man/direnv.1.md:144
-#, fuzzy, no-wrap
-#| msgid "`direnv edit [PATH_TO_RC]` : Opens PATH_TO_RC or the current .envrc or .env into an $EDITOR and allow the file to be loaded afterwards."
+#, no-wrap
 msgid "`direnv edit [PATH_TO_RC]` : Opens PATH\\_TO\\_RC or the current .envrc or .env into an $EDITOR and allow the file to be loaded afterwards."
 msgstr "`direnv edit [rcへのパス]` : rcへのパス、または現地点にある.envrc、ないし.envを$EDITORで開き、その後でファイルを読み込めるようにします。"
 
@@ -2297,14 +2111,9 @@ msgstr "`direnv export シェル` : .envrcないし.envを読み込み、エク�
 
 #. type: paragraph
 #: ../man/direnv.1.md:153
-#, fuzzy, no-wrap
-#| msgid ""
-#| "`direnv fetchurl <url> [<integrity-hash>]`\n"
-#| ": Fetches a given URL into direnv's CAS.\n"
+#, no-wrap
 msgid "`direnv fetchurl <url> [<integrity-hash>]` : Fetches a given URL into direnv's CAS."
-msgstr ""
-"`direnv fetchurl <url> [<整合性ハッシュ>]`\n"
-": 与えられたURLをdirenvのCASに取得します。\n"
+msgstr "`direnv fetchurl <url> [<整合性ハッシュ>]` : 与えられたURLをdirenvのCASに取得します。"
 
 #. type: paragraph
 #: ../man/direnv.1.md:156
@@ -2344,10 +2153,9 @@ msgstr "`direnv stdlib` : .envrcの実行の文脈で使える標準ライブラ
 
 #. type: paragraph
 #: ../man/direnv.1.md:174
-#, fuzzy, no-wrap
-#| msgid "`direnv version` : Prints the version or checks that direnv is older than VERSION_AT_LEAST."
+#, no-wrap
 msgid "`direnv version` : Prints the version or checks that direnv is older than VERSION\\_AT\\_LEAST."
-msgstr "`direnv version` : バージョンを印字するか、VERSION_AT_LEASTよりdirenvが古いかどうかを判定します。"
+msgstr "`direnv version` : バージョンを印字するか、VERSION\\_AT\\_LEASTよりdirenvが古いかどうかを判定します。"
 
 #. type: heading2
 #: ../man/direnv.1.md:177
@@ -2357,8 +2165,7 @@ msgstr "使い方"
 
 #. type: paragraph
 #: ../man/direnv.1.md:180
-#, fuzzy, no-wrap
-#| msgid "In some target folder, create an `.envrc` file and add some export(1)  and unset(1) directives in it."
+#, no-wrap
 msgid "In some target folder, create an `.envrc` file and add some export(1) and unset(1) directives in it."
 msgstr "対象のフォルダにより、`.envrc`ファイルを作ってexport(1)やunset(1)ディレクティブを加えてください。"
 
@@ -2392,8 +2199,7 @@ msgstr ""
 
 #. type: paragraph
 #: ../man/direnv.1.md:198
-#, fuzzy, no-wrap
-#| msgid "Exporting variables by hand is a bit repetitive so direnv provides a set of utility functions that are made available in the context of the `.envrc` file.  Check the direnv-stdlib(1) man page for more details. You can also define your own extensions inside `$XDG_CONFIG_HOME/direnv/direnvrc` or `$XDG_CONFIG_HOME/direnv/lib/*.sh` files."
+#, no-wrap
 msgid "Exporting variables by hand is a bit repetitive so direnv provides a set of utility functions that are made available in the context of the `.envrc` file. Check the direnv-stdlib(1) man page for more details. You can also define your own extensions inside `$XDG_CONFIG_HOME/direnv/direnvrc` or `$XDG_CONFIG_HOME/direnv/lib/*.sh` files."
 msgstr ""
 "手作業で変数をエクスポートするのは、ちょっとした作業の繰り返しになってしまいます。\n"
@@ -2481,10 +2287,9 @@ msgstr "ウィキもあり、使用しているパターン、その他のコツ
 
 #. type: paragraph
 #: ../man/direnv.1.md:241
-#, fuzzy, no-wrap
-#| msgid "Or drop by on the [#direnv channel on FreeNode](irc://#direnv@FreeNode) to have a chat."
+#, no-wrap
 msgid "Or drop by on the [\\#direnv channel on FreeNode](irc://#direnv@FreeNode) to have a chat."
-msgstr "もしくは、チャットをされる方は[FreeNodeの#direnvチャンネル](irc://#direnv@FreeNode)にお立ち寄りください。"
+msgstr "もしくは、チャットをされる方は[FreeNodeの\\#direnvチャンネル](irc://#direnv@FreeNode)にお立ち寄りください。"
 
 #. type: paragraph
 #: ../man/direnv.1.md:252
@@ -2522,11 +2327,7 @@ msgstr ""
 
 #. type: code_block (bash)
 #: ../docs/ruby.md:13
-#, fuzzy, no-wrap
-#| msgid ""
-#| "brew install direnv\n"
-#| "echo 'eval $(direnv hook bash)' >> .bashrc\n"
-#| "exec $0\n"
+#, no-wrap
 msgid ""
 "brew install direnv\n"
 "echo 'eval $(direnv hook bash)' >> .bashrc\n"
@@ -2534,7 +2335,7 @@ msgid ""
 msgstr ""
 "brew install direnv\n"
 "echo 'eval $(direnv hook bash)' >> .bashrc\n"
-"exec $0\n"
+"exec $0"
 
 #. type: paragraph
 #: ../docs/ruby.md:19
@@ -2546,16 +2347,7 @@ msgstr ""
 
 #. type: code_block
 #: ../docs/ruby.md:23
-#, fuzzy, no-wrap
-#| msgid ""
-#| "brew install ruby-install\n"
-#| "ruby-install ruby 1.9\n"
-#| "ruby-install ruby 2.0\n"
-#| "cd ~/.rubies\n"
-#| "ln -s 1.9.3-p448 1.9.3\n"
-#| "ln -s 1.9.3-p448 1.9\n"
-#| "ln -s 2.0.0-p247 2.0.0\n"
-#| "ln -s 2.0.0-p247 2.0\n"
+#, no-wrap
 msgid ""
 "brew install ruby-install\n"
 "ruby-install ruby 1.9\n"
@@ -2573,7 +2365,7 @@ msgstr ""
 "ln -s 1.9.3-p448 1.9.3\n"
 "ln -s 1.9.3-p448 1.9\n"
 "ln -s 2.0.0-p247 2.0.0\n"
-"ln -s 2.0.0-p247 2.0\n"
+"ln -s 2.0.0-p247 2.0"
 
 #. type: paragraph
 #: ../docs/ruby.md:34
@@ -2597,17 +2389,7 @@ msgstr "以下を`~/.config/direnv/direnvrc`ファイルに追加してくださ
 
 #. type: code_block (bash)
 #: ../docs/ruby.md:44
-#, fuzzy, no-wrap
-#| msgid ""
-#| "# Usage: use ruby <version>\n"
-#| "#\n"
-#| "# Loads the specified ruby version into the environment\n"
-#| "#\n"
-#| "use_ruby() {\n"
-#| "  local ruby_dir=$HOME/.rubies/$1\n"
-#| "  load_prefix $ruby_dir\n"
-#| "  layout ruby\n"
-#| "}\n"
+#, no-wrap
 msgid ""
 "# Usage: use ruby <version>\n"
 "#\n"
@@ -2627,7 +2409,7 @@ msgstr ""
 "  local ruby_dir=$HOME/.rubies/$1\n"
 "  load_prefix $ruby_dir\n"
 "  layout ruby\n"
-"}\n"
+"}"
 
 #. type: paragraph
 #: ../docs/ruby.md:56
@@ -2653,32 +2435,24 @@ msgstr ""
 
 #. type: paragraph
 #: ../docs/ruby.md:66
-#, fuzzy, no-wrap
-#| msgid ""
-#| "`use` is a command dispatch that's just there to build the\n"
-#| "`use something something` dsl so that `use ruby <version>` will translate into\n"
-#| "`use_ruby <version>`.\n"
+#, no-wrap
 msgid "`use` is a command dispatch that's just there to build the `use something something` dsl so that `use ruby <version>` will translate into `use_ruby <version>`."
 msgstr ""
 "`use`はコマンドの発出器で、`use ナントカ カントカ`の領域特化言語を構築するためだけにあります。\n"
-"これにより、`use ruby <バージョン>`は`use_ruby <バージョン>`に読み替えます。\n"
+"これにより、`use ruby <バージョン>`は`use_ruby <バージョン>`に読み替えます。"
 
 #. type: paragraph
 #: ../docs/ruby.md:70
-#, fuzzy, no-wrap
-#| msgid ""
-#| "`load_prefix` will add a couple of things into the environment, notably add\n"
-#| "`<prefix>/bin` into the PATH. This is what makes the specified ruby available.\n"
+#, no-wrap
 msgid "`load_prefix` will add a couple of things into the environment, notably add `<prefix>/bin` into the PATH. This is what makes the specified ruby available."
 msgstr ""
 "`load_prefix`により、環境にいくつかのものが追加されます。\n"
 "特に、`<prefix>/bin`がPATHに追加されます。\n"
-"こうすることで、特定のrubyが使えるようになります。\n"
+"こうすることで、特定のrubyが使えるようになります。"
 
 #. type: paragraph
 #: ../docs/ruby.md:73
-#, fuzzy, no-wrap
-#| msgid "And finally `layout ruby` who like `use` translates into the `layout_ruby` function call. It's used to describe common project layouts. In the stdlib, the ruby layout will configure rubygems (with the `GEM_HOME` environment variable)  to install all the gems into the .direnv/ruby/RUBY_VERSION folder under the project root. This is a bit similar to rvm's gemsets except that they live inside your project's folder. It also configures bundler to install wrapper shims into the .direnv/bin folder which allows you to invoke the commands directly instead of prefixing your ruby programs with `bundle exec` all the time."
+#, no-wrap
 msgid "And finally `layout ruby` who like `use` translates into the `layout_ruby` function call. It's used to describe common project layouts. In the stdlib, the ruby layout will configure rubygems (with the `GEM_HOME` environment variable) to install all the gems into the .direnv/ruby/RUBY\\_VERSION folder under the project root. This is a bit similar to rvm's gemsets except that they live inside your project's folder. It also configures bundler to install wrapper shims into the .direnv/bin folder which allows you to invoke the commands directly instead of prefixing your ruby programs with `bundle exec` all the time."
 msgstr ""
 "また最後に、`layout ruby`は`use`に似ており、`layout_ruby`関数呼び出しに読み替えます。\n"
@@ -2851,10 +2625,9 @@ msgstr "バイナリのビルド成果物をインストールするには、こ
 
 #. type: code_block (sh)
 #: ../docs/installation.md:33
-#, fuzzy, no-wrap
-#| msgid "curl -sfL https://direnv.net/install.sh | bash\n"
+#, no-wrap
 msgid "curl -sfL https://direnv.net/install.sh | bash"
-msgstr "curl -sfL https://direnv.net/install.sh | bash\n"
+msgstr "curl -sfL https://direnv.net/install.sh | bash"
 
 #. type: paragraph
 #: ../docs/installation.md:37
@@ -2932,10 +2705,9 @@ msgstr "zshrcファイルでdirenvをプラグインの配列を加えてくだ�
 
 #. type: code_block (sh)
 #: ../docs/hook.md:33
-#, fuzzy, no-wrap
-#| msgid "plugins=(... direnv)\n"
+#, no-wrap
 msgid "plugins=(... direnv)"
-msgstr "plugins=(... direnv)\n"
+msgstr "plugins=(... direnv)"
 
 #. type: paragraph
 #: ../docs/hook.md:39
@@ -2963,15 +2735,7 @@ msgstr "`config.nu`で以下のフックを`$env.config.hooks.env_change.PWD`リ
 
 #. type: code_block (nushell)
 #: ../docs/hook.md:79
-#, fuzzy, no-wrap
-#| msgid ""
-#| "{ ||\n"
-#| "    if (which direnv | is-empty) {\n"
-#| "        return\n"
-#| "    }\n"
-#| "\n"
-#| "    direnv export json | from json | default {} | load-env\n"
-#| "}\n"
+#, no-wrap
 msgid ""
 "{ ||\n"
 "    if (which direnv | is-empty) {\n"
@@ -2987,19 +2751,15 @@ msgstr ""
 "    }\n"
 "\n"
 "    direnv export json | from json | default {} | load-env\n"
-"}\n"
+"}"
 
 #. type: block_quote / paragraph
 #: ../docs/hook.md:89
-#, fuzzy, no-wrap
-#| msgid ""
-#| "> **Note**\n"
-#| "> you can follow the [`nu_scripts` of Nushell](https://github.com/nushell/nu_scripts/blob/main/nu-hooks/nu-hooks/direnv/config.nu)\n"
-#| "> for the always up-to-date version of the hook above\n"
+#, no-wrap
 msgid "**Note** you can follow the [`nu_scripts` of Nushell](https://github.com/nushell/nu_scripts/blob/main/nu-hooks/nu-hooks/direnv/config.nu) for the always up-to-date version of the hook above"
 msgstr ""
-"> **補足**\n"
-"> [Nushellの`nu_scripts`](https://github.com/nushell/nu_scripts/blob/main/nu-hooks/nu-hooks/direnv/config.nu)に従うことで、上記のフックを常に最新のバージョンで使えます。\n"
+"**補足**\n"
+"[Nushellの`nu_scripts`](https://github.com/nushell/nu_scripts/blob/main/nu-hooks/nu-hooks/direnv/config.nu)に従うことで、上記のフックを常に最新のバージョンで使えます。"
 
 #. type: paragraph
 #: ../docs/hook.md:103
@@ -3021,10 +2781,9 @@ msgstr ""
 
 #. type: block_quote / paragraph
 #: ../docs/development.md:5
-#, fuzzy, no-wrap
-#| msgid "> go >= 1.24 is required\n"
+#, no-wrap
 msgid "go \\>= 1.24 is required"
-msgstr "> go >= 1.24が必要です。\n"
+msgstr "go >= 1.24が要求されます"
 
 #. type: paragraph
 #: ../docs/development.md:7
@@ -3060,14 +2819,9 @@ msgstr "プロジェクトをテストします："
 
 #. type: code_block
 #: ../docs/development.md:18
-#, fuzzy, no-wrap
-#| msgid ""
-#| "brew bundle\n"
-#| "make test\n"
+#, no-wrap
 msgid "$ make test"
-msgstr ""
-"brew bundle\n"
-"make test\n"
+msgstr "$ make test"
 
 #. type: paragraph
 #: ../docs/development.md:20
@@ -3119,8 +2873,7 @@ msgstr "direnv -- .profileを散らかさない"
 
 #. type: paragraph
 #: ../README.md:4
-#, fuzzy, no-wrap
-#| msgid "[![Built with Nix](https://builtwithnix.org/badge.svg)](https://builtwithnix.org)  [![Packaging status](https://repology.org/badge/tiny-repos/direnv.svg)](https://repology.org/project/direnv/versions)  [![latest packaged version(s)](https://repology.org/badge/latest-versions/direnv.svg)](https://repology.org/project/direnv/versions)  [![Support room on Matrix](https://img.shields.io/matrix/direnv:numtide.com.svg?label=%23direnv%3Anumtide.com&logo=matrix&server_fqdn=matrix.numtide.com)](https://matrix.to/#/#direnv:numtide.com)"
+#, no-wrap
 msgid "[![Built with Nix](https://builtwithnix.org/badge.svg)](https://builtwithnix.org) [![Packaging status](https://repology.org/badge/tiny-repos/direnv.svg)](https://repology.org/project/direnv/versions) [![latest packaged version(s)](https://repology.org/badge/latest-versions/direnv.svg)](https://repology.org/project/direnv/versions) [![Support room on Matrix](https://img.shields.io/matrix/direnv:numtide.com.svg?label=%23direnv%3Anumtide.com&logo=matrix&server_fqdn=matrix.numtide.com)](https://matrix.to/#/#direnv:numtide.com)"
 msgstr ""
 "[![Nixでビルド](https://builtwithnix.org/badge.svg)](https://builtwithnix.org)\n"
@@ -3176,8 +2929,7 @@ msgstr ""
 
 #. type: paragraph
 #: ../README.md:27
-#, fuzzy, no-wrap
-#| msgid "It supports hooks for all the common shells like bash, zsh, tcsh and fish.  This allows project-specific environment variables without cluttering the `~/.profile` file."
+#, no-wrap
 msgid "It supports hooks for all the common shells like bash, zsh, tcsh and fish. This allows project-specific environment variables without cluttering the `~/.profile` file."
 msgstr ""
 "bash、zsh、tcsh、fishといった全ての一般的なシェルのフックに対応しています。\n"
@@ -3255,39 +3007,7 @@ msgstr "direnvがインストールされたら、シェルで以下をやって
 
 #. type: code_block (shell)
 #: ../README.md:53
-#, fuzzy, no-wrap
-#| msgid ""
-#| "# Create a new folder for demo purposes.\n"
-#| "$ mkdir ~/my-project\n"
-#| "$ cd ~/my-project\n"
-#| "\n"
-#| "# Show that the FOO environment variable is not loaded.\n"
-#| "$ echo ${FOO-nope}\n"
-#| "nope\n"
-#| "\n"
-#| "# Create a new .envrc. This file is bash code that is going to be loaded by\n"
-#| "# direnv.\n"
-#| "$ echo export FOO=foo > .envrc\n"
-#| ".envrc is not allowed\n"
-#| "\n"
-#| "# The security mechanism didn't allow to load the .envrc. Since we trust it,\n"
-#| "# let's allow its execution.\n"
-#| "$ direnv allow .\n"
-#| "direnv: reloading\n"
-#| "direnv: loading .envrc\n"
-#| "direnv export: +FOO\n"
-#| "\n"
-#| "# Show that the FOO environment variable is loaded.\n"
-#| "$ echo ${FOO-nope}\n"
-#| "foo\n"
-#| "\n"
-#| "# Exit the project\n"
-#| "$ cd ..\n"
-#| "direnv: unloading\n"
-#| "\n"
-#| "# And now FOO is unset again\n"
-#| "$ echo ${FOO-nope}\n"
-#| "nope\n"
+#, no-wrap
 msgid ""
 "# Create a new folder for demo purposes.\n"
 "$ mkdir ~/my-project\n"
@@ -3350,7 +3070,7 @@ msgstr ""
 "\n"
 "# するとFOOは再び未設定になりました\n"
 "$ echo ${FOO-nope}\n"
-"nope\n"
+"nope"
 
 #. type: heading3
 #: ../README.md:87
@@ -3550,16 +3270,13 @@ msgstr "テストを実行するには、次のコマンドを使ってくださ
 
 #. type: code_block
 #: ../README.md:162
-#, fuzzy, no-wrap
-#| msgid ""
-#| "brew bundle\n"
-#| "make test\n"
+#, no-wrap
 msgid ""
 "brew bundle\n"
 "make test"
 msgstr ""
 "brew bundle\n"
-"make test\n"
+"make test"
 
 #. type: heading2
 #: ../README.md:167
