@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Direnv\n"
-"POT-Creation-Date: 2026-05-25 20:25+0900\n"
+"POT-Creation-Date: 2026-05-25 20:26+0900\n"
 "PO-Revision-Date: 2026-01-11 14:30+0900\n"
 "Last-Translator: gemmaro\n"
 "Language-Team: none\n"
@@ -2541,6 +2541,646 @@ msgstr ""
 msgid "direnv-stdlib(1), direnv.toml(1), direnv-fetchurl(1)"
 msgstr "direnv-stdlib(1), direnv.toml(1), direnv-fetchurl(1)"
 
+#. type: Title #
+#: ../docs/ruby.md:1
+#, no-wrap
+msgid "Manage your rubies with direnv and ruby-install"
+msgstr "direnvとruby-installでRubyを管理する"
+
+#. type: Plain text
+#: ../docs/ruby.md:8
+msgid ""
+"direnv is just a shell extension that manages your environment variables "
+"depending on the folder you live in. In this article we will explore how it "
+"can be used in combination with [ruby-install](https://github.com/postmodern/"
+"ruby-install) to manage and select the version of ruby that you want to use "
+"in a project."
+msgstr ""
+"direnvは単なるシェルの拡張であり、今いるフォルダによって環境変数を管理しま"
+"す。\n"
+"この記事では、[ruby-install](https://github.com/postmodern/ruby-install)と組"
+"み合わせて使うことで、プロジェクトで使いたいrubyのバージョンを管理したり選択"
+"したりする方法を見ていきます。"
+
+#. type: Title ##
+#: ../docs/ruby.md:9
+#, no-wrap
+msgid "The setup"
+msgstr "準備"
+
+#. type: Plain text
+#: ../docs/ruby.md:12
+msgid "First install direnv. This is the quick version on OSX + Bash:"
+msgstr ""
+"まずdirenvをインストールしてください。\n"
+"以下はOSXとBashを使っている場合の簡単な手順です。"
+
+#. type: Fenced code block (bash)
+#: ../docs/ruby.md:13
+#, no-wrap
+msgid ""
+"brew install direnv\n"
+"echo 'eval $(direnv hook bash)' >> .bashrc\n"
+"exec $0\n"
+msgstr ""
+"brew install direnv\n"
+"echo 'eval $(direnv hook bash)' >> .bashrc\n"
+"exec $0\n"
+
+#. type: Plain text
+#: ../docs/ruby.md:22
+msgid ""
+"Then use [ruby-install](https://github.com/postmodern/ruby-install) to "
+"install a couple of ruby versions. We're also creating a couple of aliases "
+"for convenience."
+msgstr ""
+"それから[ruby-install](https://github.com/postmodern/ruby-install)を使って、"
+"いくつかrubyのバージョンをインストールしてください。\n"
+"また、便宜上エイリアスを作ります。"
+
+#. type: Fenced code block
+#: ../docs/ruby.md:23
+#, no-wrap
+msgid ""
+"brew install ruby-install\n"
+"ruby-install ruby 1.9\n"
+"ruby-install ruby 2.0\n"
+"cd ~/.rubies\n"
+"ln -s 1.9.3-p448 1.9.3\n"
+"ln -s 1.9.3-p448 1.9\n"
+"ln -s 2.0.0-p247 2.0.0\n"
+"ln -s 2.0.0-p247 2.0\n"
+msgstr ""
+"brew install ruby-install\n"
+"ruby-install ruby 1.9\n"
+"ruby-install ruby 2.0\n"
+"cd ~/.rubies\n"
+"ln -s 1.9.3-p448 1.9.3\n"
+"ln -s 1.9.3-p448 1.9\n"
+"ln -s 2.0.0-p247 2.0.0\n"
+"ln -s 2.0.0-p247 2.0\n"
+
+#. type: Plain text
+#: ../docs/ruby.md:37
+msgid ""
+"The end goal is that each project will have an `.envrc` file that contains a "
+"descriptive syntax like `use ruby 1.9.3` to selects the right ruby version "
+"for the project."
+msgstr ""
+"最終目標は、各プロジェクトに、`use ruby 1.9.3`のような分かりやすい構文を含む"
+"`.envrc`ファイルがあり、プロジェクトの正しいrubyのバージョンを選択できるよう"
+"にすることです。"
+
+#. type: Plain text
+#: ../docs/ruby.md:41
+msgid ""
+"For that regard we are going to use a couple of commands available in the "
+"[direnv stdlib](/man/direnv-stdlib.1.md) and expand it a bit in the "
+"`~/.config/direnv/direnvrc` file."
+msgstr ""
+"このため、[direnvの標準ライブラリ](/man/direnv-stdlib.1.md)で使えるコマンドを"
+"使います。\n"
+"また、`~/.config/direnv/direnvrc`ファイルで少し拡張します。"
+
+#. type: Plain text
+#: ../docs/ruby.md:43
+msgid ""
+"Add this to the `~/.config/direnv/direnvrc` file (you have to create it if "
+"it doesn't exist):"
+msgstr ""
+"以下を`~/.config/direnv/direnvrc`ファイルに追加してください（ファイルが存在し"
+"ないときは作らなければなりません）。"
+
+#. type: Fenced code block (bash)
+#: ../docs/ruby.md:44
+#, no-wrap
+msgid ""
+"# Usage: use ruby <version>\n"
+"#\n"
+"# Loads the specified ruby version into the environment\n"
+"#\n"
+"use_ruby() {\n"
+"  local ruby_dir=$HOME/.rubies/$1\n"
+"  load_prefix $ruby_dir\n"
+"  layout ruby\n"
+"}\n"
+msgstr ""
+"# 使い方：use ruby <バージョン>\n"
+"#\n"
+"# 指定されたrubyのバージョンを環境に読み込みます\n"
+"#\n"
+"use_ruby() {\n"
+"  local ruby_dir=$HOME/.rubies/$1\n"
+"  load_prefix $ruby_dir\n"
+"  layout ruby\n"
+"}\n"
+
+#. type: Plain text
+#: ../docs/ruby.md:59
+msgid ""
+"That's it. Now in any project you can run `direnv edit .` and add `use ruby "
+"1.9.3` or `use ruby 2.0` in the file like you want and direnv will select "
+"the right ruby version when you enter the project's folder."
+msgstr ""
+"以上です。\n"
+"これで、プロジェクトで`direnv edit .`を走らせたり、ファイルに`use ruby 1.9.3`"
+"や`use ruby 2.0`を追加したりして、direnvにより、プロジェクトのフォルダに入っ"
+"たときに正しいrubyのバージョンが選択されるようにできます。"
+
+#. type: Title ##
+#: ../docs/ruby.md:60
+#, no-wrap
+msgid "A bit of explanation"
+msgstr "少し説明"
+
+#. type: Plain text
+#: ../docs/ruby.md:65
+msgid ""
+"The last part probably needs a bit more explanation. We make use of a couple "
+"of commands that are part of the [stdlib](/man/direnv-stdlib.1.md) which is "
+"available in the execution context of an envrc."
+msgstr ""
+"最後の部分は多分もう少し説明が必要です。\n"
+"[標準ライブラリ](/man/direnv-stdlib.1.md)の一部のコマンドを活用しており、これ"
+"らはenvrcの実行の文脈で使えます。"
+
+#. type: Plain text
+#: ../docs/ruby.md:69
+#, no-wrap
+msgid ""
+"`use` is a command dispatch that's just there to build the\n"
+"`use something something` dsl so that `use ruby <version>` will translate into\n"
+"`use_ruby <version>`.\n"
+msgstr ""
+"`use`はコマンドの発出器で、`use ナントカ カントカ`の領域特化言語を構築するためだけにあります。\n"
+"これにより、`use ruby <バージョン>`は`use_ruby <バージョン>`に読み替えます。\n"
+
+#. type: Plain text
+#: ../docs/ruby.md:72
+#, no-wrap
+msgid ""
+"`load_prefix` will add a couple of things into the environment, notably add\n"
+"`<prefix>/bin` into the PATH. This is what makes the specified ruby available.\n"
+msgstr ""
+"`load_prefix`により、環境にいくつかのものが追加されます。\n"
+"特に、`<prefix>/bin`がPATHに追加されます。\n"
+"こうすることで、特定のrubyが使えるようになります。\n"
+
+#. type: Plain text
+#: ../docs/ruby.md:82
+msgid ""
+"And finally `layout ruby` who like `use` translates into the `layout_ruby` "
+"function call. It's used to describe common project layouts. In the stdlib, "
+"the ruby layout will configure rubygems (with the `GEM_HOME` environment "
+"variable)  to install all the gems into the .direnv/ruby/RUBY_VERSION folder "
+"under the project root. This is a bit similar to rvm's gemsets except that "
+"they live inside your project's folder. It also configures bundler to "
+"install wrapper shims into the .direnv/bin folder which allows you to invoke "
+"the commands directly instead of prefixing your ruby programs with `bundle "
+"exec` all the time."
+msgstr ""
+"また最後に、`layout ruby`は`use`に似ており、`layout_ruby`関数呼び出しに読み替"
+"えます。\n"
+"これは、一般的なプロジェクトの配置を記述するために使います。\n"
+"標準ライブラリでは、rubyの配置で（`GEM_HOME`環境変数により）rubygemsを構成"
+"し、プロジェクトルート配下の .direnv/ruby/RUBY_VERSION フォルダに全てのgemが"
+"インストールされます。\n"
+"rvmのgemsetと少し似ていますが、そちらはプロジェクトのフォルダ内にある点が異な"
+"ります。\n"
+"また、bundlerを構成して、.direnv/bin フォルダにラッパーのシンボリックリンクを"
+"インストールします。\n"
+"これにより、毎回`bundle exec`でrubyプログラムを前置する代わりに、直接コマンド"
+"を呼び出せます。"
+
+#. type: Title ##
+#: ../docs/ruby.md:83
+#, no-wrap
+msgid "Conclusion"
+msgstr "結論"
+
+# 「~」を含むパスは行内コードにしないと、打ち消し線に誤解されることがあります。
+#. type: Plain text
+#: ../docs/ruby.md:89
+msgid ""
+"As you see this approach is not restricted to ruby. You could have various "
+"versions of python installed under ~/.pythons and a `use_python` defined in "
+"your ~/.direnvrc. Or perl, php, ...  This is the good thing about direnv, "
+"it's not restricted to a single language."
+msgstr ""
+"ここまで見てきたように、この手法はrubyに限定されません。\n"
+"`~/.pythons`配下に様々なバージョンのpythonをインストールし、`~/.direnvrc`で"
+"`use_python`を定義することができるでしょう。\n"
+"perl、phpなども同様です。\n"
+"これはdirenvの良い点であり、単一の言語に制限されないのです。"
+
+#. type: Plain text
+#: ../docs/ruby.md:96
+msgid ""
+"Actually, wouldn't it be great to have all your project's dependencies "
+"available when you enter the project folder ? Not only your ruby version but "
+"also the exact redis or mysql or ... version that you want to use, without "
+"having to start a VM. I think that's definitely possible using something "
+"like the [Nix package manager](http://nixos.org/nix/), something that still "
+"needs to be explored in a future post."
+msgstr ""
+"実際のところ、プロジェクトフォルダに入ったとき、全てのプロジェクトの依存関係"
+"があると素晴らしくないですか？\n"
+"rubyのバージョンだけでなく、使いたいredisやmysqlやその他諸々の厳密なバージョ"
+"ンを、VMを開始させることなく使えるといいですよね。\n"
+"筆者はこれが確実に可能であると考えており、それには[Nixパッケージ管理](http://"
+"nixos.org/nix/)のようなものを使います。\n"
+"そちらについては将来別の記事で見ていく必要があると考えています。"
+
+#. type: Title #
+#: ../docs/installation.md:1
+#, no-wrap
+msgid "Installation"
+msgstr "インストール"
+
+#. type: Plain text
+#: ../docs/installation.md:4
+msgid "The installation has two parts."
+msgstr "インストールの手順は2つに分けられます。"
+
+#. type: Bullet: '1. '
+#: ../docs/installation.md:7
+msgid "Install the package or binary, which is presented in this document"
+msgstr ""
+"パッケージないしバイナリをインストールします。\n"
+"本文書で示します。"
+
+#. type: Bullet: '2. '
+#: ../docs/installation.md:7
+msgid "[hook into your shell](hook.md)."
+msgstr "[シェルにフックする](hook.md)"
+
+#. type: Title ##
+#: ../docs/installation.md:8
+#, no-wrap
+msgid "From system packages"
+msgstr "システムのパッケージから"
+
+#. type: Plain text
+#: ../docs/installation.md:11
+msgid "direnv is packaged for a variety of systems:"
+msgstr "direnvは様々なシステムでパッケージ化されています。"
+
+#. type: Bullet: '* '
+#: ../docs/installation.md:24
+msgid "[Fedora](https://src.fedoraproject.org/rpms/direnv)"
+msgstr "[Fedora](https://src.fedoraproject.org/rpms/direnv)"
+
+#. type: Bullet: '* '
+#: ../docs/installation.md:24
+msgid "[Arch Linux](https://archlinux.org/packages/extra/x86_64/direnv/)"
+msgstr "[Arch Linux](https://archlinux.org/packages/extra/x86_64/direnv/)"
+
+#. type: Bullet: '* '
+#: ../docs/installation.md:24
+msgid ""
+"[Debian](https://packages.debian.org/search?"
+"keywords=direnv&searchon=names&suite=all&section=all)"
+msgstr ""
+"[Debian](https://packages.debian.org/search?"
+"keywords=direnv&searchon=names&suite=all&section=all)"
+
+#. type: Bullet: '* '
+#: ../docs/installation.md:24
+msgid ""
+"[Gentoo Guru](https://wiki.gentoo.org/wiki/Project:GURU/"
+"Information_for_End_Users)"
+msgstr ""
+"[Gentoo Guru](https://wiki.gentoo.org/wiki/Project:GURU/"
+"Information_for_End_Users)"
+
+#. type: Bullet: '* '
+#: ../docs/installation.md:24
+msgid "[NetBSD pkgsrc-wip](http://www.pkgsrc.org/wip/)"
+msgstr "[NetBSD pkgsrc-wip](http://www.pkgsrc.org/wip/)"
+
+#. type: Bullet: '* '
+#: ../docs/installation.md:24
+msgid "[NixOS](https://search.nixos.org/options?query=programs.direnv)"
+msgstr "[NixOS](https://search.nixos.org/options?query=programs.direnv)"
+
+#. type: Bullet: '* '
+#: ../docs/installation.md:24
+msgid "[macOS Homebrew](https://formulae.brew.sh/formula/direnv#default)"
+msgstr "[macOS Homebrew](https://formulae.brew.sh/formula/direnv#default)"
+
+#. type: Bullet: '* '
+#: ../docs/installation.md:24
+msgid ""
+"[openSUSE](https://build.opensuse.org/package/show/openSUSE%3AFactory/direnv)"
+msgstr ""
+"[openSUSE](https://build.opensuse.org/package/show/openSUSE%3AFactory/direnv)"
+
+#. type: Bullet: '* '
+#: ../docs/installation.md:24
+msgid "[MacPorts](https://ports.macports.org/port/direnv/)"
+msgstr "[MacPorts](https://ports.macports.org/port/direnv/)"
+
+#. type: Bullet: '* '
+#: ../docs/installation.md:24
+msgid ""
+"[Ubuntu](https://packages.ubuntu.com/search?"
+"keywords=direnv&searchon=names&suite=all&section=all)"
+msgstr ""
+"[Ubuntu](https://packages.ubuntu.com/search?"
+"keywords=direnv&searchon=names&suite=all&section=all)"
+
+#. type: Bullet: '* '
+#: ../docs/installation.md:24
+msgid "[GNU Guix](https://packages.guix.gnu.org/search/?query=direnv)"
+msgstr "[GNU Guix](https://packages.guix.gnu.org/search/?query=direnv)"
+
+#. type: Bullet: '* '
+#: ../docs/installation.md:24
+msgid ""
+"[Windows](https://learn.microsoft.com/en-us/windows/package-manager/winget/)"
+msgstr ""
+"[Windows](https://learn.microsoft.com/en-us/windows/package-manager/winget/)"
+
+#. type: Plain text
+#: ../docs/installation.md:26
+msgid "See also:"
+msgstr "こちらも参照。"
+
+#. type: Plain text
+#: ../docs/installation.md:28
+msgid ""
+"[![Packaging status](https://repology.org/badge/vertical-allrepos/"
+"direnv.svg)](https://repology.org/metapackage/direnv)"
+msgstr ""
+"[![パッケージ化の状態](https://repology.org/badge/vertical-allrepos/"
+"direnv.svg)](https://repology.org/metapackage/direnv)"
+
+#. type: Title ##
+#: ../docs/installation.md:29
+#, no-wrap
+msgid "From binary builds"
+msgstr "バイナリのビルド成果物から"
+
+#. type: Plain text
+#: ../docs/installation.md:32
+msgid "To install binary builds you can run this bash installer:"
+msgstr ""
+"バイナリのビルド成果物をインストールするには、こちらのbashインストーラを実行"
+"してください。"
+
+#. type: Fenced code block (sh)
+#: ../docs/installation.md:33
+#, no-wrap
+msgid "curl -sfL https://direnv.net/install.sh | bash\n"
+msgstr "curl -sfL https://direnv.net/install.sh | bash\n"
+
+#. type: Plain text
+#: ../docs/installation.md:39
+msgid ""
+"Binary builds for a variety of architectures are also available for [each "
+"release](https://github.com/direnv/direnv/releases)."
+msgstr ""
+"様々なアーキテクチャ用のバイナリのビルド成果物は、[毎回のリリース](https://"
+"github.com/direnv/direnv/releases)で入手できます。"
+
+#. type: Plain text
+#: ../docs/installation.md:41
+msgid ""
+"Fetch the binary, `chmod +x direnv` and put it somewhere in your `PATH`."
+msgstr ""
+"バイナリを取得し、`chmod +x direnv`として、`PATH`にあるどこかに置いてくださ"
+"い。"
+
+#. type: Title ##
+#: ../docs/installation.md:42
+#, no-wrap
+msgid "Compile from source"
+msgstr "ソースからコンパイル"
+
+#. type: Plain text
+#: ../docs/installation.md:45
+msgid "See the [Development](development.md) page."
+msgstr "[開発](development.md)ページを参照。"
+
+#. type: Title #
+#: ../docs/installation.md:46
+#, no-wrap
+msgid "Next step"
+msgstr "次の工程"
+
+#. type: Plain text
+#: ../docs/installation.md:48
+msgid "[hook installation](hook.md)"
+msgstr "[シェルのインストール](hook.md)"
+
+#. type: Title #
+#: ../docs/hook.md:1
+#, no-wrap
+msgid "Setup"
+msgstr "準備"
+
+#. type: Plain text
+#: ../docs/hook.md:5
+msgid ""
+"For direnv to work properly it needs to be hooked into the shell. Each shell "
+"has its own extension mechanism."
+msgstr ""
+"direnvが適切に機能するためには、シェルにフックする必要があります。\n"
+"それぞれのシェルには、独自の拡張の仕組みがあります。"
+
+#. type: Plain text
+#: ../docs/hook.md:7
+msgid ""
+"Once the hook is configured, restart your shell for direnv to be activated."
+msgstr "フックが構成されたら、シェルを再起動するとdirenvが活性化します。"
+
+#. type: Title ##
+#: ../docs/hook.md:27
+#, no-wrap
+msgid "Oh my zsh"
+msgstr "Oh my zsh"
+
+#. type: Plain text
+#: ../docs/hook.md:30
+msgid ""
+"Oh my zsh has [a core plugin with direnv](https://github.com/ohmyzsh/ohmyzsh/"
+"tree/master/plugins/direnv) support."
+msgstr ""
+"Oh my zshには[direnvの中核プラグイン](https://github.com/ohmyzsh/ohmyzsh/"
+"tree/master/plugins/direnv)の対応が備わっています。"
+
+#. type: Plain text
+#: ../docs/hook.md:32
+msgid "Add direnv to the plugins array in your zshrc file:"
+msgstr "zshrcファイルでdirenvをプラグインの配列を加えてください。"
+
+#. type: Fenced code block (sh)
+#: ../docs/hook.md:33
+#, no-wrap
+msgid "plugins=(... direnv)\n"
+msgstr "plugins=(... direnv)\n"
+
+#. type: Plain text
+#: ../docs/hook.md:40
+msgid ""
+"Add the following line at the end of the `~/.config/fish/config.fish` file:"
+msgstr "以下の行を`~/.config/fish/config.fish`ファイルの末尾に加えてください。"
+
+#. type: Title ##
+#: ../docs/hook.md:61
+#, no-wrap
+msgid "Elvish (0.12+)"
+msgstr "Elvish (0.12+)"
+
+#. type: Title ##
+#: ../docs/hook.md:76
+#, no-wrap
+msgid "Nushell"
+msgstr "Nushell"
+
+#. type: Plain text
+#: ../docs/hook.md:79
+msgid ""
+"Add the following hook to your `$env.config.hooks.env_change.PWD` list in "
+"`config.nu`:"
+msgstr ""
+"`config.nu`で以下のフックを`$env.config.hooks.env_change.PWD`リストを加えてく"
+"ださい。"
+
+#. type: Fenced code block (nushell)
+#: ../docs/hook.md:79
+#, no-wrap
+msgid ""
+"{ ||\n"
+"    if (which direnv | is-empty) {\n"
+"        return\n"
+"    }\n"
+"\n"
+"    direnv export json | from json | default {} | load-env\n"
+"}\n"
+msgstr ""
+"{ ||\n"
+"    if (which direnv | is-empty) {\n"
+"        return\n"
+"    }\n"
+"\n"
+"    direnv export json | from json | default {} | load-env\n"
+"}\n"
+
+#. type: Plain text
+#: ../docs/hook.md:92
+#, no-wrap
+msgid ""
+"> **Note**\n"
+"> you can follow the [`nu_scripts` of Nushell](https://github.com/nushell/nu_scripts/blob/main/nu-hooks/nu-hooks/direnv/config.nu)\n"
+"> for the always up-to-date version of the hook above\n"
+msgstr ""
+"> **補足**\n"
+"> [Nushellの`nu_scripts`](https://github.com/nushell/nu_scripts/blob/main/nu-hooks/nu-hooks/direnv/config.nu)に従うことで、上記のフックを常に最新のバージョンで使えます。\n"
+
+#. type: Plain text
+#: ../docs/hook.md:104
+msgid "Add the following line to your `~/.murex_profile` file:"
+msgstr "以下の行を`~/.murex_profile`に加えてください。"
+
+#. type: Title #
+#: ../docs/development.md:1
+#, no-wrap
+msgid "Development"
+msgstr ""
+
+#. type: Plain text
+#: ../docs/development.md:4
+msgid "Setup a go environment https://golang.org/doc/install"
+msgstr ""
+
+#. type: Plain text
+#: ../docs/development.md:6
+#, fuzzy, no-wrap
+#| msgid "> direnv >= 2.31.0 is required\n"
+msgid "> go >= 1.24 is required\n"
+msgstr "> direnv >= 2.31.0が必要です。\n"
+
+#. type: Plain text
+#: ../docs/development.md:8
+#, fuzzy
+#| msgid "Related projects"
+msgid "Clone the project:"
+msgstr "関連するプロジェクト"
+
+#. type: Plain text
+#: ../docs/development.md:10
+#, no-wrap
+msgid "    $ git clone git@github.com:direnv/direnv.git\n"
+msgstr ""
+
+#. type: Plain text
+#: ../docs/development.md:12
+msgid "Build by just typing make:"
+msgstr ""
+
+#. type: Plain text
+#: ../docs/development.md:15
+#, no-wrap
+msgid ""
+"    $ cd direnv\n"
+"    $ make\n"
+msgstr ""
+
+#. type: Plain text
+#: ../docs/development.md:17
+#, fuzzy
+#| msgid "Related projects"
+msgid "Test the projects:"
+msgstr "関連するプロジェクト"
+
+#. type: Plain text
+#: ../docs/development.md:19
+#, no-wrap
+msgid "    $ make test\n"
+msgstr ""
+
+#. type: Plain text
+#: ../docs/development.md:21
+msgid "To install to /usr/local:"
+msgstr ""
+
+#. type: Plain text
+#: ../docs/development.md:23
+#, no-wrap
+msgid "    $ make install\n"
+msgstr ""
+
+#. type: Plain text
+#: ../docs/development.md:25
+msgid "Or to a different location like `~/.local`:"
+msgstr ""
+
+#. type: Plain text
+#: ../docs/development.md:27
+#, no-wrap
+msgid "    $ make install PREFIX=~/.local\n"
+msgstr ""
+
+#. type: Title ##
+#: ../docs/development.md:28
+#, no-wrap
+msgid "Updating gomod2nix.toml"
+msgstr ""
+
+#. type: Plain text
+#: ../docs/development.md:32
+msgid ""
+"Execute `./script/update-gomod2nix`; if you don't have nix locally, can do "
+"so via a docker container like so:"
+msgstr ""
+
+#. type: Plain text
+#: ../docs/development.md:33
+#, no-wrap
+msgid "    $ docker run -it --platform linux/amd64 -v $(pwd):/workdir nixos/nix /bin/sh -c \"cd workdir && ./script/update-gomod2nix\"\n"
+msgstr ""
+
 #. type: Title =
 #: ../README.md:2
 #, no-wrap
@@ -3173,545 +3813,3 @@ msgid ""
 msgstr ""
 "[MIT licence](LICENSE) - Copyright (C) 2019 @zimbatm と[貢献者の方々]"
 "(https://github.com/direnv/direnv/graphs/contributors)"
-
-#. type: Title #
-#: ../docs/ruby.md:1
-#, no-wrap
-msgid "Manage your rubies with direnv and ruby-install"
-msgstr "direnvとruby-installでRubyを管理する"
-
-#. type: Plain text
-#: ../docs/ruby.md:8
-msgid ""
-"direnv is just a shell extension that manages your environment variables "
-"depending on the folder you live in. In this article we will explore how it "
-"can be used in combination with [ruby-install](https://github.com/postmodern/"
-"ruby-install) to manage and select the version of ruby that you want to use "
-"in a project."
-msgstr ""
-"direnvは単なるシェルの拡張であり、今いるフォルダによって環境変数を管理しま"
-"す。\n"
-"この記事では、[ruby-install](https://github.com/postmodern/ruby-install)と組"
-"み合わせて使うことで、プロジェクトで使いたいrubyのバージョンを管理したり選択"
-"したりする方法を見ていきます。"
-
-#. type: Title ##
-#: ../docs/ruby.md:9
-#, no-wrap
-msgid "The setup"
-msgstr "準備"
-
-#. type: Plain text
-#: ../docs/ruby.md:12
-msgid "First install direnv. This is the quick version on OSX + Bash:"
-msgstr ""
-"まずdirenvをインストールしてください。\n"
-"以下はOSXとBashを使っている場合の簡単な手順です。"
-
-#. type: Fenced code block (bash)
-#: ../docs/ruby.md:13
-#, no-wrap
-msgid ""
-"brew install direnv\n"
-"echo 'eval $(direnv hook bash)' >> .bashrc\n"
-"exec $0\n"
-msgstr ""
-"brew install direnv\n"
-"echo 'eval $(direnv hook bash)' >> .bashrc\n"
-"exec $0\n"
-
-#. type: Plain text
-#: ../docs/ruby.md:22
-msgid ""
-"Then use [ruby-install](https://github.com/postmodern/ruby-install) to "
-"install a couple of ruby versions. We're also creating a couple of aliases "
-"for convenience."
-msgstr ""
-"それから[ruby-install](https://github.com/postmodern/ruby-install)を使って、"
-"いくつかrubyのバージョンをインストールしてください。\n"
-"また、便宜上エイリアスを作ります。"
-
-#. type: Fenced code block
-#: ../docs/ruby.md:23
-#, no-wrap
-msgid ""
-"brew install ruby-install\n"
-"ruby-install ruby 1.9\n"
-"ruby-install ruby 2.0\n"
-"cd ~/.rubies\n"
-"ln -s 1.9.3-p448 1.9.3\n"
-"ln -s 1.9.3-p448 1.9\n"
-"ln -s 2.0.0-p247 2.0.0\n"
-"ln -s 2.0.0-p247 2.0\n"
-msgstr ""
-"brew install ruby-install\n"
-"ruby-install ruby 1.9\n"
-"ruby-install ruby 2.0\n"
-"cd ~/.rubies\n"
-"ln -s 1.9.3-p448 1.9.3\n"
-"ln -s 1.9.3-p448 1.9\n"
-"ln -s 2.0.0-p247 2.0.0\n"
-"ln -s 2.0.0-p247 2.0\n"
-
-#. type: Plain text
-#: ../docs/ruby.md:37
-msgid ""
-"The end goal is that each project will have an `.envrc` file that contains a "
-"descriptive syntax like `use ruby 1.9.3` to selects the right ruby version "
-"for the project."
-msgstr ""
-"最終目標は、各プロジェクトに、`use ruby 1.9.3`のような分かりやすい構文を含む"
-"`.envrc`ファイルがあり、プロジェクトの正しいrubyのバージョンを選択できるよう"
-"にすることです。"
-
-#. type: Plain text
-#: ../docs/ruby.md:41
-msgid ""
-"For that regard we are going to use a couple of commands available in the "
-"[direnv stdlib](/man/direnv-stdlib.1.md) and expand it a bit in the "
-"`~/.config/direnv/direnvrc` file."
-msgstr ""
-"このため、[direnvの標準ライブラリ](/man/direnv-stdlib.1.md)で使えるコマンドを"
-"使います。\n"
-"また、`~/.config/direnv/direnvrc`ファイルで少し拡張します。"
-
-#. type: Plain text
-#: ../docs/ruby.md:43
-msgid ""
-"Add this to the `~/.config/direnv/direnvrc` file (you have to create it if "
-"it doesn't exist):"
-msgstr ""
-"以下を`~/.config/direnv/direnvrc`ファイルに追加してください（ファイルが存在し"
-"ないときは作らなければなりません）。"
-
-#. type: Fenced code block (bash)
-#: ../docs/ruby.md:44
-#, no-wrap
-msgid ""
-"# Usage: use ruby <version>\n"
-"#\n"
-"# Loads the specified ruby version into the environment\n"
-"#\n"
-"use_ruby() {\n"
-"  local ruby_dir=$HOME/.rubies/$1\n"
-"  load_prefix $ruby_dir\n"
-"  layout ruby\n"
-"}\n"
-msgstr ""
-"# 使い方：use ruby <バージョン>\n"
-"#\n"
-"# 指定されたrubyのバージョンを環境に読み込みます\n"
-"#\n"
-"use_ruby() {\n"
-"  local ruby_dir=$HOME/.rubies/$1\n"
-"  load_prefix $ruby_dir\n"
-"  layout ruby\n"
-"}\n"
-
-#. type: Plain text
-#: ../docs/ruby.md:59
-msgid ""
-"That's it. Now in any project you can run `direnv edit .` and add `use ruby "
-"1.9.3` or `use ruby 2.0` in the file like you want and direnv will select "
-"the right ruby version when you enter the project's folder."
-msgstr ""
-"以上です。\n"
-"これで、プロジェクトで`direnv edit .`を走らせたり、ファイルに`use ruby 1.9.3`"
-"や`use ruby 2.0`を追加したりして、direnvにより、プロジェクトのフォルダに入っ"
-"たときに正しいrubyのバージョンが選択されるようにできます。"
-
-#. type: Title ##
-#: ../docs/ruby.md:60
-#, no-wrap
-msgid "A bit of explanation"
-msgstr "少し説明"
-
-#. type: Plain text
-#: ../docs/ruby.md:65
-msgid ""
-"The last part probably needs a bit more explanation. We make use of a couple "
-"of commands that are part of the [stdlib](/man/direnv-stdlib.1.md) which is "
-"available in the execution context of an envrc."
-msgstr ""
-"最後の部分は多分もう少し説明が必要です。\n"
-"[標準ライブラリ](/man/direnv-stdlib.1.md)の一部のコマンドを活用しており、これ"
-"らはenvrcの実行の文脈で使えます。"
-
-#. type: Plain text
-#: ../docs/ruby.md:69
-#, no-wrap
-msgid ""
-"`use` is a command dispatch that's just there to build the\n"
-"`use something something` dsl so that `use ruby <version>` will translate into\n"
-"`use_ruby <version>`.\n"
-msgstr ""
-"`use`はコマンドの発出器で、`use ナントカ カントカ`の領域特化言語を構築するためだけにあります。\n"
-"これにより、`use ruby <バージョン>`は`use_ruby <バージョン>`に読み替えます。\n"
-
-#. type: Plain text
-#: ../docs/ruby.md:72
-#, no-wrap
-msgid ""
-"`load_prefix` will add a couple of things into the environment, notably add\n"
-"`<prefix>/bin` into the PATH. This is what makes the specified ruby available.\n"
-msgstr ""
-"`load_prefix`により、環境にいくつかのものが追加されます。\n"
-"特に、`<prefix>/bin`がPATHに追加されます。\n"
-"こうすることで、特定のrubyが使えるようになります。\n"
-
-#. type: Plain text
-#: ../docs/ruby.md:82
-msgid ""
-"And finally `layout ruby` who like `use` translates into the `layout_ruby` "
-"function call. It's used to describe common project layouts. In the stdlib, "
-"the ruby layout will configure rubygems (with the `GEM_HOME` environment "
-"variable)  to install all the gems into the .direnv/ruby/RUBY_VERSION folder "
-"under the project root. This is a bit similar to rvm's gemsets except that "
-"they live inside your project's folder. It also configures bundler to "
-"install wrapper shims into the .direnv/bin folder which allows you to invoke "
-"the commands directly instead of prefixing your ruby programs with `bundle "
-"exec` all the time."
-msgstr ""
-"また最後に、`layout ruby`は`use`に似ており、`layout_ruby`関数呼び出しに読み替"
-"えます。\n"
-"これは、一般的なプロジェクトの配置を記述するために使います。\n"
-"標準ライブラリでは、rubyの配置で（`GEM_HOME`環境変数により）rubygemsを構成"
-"し、プロジェクトルート配下の .direnv/ruby/RUBY_VERSION フォルダに全てのgemが"
-"インストールされます。\n"
-"rvmのgemsetと少し似ていますが、そちらはプロジェクトのフォルダ内にある点が異な"
-"ります。\n"
-"また、bundlerを構成して、.direnv/bin フォルダにラッパーのシンボリックリンクを"
-"インストールします。\n"
-"これにより、毎回`bundle exec`でrubyプログラムを前置する代わりに、直接コマンド"
-"を呼び出せます。"
-
-#. type: Title ##
-#: ../docs/ruby.md:83
-#, no-wrap
-msgid "Conclusion"
-msgstr "結論"
-
-# 「~」を含むパスは行内コードにしないと、打ち消し線に誤解されることがあります。
-#. type: Plain text
-#: ../docs/ruby.md:89
-msgid ""
-"As you see this approach is not restricted to ruby. You could have various "
-"versions of python installed under ~/.pythons and a `use_python` defined in "
-"your ~/.direnvrc. Or perl, php, ...  This is the good thing about direnv, "
-"it's not restricted to a single language."
-msgstr ""
-"ここまで見てきたように、この手法はrubyに限定されません。\n"
-"`~/.pythons`配下に様々なバージョンのpythonをインストールし、`~/.direnvrc`で"
-"`use_python`を定義することができるでしょう。\n"
-"perl、phpなども同様です。\n"
-"これはdirenvの良い点であり、単一の言語に制限されないのです。"
-
-#. type: Plain text
-#: ../docs/ruby.md:96
-msgid ""
-"Actually, wouldn't it be great to have all your project's dependencies "
-"available when you enter the project folder ? Not only your ruby version but "
-"also the exact redis or mysql or ... version that you want to use, without "
-"having to start a VM. I think that's definitely possible using something "
-"like the [Nix package manager](http://nixos.org/nix/), something that still "
-"needs to be explored in a future post."
-msgstr ""
-"実際のところ、プロジェクトフォルダに入ったとき、全てのプロジェクトの依存関係"
-"があると素晴らしくないですか？\n"
-"rubyのバージョンだけでなく、使いたいredisやmysqlやその他諸々の厳密なバージョ"
-"ンを、VMを開始させることなく使えるといいですよね。\n"
-"筆者はこれが確実に可能であると考えており、それには[Nixパッケージ管理](http://"
-"nixos.org/nix/)のようなものを使います。\n"
-"そちらについては将来別の記事で見ていく必要があると考えています。"
-
-#. type: Title #
-#: ../docs/installation.md:1
-#, no-wrap
-msgid "Installation"
-msgstr "インストール"
-
-#. type: Plain text
-#: ../docs/installation.md:4
-msgid "The installation has two parts."
-msgstr "インストールの手順は2つに分けられます。"
-
-#. type: Bullet: '1. '
-#: ../docs/installation.md:7
-msgid "Install the package or binary, which is presented in this document"
-msgstr ""
-"パッケージないしバイナリをインストールします。\n"
-"本文書で示します。"
-
-#. type: Bullet: '2. '
-#: ../docs/installation.md:7
-msgid "[hook into your shell](hook.md)."
-msgstr "[シェルにフックする](hook.md)"
-
-#. type: Title ##
-#: ../docs/installation.md:8
-#, no-wrap
-msgid "From system packages"
-msgstr "システムのパッケージから"
-
-#. type: Plain text
-#: ../docs/installation.md:11
-msgid "direnv is packaged for a variety of systems:"
-msgstr "direnvは様々なシステムでパッケージ化されています。"
-
-#. type: Bullet: '* '
-#: ../docs/installation.md:24
-msgid "[Fedora](https://src.fedoraproject.org/rpms/direnv)"
-msgstr "[Fedora](https://src.fedoraproject.org/rpms/direnv)"
-
-#. type: Bullet: '* '
-#: ../docs/installation.md:24
-msgid "[Arch Linux](https://archlinux.org/packages/extra/x86_64/direnv/)"
-msgstr "[Arch Linux](https://archlinux.org/packages/extra/x86_64/direnv/)"
-
-#. type: Bullet: '* '
-#: ../docs/installation.md:24
-msgid ""
-"[Debian](https://packages.debian.org/search?"
-"keywords=direnv&searchon=names&suite=all&section=all)"
-msgstr ""
-"[Debian](https://packages.debian.org/search?"
-"keywords=direnv&searchon=names&suite=all&section=all)"
-
-#. type: Bullet: '* '
-#: ../docs/installation.md:24
-msgid ""
-"[Gentoo Guru](https://wiki.gentoo.org/wiki/Project:GURU/"
-"Information_for_End_Users)"
-msgstr ""
-"[Gentoo Guru](https://wiki.gentoo.org/wiki/Project:GURU/"
-"Information_for_End_Users)"
-
-#. type: Bullet: '* '
-#: ../docs/installation.md:24
-msgid "[NetBSD pkgsrc-wip](http://www.pkgsrc.org/wip/)"
-msgstr "[NetBSD pkgsrc-wip](http://www.pkgsrc.org/wip/)"
-
-#. type: Bullet: '* '
-#: ../docs/installation.md:24
-msgid "[NixOS](https://search.nixos.org/options?query=programs.direnv)"
-msgstr "[NixOS](https://search.nixos.org/options?query=programs.direnv)"
-
-#. type: Bullet: '* '
-#: ../docs/installation.md:24
-msgid "[macOS Homebrew](https://formulae.brew.sh/formula/direnv#default)"
-msgstr "[macOS Homebrew](https://formulae.brew.sh/formula/direnv#default)"
-
-#. type: Bullet: '* '
-#: ../docs/installation.md:24
-msgid ""
-"[openSUSE](https://build.opensuse.org/package/show/openSUSE%3AFactory/direnv)"
-msgstr ""
-"[openSUSE](https://build.opensuse.org/package/show/openSUSE%3AFactory/direnv)"
-
-#. type: Bullet: '* '
-#: ../docs/installation.md:24
-msgid "[MacPorts](https://ports.macports.org/port/direnv/)"
-msgstr "[MacPorts](https://ports.macports.org/port/direnv/)"
-
-#. type: Bullet: '* '
-#: ../docs/installation.md:24
-msgid ""
-"[Ubuntu](https://packages.ubuntu.com/search?"
-"keywords=direnv&searchon=names&suite=all&section=all)"
-msgstr ""
-"[Ubuntu](https://packages.ubuntu.com/search?"
-"keywords=direnv&searchon=names&suite=all&section=all)"
-
-#. type: Bullet: '* '
-#: ../docs/installation.md:24
-msgid "[GNU Guix](https://packages.guix.gnu.org/search/?query=direnv)"
-msgstr "[GNU Guix](https://packages.guix.gnu.org/search/?query=direnv)"
-
-#. type: Bullet: '* '
-#: ../docs/installation.md:24
-msgid ""
-"[Windows](https://learn.microsoft.com/en-us/windows/package-manager/winget/)"
-msgstr ""
-"[Windows](https://learn.microsoft.com/en-us/windows/package-manager/winget/)"
-
-#. type: Plain text
-#: ../docs/installation.md:26
-msgid "See also:"
-msgstr "こちらも参照。"
-
-#. type: Plain text
-#: ../docs/installation.md:28
-msgid ""
-"[![Packaging status](https://repology.org/badge/vertical-allrepos/"
-"direnv.svg)](https://repology.org/metapackage/direnv)"
-msgstr ""
-"[![パッケージ化の状態](https://repology.org/badge/vertical-allrepos/"
-"direnv.svg)](https://repology.org/metapackage/direnv)"
-
-#. type: Title ##
-#: ../docs/installation.md:29
-#, no-wrap
-msgid "From binary builds"
-msgstr "バイナリのビルド成果物から"
-
-#. type: Plain text
-#: ../docs/installation.md:32
-msgid "To install binary builds you can run this bash installer:"
-msgstr ""
-"バイナリのビルド成果物をインストールするには、こちらのbashインストーラを実行"
-"してください。"
-
-#. type: Fenced code block (sh)
-#: ../docs/installation.md:33
-#, no-wrap
-msgid "curl -sfL https://direnv.net/install.sh | bash\n"
-msgstr "curl -sfL https://direnv.net/install.sh | bash\n"
-
-#. type: Plain text
-#: ../docs/installation.md:39
-msgid ""
-"Binary builds for a variety of architectures are also available for [each "
-"release](https://github.com/direnv/direnv/releases)."
-msgstr ""
-"様々なアーキテクチャ用のバイナリのビルド成果物は、[毎回のリリース](https://"
-"github.com/direnv/direnv/releases)で入手できます。"
-
-#. type: Plain text
-#: ../docs/installation.md:41
-msgid ""
-"Fetch the binary, `chmod +x direnv` and put it somewhere in your `PATH`."
-msgstr ""
-"バイナリを取得し、`chmod +x direnv`として、`PATH`にあるどこかに置いてくださ"
-"い。"
-
-#. type: Title ##
-#: ../docs/installation.md:42
-#, no-wrap
-msgid "Compile from source"
-msgstr "ソースからコンパイル"
-
-#. type: Plain text
-#: ../docs/installation.md:45
-msgid "See the [Development](development.md) page."
-msgstr "[開発](development.md)ページを参照。"
-
-#. type: Title #
-#: ../docs/installation.md:46
-#, no-wrap
-msgid "Next step"
-msgstr "次の工程"
-
-#. type: Plain text
-#: ../docs/installation.md:48
-msgid "[hook installation](hook.md)"
-msgstr "[シェルのインストール](hook.md)"
-
-#. type: Title #
-#: ../docs/hook.md:1
-#, no-wrap
-msgid "Setup"
-msgstr "準備"
-
-#. type: Plain text
-#: ../docs/hook.md:5
-msgid ""
-"For direnv to work properly it needs to be hooked into the shell. Each shell "
-"has its own extension mechanism."
-msgstr ""
-"direnvが適切に機能するためには、シェルにフックする必要があります。\n"
-"それぞれのシェルには、独自の拡張の仕組みがあります。"
-
-#. type: Plain text
-#: ../docs/hook.md:7
-msgid ""
-"Once the hook is configured, restart your shell for direnv to be activated."
-msgstr "フックが構成されたら、シェルを再起動するとdirenvが活性化します。"
-
-#. type: Title ##
-#: ../docs/hook.md:27
-#, no-wrap
-msgid "Oh my zsh"
-msgstr "Oh my zsh"
-
-#. type: Plain text
-#: ../docs/hook.md:30
-msgid ""
-"Oh my zsh has [a core plugin with direnv](https://github.com/ohmyzsh/ohmyzsh/"
-"tree/master/plugins/direnv) support."
-msgstr ""
-"Oh my zshには[direnvの中核プラグイン](https://github.com/ohmyzsh/ohmyzsh/"
-"tree/master/plugins/direnv)の対応が備わっています。"
-
-#. type: Plain text
-#: ../docs/hook.md:32
-msgid "Add direnv to the plugins array in your zshrc file:"
-msgstr "zshrcファイルでdirenvをプラグインの配列を加えてください。"
-
-#. type: Fenced code block (sh)
-#: ../docs/hook.md:33
-#, no-wrap
-msgid "plugins=(... direnv)\n"
-msgstr "plugins=(... direnv)\n"
-
-#. type: Plain text
-#: ../docs/hook.md:40
-msgid ""
-"Add the following line at the end of the `~/.config/fish/config.fish` file:"
-msgstr "以下の行を`~/.config/fish/config.fish`ファイルの末尾に加えてください。"
-
-#. type: Title ##
-#: ../docs/hook.md:61
-#, no-wrap
-msgid "Elvish (0.12+)"
-msgstr "Elvish (0.12+)"
-
-#. type: Title ##
-#: ../docs/hook.md:76
-#, no-wrap
-msgid "Nushell"
-msgstr "Nushell"
-
-#. type: Plain text
-#: ../docs/hook.md:79
-msgid ""
-"Add the following hook to your `$env.config.hooks.env_change.PWD` list in "
-"`config.nu`:"
-msgstr ""
-"`config.nu`で以下のフックを`$env.config.hooks.env_change.PWD`リストを加えてく"
-"ださい。"
-
-#. type: Fenced code block (nushell)
-#: ../docs/hook.md:79
-#, no-wrap
-msgid ""
-"{ ||\n"
-"    if (which direnv | is-empty) {\n"
-"        return\n"
-"    }\n"
-"\n"
-"    direnv export json | from json | default {} | load-env\n"
-"}\n"
-msgstr ""
-"{ ||\n"
-"    if (which direnv | is-empty) {\n"
-"        return\n"
-"    }\n"
-"\n"
-"    direnv export json | from json | default {} | load-env\n"
-"}\n"
-
-#. type: Plain text
-#: ../docs/hook.md:92
-#, no-wrap
-msgid ""
-"> **Note**\n"
-"> you can follow the [`nu_scripts` of Nushell](https://github.com/nushell/nu_scripts/blob/main/nu-hooks/nu-hooks/direnv/config.nu)\n"
-"> for the always up-to-date version of the hook above\n"
-msgstr ""
-"> **補足**\n"
-"> [Nushellの`nu_scripts`](https://github.com/nushell/nu_scripts/blob/main/nu-hooks/nu-hooks/direnv/config.nu)に従うことで、上記のフックを常に最新のバージョンで使えます。\n"
-
-#. type: Plain text
-#: ../docs/hook.md:104
-msgid "Add the following line to your `~/.murex_profile` file:"
-msgstr "以下の行を`~/.murex_profile`に加えてください。"
