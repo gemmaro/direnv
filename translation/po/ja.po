@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Direnv\n"
-"POT-Creation-Date: 2026-05-25 20:28+0900\n"
+"POT-Creation-Date: 2026-05-25 21:07+0900\n"
 "PO-Revision-Date: 2026-05-25 21:06+0900\n"
 "Last-Translator: gemmaro\n"
 "Language-Team: none\n"
@@ -2768,104 +2768,6 @@ msgid "Add the following line to your `~/.murex_profile` file:"
 msgstr "以下の行を`~/.murex_profile`に加えてください。"
 
 #. type: heading1
-#: ../docs/development.md:1
-#, no-wrap
-msgid "Development"
-msgstr ""
-
-#. type: paragraph
-#: ../docs/development.md:3
-#, no-wrap
-msgid "Setup a go environment https://golang.org/doc/install"
-msgstr ""
-
-#. type: block_quote / paragraph
-#: ../docs/development.md:5
-#, no-wrap
-msgid "go \\>= 1.24 is required"
-msgstr "go >= 1.24が要求されます"
-
-#. type: paragraph
-#: ../docs/development.md:7
-#, no-wrap
-msgid "Clone the project:"
-msgstr "プロジェクトをクローンします："
-
-#. type: code_block
-#: ../docs/development.md:9
-#, no-wrap
-msgid "$ git clone git@github.com:direnv/direnv.git"
-msgstr ""
-
-#. type: paragraph
-#: ../docs/development.md:11
-#, no-wrap
-msgid "Build by just typing make:"
-msgstr ""
-
-#. type: code_block
-#: ../docs/development.md:13
-#, no-wrap
-msgid ""
-"$ cd direnv\n"
-"$ make"
-msgstr ""
-
-#. type: paragraph
-#: ../docs/development.md:16
-#, no-wrap
-msgid "Test the projects:"
-msgstr "プロジェクトをテストします："
-
-#. type: code_block
-#: ../docs/development.md:18
-#, no-wrap
-msgid "$ make test"
-msgstr "$ make test"
-
-#. type: paragraph
-#: ../docs/development.md:20
-#, no-wrap
-msgid "To install to /usr/local:"
-msgstr ""
-
-#. type: code_block
-#: ../docs/development.md:22
-#, no-wrap
-msgid "$ make install"
-msgstr ""
-
-#. type: paragraph
-#: ../docs/development.md:24
-#, no-wrap
-msgid "Or to a different location like `~/.local`:"
-msgstr ""
-
-#. type: code_block
-#: ../docs/development.md:26
-#, no-wrap
-msgid "$ make install PREFIX=~/.local"
-msgstr ""
-
-#. type: heading2
-#: ../docs/development.md:28
-#, no-wrap
-msgid "Updating gomod2nix.toml"
-msgstr ""
-
-#. type: paragraph
-#: ../docs/development.md:30
-#, no-wrap
-msgid "Execute `./script/update-gomod2nix`; if you don't have nix locally, can do so via a docker container like so:"
-msgstr ""
-
-#. type: code_block
-#: ../docs/development.md:33
-#, no-wrap
-msgid "$ docker run -it --platform linux/amd64 -v $(pwd):/workdir nixos/nix /bin/sh -c \"cd workdir && ./script/update-gomod2nix\""
-msgstr ""
-
-#. type: heading1
 #: ../README.md:1
 #, no-wrap
 msgid "direnv -- unclutter your .profile"
@@ -3389,6 +3291,22 @@ msgstr ""
 #, no-wrap
 msgid "[MIT licence](LICENSE) - Copyright (C) 2019 @zimbatm and [contributors](https://github.com/direnv/direnv/graphs/contributors)"
 msgstr "[MIT licence](LICENSE) - Copyright (C) 2019 @zimbatm と[貢献者の方々](https://github.com/direnv/direnv/graphs/contributors)"
+
+#, no-wrap
+#~ msgid "go \\>= 1.24 is required"
+#~ msgstr "go >= 1.24が要求されます"
+
+#, no-wrap
+#~ msgid "Clone the project:"
+#~ msgstr "プロジェクトをクローンします："
+
+#, no-wrap
+#~ msgid "Test the projects:"
+#~ msgstr "プロジェクトをテストします："
+
+#, no-wrap
+#~ msgid "$ make test"
+#~ msgstr "$ make test"
 
 #, no-wrap
 #~ msgid ""
