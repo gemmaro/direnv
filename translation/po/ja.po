@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Direnv\n"
 "POT-Creation-Date: 2026-05-25 21:07+0900\n"
-"PO-Revision-Date: 2026-05-25 21:06+0900\n"
+"PO-Revision-Date: 2026-05-25 21:07+0900\n"
 "Last-Translator: gemmaro\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -2768,6 +2768,112 @@ msgid "Add the following line to your `~/.murex_profile` file:"
 msgstr "以下の行を`~/.murex_profile`に加えてください。"
 
 #. type: heading1
+#: ../docs/development.md:1
+#, no-wrap
+msgid "Development"
+msgstr ""
+
+#. type: paragraph
+#: ../docs/development.md:3
+#, no-wrap
+msgid "Setup a go environment https://golang.org/doc/install"
+msgstr ""
+
+#. type: block_quote / paragraph
+#: ../docs/development.md:5
+#, fuzzy, no-wrap
+#| msgid "direnv \\>= 2.31.0 is required"
+msgid "go \\>= 1.24 is required"
+msgstr "direnv >= 2.31.0が要求されます。"
+
+#. type: paragraph
+#: ../docs/development.md:7
+#, fuzzy, no-wrap
+#| msgid "Related projects"
+msgid "Clone the project:"
+msgstr "関連するプロジェクト"
+
+#. type: code_block
+#: ../docs/development.md:9
+#, no-wrap
+msgid "$ git clone git@github.com:direnv/direnv.git"
+msgstr ""
+
+#. type: paragraph
+#: ../docs/development.md:11
+#, no-wrap
+msgid "Build by just typing make:"
+msgstr ""
+
+#. type: code_block
+#: ../docs/development.md:13
+#, no-wrap
+msgid ""
+"$ cd direnv\n"
+"$ make"
+msgstr ""
+
+#. type: paragraph
+#: ../docs/development.md:16
+#, fuzzy, no-wrap
+#| msgid "Related projects"
+msgid "Test the projects:"
+msgstr "関連するプロジェクト"
+
+#. type: code_block
+#: ../docs/development.md:18
+#, fuzzy, no-wrap
+#| msgid ""
+#| "brew bundle\n"
+#| "make test"
+msgid "$ make test"
+msgstr ""
+"brew bundle\n"
+"make test"
+
+#. type: paragraph
+#: ../docs/development.md:20
+#, no-wrap
+msgid "To install to /usr/local:"
+msgstr ""
+
+#. type: code_block
+#: ../docs/development.md:22
+#, no-wrap
+msgid "$ make install"
+msgstr ""
+
+#. type: paragraph
+#: ../docs/development.md:24
+#, no-wrap
+msgid "Or to a different location like `~/.local`:"
+msgstr ""
+
+#. type: code_block
+#: ../docs/development.md:26
+#, no-wrap
+msgid "$ make install PREFIX=~/.local"
+msgstr ""
+
+#. type: heading2
+#: ../docs/development.md:28
+#, no-wrap
+msgid "Updating gomod2nix.toml"
+msgstr ""
+
+#. type: paragraph
+#: ../docs/development.md:30
+#, no-wrap
+msgid "Execute `./script/update-gomod2nix`; if you don't have nix locally, can do so via a docker container like so:"
+msgstr ""
+
+#. type: code_block
+#: ../docs/development.md:33
+#, no-wrap
+msgid "$ docker run -it --platform linux/amd64 -v $(pwd):/workdir nixos/nix /bin/sh -c \"cd workdir && ./script/update-gomod2nix\""
+msgstr ""
+
+#. type: heading1
 #: ../README.md:1
 #, no-wrap
 msgid "direnv -- unclutter your .profile"
@@ -3291,70 +3397,3 @@ msgstr ""
 #, no-wrap
 msgid "[MIT licence](LICENSE) - Copyright (C) 2019 @zimbatm and [contributors](https://github.com/direnv/direnv/graphs/contributors)"
 msgstr "[MIT licence](LICENSE) - Copyright (C) 2019 @zimbatm と[貢献者の方々](https://github.com/direnv/direnv/graphs/contributors)"
-
-#, no-wrap
-#~ msgid "go \\>= 1.24 is required"
-#~ msgstr "go >= 1.24が要求されます"
-
-#, no-wrap
-#~ msgid "Clone the project:"
-#~ msgstr "プロジェクトをクローンします："
-
-#, no-wrap
-#~ msgid "Test the projects:"
-#~ msgstr "プロジェクトをテストします："
-
-#, no-wrap
-#~ msgid "$ make test"
-#~ msgstr "$ make test"
-
-#, no-wrap
-#~ msgid ""
-#~ "    $ ./direnv fetchurl https://releases.nixos.org/nix/nix-2.3.7/install\n"
-#~ "    Found hash: sha256-7Gxl5GzI9juc/U30Igh/pY+p6+gj5Waohfwql3jHIds=\n"
-#~ msgstr ""
-#~ "    $ ./direnv fetchurl https://releases.nixos.org/nix/nix-2.3.7/install\n"
-#~ "    Found hash: sha256-7Gxl5GzI9juc/U30Igh/pY+p6+gj5Waohfwql3jHIds=\n"
-
-#, no-wrap
-#~ msgid "    Invoke fetchurl again with the hash as an argument to get the disk location:\n"
-#~ msgstr "    Invoke fetchurl again with the hash as an argument to get the disk location:\n"
-
-#~ msgid ""
-#~ "Typically this is used in combination with source_env and "
-#~ "source_env_if_exists."
-#~ msgstr "よく、source_envやsource_env_if_existsと組み合わせて使われます。"
-
-#, no-wrap
-#~ msgid ""
-#~ "    strict_env\n"
-#~ "    has curl\n"
-#~ msgstr ""
-#~ "    strict_env\n"
-#~ "    has curl\n"
-
-#, no-wrap
-#~ msgid ""
-#~ "    unstrict_env\n"
-#~ "    has curl\n"
-#~ msgstr ""
-#~ "    unstrict_env\n"
-#~ "    has curl\n"
-
-#, no-wrap
-#~ msgid ""
-#~ "    if on_git_branch; then\n"
-#~ "      echo \"Thanks for contributing to a GitHub project!\"\n"
-#~ "    fi\n"
-#~ msgstr ""
-#~ "    if on_git_branch; then\n"
-#~ "      echo \"Thanks for contributing to a GitHub project!\"\n"
-#~ "    fi\n"
-
-#, no-wrap
-#~ msgid ""
-#~ "DIRENV 1 \"2019\" direnv \"User Manuals\"\n"
-#~ "===========================================\n"
-#~ msgstr ""
-#~ "DIRENV 1 \"2019\" direnv \"取扱説明書\"\n"
-#~ "===========================================\n"
