@@ -33,8 +33,17 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - run: sudo apt install po4a
-      - run: make --directory translation
+
+      - name: Prepare po4a files
+        run: touch ${{ github.workspace }}/translation/po/en.pot
+      - name: Run po4a via Docker
+        run: |
+          docker run --rm \
+            -v ${{ github.workspace }}:/work \
+            -w /work/translation \
+            ghcr.io/mquinson/po4a:master \
+            po4a po4a.cfg
+
       - name: Setup Ruby
         # https://github.com/ruby/setup-ruby/releases/tag/v1.207.0
         uses: ruby/setup-ruby@4a9ddd6f338a97768b8006bf671dfbad383215f4
