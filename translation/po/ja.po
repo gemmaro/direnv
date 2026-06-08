@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Direnv\n"
-"POT-Creation-Date: 2026-05-25 21:07+0900\n"
+"POT-Creation-Date: 2026-06-08 15:15+0900\n"
 "PO-Revision-Date: 2026-05-25 21:11+0900\n"
 "Last-Translator: gemmaro\n"
 "Language-Team: none\n"
@@ -2868,6 +2868,359 @@ msgstr ""
 #, no-wrap
 msgid "$ docker run -it --platform linux/amd64 -v $(pwd):/workdir nixos/nix /bin/sh -c \"cd workdir && ./script/update-gomod2nix\""
 msgstr "$ docker run -it --platform linux/amd64 -v $(pwd):/workdir nixos/nix /bin/sh -c \"cd workdir && ./script/update-gomod2nix\""
+
+#. type: heading1
+#: ../docs/github-actions.md:1
+#, fuzzy, no-wrap
+#| msgid "[Using direnv with GitHub Actions](docs/github-actions.md)"
+msgid "Using direnv with GitHub Actions"
+msgstr "[GitHub Actionsでdirenvを使う](docs/github-actions.md)"
+
+#. type: paragraph
+#: ../docs/github-actions.md:3
+#, no-wrap
+msgid "direnv can be integrated into GitHub Actions workflows to manage environment variables from `.envrc` files. This is particularly useful for:"
+msgstr ""
+
+#. type: bullet list / item / paragraph
+#: ../docs/github-actions.md:5
+#, no-wrap
+msgid "Maintaining consistent environment variables between local development and CI/CD"
+msgstr ""
+
+#. type: bullet list / item / paragraph
+#: ../docs/github-actions.md:6
+#, no-wrap
+msgid "Managing secrets and configuration in a familiar way"
+msgstr ""
+
+#. type: bullet list / item / paragraph
+#: ../docs/github-actions.md:7
+#, no-wrap
+msgid "Reusing existing `.envrc` files in your CI pipeline"
+msgstr ""
+
+#. type: heading2
+#: ../docs/github-actions.md:9
+#, no-wrap
+msgid "Basic Usage"
+msgstr ""
+
+#. type: paragraph
+#: ../docs/github-actions.md:11
+#, no-wrap
+msgid "The `direnv export gha` command outputs environment variables in the format required by GitHub Actions. Here's a basic example:"
+msgstr ""
+
+#. type: code_block (yaml)
+#: ../docs/github-actions.md:13
+#, no-wrap
+msgid ""
+"name: CI\n"
+"on: [push, pull_request]\n"
+"\n"
+"jobs:\n"
+"  test:\n"
+"    runs-on: ubuntu-latest\n"
+"    steps:\n"
+"      - uses: actions/checkout@v4\n"
+"      \n"
+"      - name: Install direnv\n"
+"        run: |\n"
+"          curl -sfL https://direnv.net/install.sh | bash\n"
+"          echo \"$HOME/.local/bin\" >> $GITHUB_PATH\n"
+"      \n"
+"      - name: Load environment variables\n"
+"        run: |\n"
+"          direnv allow .\n"
+"          direnv export gha > \"$GITHUB_ENV\"\n"
+"      \n"
+"      - name: Run tests\n"
+"        run: |\n"
+"          # Your environment variables from .envrc are now available\n"
+"          echo \"DATABASE_URL=$DATABASE_URL\"\n"
+"          make test"
+msgstr ""
+
+#. type: heading2
+#: ../docs/github-actions.md:40
+#, no-wrap
+msgid "Installation in GitHub Actions"
+msgstr ""
+
+#. type: paragraph
+#: ../docs/github-actions.md:42
+#, no-wrap
+msgid "There are several ways to install direnv in your GitHub Actions workflow:"
+msgstr ""
+
+#. type: heading3
+#: ../docs/github-actions.md:44
+#, no-wrap
+msgid "Using the install script (recommended)"
+msgstr ""
+
+#. type: code_block (yaml)
+#: ../docs/github-actions.md:46
+#, no-wrap
+msgid ""
+"- name: Install direnv\n"
+"  run: |\n"
+"    curl -sfL https://direnv.net/install.sh | bash\n"
+"    echo \"$HOME/.local/bin\" >> $GITHUB_PATH"
+msgstr ""
+
+#. type: heading3
+#: ../docs/github-actions.md:53
+#, no-wrap
+msgid "Using package managers"
+msgstr ""
+
+#. type: paragraph
+#: ../docs/github-actions.md:55
+#, no-wrap
+msgid "On Ubuntu runners:"
+msgstr ""
+
+#. type: code_block (yaml)
+#: ../docs/github-actions.md:56
+#, no-wrap
+msgid ""
+"- name: Install direnv\n"
+"  run: sudo apt-get update && sudo apt-get install -y direnv"
+msgstr ""
+
+#. type: paragraph
+#: ../docs/github-actions.md:61
+#, no-wrap
+msgid "On macOS runners:"
+msgstr ""
+
+#. type: code_block (yaml)
+#: ../docs/github-actions.md:62
+#, no-wrap
+msgid ""
+"- name: Install direnv\n"
+"  run: brew install direnv"
+msgstr ""
+
+#. type: heading3
+#: ../docs/github-actions.md:67
+#, no-wrap
+msgid "Using a specific version"
+msgstr ""
+
+#. type: code_block (yaml)
+#: ../docs/github-actions.md:69
+#, no-wrap
+msgid ""
+"- name: Install direnv\n"
+"  run: |\n"
+"    wget -O direnv https://github.com/direnv/direnv/releases/download/v2.34.0/direnv.linux-amd64\n"
+"    chmod +x direnv\n"
+"    sudo mv direnv /usr/local/bin/"
+msgstr ""
+
+#. type: heading2
+#: ../docs/github-actions.md:77
+#, no-wrap
+msgid "Security Considerations"
+msgstr ""
+
+#. type: ordered list (period delim) / item / paragraph
+#: ../docs/github-actions.md:79
+#, no-wrap
+msgid "**Always use `direnv allow`**: Even in CI, direnv requires explicit permission to load `.envrc` files"
+msgstr ""
+
+#. type: ordered list (period delim) / item / paragraph
+#: ../docs/github-actions.md:80
+#, no-wrap
+msgid "**Be careful with secrets**: Don't echo or log sensitive environment variables"
+msgstr ""
+
+#. type: ordered list (period delim) / item / paragraph
+#: ../docs/github-actions.md:81
+#, no-wrap
+msgid "**Use GitHub Actions secrets**: Store sensitive values in GitHub Actions secrets rather than committing them to your repository"
+msgstr ""
+
+#. type: heading2
+#: ../docs/github-actions.md:83
+#, fuzzy, no-wrap
+#| msgid "Testing"
+msgid "Troubleshooting"
+msgstr "テスト"
+
+#. type: heading3
+#: ../docs/github-actions.md:85
+#, fuzzy, no-wrap
+#| msgid "Environment Variables:"
+msgid "Environment variables not available"
+msgstr "環境変数は次の通りです。"
+
+#. type: paragraph
+#: ../docs/github-actions.md:87
+#, no-wrap
+msgid "Make sure you're using `> \"$GITHUB_ENV\"` to override to the GitHub environment file:"
+msgstr ""
+
+#. type: code_block (yaml)
+#: ../docs/github-actions.md:89
+#, no-wrap
+msgid ""
+"# Correct\n"
+"direnv export gha > \"$GITHUB_ENV\"\n"
+"\n"
+"# Incorrect - this just prints to stdout\n"
+"direnv export gha"
+msgstr ""
+
+#. type: heading3
+#: ../docs/github-actions.md:97
+#, no-wrap
+msgid "Permission denied errors"
+msgstr ""
+
+#. type: paragraph
+#: ../docs/github-actions.md:99
+#, no-wrap
+msgid "Ensure direnv is executable and in your PATH:"
+msgstr ""
+
+#. type: code_block (yaml)
+#: ../docs/github-actions.md:101
+#, no-wrap
+msgid ""
+"- name: Install and setup direnv\n"
+"  run: |\n"
+"    curl -sfL https://direnv.net/install.sh | bash\n"
+"    echo \"$HOME/.local/bin\" >> $GITHUB_PATH\n"
+"    # Force PATH update in current step\n"
+"    export PATH=\"$HOME/.local/bin:$PATH\"\n"
+"    direnv allow .\n"
+"    direnv export gha >> \"$GITHUB_ENV\""
+msgstr ""
+
+#. type: heading3
+#: ../docs/github-actions.md:112
+#, no-wrap
+msgid "Debugging"
+msgstr ""
+
+#. type: paragraph
+#: ../docs/github-actions.md:114
+#, no-wrap
+msgid "To debug issues, you can examine what direnv is doing:"
+msgstr ""
+
+#. type: code_block (yaml)
+#: ../docs/github-actions.md:116
+#, no-wrap
+msgid ""
+"- name: Debug direnv\n"
+"  run: |\n"
+"    direnv version\n"
+"    direnv status\n"
+"    cat .envrc\n"
+"    direnv allow .\n"
+"    direnv export gha"
+msgstr ""
+
+#. type: heading2
+#: ../docs/github-actions.md:126
+#, no-wrap
+msgid "Example: Complete Node.js Workflow"
+msgstr ""
+
+#. type: paragraph
+#: ../docs/github-actions.md:128
+#, no-wrap
+msgid "Here's a complete example for a Node.js project:"
+msgstr ""
+
+#. type: code_block (yaml)
+#: ../docs/github-actions.md:130
+#, no-wrap
+msgid ""
+"name: Node.js CI\n"
+"\n"
+"on:\n"
+"  push:\n"
+"    branches: [ main ]\n"
+"  pull_request:\n"
+"    branches: [ main ]\n"
+"\n"
+"jobs:\n"
+"  test:\n"
+"    runs-on: ubuntu-latest\n"
+"    \n"
+"    strategy:\n"
+"      matrix:\n"
+"        node-version: [18.x, 20.x]\n"
+"    \n"
+"    steps:\n"
+"    - uses: actions/checkout@v4\n"
+"    \n"
+"    - name: Install direnv\n"
+"      run: |\n"
+"        curl -sfL https://direnv.net/install.sh | bash\n"
+"        echo \"$HOME/.local/bin\" >> $GITHUB_PATH\n"
+"    \n"
+"    - name: Setup Node.js ${{ matrix.node-version }}\n"
+"      uses: actions/setup-node@v4\n"
+"      with:\n"
+"        node-version: ${{ matrix.node-version }}\n"
+"    \n"
+"    - name: Load environment\n"
+"      run: |\n"
+"        # Create .envrc if it doesn't exist\n"
+"        if [ ! -f .envrc ]; then\n"
+"          cat > .envrc <<'EOF'\n"
+"          export NODE_ENV=test\n"
+"          export DATABASE_URL=\"postgresql://localhost/test_db\"\n"
+"          PATH_add node_modules/.bin\n"
+"          EOF\n"
+"        fi\n"
+"        \n"
+"        direnv allow .\n"
+"        direnv export gha >> \"$GITHUB_ENV\"\n"
+"    \n"
+"    - name: Install dependencies\n"
+"      run: npm ci\n"
+"    \n"
+"    - name: Run tests\n"
+"      run: npm test\n"
+"    \n"
+"    - name: Run linter\n"
+"      run: npm run lint"
+msgstr ""
+
+#. type: heading2
+#: ../docs/github-actions.md:184
+#, fuzzy, no-wrap
+#| msgid "See also:"
+msgid "See Also"
+msgstr "こちらも参照。"
+
+#. type: bullet list / item / paragraph
+#: ../docs/github-actions.md:186
+#, no-wrap
+msgid "[GitHub Actions Environment Files](https://docs.github.com/en/actions/using-workflows/workflow-commands-for-github-actions#environment-files)"
+msgstr ""
+
+#. type: bullet list / item / paragraph
+#: ../docs/github-actions.md:187
+#, no-wrap
+msgid "[direnv Documentation](https://direnv.net)"
+msgstr ""
+
+#. type: bullet list / item / paragraph
+#: ../docs/github-actions.md:188
+#, fuzzy, no-wrap
+#| msgid "[direnv-stdlib(1) man page](man/direnv-stdlib.1.md)"
+msgid "[direnv-stdlib(1)](../man/direnv-stdlib.1.md)"
+msgstr "[direnv-stdlib(1)のmanページ](man/direnv-stdlib.1.md)"
 
 #. type: heading1
 #: ../README.md:1
