@@ -112,7 +112,8 @@ tests = \
 				test-tcsh \
 				test-zsh \
 				test-pwsh \
-				test-mx
+				test-mx \
+				test-ksh
 
 # Skip few checks for IBM Z mainframe's z/OS aka OS/390
 ifeq ($(shell uname), OS/390)
@@ -162,6 +163,9 @@ test-pwsh:
 
 test-mx:
 	murex -trypipe ./test/direnv-test.mx
+
+test-ksh:
+	ksh ./test/direnv-test.ksh
 
 ############################################################################
 # Installation

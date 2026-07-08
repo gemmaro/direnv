@@ -44,6 +44,7 @@ var supportedShellList = map[string]Shell{
 	"zsh":     Zsh,
 	"pwsh":    Pwsh,
 	"systemd": Systemd,
+	"ksh":     Ksh,
 }
 
 // DetectShell returns a Shell instance from the given target.
