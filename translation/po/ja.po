@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Direnv\n"
 "POT-Creation-Date: 2026-10-20 09:15+0900\n"
-"PO-Revision-Date: 2026-06-08 15:31+0900\n"
+"PO-Revision-Date: 2026-10-20 09:31+0900\n"
 "Last-Translator: gemmaro\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -32,10 +32,9 @@ msgstr "名称"
 
 #. type: paragraph
 #: ../man/direnv-fetchurl.1.md:7
-#, fuzzy, no-wrap
-#| msgid "direnv fetchurl - Fetch a URL to disk"
+#, no-wrap
 msgid "direnv-fetchurl - Fetch a URL to disk"
-msgstr "direnv fetchurl - URLから取得して保存"
+msgstr "direnv-fetchurl - URLから取得してディスクへ"
 
 #. type: heading2
 #: ../man/direnv-fetchurl.1.md:9 ../man/direnv-stdlib.1.md:9
@@ -840,10 +839,7 @@ msgstr "`env_vars_required <変数名> [<変数名> ...]`"
 
 #. type: paragraph
 #: ../man/direnv-stdlib.1.md:95
-#, fuzzy, no-wrap
-#| msgid ""
-#| "Logs error for every variable not present in the environment or having an empty value.  \n"
-#| "Typically this is used in combination with source\\_env and source\\_env\\_if\\_exists."
+#, no-wrap
 msgid "Logs error for every variable not present in the environment or having an empty value. Typically this is used in combination with source\\_env and source\\_env\\_if\\_exists."
 msgstr ""
 "環境に存在しないか空の値を持つすべての変数に対してエラーをログ出力します。  \n"
@@ -1237,28 +1233,35 @@ msgstr "「$PWD/vendor/bin」をPATH環境変数に加えます。"
 
 #. type: heading3
 #: ../man/direnv-stdlib.1.md:252
-#, fuzzy, no-wrap
-#| msgid "`layout php`"
+#, no-wrap
 msgid "`layout pixi`"
-msgstr "`layout php`"
+msgstr "`layout pixi`"
 
 #. type: paragraph
 #: ../man/direnv-stdlib.1.md:254
 #, no-wrap
 msgid "Loads a pixi environment. If no additional arguments are given the `default` environment is loaded."
 msgstr ""
+"pixiの環境を読み込み。\n"
+"追加の引数が何ら与えられなければ、`default`環境が読み込まれます。"
 
 #. type: paragraph
 #: ../man/direnv-stdlib.1.md:256
 #, no-wrap
 msgid "You can pass `-e <env_name>` to load a different environment instead. For supported arguments see `pixi shell-hook --help`."
 msgstr ""
+"`-e <環境名>`を渡せば、代わりに異なる環境へ読み込めます。\n"
+"対応している引数については`pixi shell-hook --help`を参照。"
 
 #. type: paragraph
 #: ../man/direnv-stdlib.1.md:258
 #, no-wrap
 msgid "The manifest (`pixi.toml` if present, `pyproject.toml` otherwise) and `pixi.lock` are added to the allow-list via `require_allowed`, as they can define activation scripts that get executed. Any change to them requires running `direnv allow` again. If no `pixi.lock` exists, loading fails until you run `pixi lock`. Must be used in the workspace root."
 msgstr ""
+"マニフェスト（在れば`pixi.toml`、さもなくば`pyproject.toml`）と`pixi.lock`は`require_allowed`により許可リストへ加わりますが、これは実行される活性化スクリプトをそれらに定義できるためです。\n"
+"それらへのいかなる変更によっても、再び`direnv allow`を走らせることが求められます。\n"
+"何ら`pixi.lock`が存在しなければ、`pixi lock`を走らせるまで読み込みは失敗します。\n"
+"作業場所の根幹で使わなければなりません。"
 
 #. type: heading3
 #: ../man/direnv-stdlib.1.md:260
@@ -1318,10 +1321,9 @@ msgstr ""
 
 #. type: heading3
 #: ../man/direnv-stdlib.1.md:276
-#, fuzzy, no-wrap
-#| msgid "`layout pyenv [<version> ...]`"
+#, no-wrap
 msgid "`layout uv [<uv-sync-args>...]`"
-msgstr "`layout pyenv [<バージョン> ...]`"
+msgstr "`layout uv [<uv-syncの引数>...]`"
 
 #. type: paragraph
 #: ../man/direnv-stdlib.1.md:278
@@ -1705,12 +1707,11 @@ msgstr "`direnv_version <最低バージョン>`"
 
 #. type: paragraph
 #: ../man/direnv-stdlib.1.md:419
-#, fuzzy, no-wrap
-#| msgid "Checks that the direnv version is at least old as `version_at_least`. This can be useful when sharing an `.envrc` and to make sure that the users are up to date."
+#, no-wrap
 msgid "Checks that the direnv version is no older than `version_at_least`. This can be useful when sharing an `.envrc` and to make sure that the users are up to date."
 msgstr ""
-"direnvのバージョンが少なくとも`最低バージョン`と同じくらい古いことを確認します。\n"
-"`.envrc`を共有しており、利用者の環境が最新であることを確認するときに便利なことがあります。"
+"direnvのバージョンが`最低バージョン`よりも古くないことを確認。\n"
+"`.envrc`を共有しており、利用者の環境が最新であることを確かめるときに便利なことがあります。"
 
 #. type: heading3
 #: ../man/direnv-stdlib.1.md:423
@@ -2194,10 +2195,9 @@ msgstr "`direnv stdlib` : .envrcの実行の文脈で使える標準ライブラ
 
 #. type: paragraph
 #: ../man/direnv.1.md:174
-#, fuzzy, no-wrap
-#| msgid "`direnv version` : Prints the version or checks that direnv is older than VERSION\\_AT\\_LEAST."
+#, no-wrap
 msgid "`direnv version` : Prints the version or checks that direnv is no older than VERSION\\_AT\\_LEAST."
-msgstr "`direnv version` : バージョンを印字するか、VERSION\\_AT\\_LEASTよりdirenvが古いかどうかを判定します。"
+msgstr "`direnv version` : バージョンを印字するか、VERSION\\_AT\\_LEASTほどにはdirenvが古くないことを判定します。"
 
 #. type: heading2
 #: ../man/direnv.1.md:177
@@ -2500,13 +2500,12 @@ msgstr ""
 
 #. type: paragraph
 #: ../docs/ruby.md:73
-#, fuzzy, no-wrap
-#| msgid "And finally `layout ruby` who like `use` translates into the `layout_ruby` function call. It's used to describe common project layouts. In the stdlib, the ruby layout will configure rubygems (with the `GEM_HOME` environment variable) to install all the gems into the .direnv/ruby/RUBY\\_VERSION folder under the project root. This is a bit similar to rvm's gemsets except that they live inside your project's folder. It also configures bundler to install wrapper shims into the .direnv/bin folder which allows you to invoke the commands directly instead of prefixing your ruby programs with `bundle exec` all the time."
+#, no-wrap
 msgid "And finally `layout ruby` who like `use` translates into the `layout_ruby` function call. It's used to describe common project layouts. In the stdlib, the ruby layout will configure rubygems (with the `GEM_HOME` environment variable) to install all the gems into the `.direnv/ruby/RUBY_VERSION` folder under the project root. This is a bit similar to rvm's gemsets except that they live inside your project's folder. It also configures bundler to install wrapper shims into the `.direnv/bin` folder which allows you to invoke the commands directly instead of prefixing your ruby programs with `bundle exec` all the time."
 msgstr ""
-"また最後に、`layout ruby`は`use`に似ており、`layout_ruby`関数呼び出しに読み替えます。\n"
+"また最後に`layout ruby`は、`use`に似ていますが、`layout_ruby`の関数呼び出しに読み替えます。\n"
 "これは、一般的なプロジェクトの配置を記述するために使います。\n"
-"標準ライブラリでは、rubyの配置で（`GEM_HOME`環境変数により）rubygemsを構成し、プロジェクトルート配下の .direnv/ruby/RUBY_VERSION フォルダに全てのgemがインストールされます。\n"
+"標準ライブラリでは、rubyの配置では（`GEM_HOME`環境変数により）rubygemsが構成され、プロジェクトルート配下の .direnv/ruby/RUBY_VERSION フォルダに全てのgemがインストールされます。\n"
 "rvmのgemsetと少し似ていますが、そちらはプロジェクトのフォルダ内にある点が異なります。\n"
 "また、bundlerを構成して、.direnv/bin フォルダにラッパーのシンボリックリンクをインストールします。\n"
 "これにより、毎回`bundle exec`でrubyプログラムを前置する代わりに、直接コマンドを呼び出せます。"
@@ -2517,11 +2516,9 @@ msgstr ""
 msgid "Conclusion"
 msgstr "結論"
 
-# 「~」を含むパスは行内コードにしないと、打ち消し線に誤解されることがあります。
 #. type: paragraph
 #: ../docs/ruby.md:85
-#, fuzzy, no-wrap
-#| msgid "As you see this approach is not restricted to ruby. You could have various versions of python installed under ~/.pythons and a `use_python` defined in your ~/.direnvrc. Or perl, php, ...  This is the good thing about direnv, it's not restricted to a single language."
+#, no-wrap
 msgid "As you see this approach is not restricted to ruby. You could have various versions of python installed under `~/.pythons` and a `use_python` defined in your `~/.direnvrc`. Or perl, php, ...  This is the good thing about direnv, it's not restricted to a single language."
 msgstr ""
 "ここまで見てきたように、この手法はrubyに限定されません。\n"
@@ -2806,12 +2803,11 @@ msgstr ""
 
 #. type: block_quote / paragraph
 #: ../docs/hook.md:99
-#, fuzzy, no-wrap
-#| msgid "**Note** you can follow the [`nu_scripts` of Nushell](https://github.com/nushell/nu_scripts/blob/main/nu-hooks/nu-hooks/direnv/config.nu) for the always up-to-date version of the hook above"
+#, no-wrap
 msgid "**Note** you can follow the official [cookbook example](https://www.nushell.sh/cookbook/direnv.html) for the always up-to-date version of the hook above."
 msgstr ""
 "**補足**\n"
-"[Nushellの`nu_scripts`](https://github.com/nushell/nu_scripts/blob/main/nu-hooks/nu-hooks/direnv/config.nu)に従うことで、上記のフックを常に最新のバージョンで使えます。"
+"公式の[レシピの例](https://www.nushell.sh/cookbook/direnv.html)に従うことで、上記のフックを常に最新のバージョンで使えます。"
 
 #. type: paragraph
 #: ../docs/hook.md:113
@@ -2833,10 +2829,9 @@ msgstr "goを環境構築 https://golang.org/doc/install"
 
 #. type: block_quote / paragraph
 #: ../docs/development.md:5
-#, fuzzy, no-wrap
-#| msgid "go \\>= 1.24 is required"
+#, no-wrap
 msgid "go \\>= 1.26 is required"
-msgstr "go >= 1.24が要求されます"
+msgstr "go >= 1.26が要求されます"
 
 #. type: paragraph
 #: ../docs/development.md:7
@@ -3224,12 +3219,7 @@ msgstr ""
 
 #. type: code_block (yaml)
 #: ../docs/github-actions.md:116
-#, fuzzy, no-wrap
-#| msgid ""
-#| "- name: Install direnv\n"
-#| "  run: |\n"
-#| "    curl -sfL https://direnv.net/install.sh | bash\n"
-#| "    echo \"$HOME/.local/bin\" >> $GITHUB_PATH"
+#, no-wrap
 msgid ""
 "- name: Install direnv\n"
 "  run: |\n"
@@ -3240,8 +3230,10 @@ msgid ""
 msgstr ""
 "- name: Install direnv\n"
 "  run: |\n"
-"    curl -sfL https://direnv.net/install.sh | bash\n"
-"    echo \"$HOME/.local/bin\" >> $GITHUB_PATH"
+"    curl -sfL https://direnv.net/install.sh | DIRENV_GITHUB_API_TOKEN=$GITHUB_TOKEN bash\n"
+"    echo \"$HOME/.local/bin\" >> $GITHUB_PATH\n"
+"  env:\n"
+"    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}"
 
 #. type: heading3
 #: ../docs/github-actions.md:125
@@ -3719,8 +3711,7 @@ msgstr "[コミュニティのウィキ](https://github.com/direnv/direnv/wiki)"
 
 #. type: paragraph
 #: ../README.md:123
-#, fuzzy, no-wrap
-#| msgid "Make sure to take a look at the wiki! It contains all sorts of useful information such as common recipes, editor integration, tips-and-tricks."
+#, no-wrap
 msgid "Make sure to take a look at the wiki\\! It contains all sorts of useful information such as common recipes, editor integration, tips-and-tricks."
 msgstr ""
 "ぜひウィキをご覧ください！\n"
@@ -3797,10 +3788,9 @@ msgstr ""
 
 #. type: heading3
 #: ../README.md:153
-#, fuzzy, no-wrap
-#| msgid "Installation"
+#, no-wrap
 msgid "Translations"
-msgstr "インストール"
+msgstr "翻訳"
 
 #. type: paragraph
 #: ../README.md:155
