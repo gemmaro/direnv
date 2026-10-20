@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Direnv\n"
 "POT-Creation-Date: 2026-10-20 09:15+0900\n"
-"PO-Revision-Date: 2026-10-20 09:31+0900\n"
+"PO-Revision-Date: 2026-10-20 09:43+0900\n"
 "Last-Translator: gemmaro\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -1330,6 +1330,12 @@ msgstr "`layout uv [<uv-syncの引数>...]`"
 #, no-wrap
 msgid "Similar to `layout python`, but syncs the uv project with `uv sync --frozen` and activates its virtual environment. Requires a `pyproject.toml`. `uv.lock` is never modified, so loading fails when it is out of date with `pyproject.toml`. Arguments are passed to `uv sync` (e.g. `layout uv --no-dev`). The Python version comes from `.python-version`, `pyproject.toml` or `UV_PYTHON` (e.g. `UV_PYTHON=3.12 layout uv`). The virtual environment path can be overridden with `UV_PROJECT_ENVIRONMENT`."
 msgstr ""
+"`layout python`に似ていますが、`uv sync --frozen`でuvのプロジェクトを同期し仮想環境を活性化します。\n"
+"`pyproject.toml`を要求。\n"
+"`uv.lock`は決して改変されないため、`pyproject.toml`から古びているときは読み込みが失敗します。\n"
+"引数は`uv sync`へ渡されます（例：`layout uv --no-dev`）。\n"
+"Pythonの版は`.python-version`、`pyproject.toml`、または`UV_PYTHON`（例：`UV_PYTHON=3.12 layout uv`）に由来します。\n"
+"仮想環境のパスは`UV_PROJECT_ENVIRONMENT`で上塗りできます。"
 
 #. type: heading3
 #: ../man/direnv-stdlib.1.md:280
@@ -2266,6 +2272,9 @@ msgstr "環境"
 #, no-wrap
 msgid "`DIRENV_DISABLE` : Set to `1` or `true` to stop direnv from changing the environment. direnv does not revert the changes it already made. Unset it to let direnv continue."
 msgstr ""
+"`DIRENV_DISABLE` : `1`または`true`に設定すると、direnvにより環境が変わるのが止まります。\n"
+"direnvは既にされた変更を元に戻しません。\n"
+"設定を外せばdirenvによる動作が続けられます。"
 
 #. type: paragraph
 #: ../man/direnv.1.md:213
@@ -2644,7 +2653,7 @@ msgstr "[GNU Guix](https://packages.guix.gnu.org/search/?query=direnv)"
 #: ../docs/installation.md:23
 #, no-wrap
 msgid "[Windows](https://winstall.app/apps/direnv.direnv)"
-msgstr ""
+msgstr "[Windows](https://winstall.app/apps/direnv.direnv)"
 
 #. type: paragraph
 #: ../docs/installation.md:25
@@ -2778,7 +2787,7 @@ msgstr "Nushell"
 #: ../docs/hook.md:78
 #, no-wrap
 msgid "The following `config.nu` snippet, requiring Nushell 0.104 or later, shows how to configure a hook that runs when the current working directory is changed:"
-msgstr ""
+msgstr "以下の`config.nu`スニペットでは、Nushellの0.104以降が要求され、現在の作業ディレクトリが変わったときに走るホックをどう構成するかが示されます。"
 
 #. type: code_block (nushell)
 #: ../docs/hook.md:81
@@ -2800,6 +2809,21 @@ msgid ""
 "  $env.PATH = do (env-conversions).path.from_string $env.PATH\n"
 "}]"
 msgstr ""
+"use std/config *\n"
+"\n"
+"# PWDフックが存在しなければ、このフックを空のリストで初期化\n"
+"$env.config.hooks.env_change.PWD = $env.config.hooks.env_change.PWD? | default []\n"
+"\n"
+"$env.config.hooks.env_change.PWD ++= [{||\n"
+"  if (which direnv | is-empty) {\n"
+"    # direnvがインストールされていなければ、何もしません\n"
+"    return\n"
+"  }\n"
+"\n"
+"  direnv export json | from json | default {} | load-env\n"
+"  # direnvがPATHを変えるなら、文字列になり、リストへ再び変換する必要があります\n"
+"  $env.PATH = do (env-conversions).path.from_string $env.PATH\n"
+"}]"
 
 #. type: block_quote / paragraph
 #: ../docs/hook.md:99
@@ -3209,13 +3233,13 @@ msgstr ""
 #: ../docs/github-actions.md:112
 #, no-wrap
 msgid "Intermittent 403 errors"
-msgstr ""
+msgstr "断続的な403エラー"
 
 #. type: paragraph
 #: ../docs/github-actions.md:114
 #, no-wrap
 msgid "When downloading from `direnv.net` gives intermittent 403 errors, you might be hitting the GitHub rate limit. Supply a GITHUB\\_TOKEN for higher limits:"
-msgstr ""
+msgstr "`direnv.net`からのダウンロードが断続的な403エラーになるときは、GitHubの速度制限に当たっているのかもしれません。より高い上限のためにGITHUB\\_TOKENを与えてください。"
 
 #. type: code_block (yaml)
 #: ../docs/github-actions.md:116
@@ -3623,6 +3647,9 @@ msgstr ""
 #, no-wrap
 msgid "Some stdlib functions store files in `.direnv/`. Add `.direnv/` to your `.gitignore`. For local overrides that you do not commit, put `source_env_if_exists .envrc.local` in `.envrc` and also ignore `.envrc.local`."
 msgstr ""
+"stdlibの関数にはファイルを`.direnv/`に保管するものがあります。\n"
+"`.gitignore`に`.direnv/`を追加してください。\n"
+"コミットしない手元で上塗りしたものについては、`.envrc`に`source_env_if_exists .envrc.local`を書いて、`.envrc.local`も無視してください。"
 
 #. type: heading3
 #: ../README.md:91
@@ -3796,13 +3823,13 @@ msgstr "翻訳"
 #: ../README.md:155
 #, no-wrap
 msgid "The direnv documentation is also available in other languages:"
-msgstr ""
+msgstr "direnvの文書は他の言語でも利用できます。"
 
 #. type: bullet list / item / paragraph
 #: ../README.md:157
 #, no-wrap
 msgid "[日本語 (Japanese)](https://gemmaro.github.io/direnv/)"
-msgstr ""
+msgstr "[日本語（Japanese; 本訳）](https://gemmaro.github.io/direnv/)"
 
 #. type: heading2
 #: ../README.md:159
